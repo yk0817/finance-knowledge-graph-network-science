@@ -1,141 +1,141 @@
-# Tools and Platforms for Financial Network Analysis and Knowledge Graphs
+# 金融ネットワーク分析とナレッジグラフのためのツールとプラットフォーム
 
-This document catalogs software tools, libraries, platforms, and services for building and analyzing financial networks and knowledge graphs.
-
----
-
-## Graph Databases
-
-| Tool | Type | Description | License | URL |
-|------|------|-------------|---------|-----|
-| Neo4j | Native graph database (labeled property graph) | Most popular graph database; Cypher query language; ACID compliant; strong ecosystem (APOC, GDS library) | Community (GPLv3) / Enterprise (Commercial) | https://neo4j.com/ |
-| TigerGraph | Native parallel graph database | High-performance distributed graph analytics; GSQL query language; real-time deep link analytics | Commercial (free tier available) | https://www.tigergraph.com/ |
-| Amazon Neptune | Managed graph database (AWS) | Supports both property graph (Gremlin/openCypher) and RDF (SPARQL); serverless option | Commercial (AWS) | https://aws.amazon.com/neptune/ |
-| ArangoDB | Multi-model (document, graph, key-value) | Native graph + document store; AQL query language; Pregel-based graph analytics | Apache 2.0 / Commercial | https://www.arangodb.com/ |
-| JanusGraph | Distributed graph database | Supports multiple backends (Cassandra, HBase, BerkeleyDB); Gremlin/TinkerPop compatible | Apache 2.0 | https://janusgraph.org/ |
-| Dgraph | Native distributed graph database | GraphQL-native; horizontal scaling; ACID transactions | Apache 2.0 / Commercial | https://dgraph.io/ |
-| Stardog | Enterprise knowledge graph platform | RDF/OWL triple store with reasoning; SPARQL + GraphQL; virtual graph federation | Commercial | https://www.stardog.com/ |
-| Ontotext GraphDB | RDF triple store with reasoning | OWL 2 reasoning; SPARQL 1.1; semantic inference; SHACL validation | Commercial (free edition available) | https://www.ontotext.com/products/graphdb/ |
-| Ultipa | Real-time graph database | High-performance parallel graph traversal; HDFS-like distributed architecture | Commercial | https://www.ultipa.com/ |
-| Memgraph | In-memory graph database | Cypher-compatible; streaming graph analytics; Kafka integration | BSL / Community (free) | https://memgraph.com/ |
-| NebulaGraph | Distributed graph database | Horizontal scaling; nGQL query language; designed for super-large graphs | Apache 2.0 | https://www.nebula-graph.io/ |
+本文書は、金融ネットワークおよびナレッジグラフの構築・分析のためのソフトウェアツール、ライブラリ、プラットフォーム、サービスをまとめたものである。
 
 ---
 
-## Graph Analytics Libraries
+## グラフデータベース
 
-| Tool | Language | Description | License | URL |
-|------|----------|-------------|---------|-----|
-| NetworkX | Python | De facto standard for network analysis in Python; rich algorithm library; easy to use | BSD | https://networkx.org/ |
-| igraph | R / Python / C | High-performance network analysis; fast community detection, centrality, visualization | GPL-2.0 | https://igraph.org/ |
-| graph-tool | Python (C++ core) | High-performance network analysis with Bayesian inference; stochastic block models | LGPL-3.0 | https://graph-tool.skewed.de/ |
-| SNAP | C++ / Python | Stanford large-scale network analysis; billions of edges; PageRank, motifs, communities | BSD | https://snap.stanford.edu/snap/ |
-| DGL (Deep Graph Library) | Python (PyTorch/TensorFlow) | Flexible framework for GNNs; message passing; heterogeneous graphs | Apache 2.0 | https://www.dgl.ai/ |
-| PyG (PyTorch Geometric) | Python (PyTorch) | GNN library; extensive model zoo; mini-batch training; heterogeneous graphs | MIT | https://pyg.org/ |
-| StellarGraph | Python (TensorFlow/Keras) | GNNs for node/edge/graph tasks; GraphSAGE, GAT, GCN implementations | Apache 2.0 | https://stellargraph.readthedocs.io/ |
-| cuGraph (NVIDIA RAPIDS) | Python (CUDA) | GPU-accelerated graph analytics; PageRank, BFS, Louvain on GPU | Apache 2.0 | https://github.com/rapidsai/cugraph |
-| Networkit | Python (C++ core) | Large-scale network analysis; parallel algorithms; community detection | MIT | https://networkit.github.io/ |
-| GraphFrames | Python/Scala (Apache Spark) | Distributed graph processing on Spark; motif finding; connected components | Apache 2.0 | https://graphframes.github.io/graphframes/ |
-| Tulip | C++ / Python | Large graph visualization and analysis framework | LGPL | https://tulip.labri.fr/ |
-| PowerGraph (GraphLab) | C++ | Distributed graph computation; vertex-cut partitioning | Apache 2.0 | https://github.com/jegonzal/PowerGraph |
-
----
-
-## Knowledge Graph Construction and Management Tools
-
-| Tool | Type | Description | License | URL |
-|------|------|-------------|---------|-----|
-| Protégé | Ontology editor | Stanford's OWL/RDF ontology editor; visual class hierarchy; plugin ecosystem | BSD-2-Clause | https://protege.stanford.edu/ |
-| Apache Jena | RDF framework (Java) | RDF/SPARQL framework; TDB triple store; Fuseki SPARQL server; OWL reasoning | Apache 2.0 | https://jena.apache.org/ |
-| RDFLib | RDF library (Python) | Python RDF manipulation; SPARQL query; serialization (Turtle, JSON-LD, N-Triples) | BSD | https://rdflib.readthedocs.io/ |
-| Owlready2 | Ontology library (Python) | Load/modify OWL ontologies in Python; HermiT reasoning; SPARQL queries | LGPL-3.0 | https://owlready2.readthedocs.io/ |
-| PyKEEN | KG embedding library (Python) | Knowledge graph embedding models (TransE, RotatE, ConvE, etc.); hyperparameter search | MIT | https://pykeen.readthedocs.io/ |
-| AmpliGraph | KG embedding library (Python) | Knowledge graph embeddings; link prediction; model evaluation | Apache 2.0 | https://docs.ampligraph.org/ |
-| OpenKE | KG embedding framework | Open-source KG embedding toolkit; efficient C++ backend with Python interface | MIT | https://github.com/thunlp/OpenKE |
-| spaCy + REL | NER + Entity Linking | Named entity recognition with entity linking to knowledge bases | MIT | https://spacy.io/ |
-| DeepKE | Knowledge extraction (Python) | Low-resource knowledge graph construction; NER, RE, attribute extraction | MIT | https://github.com/zjunlp/DeepKE |
-| OpenIE / Stanford KG | Information extraction | Open information extraction for triple generation from text | Apache 2.0 | https://stanfordnlp.github.io/CoreNLP/ |
+| ツール | 種類 | 説明 | ライセンス | URL |
+|--------|------|------|-----------|-----|
+| Neo4j | ネイティブグラフデータベース（ラベル付きプロパティグラフ） | 最も普及しているグラフデータベース; Cypherクエリ言語; ACID準拠; 充実したエコシステム（APOC、GDSライブラリ） | Community (GPLv3) / Enterprise (商用) | https://neo4j.com/ |
+| TigerGraph | ネイティブ並列グラフデータベース | 高性能分散グラフ分析; GSQLクエリ言語; リアルタイム深層リンク分析 | 商用（無料枠あり） | https://www.tigergraph.com/ |
+| Amazon Neptune | マネージドグラフデータベース (AWS) | プロパティグラフ（Gremlin/openCypher）とRDF（SPARQL）の両方をサポート; サーバーレスオプション | 商用 (AWS) | https://aws.amazon.com/neptune/ |
+| ArangoDB | マルチモデル（ドキュメント、グラフ、キーバリュー） | ネイティブグラフ＋ドキュメントストア; AQLクエリ言語; Pregelベースのグラフ分析 | Apache 2.0 / 商用 | https://www.arangodb.com/ |
+| JanusGraph | 分散グラフデータベース | 複数バックエンドに対応（Cassandra、HBase、BerkeleyDB）; Gremlin/TinkerPop互換 | Apache 2.0 | https://janusgraph.org/ |
+| Dgraph | ネイティブ分散グラフデータベース | GraphQLネイティブ; 水平スケーリング; ACIDトランザクション | Apache 2.0 / 商用 | https://dgraph.io/ |
+| Stardog | エンタープライズナレッジグラフプラットフォーム | 推論機能付きRDF/OWLトリプルストア; SPARQL + GraphQL; 仮想グラフフェデレーション | 商用 | https://www.stardog.com/ |
+| Ontotext GraphDB | 推論機能付きRDFトリプルストア | OWL 2推論; SPARQL 1.1; セマンティック推論; SHACLバリデーション | 商用（無料版あり） | https://www.ontotext.com/products/graphdb/ |
+| Ultipa | リアルタイムグラフデータベース | 高性能並列グラフ走査; HDFSライクな分散アーキテクチャ | 商用 | https://www.ultipa.com/ |
+| Memgraph | インメモリグラフデータベース | Cypher互換; ストリーミンググラフ分析; Kafka統合 | BSL / Community（無料） | https://memgraph.com/ |
+| NebulaGraph | 分散グラフデータベース | 水平スケーリング; nGQLクエリ言語; 超大規模グラフ向け設計 | Apache 2.0 | https://www.nebula-graph.io/ |
 
 ---
 
-## Financial NLP Tools
+## グラフ分析ライブラリ
 
-| Tool | Type | Description | License | URL |
-|------|------|-------------|---------|-----|
-| FinBERT | Pre-trained language model | BERT fine-tuned on financial text; sentiment analysis; financial NER | Apache 2.0 | https://github.com/ProsusAI/finBERT |
-| BloombergGPT | Large language model | 50B parameter LLM trained on Bloomberg financial data; financial NLP tasks | Commercial (Bloomberg) | — |
-| FinGPT | Open-source financial LLM | Open framework for financial LLMs; RLHF with financial data | MIT | https://github.com/AI4Finance-Foundation/FinGPT |
-| spaCy (finance pipelines) | NLP library (Python) | Industrial-strength NLP; custom financial NER models; fast tokenization | MIT | https://spacy.io/ |
-| Stanza | NLP library (Python) | Stanford NLP toolkit; multilingual support; biomedical/financial models | Apache 2.0 | https://stanfordnlp.github.io/stanza/ |
-| AllenNLP | NLP framework (Python) | Deep learning NLP framework; semantic role labeling; coreference | Apache 2.0 | https://allennlp.org/ |
-| FinRL | Deep RL for finance (Python) | Reinforcement learning library for quantitative finance | MIT | https://github.com/AI4Finance-Foundation/FinRL |
-| Hugging Face Transformers | Model hub / framework | Access to FinBERT, financial GPT models, and fine-tuning pipelines | Apache 2.0 | https://huggingface.co/ |
-| SEC-API | SEC filing parser | Programmatic access to SEC EDGAR filings with full-text search | Freemium | https://sec-api.io/ |
-
----
-
-## Visualization Tools
-
-| Tool | Type | Description | License | URL |
-|------|------|-------------|---------|-----|
-| Gephi | Desktop application | Open-source network visualization and exploration; ForceAtlas2 layout; large graphs | GPL-3.0 / CDDL | https://gephi.org/ |
-| Cytoscape | Desktop application | Network visualization originally for biology; extensive plugin ecosystem; large graphs | LGPL-2.1 | https://cytoscape.org/ |
-| D3.js | JavaScript library | Low-level data visualization; force-directed layouts; highly customizable | ISC | https://d3js.org/ |
-| vis.js (vis-network) | JavaScript library | Interactive network visualization; physics-based layouts; browser-based | Apache 2.0 / MIT | https://visjs.org/ |
-| Sigma.js | JavaScript library | Web-based graph visualization for large graphs; WebGL rendering | MIT | https://www.sigmajs.org/ |
-| Linkurious | Commercial platform | Graph visualization and investigation platform; Neo4j/Cosmos integration | Commercial | https://linkurious.com/ |
-| Graphistry | Commercial platform | GPU-accelerated visual graph analytics; large-scale exploration | Commercial (free tier) | https://www.graphistry.com/ |
-| yFiles | Commercial library | Professional graph visualization SDK (Java, JS, .NET); automatic layouts | Commercial | https://www.yworks.com/products/yfiles |
-| Plotly/Dash + NetworkX | Python framework | Interactive web-based network visualizations using Plotly + Python | MIT | https://plotly.com/ |
-| Pyvis | Python library | Interactive network visualization in Jupyter; vis.js wrapper | BSD | https://pyvis.readthedocs.io/ |
-| Cosmograph | JavaScript library | GPU-powered large-scale graph visualization (WebGL) | — | https://cosmograph.app/ |
-| Flourish | Web platform | No-code interactive data visualization; network diagram templates | Freemium | https://flourish.studio/ |
+| ツール | 言語 | 説明 | ライセンス | URL |
+|--------|------|------|-----------|-----|
+| NetworkX | Python | Pythonにおけるネットワーク分析のデファクトスタンダード; 豊富なアルゴリズムライブラリ; 使いやすい | BSD | https://networkx.org/ |
+| igraph | R / Python / C | 高性能ネットワーク分析; 高速なコミュニティ検出、中心性計算、可視化 | GPL-2.0 | https://igraph.org/ |
+| graph-tool | Python (C++コア) | ベイズ推論を備えた高性能ネットワーク分析; 確率的ブロックモデル | LGPL-3.0 | https://graph-tool.skewed.de/ |
+| SNAP | C++ / Python | Stanford大規模ネットワーク分析; 数十億エッジ対応; PageRank、モチーフ、コミュニティ | BSD | https://snap.stanford.edu/snap/ |
+| DGL (Deep Graph Library) | Python (PyTorch/TensorFlow) | GNNのための柔軟なフレームワーク; メッセージパッシング; 異種グラフ | Apache 2.0 | https://www.dgl.ai/ |
+| PyG (PyTorch Geometric) | Python (PyTorch) | GNNライブラリ; 豊富なモデルリポジトリ; ミニバッチ学習; 異種グラフ | MIT | https://pyg.org/ |
+| StellarGraph | Python (TensorFlow/Keras) | ノード/エッジ/グラフタスク用GNN; GraphSAGE、GAT、GCN実装 | Apache 2.0 | https://stellargraph.readthedocs.io/ |
+| cuGraph (NVIDIA RAPIDS) | Python (CUDA) | GPU加速グラフ分析; GPU上でのPageRank、BFS、Louvain | Apache 2.0 | https://github.com/rapidsai/cugraph |
+| Networkit | Python (C++コア) | 大規模ネットワーク分析; 並列アルゴリズム; コミュニティ検出 | MIT | https://networkit.github.io/ |
+| GraphFrames | Python/Scala (Apache Spark) | Spark上の分散グラフ処理; モチーフ検索; 連結成分 | Apache 2.0 | https://graphframes.github.io/graphframes/ |
+| Tulip | C++ / Python | 大規模グラフ可視化・分析フレームワーク | LGPL | https://tulip.labri.fr/ |
+| PowerGraph (GraphLab) | C++ | 分散グラフ計算; 頂点カット分割 | Apache 2.0 | https://github.com/jegonzal/PowerGraph |
 
 ---
 
-## Commercial Financial Platforms
+## ナレッジグラフ構築・管理ツール
 
-| Platform | Provider | Description | Key Features | URL |
-|----------|----------|-------------|--------------|-----|
-| Refinitiv Workspace | LSEG (London Stock Exchange Group) | Financial data terminal; corporate relationships; ownership data | Company trees, supply chains, ownership networks | https://www.refinitiv.com/ |
-| Bloomberg Terminal | Bloomberg L.P. | Comprehensive financial data; SPLC (supply chain); OWNS (ownership) | Supply chain maps, ownership analysis, corporate structure | https://www.bloomberg.com/professional/ |
-| Sayari | Sayari | Trade and corporate records for supply chain and risk analysis | Beneficial ownership, trade networks, entity resolution | https://sayari.com/ |
-| Palantir Foundry | Palantir Technologies | Data integration and analytics platform; graph-based investigation | Entity resolution, link analysis, financial crime detection | https://www.palantir.com/ |
-| Chainalysis | Chainalysis | Blockchain analytics and investigation platform | Crypto transaction tracing, compliance, network visualization | https://www.chainalysis.com/ |
-| Elliptic | Elliptic | Crypto compliance and risk management | Transaction scoring, wallet screening, network analysis | https://www.elliptic.co/ |
-| GraphAware Hume | GraphAware (now Neo4j) | Knowledge graph platform with NLP and graph analytics | Entity extraction, relationship discovery, knowledge management | https://graphaware.com/hume/ |
-| Diffbot | Diffbot | AI-powered web scraping and knowledge graph construction | 20B+ entity Knowledge Graph; relationship extraction from web | https://www.diffbot.com/ |
-| Moody's Analytics / RiskCalc | Moody's | Credit risk and financial network analysis | Interbank exposure, counterparty risk, network stress testing | https://www.moodysanalytics.com/ |
-| FactSet | FactSet Research Systems | Financial data, analytics, supply chain relationships | Supply chain mapping, ownership data, entity relationships | https://www.factset.com/ |
-| S&P Capital IQ Pro | S&P Global | Financial data platform with corporate relationship data | Corporate hierarchy, key relationships, supply chain intel | https://www.spglobal.com/marketintelligence/ |
-
----
-
-## Cloud Graph Services
-
-| Service | Provider | Description | Graph Model | URL |
-|---------|----------|-------------|-------------|-----|
-| Amazon Neptune | AWS | Managed graph database service; serverless option | Property Graph (Gremlin/openCypher) + RDF (SPARQL) | https://aws.amazon.com/neptune/ |
-| Amazon Neptune Analytics | AWS | Graph analytics with vector search; Neptune ML for GNN-based predictions | Property Graph + ML | https://aws.amazon.com/neptune/neptune-analytics/ |
-| Google Cloud Knowledge Graph / Spanner | Google Cloud | Enterprise knowledge graph and distributed graph database capabilities | Multi-model | https://cloud.google.com/spanner |
-| Azure Cosmos DB (Gremlin API) | Microsoft Azure | Globally distributed multi-model database with graph API | Property Graph (Gremlin) | https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/ |
-| Databricks (GraphFrames) | Databricks | Distributed graph processing on Spark; Lakehouse architecture | GraphFrames (Spark) | https://docs.databricks.com/ |
-| Neo4j AuraDB | Neo4j | Fully managed cloud Neo4j; graph data science as a service | Labeled Property Graph (Cypher) | https://neo4j.com/cloud/aura/ |
-| TigerGraph Cloud | TigerGraph | Managed TigerGraph instance with ML workbench | Property Graph (GSQL) | https://www.tigergraph.com/cloud/ |
+| ツール | 種類 | 説明 | ライセンス | URL |
+|--------|------|------|-----------|-----|
+| Protégé | オントロジーエディタ | StanfordのOWL/RDFオントロジーエディタ; 視覚的クラス階層; プラグインエコシステム | BSD-2-Clause | https://protege.stanford.edu/ |
+| Apache Jena | RDFフレームワーク (Java) | RDF/SPARQLフレームワーク; TDBトリプルストア; Fuseki SPARQLサーバー; OWL推論 | Apache 2.0 | https://jena.apache.org/ |
+| RDFLib | RDFライブラリ (Python) | PythonでのRDF操作; SPARQLクエリ; シリアライゼーション（Turtle、JSON-LD、N-Triples） | BSD | https://rdflib.readthedocs.io/ |
+| Owlready2 | オントロジーライブラリ (Python) | PythonでOWLオントロジーのロード/修正; HermiT推論; SPARQLクエリ | LGPL-3.0 | https://owlready2.readthedocs.io/ |
+| PyKEEN | KG埋め込みライブラリ (Python) | ナレッジグラフ埋め込みモデル（TransE、RotatE、ConvE等）; ハイパーパラメータ探索 | MIT | https://pykeen.readthedocs.io/ |
+| AmpliGraph | KG埋め込みライブラリ (Python) | ナレッジグラフ埋め込み; リンク予測; モデル評価 | Apache 2.0 | https://docs.ampligraph.org/ |
+| OpenKE | KG埋め込みフレームワーク | オープンソースKG埋め込みツールキット; 効率的なC++バックエンドとPythonインターフェース | MIT | https://github.com/thunlp/OpenKE |
+| spaCy + REL | 固有表現認識 + エンティティリンキング | ナレッジベースへのエンティティリンキング機能付き固有表現認識 | MIT | https://spacy.io/ |
+| DeepKE | 知識抽出 (Python) | 少リソースでのナレッジグラフ構築; NER、関係抽出、属性抽出 | MIT | https://github.com/zjunlp/DeepKE |
+| OpenIE / Stanford KG | 情報抽出 | テキストからのトリプル生成のためのオープン情報抽出 | Apache 2.0 | https://stanfordnlp.github.io/CoreNLP/ |
 
 ---
 
-## Development and Integration Tools
+## 金融NLPツール
 
-| Tool | Type | Description | License | URL |
-|------|------|-------------|---------|-----|
-| Apache Kafka + Graph Sink | Stream processing | Real-time graph construction from streaming financial data | Apache 2.0 | https://kafka.apache.org/ |
-| Apache Airflow | Workflow orchestration | Schedule and monitor financial data pipeline DAGs | Apache 2.0 | https://airflow.apache.org/ |
-| dbt | Data transformation | SQL-based transformation for graph feature engineering | Apache 2.0 | https://www.getdbt.com/ |
-| LangChain (Graph modules) | LLM framework | LLM-powered knowledge graph construction and querying | MIT | https://www.langchain.com/ |
-| LlamaIndex (Knowledge Graph) | LLM framework | KG-augmented retrieval; graph stores; structured queries | MIT | https://www.llamaindex.ai/ |
-| Jupyter + Graph Extensions | Notebook environment | Interactive graph analysis with yFiles, nxviz, pyvis integrations | BSD | https://jupyter.org/ |
+| ツール | 種類 | 説明 | ライセンス | URL |
+|--------|------|------|-----------|-----|
+| FinBERT | 事前学習済み言語モデル | 金融テキストでファインチューニングされたBERT; センチメント分析; 金融固有表現認識 | Apache 2.0 | https://github.com/ProsusAI/finBERT |
+| BloombergGPT | 大規模言語モデル | Bloombergの金融データで学習された500億パラメータのLLM; 金融NLPタスク | 商用 (Bloomberg) | — |
+| FinGPT | オープンソース金融LLM | 金融LLMのためのオープンフレームワーク; 金融データによるRLHF | MIT | https://github.com/AI4Finance-Foundation/FinGPT |
+| spaCy（金融パイプライン） | NLPライブラリ (Python) | 産業グレードのNLP; カスタム金融NERモデル; 高速トークナイゼーション | MIT | https://spacy.io/ |
+| Stanza | NLPライブラリ (Python) | Stanford NLPツールキット; 多言語対応; バイオメディカル/金融モデル | Apache 2.0 | https://stanfordnlp.github.io/stanza/ |
+| AllenNLP | NLPフレームワーク (Python) | 深層学習NLPフレームワーク; 意味役割付与; 共参照解析 | Apache 2.0 | https://allennlp.org/ |
+| FinRL | 金融のための深層強化学習 (Python) | 定量ファイナンスのための強化学習ライブラリ | MIT | https://github.com/AI4Finance-Foundation/FinRL |
+| Hugging Face Transformers | モデルハブ/フレームワーク | FinBERT、金融GPTモデルへのアクセスとファインチューニングパイプライン | Apache 2.0 | https://huggingface.co/ |
+| SEC-API | SEC開示書類パーサー | 全文検索機能付きSEC EDGAR開示書類へのプログラマティックアクセス | フリーミアム | https://sec-api.io/ |
 
 ---
 
-*Last updated: 2026-02-23*
+## 可視化ツール
+
+| ツール | 種類 | 説明 | ライセンス | URL |
+|--------|------|------|-----------|-----|
+| Gephi | デスクトップアプリケーション | オープンソースのネットワーク可視化・探索ツール; ForceAtlas2レイアウト; 大規模グラフ対応 | GPL-3.0 / CDDL | https://gephi.org/ |
+| Cytoscape | デスクトップアプリケーション | 元々は生物学向けのネットワーク可視化; 豊富なプラグインエコシステム; 大規模グラフ対応 | LGPL-2.1 | https://cytoscape.org/ |
+| D3.js | JavaScriptライブラリ | 低レベルデータ可視化; 力学的レイアウト; 高度にカスタマイズ可能 | ISC | https://d3js.org/ |
+| vis.js (vis-network) | JavaScriptライブラリ | インタラクティブなネットワーク可視化; 物理ベースレイアウト; ブラウザベース | Apache 2.0 / MIT | https://visjs.org/ |
+| Sigma.js | JavaScriptライブラリ | 大規模グラフ向けウェブベースグラフ可視化; WebGLレンダリング | MIT | https://www.sigmajs.org/ |
+| Linkurious | 商用プラットフォーム | グラフ可視化・調査プラットフォーム; Neo4j/Cosmos統合 | 商用 | https://linkurious.com/ |
+| Graphistry | 商用プラットフォーム | GPU加速ビジュアルグラフ分析; 大規模探索 | 商用（無料枠あり） | https://www.graphistry.com/ |
+| yFiles | 商用ライブラリ | プロフェッショナルグラフ可視化SDK（Java、JS、.NET）; 自動レイアウト | 商用 | https://www.yworks.com/products/yfiles |
+| Plotly/Dash + NetworkX | Pythonフレームワーク | Plotly + Pythonを使用したインタラクティブなウェブベースネットワーク可視化 | MIT | https://plotly.com/ |
+| Pyvis | Pythonライブラリ | Jupyterでのインタラクティブなネットワーク可視化; vis.jsラッパー | BSD | https://pyvis.readthedocs.io/ |
+| Cosmograph | JavaScriptライブラリ | GPU駆動の大規模グラフ可視化 (WebGL) | — | https://cosmograph.app/ |
+| Flourish | ウェブプラットフォーム | ノーコードインタラクティブデータ可視化; ネットワーク図テンプレート | フリーミアム | https://flourish.studio/ |
+
+---
+
+## 商用金融プラットフォーム
+
+| プラットフォーム | 提供元 | 説明 | 主な機能 | URL |
+|-----------------|--------|------|----------|-----|
+| Refinitiv Workspace | LSEG (London Stock Exchange Group) | 金融データ端末; 企業関係; 所有データ | 企業ツリー、サプライチェーン、所有ネットワーク | https://www.refinitiv.com/ |
+| Bloomberg Terminal | Bloomberg L.P. | 包括的な金融データ; SPLC（サプライチェーン）; OWNS（所有構造） | サプライチェーンマップ、所有構造分析、企業構造 | https://www.bloomberg.com/professional/ |
+| Sayari | Sayari | サプライチェーンおよびリスク分析のための貿易・企業記録 | 実質的所有者、貿易ネットワーク、エンティティ解決 | https://sayari.com/ |
+| Palantir Foundry | Palantir Technologies | データ統合・分析プラットフォーム; グラフベースの調査 | エンティティ解決、リンク分析、金融犯罪検出 | https://www.palantir.com/ |
+| Chainalysis | Chainalysis | ブロックチェーン分析・調査プラットフォーム | 暗号資産トランザクション追跡、コンプライアンス、ネットワーク可視化 | https://www.chainalysis.com/ |
+| Elliptic | Elliptic | 暗号資産コンプライアンス・リスク管理 | トランザクションスコアリング、ウォレットスクリーニング、ネットワーク分析 | https://www.elliptic.co/ |
+| GraphAware Hume | GraphAware (現Neo4j) | NLPとグラフ分析を備えたナレッジグラフプラットフォーム | エンティティ抽出、関係発見、知識管理 | https://graphaware.com/hume/ |
+| Diffbot | Diffbot | AI駆動のウェブスクレイピングとナレッジグラフ構築 | 200億以上のエンティティナレッジグラフ; ウェブからの関係抽出 | https://www.diffbot.com/ |
+| Moody's Analytics / RiskCalc | Moody's | 信用リスクおよび金融ネットワーク分析 | インターバンクエクスポージャー、カウンターパーティリスク、ネットワークストレステスト | https://www.moodysanalytics.com/ |
+| FactSet | FactSet Research Systems | 金融データ、分析、サプライチェーン関係 | サプライチェーンマッピング、所有データ、エンティティ関係 | https://www.factset.com/ |
+| S&P Capital IQ Pro | S&P Global | 企業関係データ付き金融データプラットフォーム | 企業階層、主要関係、サプライチェーンインテリジェンス | https://www.spglobal.com/marketintelligence/ |
+
+---
+
+## クラウドグラフサービス
+
+| サービス | 提供元 | 説明 | グラフモデル | URL |
+|----------|--------|------|-------------|-----|
+| Amazon Neptune | AWS | マネージドグラフデータベースサービス; サーバーレスオプション | プロパティグラフ (Gremlin/openCypher) + RDF (SPARQL) | https://aws.amazon.com/neptune/ |
+| Amazon Neptune Analytics | AWS | ベクトル検索を備えたグラフ分析; GNNベース予測のためのNeptune ML | プロパティグラフ + ML | https://aws.amazon.com/neptune/neptune-analytics/ |
+| Google Cloud Knowledge Graph / Spanner | Google Cloud | エンタープライズナレッジグラフと分散グラフデータベース機能 | マルチモデル | https://cloud.google.com/spanner |
+| Azure Cosmos DB (Gremlin API) | Microsoft Azure | グラフAPIを備えたグローバル分散マルチモデルデータベース | プロパティグラフ (Gremlin) | https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/ |
+| Databricks (GraphFrames) | Databricks | Spark上の分散グラフ処理; Lakehouseアーキテクチャ | GraphFrames (Spark) | https://docs.databricks.com/ |
+| Neo4j AuraDB | Neo4j | フルマネージドクラウドNeo4j; サービスとしてのグラフデータサイエンス | ラベル付きプロパティグラフ (Cypher) | https://neo4j.com/cloud/aura/ |
+| TigerGraph Cloud | TigerGraph | MLワークベンチ付きマネージドTigerGraphインスタンス | プロパティグラフ (GSQL) | https://www.tigergraph.com/cloud/ |
+
+---
+
+## 開発・統合ツール
+
+| ツール | 種類 | 説明 | ライセンス | URL |
+|--------|------|------|-----------|-----|
+| Apache Kafka + Graph Sink | ストリーム処理 | ストリーミング金融データからのリアルタイムグラフ構築 | Apache 2.0 | https://kafka.apache.org/ |
+| Apache Airflow | ワークフローオーケストレーション | 金融データパイプラインDAGのスケジューリングと監視 | Apache 2.0 | https://airflow.apache.org/ |
+| dbt | データ変換 | グラフ特徴量エンジニアリングのためのSQLベース変換 | Apache 2.0 | https://www.getdbt.com/ |
+| LangChain（グラフモジュール） | LLMフレームワーク | LLM駆動のナレッジグラフ構築・クエリ | MIT | https://www.langchain.com/ |
+| LlamaIndex (Knowledge Graph) | LLMフレームワーク | KG強化型検索; グラフストア; 構造化クエリ | MIT | https://www.llamaindex.ai/ |
+| Jupyter + Graph Extensions | ノートブック環境 | yFiles、nxviz、pyvis統合によるインタラクティブなグラフ分析 | BSD | https://jupyter.org/ |
+
+---
+
+*最終更新: 2026-02-23*

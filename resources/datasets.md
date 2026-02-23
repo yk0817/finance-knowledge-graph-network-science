@@ -1,131 +1,131 @@
-# Datasets for Financial Network Science and Knowledge Graphs
+# 金融ネットワーク科学とナレッジグラフのためのデータセット
 
-This document catalogs datasets relevant to financial network analysis, knowledge graph construction, and related research. Organized by domain.
-
----
-
-## Ownership and Corporate Structure
-
-| Dataset | Provider | Description | Scale | Access | URL |
-|---------|----------|-------------|-------|--------|-----|
-| Orbis | Bureau van Dijk (Moody's) | Global firm-level ownership, financials, and corporate structure database | 400M+ entities worldwide | Commercial | https://www.bvdinfo.com/en-gb/our-products/data/international/orbis |
-| OpenOwnership Register | Open Ownership | Global beneficial ownership data aggregated from national registers | 27M+ ownership records | Open | https://register.openownership.org/ |
-| GLEIF LEI Database | Global Legal Entity Identifier Foundation | Legal Entity Identifiers with relationship data (direct/ultimate parent) | 2.5M+ legal entities | Open | https://www.gleif.org/en/lei-data/gleif-concatenated-file |
-| OpenCorporates | OpenCorporates | Largest open database of companies, with jurisdictional filings | 220M+ companies, 170+ jurisdictions | Freemium | https://opencorporates.com/ |
-| SEC EDGAR | U.S. Securities and Exchange Commission | Corporate filings (10-K, 10-Q, 13-F, DEF 14A proxy), ownership disclosures | All US public companies | Open | https://www.sec.gov/edgar/ |
-| Companies House UK | UK Government | UK company registrations, directors, persons with significant control | 5M+ companies | Open | https://www.gov.uk/government/organisations/companies-house |
-| ICIJ Offshore Leaks | International Consortium of Investigative Journalists | Panama Papers, Paradise Papers, Pandora Papers — offshore entity networks | 800K+ offshore entities | Open | https://offshoreleaks.icij.org/ |
-| Wikidata Corporate Entities | Wikidata / Wikimedia | Structured data on companies, ownership, board members | 10M+ organizational entities | Open | https://www.wikidata.org/ |
-| EDGAR Company Ownership (13F/13D) | SEC | Institutional ownership filings, activist investor positions | All US institutional holders | Open | https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=13F |
-| Refinitiv Ownership Data | LSEG (Refinitiv) | Global institutional and insider ownership data | 80K+ companies globally | Commercial | https://www.refinitiv.com/ |
-| Bureau van Dijk Zephyr | Bureau van Dijk (Moody's) | M&A, IPO, and private equity deal information with network data | 2M+ deals | Commercial | https://www.bvdinfo.com/en-gb/our-products/data/international/zephyr |
+本文書は、金融ネットワーク分析、ナレッジグラフ構築、および関連研究に関連するデータセットをまとめたものである。ドメインごとに整理している。
 
 ---
 
-## Financial Networks and Interbank Data
+## 所有構造と企業構造
 
-| Dataset | Provider | Description | Scale | Access | URL |
-|---------|----------|-------------|-------|--------|-----|
-| BIS International Banking Statistics | Bank for International Settlements | Cross-border banking claims and liabilities by country and sector | 30+ reporting countries | Open (aggregated) | https://www.bis.org/statistics/bankstats.htm |
-| ECB Securities Holdings Statistics | European Central Bank | Euro area securities holdings by sector and instrument | Euro area | Restricted | https://www.ecb.europa.eu/stats/financial_markets_and_interest_rates/securities/html/index.en.html |
-| Federal Reserve Flow of Funds (Z.1) | Federal Reserve Board | Financial accounts of the United States — intersectoral flows | US economy | Open | https://www.federalreserve.gov/releases/z1/ |
-| DTCC Trade Repository Data | DTCC | OTC derivatives trade data (interest rate, credit, equity, FX) | Trillions in notional | Restricted/Regulatory | https://www.dtcc.com/repository-otc-data |
-| Fedwire Funds Transfer Data | Federal Reserve Bank of New York | Large-value interbank payment flows | ~$3T daily transfers | Restricted (research access) | https://www.newyorkfed.org/fedwire |
-| TARGET2 Payment Data | European Central Bank | Euro area large-value payment system data | €2T+ daily | Restricted (central bank research) | — |
-| e-MID Interbank Market | e-MID SIM S.p.A. | European electronic interbank deposit market — bilateral transactions | European banks | Academic access available | https://www.e-mid.it/ |
-| CDS Data (DTCC TIW) | DTCC | Credit default swap trade-level data | Global CDS market | Restricted | https://www.dtcc.com/ |
-
----
-
-## Market Data for Correlation Networks
-
-| Dataset | Provider | Description | Scale | Access | URL |
-|---------|----------|-------------|-------|--------|-----|
-| CRSP | Center for Research in Security Prices (Wharton) | US stock prices, returns, volumes — historical since 1925 | All US equities | Academic (commercial) | https://www.crsp.org/ |
-| TAQ (Trade and Quote) | NYSE | US equity tick-by-tick trade and quote data | Millisecond resolution | Academic (commercial) | https://www.nyse.com/market-data/historical |
-| Yahoo Finance | Yahoo | Free daily/intraday stock prices, fundamentals | Global equities | Open | https://finance.yahoo.com/ |
-| WRDS (Wharton Research Data Services) | Wharton / U Penn | Integrated platform: CRSP, Compustat, IBES, TAQ, and more | Multi-database | Academic (subscription) | https://wrds-www.wharton.upenn.edu/ |
-| Compustat | S&P Global (via WRDS) | Financial statements, balance sheet, income statement for US/global firms | 80K+ companies | Academic (commercial) | https://www.spglobal.com/marketintelligence/ |
-| Bloomberg Terminal Data | Bloomberg L.P. | Comprehensive market data, news, analytics, corporate data | Global | Commercial | https://www.bloomberg.com/professional/ |
-| Quandl / Nasdaq Data Link | Nasdaq | Alternative data, financial and economic datasets | Various | Freemium | https://data.nasdaq.com/ |
-| Kenneth French Data Library | Dartmouth / Kenneth French | Factor returns (Fama-French), industry portfolios, benchmark data | US/Global equities | Open | https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html |
+| データセット | 提供元 | 説明 | 規模 | アクセス | URL |
+|-------------|--------|------|------|----------|-----|
+| Orbis | Bureau van Dijk (Moody's) | グローバルな企業レベルの所有構造、財務、企業構造データベース | 全世界4億以上のエンティティ | 商用 | https://www.bvdinfo.com/en-gb/our-products/data/international/orbis |
+| OpenOwnership Register | Open Ownership | 各国の登録簿から集約されたグローバルな実質的所有者データ | 2,700万以上の所有記録 | オープン | https://register.openownership.org/ |
+| GLEIF LEI Database | Global Legal Entity Identifier Foundation（グローバルLEI財団） | 関係データ（直接親会社／最終親会社）を含む法人識別子 | 250万以上の法人 | オープン | https://www.gleif.org/en/lei-data/gleif-concatenated-file |
+| OpenCorporates | OpenCorporates | 法域別登録情報を含む最大のオープン企業データベース | 2億2,000万以上の企業、170以上の法域 | フリーミアム | https://opencorporates.com/ |
+| SEC EDGAR | U.S. Securities and Exchange Commission（米国証券取引委員会） | 企業開示書類（10-K、10-Q、13-F、DEF 14A委任状）、所有開示 | 全米上場企業 | オープン | https://www.sec.gov/edgar/ |
+| Companies House UK | UK Government（英国政府） | 英国企業登録、取締役、重要支配者 | 500万以上の企業 | オープン | https://www.gov.uk/government/organisations/companies-house |
+| ICIJ Offshore Leaks | International Consortium of Investigative Journalists（国際調査報道ジャーナリスト連合） | Panama Papers、Paradise Papers、Pandora Papers — オフショア法人ネットワーク | 80万以上のオフショア法人 | オープン | https://offshoreleaks.icij.org/ |
+| Wikidata Corporate Entities | Wikidata / Wikimedia | 企業、所有構造、取締役会メンバーの構造化データ | 1,000万以上の組織エンティティ | オープン | https://www.wikidata.org/ |
+| EDGAR Company Ownership (13F/13D) | SEC | 機関投資家所有開示、アクティビスト投資家ポジション | 全米機関投資家 | オープン | https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=13F |
+| Refinitiv Ownership Data | LSEG (Refinitiv) | グローバルな機関投資家およびインサイダー所有データ | 全世界8万以上の企業 | 商用 | https://www.refinitiv.com/ |
+| Bureau van Dijk Zephyr | Bureau van Dijk (Moody's) | M&A、IPO、プライベートエクイティ取引情報（ネットワークデータ付き） | 200万以上の取引 | 商用 | https://www.bvdinfo.com/en-gb/our-products/data/international/zephyr |
 
 ---
 
-## NLP and Text Data
+## 金融ネットワークとインターバンクデータ
 
-| Dataset | Provider | Description | Scale | Access | URL |
-|---------|----------|-------------|-------|--------|-----|
-| EDGAR Full-Text Filings | SEC | Raw text of all SEC filings (10-K, 10-Q, 8-K, etc.) | Millions of filings | Open | https://www.sec.gov/edgar/searchedgar/efulltext.htm |
-| EDGAR-CORPUS | Lancaster University / EMNLP | Pre-processed, cleaned annual reports from EDGAR for NLP research | 10K+ annual reports | Open | https://github.com/nlpaueb/edgar-corpus |
-| FinancialPhraseBank | Malo et al. (Aalto University) | Sentence-level sentiment annotations from financial news | 4,846 sentences | Open | https://huggingface.co/datasets/financial_phrasebank |
-| FiQA (Financial Question Answering) | WWW 2018 Challenge | Financial opinion mining, QA, sentiment from microblogs and headlines | 17K+ sentences | Open | https://sites.google.com/view/fiqa/ |
-| TweetFinSent | — | Financial sentiment from Twitter/X posts | Thousands of tweets | Open | https://huggingface.co/datasets/ |
-| Reuters Financial News | Thomson Reuters | Financial news articles with metadata and categories | 10K+ articles | Academic | — |
-| SEntFiN | — | Entity-level financial sentiment dataset | 10K+ annotations | Open | https://github.com/ |
-| FinSim | FinNLP Workshop | Financial term similarity and hypernym detection shared task | Thousands of term pairs | Open | https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp/ |
-| Financial Times Archive | Financial Times | Historical news articles for financial text mining | Decades of coverage | Commercial | https://www.ft.com/ |
-| Loughran-McDonald Sentiment Word Lists | Notre Dame | Finance-specific sentiment dictionaries (positive, negative, uncertainty, etc.) | ~4,000 words | Open | https://sraf.nd.edu/loughranmcdonald-master-dictionary/ |
+| データセット | 提供元 | 説明 | 規模 | アクセス | URL |
+|-------------|--------|------|------|----------|-----|
+| BIS International Banking Statistics | Bank for International Settlements（国際決済銀行） | 国別・セクター別のクロスボーダー銀行債権・負債 | 30カ国以上の報告国 | オープン（集計値） | https://www.bis.org/statistics/bankstats.htm |
+| ECB Securities Holdings Statistics | European Central Bank（欧州中央銀行） | ユーロ圏のセクター別・商品別証券保有データ | ユーロ圏 | 制限付き | https://www.ecb.europa.eu/stats/financial_markets_and_interest_rates/securities/html/index.en.html |
+| Federal Reserve Flow of Funds (Z.1) | Federal Reserve Board（連邦準備制度理事会） | 米国の資金循環勘定 — セクター間フロー | 米国経済 | オープン | https://www.federalreserve.gov/releases/z1/ |
+| DTCC Trade Repository Data | DTCC | OTCデリバティブ取引データ（金利、クレジット、株式、外国為替） | 想定元本で数兆ドル規模 | 制限付き／規制当局向け | https://www.dtcc.com/repository-otc-data |
+| Fedwire Funds Transfer Data | Federal Reserve Bank of New York（ニューヨーク連邦準備銀行） | 大口インターバンク決済フロー | 日次約3兆ドルの送金 | 制限付き（研究アクセス） | https://www.newyorkfed.org/fedwire |
+| TARGET2 Payment Data | European Central Bank（欧州中央銀行） | ユーロ圏大口決済システムデータ | 日次2兆ユーロ以上 | 制限付き（中央銀行研究向け） | — |
+| e-MID Interbank Market | e-MID SIM S.p.A. | 欧州電子インターバンク預金市場 — 二者間取引 | 欧州の銀行 | 学術アクセス可能 | https://www.e-mid.it/ |
+| CDS Data (DTCC TIW) | DTCC | クレジットデフォルトスワップ取引レベルデータ | グローバルCDS市場 | 制限付き | https://www.dtcc.com/ |
 
 ---
 
-## Blockchain and Cryptocurrency Data
+## 相関ネットワークのための市場データ
 
-| Dataset | Provider | Description | Scale | Access | URL |
-|---------|----------|-------------|-------|--------|-----|
-| Elliptic Bitcoin Dataset | Elliptic / Kaggle | Labeled Bitcoin transaction graph for illicit transaction detection | 203K transactions, 234K edges | Open | https://www.kaggle.com/datasets/ellipticco/elliptic-data-set |
-| Ethereum Blockchain (BigQuery) | Google Cloud | Full Ethereum blockchain — transactions, contracts, token transfers | Entire blockchain | Open | https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-public-dataset |
-| Bitcoin Blockchain | Various (Blockchair, etc.) | Full Bitcoin transaction graph and UTXO set | Entire blockchain | Open | https://blockchair.com/ |
-| Chainalysis Reactor Data | Chainalysis | Labeled cryptocurrency transaction data for compliance | Multi-chain | Commercial | https://www.chainalysis.com/ |
-| Token Terminal | Token Terminal | DeFi protocol financial data (TVL, revenue, P/E ratios) | 200+ DeFi protocols | Freemium | https://tokenterminal.com/ |
-| DeFi Llama | DeFi Llama | DeFi TVL, protocol data, cross-chain analytics | 2000+ protocols | Open | https://defillama.com/ |
-
----
-
-## Japanese and Asian Financial Data
-
-| Dataset | Provider | Description | Scale | Access | URL |
-|---------|----------|-------------|-------|--------|-----|
-| TSR (Tokyo Shoko Research) Firm Transaction Data | Tokyo Shoko Research | Japanese firm-to-firm transaction (buyer-seller) network | ~1M firms, ~4M transaction links | Commercial (academic access) | https://www.tsr-net.co.jp/ |
-| TDB (Teikoku Databank) | Teikoku Databank | Japanese firm data with supply chain and ownership relationships | ~1.5M firms | Commercial (academic access) | https://www.tdb.co.jp/ |
-| Nikkei NEEDS | Nikkei | Japanese financial statements, stock prices, corporate data | All listed Japanese firms | Academic (commercial) | https://www.nikkei.co.jp/needs/ |
-| EDINET | Financial Services Agency (Japan) | Japanese corporate filings in XBRL (equivalent of SEC EDGAR) | All Japanese listed companies | Open | https://disclosure.edinet-fsa.go.jp/ |
-| JPX Market Data | Japan Exchange Group | Japanese equity trading data, order book, corporate actions | TSE-listed companies | Commercial | https://www.jpx.co.jp/english/markets/statistics-equities/ |
-| BOJ Flow of Funds | Bank of Japan | Japanese financial accounts by sector — intersectoral flows | Japanese economy | Open | https://www.boj.or.jp/en/statistics/sj/ |
-| CSMAR | GTA (China) | Chinese financial market and corporate data | All Chinese listed firms | Academic (commercial) | https://www.gtarsc.com/ |
-| WIND Information | Wind Info (China) | Chinese financial terminal data, corporate data | Chinese markets | Commercial | https://www.wind.com.cn/ |
+| データセット | 提供元 | 説明 | 規模 | アクセス | URL |
+|-------------|--------|------|------|----------|-----|
+| CRSP | Center for Research in Security Prices (Wharton) | 1925年以降の米国株式価格、リターン、出来高（ヒストリカル） | 全米株式 | 学術（商用） | https://www.crsp.org/ |
+| TAQ (Trade and Quote) | NYSE | 米国株式のティックバイティック取引・気配データ | ミリ秒精度 | 学術（商用） | https://www.nyse.com/market-data/historical |
+| Yahoo Finance | Yahoo | 無料の日次/日中株価、ファンダメンタルズ | グローバル株式 | オープン | https://finance.yahoo.com/ |
+| WRDS (Wharton Research Data Services) | Wharton / U Penn | 統合プラットフォーム: CRSP、Compustat、IBES、TAQ等 | マルチデータベース | 学術（サブスクリプション） | https://wrds-www.wharton.upenn.edu/ |
+| Compustat | S&P Global (WRDS経由) | 米国/グローバル企業の財務諸表、貸借対照表、損益計算書 | 8万以上の企業 | 学術（商用） | https://www.spglobal.com/marketintelligence/ |
+| Bloomberg Terminal Data | Bloomberg L.P. | 包括的な市場データ、ニュース、分析、企業データ | グローバル | 商用 | https://www.bloomberg.com/professional/ |
+| Quandl / Nasdaq Data Link | Nasdaq | オルタナティブデータ、金融・経済データセット | 各種 | フリーミアム | https://data.nasdaq.com/ |
+| Kenneth French Data Library | Dartmouth / Kenneth French | ファクターリターン（Fama-French）、業種別ポートフォリオ、ベンチマークデータ | 米国/グローバル株式 | オープン | https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html |
 
 ---
 
-## Graph and Knowledge Graph Benchmark Datasets
+## NLPおよびテキストデータ
 
-| Dataset | Provider | Description | Scale | Access | URL |
-|---------|----------|-------------|-------|--------|-----|
-| FinDKG | Cheng et al. (2024) | Dynamic financial knowledge graph from news with temporal relations | 14K+ entities, temporal | Open | https://github.com/ |
-| FNKG (Financial News Knowledge Graph) | Various | Knowledge graph extracted from financial news articles | Thousands of triples | Open | — |
-| Freebase (FB15k / FB15k-237) | Google / Meta | General knowledge graph benchmark for link prediction | 15K entities, 592K triples | Open | https://www.microsoft.com/en-us/download/details.aspx?id=52312 |
-| OGB (Open Graph Benchmark) | Stanford SNAP | Standardized graph ML benchmarks including ogbn-products, ogbn-arxiv | Various scales | Open | https://ogb.stanford.edu/ |
-| WikiKG90Mv2 | OGB / Wikidata | Large-scale KG benchmark from Wikidata | 90M+ entities | Open | https://ogb.stanford.edu/docs/lsc/wikikg90mv2/ |
-| YAGO | Max Planck Institute | Large knowledge graph combining Wikipedia, WordNet, GeoNames | 50M+ facts | Open | https://yago-knowledge.org/ |
-| DBpedia | DBpedia Association | Structured data extracted from Wikipedia | Billions of triples | Open | https://www.dbpedia.org/ |
-| ConceptNet | MIT Media Lab | Common sense knowledge graph | 21M+ edges | Open | https://conceptnet.io/ |
-| FinKG | Ren et al. | Financial knowledge graph for investment analysis | Thousands of entities | Open | — |
-| Temporal KG Benchmarks (ICEWS, GDELT) | Various | Event-based temporal knowledge graphs with timestamps | Millions of events | Open | https://www.gdeltproject.org/ |
-
----
-
-## Miscellaneous and Alternative Data
-
-| Dataset | Provider | Description | Scale | Access | URL |
-|---------|----------|-------------|-------|--------|-----|
-| World Input-Output Database (WIOD) | Groningen / EU | International input-output tables linking industries across countries | 43 countries, 56 sectors | Open | https://www.rug.nl/ggdc/valuechain/wiod/ |
-| OECD Inter-Country Input-Output (ICIO) | OECD | Bilateral inter-country input-output tables | 76 economies, 45 industries | Open | https://www.oecd.org/sti/ind/inter-country-input-output-tables.htm |
-| UN Comtrade | United Nations | International trade data by commodity and country | 200+ countries | Open | https://comtrade.un.org/ |
-| Global Financial Development Database | World Bank | Financial system characteristics by country | 200+ countries | Open | https://www.worldbank.org/en/publication/gfdr/data |
-| EORA Global Supply Chain Database | University of Sydney | Multi-region input-output tables | 190 countries, 26 sectors | Open | https://worldmrio.com/ |
-| BoardEx | WRDS / Management Diagnostics | Executive and board member biographical data, board interlocks | 1M+ individuals | Academic (commercial) | https://www.boardex.com/ |
-| ISS (Institutional Shareholder Services) | ISS | Corporate governance ratings, proxy voting, director data | Global companies | Commercial | https://www.issgovernance.com/ |
+| データセット | 提供元 | 説明 | 規模 | アクセス | URL |
+|-------------|--------|------|------|----------|-----|
+| EDGAR Full-Text Filings | SEC | 全SEC開示書類の全文テキスト（10-K、10-Q、8-K等） | 数百万の書類 | オープン | https://www.sec.gov/edgar/searchedgar/efulltext.htm |
+| EDGAR-CORPUS | Lancaster University / EMNLP | NLP研究用に前処理・クリーニング済みのEDGAR年次報告書 | 1万以上の年次報告書 | オープン | https://github.com/nlpaueb/edgar-corpus |
+| FinancialPhraseBank | Malo et al. (Aalto University) | 金融ニュースからの文レベルセンチメントアノテーション | 4,846文 | オープン | https://huggingface.co/datasets/financial_phrasebank |
+| FiQA (Financial Question Answering) | WWW 2018 Challenge | マイクロブログとヘッドラインからの金融オピニオンマイニング、質問応答、センチメント | 17,000以上の文 | オープン | https://sites.google.com/view/fiqa/ |
+| TweetFinSent | — | Twitter/Xの投稿からの金融センチメント | 数千のツイート | オープン | https://huggingface.co/datasets/ |
+| Reuters Financial News | Thomson Reuters | メタデータとカテゴリ付きの金融ニュース記事 | 1万以上の記事 | 学術 | — |
+| SEntFiN | — | エンティティレベルの金融センチメントデータセット | 1万以上のアノテーション | オープン | https://github.com/ |
+| FinSim | FinNLP Workshop | 金融用語の類似性と上位語検出の共有タスク | 数千の用語ペア | オープン | https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp/ |
+| Financial Times Archive | Financial Times | 金融テキストマイニング用の過去のニュース記事 | 数十年分のカバレッジ | 商用 | https://www.ft.com/ |
+| Loughran-McDonald Sentiment Word Lists | Notre Dame | 金融特化型センチメント辞書（ポジティブ、ネガティブ、不確実性等） | 約4,000語 | オープン | https://sraf.nd.edu/loughranmcdonald-master-dictionary/ |
 
 ---
 
-*Last updated: 2026-02-23*
+## ブロックチェーンと暗号資産データ
+
+| データセット | 提供元 | 説明 | 規模 | アクセス | URL |
+|-------------|--------|------|------|----------|-----|
+| Elliptic Bitcoin Dataset | Elliptic / Kaggle | 不正取引検出のためのラベル付きビットコイントランザクショングラフ | 20万3千トランザクション、23万4千エッジ | オープン | https://www.kaggle.com/datasets/ellipticco/elliptic-data-set |
+| Ethereum Blockchain (BigQuery) | Google Cloud | Ethereumブロックチェーン全体 — トランザクション、コントラクト、トークン転送 | ブロックチェーン全体 | オープン | https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-public-dataset |
+| Bitcoin Blockchain | 各種 (Blockchair等) | ビットコイントランザクショングラフ全体およびUTXOセット | ブロックチェーン全体 | オープン | https://blockchair.com/ |
+| Chainalysis Reactor Data | Chainalysis | コンプライアンス用のラベル付き暗号資産トランザクションデータ | マルチチェーン | 商用 | https://www.chainalysis.com/ |
+| Token Terminal | Token Terminal | DeFiプロトコルの財務データ（TVL、収益、PER等） | 200以上のDeFiプロトコル | フリーミアム | https://tokenterminal.com/ |
+| DeFi Llama | DeFi Llama | DeFi TVL、プロトコルデータ、クロスチェーン分析 | 2,000以上のプロトコル | オープン | https://defillama.com/ |
+
+---
+
+## 日本およびアジアの金融データ
+
+| データセット | 提供元 | 説明 | 規模 | アクセス | URL |
+|-------------|--------|------|------|----------|-----|
+| TSR（東京商工リサーチ）企業間取引データ | Tokyo Shoko Research（東京商工リサーチ） | 日本の企業間取引（売り手・買い手）ネットワーク | 約100万社、約400万取引リンク | 商用（学術アクセス可） | https://www.tsr-net.co.jp/ |
+| TDB（帝国データバンク） | Teikoku Databank（帝国データバンク） | サプライチェーンおよび所有関係を含む日本の企業データ | 約150万社 | 商用（学術アクセス可） | https://www.tdb.co.jp/ |
+| Nikkei NEEDS | Nikkei（日経） | 日本の財務諸表、株価、企業データ | 日本の全上場企業 | 学術（商用） | https://www.nikkei.co.jp/needs/ |
+| EDINET | Financial Services Agency（金融庁） | XBRL形式の日本の企業開示書類（SEC EDGARに相当） | 日本の全上場企業 | オープン | https://disclosure.edinet-fsa.go.jp/ |
+| JPX Market Data | Japan Exchange Group（日本取引所グループ） | 日本の株式取引データ、注文板、コーポレートアクション | 東証上場企業 | 商用 | https://www.jpx.co.jp/english/markets/statistics-equities/ |
+| BOJ Flow of Funds | Bank of Japan（日本銀行） | 日本のセクター別資金循環勘定 — セクター間フロー | 日本経済 | オープン | https://www.boj.or.jp/en/statistics/sj/ |
+| CSMAR | GTA（中国） | 中国の金融市場および企業データ | 中国の全上場企業 | 学術（商用） | https://www.gtarsc.com/ |
+| WIND Information | Wind Info（中国） | 中国の金融端末データ、企業データ | 中国市場 | 商用 | https://www.wind.com.cn/ |
+
+---
+
+## グラフおよびナレッジグラフのベンチマークデータセット
+
+| データセット | 提供元 | 説明 | 規模 | アクセス | URL |
+|-------------|--------|------|------|----------|-----|
+| FinDKG | Cheng et al. (2024) | 時間的関係を持つニュースからの動的金融ナレッジグラフ | 14,000以上のエンティティ、時間的 | オープン | https://github.com/ |
+| FNKG (Financial News Knowledge Graph) | 各種 | 金融ニュース記事から抽出されたナレッジグラフ | 数千のトリプル | オープン | — |
+| Freebase (FB15k / FB15k-237) | Google / Meta | リンク予測のための一般的なナレッジグラフベンチマーク | 15,000エンティティ、592,000トリプル | オープン | https://www.microsoft.com/en-us/download/details.aspx?id=52312 |
+| OGB (Open Graph Benchmark) | Stanford SNAP | ogbn-products、ogbn-arxivを含む標準化されたグラフ機械学習ベンチマーク | 各種規模 | オープン | https://ogb.stanford.edu/ |
+| WikiKG90Mv2 | OGB / Wikidata | Wikidataからの大規模KGベンチマーク | 9,000万以上のエンティティ | オープン | https://ogb.stanford.edu/docs/lsc/wikikg90mv2/ |
+| YAGO | Max Planck Institute | Wikipedia、WordNet、GeoNamesを統合した大規模ナレッジグラフ | 5,000万以上のファクト | オープン | https://yago-knowledge.org/ |
+| DBpedia | DBpedia Association | Wikipediaから抽出された構造化データ | 数十億のトリプル | オープン | https://www.dbpedia.org/ |
+| ConceptNet | MIT Media Lab | 常識知識グラフ | 2,100万以上のエッジ | オープン | https://conceptnet.io/ |
+| FinKG | Ren et al. | 投資分析のための金融ナレッジグラフ | 数千のエンティティ | オープン | — |
+| Temporal KG Benchmarks (ICEWS, GDELT) | 各種 | タイムスタンプ付きのイベントベース時間的ナレッジグラフ | 数百万のイベント | オープン | https://www.gdeltproject.org/ |
+
+---
+
+## その他およびオルタナティブデータ
+
+| データセット | 提供元 | 説明 | 規模 | アクセス | URL |
+|-------------|--------|------|------|----------|-----|
+| World Input-Output Database (WIOD) | Groningen / EU | 各国間の産業を連結する国際産業連関表 | 43カ国、56セクター | オープン | https://www.rug.nl/ggdc/valuechain/wiod/ |
+| OECD Inter-Country Input-Output (ICIO) | OECD | 二国間産業連関表 | 76経済圏、45産業 | オープン | https://www.oecd.org/sti/ind/inter-country-input-output-tables.htm |
+| UN Comtrade | United Nations（国際連合） | 商品別・国別の国際貿易データ | 200カ国以上 | オープン | https://comtrade.un.org/ |
+| Global Financial Development Database | World Bank（世界銀行） | 国別の金融システム特性 | 200カ国以上 | オープン | https://www.worldbank.org/en/publication/gfdr/data |
+| EORA Global Supply Chain Database | University of Sydney | 多地域産業連関表 | 190カ国、26セクター | オープン | https://worldmrio.com/ |
+| BoardEx | WRDS / Management Diagnostics | 経営幹部・取締役会メンバーの経歴データ、取締役兼任 | 100万以上の個人 | 学術（商用） | https://www.boardex.com/ |
+| ISS (Institutional Shareholder Services) | ISS | コーポレートガバナンス格付け、議決権行使、取締役データ | グローバル企業 | 商用 | https://www.issgovernance.com/ |
+
+---
+
+*最終更新: 2026-02-23*

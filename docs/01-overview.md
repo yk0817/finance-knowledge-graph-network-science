@@ -1,205 +1,205 @@
-# Overview: Financial Network Science and Knowledge Graphs
+# 概要: 金融ネットワーク科学とナレッジグラフ
 
-## 1. History of Financial Network Science
+## 1. 金融ネットワーク科学の歴史
 
-### 1.1 Foundations (Late 1990s)
+### 1.1 基礎の確立 (1990年代後半)
 
-The application of network science to finance traces its origins to **Mantegna (1999)**, who constructed a **Minimum Spanning Tree (MST)** from stock return correlations on the NYSE. This work demonstrated that hierarchical clustering of financial assets reveals meaningful economic taxonomy — sector structures emerged naturally from price co-movements. Mantegna's approach borrowed directly from statistical physics, applying graph-theoretic methods to correlation matrices, and is widely regarded as the founding contribution of financial network science.
+金融へのネットワーク科学の応用は、**Mantegna (1999)** に起源を遡る。彼はNYSEにおける株式リターンの相関関係から**最小全域木 (Minimum Spanning Tree, MST)** を構築した。この研究は、金融資産の階層的クラスタリングが経済的に意味のある分類体系を明らかにすることを示した。すなわち、価格の共変動からセクター構造が自然に浮かび上がったのである。Mantegnaのアプローチは統計物理学から直接手法を借用し、相関行列にグラフ理論的手法を適用したものであり、金融ネットワーク科学の創始的貢献として広く認められている。
 
-Around the same period, **Vandewalle, Brisbois & Trevisan (1998)** and **Bonanno, Lillo & Mantegna (2001)** extended correlation-based network analysis to foreign exchange markets and broader asset classes, establishing the Random Matrix Theory (RMT) + network filtering pipeline that remains influential today.
+同時期に、**Vandewalle, Brisbois & Trevisan (1998)** および **Bonanno, Lillo & Mantegna (2001)** が相関ベースのネットワーク分析を外国為替市場やより広範な資産クラスに拡張し、今日でも影響力を持つランダム行列理論 (Random Matrix Theory, RMT) とネットワークフィルタリングのパイプラインを確立した。
 
-### 1.2 Early 2000s: Contagion and Complex Networks
+### 1.2 2000年代初頭: 伝染と複雑ネットワーク
 
-The early 2000s saw two parallel developments:
+2000年代初頭には、二つの並行した発展が見られた:
 
-**Financial contagion theory:**
-- **Allen & Gale (2000)** published "Financial Contagion" in the *Journal of Political Economy*, providing the first formal model of contagion spreading through interbank network structures. They showed that network topology — complete vs. incomplete — determines system resilience.
-- **Freixas, Parigi & Rochet (2000)** modeled systemic risk in interbank payment systems.
-- **Eisenberg & Noe (2001)** introduced the clearing payment vector framework for interbank obligations, enabling computation of losses in networked financial systems.
+**金融伝染理論:**
+- **Allen & Gale (2000)** は *Journal of Political Economy* に「Financial Contagion」を発表し、銀行間ネットワーク構造を通じて伝染が広がる最初の形式モデルを提供した。彼らは、ネットワークトポロジー -- 完全型か不完全型か -- がシステムの頑健性を決定することを示した。
+- **Freixas, Parigi & Rochet (2000)** は銀行間決済システムにおけるシステミックリスクをモデル化した。
+- **Eisenberg & Noe (2001)** は銀行間債務に対するクリアリング支払ベクトルフレームワークを導入し、ネットワーク化された金融システムにおける損失の計算を可能にした。
 
-**Complex network theory applied to economics:**
-- **Caldarelli (2007)** and collaborators applied scale-free network models to financial systems.
-- **Boss, Elsinger, Summer & Thurner (2004)** produced one of the first empirical mappings of a national interbank network (Austria), revealing heavy-tailed degree distributions.
-- **Iori, De Masi, Precup, Gabbi & Caldarelli (2008)** analyzed the Italian overnight money market as a complex network.
+**経済学に適用された複雑ネットワーク理論:**
+- **Caldarelli (2007)** およびその共同研究者は、スケールフリーネットワークモデルを金融システムに適用した。
+- **Boss, Elsinger, Summer & Thurner (2004)** は、国家レベルの銀行間ネットワーク (オーストリア) の最初の実証的マッピングの一つを作成し、次数分布の裾の重さを明らかにした。
+- **Iori, De Masi, Precup, Gabbi & Caldarelli (2008)** は、イタリアのオーバーナイト金融市場を複雑ネットワークとして分析した。
 
-### 1.3 The 2008 Financial Crisis: A Turning Point
+### 1.3 2008年金融危機: 転換点
 
-The Global Financial Crisis (GFC) of 2007–2009 was a watershed moment for financial network science. The crisis exposed how interconnections — through derivatives, repo markets, and cross-holdings — could amplify and propagate shocks in ways that traditional risk models completely missed.
+2007年から2009年の世界金融危機 (Global Financial Crisis, GFC) は、金融ネットワーク科学にとって画期的な出来事であった。この危機は、デリバティブ、レポ市場、クロスホールディングスを通じた相互接続が、従来のリスクモデルでは全く捉えられなかった方法でショックを増幅・伝播しうることを白日の下に晒した。
 
-**Key intellectual responses:**
+**主要な知的対応:**
 
-- **Andrew Haldane's "Rethinking the Financial Network" speech (2009)** at the Bank of England drew explicit parallels between financial networks and ecological/epidemiological networks. Haldane argued that regulators had focused on individual institution risk while ignoring the network topology that determined systemic fragility. This speech became a rallying call for network-based financial regulation.
+- **Andrew Haldaneの「Rethinking the Financial Network」講演 (2009)** は、Bank of England (イングランド銀行) において行われ、金融ネットワークと生態学的・疫学的ネットワークとの間に明示的な類似性を描いた。Haldaneは、規制当局がシステムの脆弱性を決定するネットワークトポロジーを無視しながら、個別金融機関のリスクに焦点を当ててきたと主張した。この講演は、ネットワークに基づく金融規制の結集点となった。
 
-- **Haldane & May (2011)**, published in *Nature*, formalized this argument by applying May's (1972) ecological stability results to banking ecosystems, showing that increasing complexity and connectivity can destabilize financial networks beyond a critical threshold.
+- **Haldane & May (2011)** は *Nature* に発表され、May (1972) の生態学的安定性の結果を銀行エコシステムに適用することでこの議論を形式化し、複雑性と接続性の増大が臨界閾値を超えると金融ネットワークを不安定化させうることを示した。
 
-- **Basel III and macroprudential regulation** emerged partly from this network-aware thinking. The designation of **Global Systemically Important Banks (G-SIBs)** explicitly incorporated interconnectedness metrics alongside size, complexity, and substitutability.
+- **Basel III (バーゼルIII) とマクロプルーデンス規制** は、部分的にこのネットワーク認識的な思考から生まれた。**グローバルなシステム上重要な銀行 (Global Systemically Important Banks, G-SIBs)** の指定には、規模、複雑性、代替可能性に加えて、相互接続性の指標が明示的に組み込まれた。
 
-- **Battiston, Puliga, Kaushik, Tasca & Caldarelli (2012)** introduced **DebtRank**, a recursive algorithm inspired by feedback centrality that measures the systemic importance of financial institutions by propagating distress through the network. DebtRank became one of the most widely adopted tools in macroprudential network analysis.
+- **Battiston, Puliga, Kaushik, Tasca & Caldarelli (2012)** は **DebtRank** を導入した。これはフィードバック中心性に着想を得た再帰的アルゴリズムであり、ネットワークを通じてディストレスを伝播させることで金融機関のシステム的重要性を測定する。DebtRankは、マクロプルーデンスネットワーク分析において最も広く採用されたツールの一つとなった。
 
-- **Cont, Moussa & Santos (2013)** provided a detailed simulation-based study of contagion in the Brazilian banking system, distinguishing between credit and funding contagion channels.
+- **Cont, Moussa & Santos (2013)** は、ブラジルの銀行システムにおける伝染についてシミュレーションに基づく詳細な研究を行い、信用伝染と資金調達伝染のチャネルを区別した。
 
-### 1.4 2010s: Expansion and Maturation
+### 1.4 2010年代: 拡張と成熟
 
-The post-crisis decade saw an explosion of research across multiple dimensions:
+危機後の10年間には、複数の次元にわたる研究の爆発的増加が見られた:
 
-**Interbank and payment networks:**
-- Network topology of TARGET2 (ECB), Fedwire (Fed), and other large-value payment systems
-- **Craig & von Peter (2014)**: Tiered structure of interbank networks
-- **in 't Veld & van Lelyveld (2014)**: Reconstructing interbank networks from incomplete data
+**銀行間ネットワークと決済ネットワーク:**
+- TARGET2 (ECB)、Fedwire (Fed) およびその他の大口決済システムのネットワークトポロジー
+- **Craig & von Peter (2014)**: 銀行間ネットワークの階層構造
+- **in 't Veld & van Lelyveld (2014)**: 不完全なデータからの銀行間ネットワークの再構築
 
-**Production and trade networks:**
-- **Acemoglu, Carvalho, Ozdaglar & Tahbaz-Salehi (2012)**: Network origins of aggregate economic fluctuations — showed that heavy-tailed input-output networks prevent diversification of idiosyncratic shocks
-- **Carvalho (2014)**: Survey on micro-origins of macroeconomic fluctuations through production networks
-- **Barrot & Sauvagnat (2016)**: Propagation of natural disaster shocks through supply chains
+**生産ネットワークと貿易ネットワーク:**
+- **Acemoglu, Carvalho, Ozdaglar & Tahbaz-Salehi (2012)**: マクロ経済変動のネットワーク的起源 -- 裾の重い産業連関ネットワークが固有ショックの分散化を妨げることを示した
+- **Carvalho (2014)**: 生産ネットワークを通じたマクロ経済変動のミクロ的起源に関するサーベイ
+- **Barrot & Sauvagnat (2016)**: サプライチェーンを通じた自然災害ショックの伝播
 
-**Theoretical advances:**
-- **Acemoglu, Ozdaglar & Tahbaz-Salehi (2015)**: "Systemic Risk and Stability in Financial Networks" in *AER* — showed phase transitions between diversification (dense networks absorb small shocks) and contagion (dense networks amplify large shocks)
-- **Elliott, Golub & Jackson (2014)**: "Financial Networks and Contagion" in *AER* — cross-holdings and integration vs. diversification
-- **Glasserman & Young (2016)**: Contagion in financial networks, bounding default cascades
+**理論的進展:**
+- **Acemoglu, Ozdaglar & Tahbaz-Salehi (2015)**: *AER* 掲載の「Systemic Risk and Stability in Financial Networks」 -- 分散化 (密なネットワークが小さなショックを吸収) と伝染 (密なネットワークが大きなショックを増幅) の間の相転移を示した
+- **Elliott, Golub & Jackson (2014)**: *AER* 掲載の「Financial Networks and Contagion」 -- クロスホールディングスと統合対分散化
+- **Glasserman & Young (2016)**: 金融ネットワークにおける伝染とデフォルトカスケードの上界
 
-**Regulatory adoption:**
-- Central banks worldwide developed network-based stress testing tools
-- ECB's NATkit, OFR's financial stability monitor
-- Network metrics integrated into supervisory frameworks
+**規制への導入:**
+- 世界中の中央銀行がネットワークベースのストレステストツールを開発
+- ECBのNATkit、OFR (Office of Financial Research) の金融安定モニター
+- 監督枠組みへのネットワーク指標の統合
 
-### 1.5 2020s: Knowledge Graphs, GNNs, and LLMs
+### 1.5 2020年代: ナレッジグラフ、GNN、LLM
 
-The current frontier integrates modern AI with financial network analysis:
+現在の最前線では、現代のAIと金融ネットワーク分析が統合されている:
 
-- **Graph Neural Networks (GNNs)** applied to financial networks: credit risk prediction, fraud detection, stock movement prediction using relational data (Wang et al., 2021; Cheng et al., 2022)
-- **Knowledge Graphs (KGs)** for financial regulation, compliance, and risk analysis
-- **Large Language Models (LLMs)** combined with KGs for financial text analysis, event extraction, and reasoning (GraphRAG approaches)
-- **FinDKG (Cheng, Xu & Farmer, 2024)**: Dynamic knowledge graph construction from financial news for macro-financial forecasting
-- **Temporal financial networks**: Time-varying topology analysis with dynamic community detection
-- **Climate-finance networks**: Battiston et al.'s work on climate stress testing through financial network transmission
-
----
-
-## 2. Knowledge Graphs in Finance
-
-### 2.1 Semantic Web Origins
-
-Knowledge graphs build on decades of work in knowledge representation:
-
-- **RDF (Resource Description Framework)**: W3C standard for representing information as subject-predicate-object triples. Provides the foundational data model for knowledge graphs.
-- **OWL (Web Ontology Language)**: Enables formal ontological reasoning — class hierarchies, property constraints, logical inference.
-- **SPARQL**: Query language for RDF data, allowing complex graph pattern matching.
-- **The original "Knowledge Graph"**: Google (2012) popularized the term, but the underlying technology draws from the Semantic Web, description logics, and earlier AI knowledge representation work (Cyc, WordNet, etc.).
-
-### 2.2 The FIBO Ontology
-
-The **Financial Industry Business Ontology (FIBO)**, developed by the **EDM Council** (now a program of GLEIF), is the most significant domain ontology for finance:
-
-- Covers: financial instruments, business entities, corporate actions, indices, market data, loans, derivatives
-- Built on OWL/RDF standards with formal semantics
-- Enables interoperability across institutions and regulatory bodies
-- Adopted by regulators (e.g., OFR, GLEIF) for entity identification and data harmonization
-- Continuously maintained and extended by industry working groups
-
-### 2.3 Industry Adoption
-
-| Organization | KG Application | Scale / Notes |
-|---|---|---|
-| **Bloomberg** | Enterprise KG linking companies, people, securities, events | Billions of triples; powers Bloomberg Terminal analytics |
-| **Refinitiv (LSEG)** | Permid entity graph, relationship extraction from news | Open identifiers for financial entities |
-| **JPMorgan** | Internal KG for regulatory compliance, AML | Connects transaction data with entity relationships |
-| **Goldman Sachs** | KG for market intelligence and research | Links financial data with alternative data sources |
-| **Moody's Analytics** | Orbis company network, ownership chains | ~400M company records with beneficial ownership |
-| **IHS Markit (S&P Global)** | Supply chain and corporate hierarchy mapping | Used in supply chain risk analytics |
-| **Central Banks** | GLEIF LEI graph, regulatory reporting KGs | Entity identification and systemic risk mapping |
-
-### 2.4 Financial NLP to KG Construction Pipeline
-
-A typical pipeline for constructing financial knowledge graphs from text:
-
-1. **Corpus collection**: Financial news (Reuters, Bloomberg), SEC filings (10-K, 10-Q, 8-K), earnings call transcripts, analyst reports, central bank communications
-2. **Named Entity Recognition (NER)**: Identifying financial entities — companies, people, instruments, monetary amounts, dates (FinBERT, domain-adapted NER models)
-3. **Relation Extraction (RE)**: Extracting relationships — acquisitions, partnerships, supply relationships, executive appointments (supervised & distant supervision approaches)
-4. **Entity Linking / Resolution**: Mapping extracted entities to canonical identifiers (LEI, ISIN, CUSIP, Permid)
-5. **Knowledge Graph Construction**: Populating RDF/property graph stores with extracted triples
-6. **Temporal enrichment**: Adding timestamps, validity periods, and provenance metadata
-7. **Reasoning & inference**: Applying ontological rules to derive implicit knowledge
-
-**Key research:**
-- **Ding, Zhang, Liu & Duan (2019)**: Knowledge graph construction for financial text
-- **Chen, Wei & Huang (2018)**: FinKG — financial knowledge graph from SEC filings
-- **Cheng, Xu & Farmer (2024)**: FinDKG — dynamic KG from financial news with temporal link prediction
-
-### 2.5 Recent Advances: GraphRAG and LLM Integration
-
-- **GraphRAG (Microsoft Research, 2024)**: Combines knowledge graphs with retrieval-augmented generation for structured reasoning over large document collections
-- **KG-enhanced financial LLMs**: Using knowledge graphs to ground LLM outputs, reduce hallucination, and enable structured financial reasoning
-- **Automated KG construction with LLMs**: Using GPT-4, Claude, and similar models for zero-shot relation extraction and ontology learning
-- **Multi-modal financial KGs**: Integrating structured data (financial statements), unstructured text, and temporal market data into unified graph representations
+- **グラフニューラルネットワーク (Graph Neural Networks, GNNs)** の金融ネットワークへの適用: 信用リスク予測、不正検知、関係データを用いた株価変動予測 (Wang et al., 2021; Cheng et al., 2022)
+- **ナレッジグラフ (Knowledge Graphs, KGs)** による金融規制、コンプライアンス、リスク分析
+- **大規模言語モデル (Large Language Models, LLMs)** とKGsの組み合わせによる金融テキスト分析、イベント抽出、推論 (GraphRAGアプローチ)
+- **FinDKG (Cheng, Xu & Farmer, 2024)**: マクロ金融予測のための金融ニュースからの動的ナレッジグラフ構築
+- **時間的金融ネットワーク**: 動的コミュニティ検出を伴う時変トポロジー分析
+- **気候-金融ネットワーク**: 金融ネットワークの伝達経路を通じた気候ストレステストに関するBattistonらの研究
 
 ---
 
-## 3. Intersection of Economics and Computer Science
+## 2. 金融におけるナレッジグラフ
 
-### 3.1 Methodological Traditions
+### 2.1 セマンティックウェブの起源
 
-| Dimension | Economics | Computer Science |
+ナレッジグラフは、知識表現における数十年の研究の上に構築されている:
+
+- **RDF (Resource Description Framework)**: 情報を主語-述語-目的語のトリプルとして表現するためのW3C標準。ナレッジグラフの基盤となるデータモデルを提供する。
+- **OWL (Web Ontology Language)**: 形式的なオントロジー推論を可能にする。クラス階層、プロパティ制約、論理的推論を含む。
+- **SPARQL**: RDFデータのためのクエリ言語であり、複雑なグラフパターンマッチングを可能にする。
+- **元祖「ナレッジグラフ」**: Google (2012) がこの用語を普及させたが、基盤となる技術はセマンティックウェブ、記述論理、および初期のAI知識表現研究 (Cyc、WordNetなど) に由来する。
+
+### 2.2 FIBOオントロジー
+
+**Financial Industry Business Ontology (FIBO、金融業界ビジネスオントロジー)** は、**EDM Council** (現在はGLEIFのプログラム) によって開発された、金融分野で最も重要なドメインオントロジーである:
+
+- 対象範囲: 金融商品、事業体、コーポレートアクション、インデックス、市場データ、ローン、デリバティブ
+- OWL/RDF標準に基づいて構築され、形式的意味論を持つ
+- 金融機関間および規制機関間の相互運用性を実現
+- 規制当局 (例: OFR、GLEIF) がエンティティ識別とデータ調和のために採用
+- 業界ワーキンググループにより継続的に維持・拡張
+
+### 2.3 業界での採用
+
+| 組織 | KGの適用分野 | 規模・備考 |
 |---|---|---|
-| **Epistemology** | Theory-driven, deductive | Data-driven, inductive |
-| **Causality** | Causal identification (IV, RDD, DiD) | Prediction-focused, correlation-based |
-| **Models** | Equilibrium models, optimization | Machine learning, scalable algorithms |
-| **Agents** | Representative agent / heterogeneous agents with micro-foundations | Nodes in networks, features in ML |
-| **Validation** | Econometric hypothesis testing | Train/test splits, benchmarks |
-| **Data** | Panel data, national accounts, surveys | Web-scale data, alternative data |
-| **Publication** | Top-5 journals, long review cycles | Conference papers (NeurIPS, ICML, KDD), fast cycles |
+| **Bloomberg** | 企業、人物、証券、イベントを結ぶエンタープライズKG | 数十億のトリプル。Bloomberg Terminal分析を支える |
+| **Refinitiv (LSEG)** | Permidエンティティグラフ、ニュースからの関係抽出 | 金融エンティティ向けオープン識別子 |
+| **JPMorgan** | 規制コンプライアンス、AML (マネーロンダリング対策) のための社内KG | 取引データとエンティティ関係を接続 |
+| **Goldman Sachs** | 市場インテリジェンスと調査のためのKG | 金融データとオルタナティブデータソースを連携 |
+| **Moody's Analytics** | Orbis企業ネットワーク、所有連鎖 | 約4億件の企業レコードと実質的所有者情報 |
+| **IHS Markit (S&P Global)** | サプライチェーンと企業階層のマッピング | サプライチェーンリスク分析に使用 |
+| **中央銀行** | GLEIF LEIグラフ、規制報告KG | エンティティ識別とシステミックリスクマッピング |
 
-### 3.2 Convergence Areas
+### 2.4 金融NLPからKG構築へのパイプライン
 
-**Graph Neural Networks for Economic Prediction:**
-- GNNs applied to supply chain networks for macro forecasting (Brintrup et al., 2020)
-- Stock prediction using company relationship graphs (Feng et al., 2019)
-- Credit risk assessment with borrower-lender network features (Wang et al., 2021)
+テキストから金融ナレッジグラフを構築する典型的なパイプライン:
 
-**Knowledge Graphs for Financial Regulation:**
-- Regulatory compliance checking via ontological reasoning
-- Anti-money laundering through entity resolution and graph analytics
-- Beneficial ownership networks for tax transparency (e.g., OpenCorporates, GLEIF)
+1. **コーパス収集**: 金融ニュース (Reuters、Bloomberg)、SEC提出書類 (10-K、10-Q、8-K)、決算説明会のトランスクリプト、アナリストレポート、中央銀行のコミュニケーション
+2. **固有表現認識 (Named Entity Recognition, NER)**: 金融エンティティの識別 -- 企業、人物、金融商品、金額、日付 (FinBERT、ドメイン適応NERモデル)
+3. **関係抽出 (Relation Extraction, RE)**: 関係の抽出 -- 買収、パートナーシップ、供給関係、役員人事 (教師あり学習および遠距離教師あり学習アプローチ)
+4. **エンティティリンキング / 解決**: 抽出されたエンティティを正規識別子 (LEI、ISIN、CUSIP、Permid) にマッピング
+5. **ナレッジグラフ構築**: 抽出されたトリプルをRDF/プロパティグラフストアに格納
+6. **時間的エンリッチメント**: タイムスタンプ、有効期間、来歴メタデータの付加
+7. **推論と推論**: オントロジー規則を適用して暗黙的知識を導出
 
-**NLP for Economic Text:**
-- Central bank communication analysis (Hansen & McMahon, 2016; Shapiro et al., 2022)
-- Measuring economic sentiment and uncertainty (Baker, Bloom & Davis, 2016)
-- Extracting supply chain relationships from earnings calls (Barrot & Sauvagnat, 2016)
+**主要な研究:**
+- **Ding, Zhang, Liu & Duan (2019)**: 金融テキストからのナレッジグラフ構築
+- **Chen, Wei & Huang (2018)**: FinKG -- SEC提出書類からの金融ナレッジグラフ
+- **Cheng, Xu & Farmer (2024)**: FinDKG -- 時間的リンク予測を伴う金融ニュースからの動的KG
 
-**Agent-Based Computational Economics:**
-- Multi-agent simulation of financial markets (Farmer & Foley, 2009)
-- Combining ABM with network topology (Thurner, Farmer & Geanakoplos, 2012)
-- Reinforcement learning agents in economic environments
+### 2.5 最近の進展: GraphRAGとLLMの統合
 
-### 3.3 Complementarities and Tensions
+- **GraphRAG (Microsoft Research, 2024)**: 大規模文書コレクションに対する構造化推論のために、ナレッジグラフと検索拡張生成 (Retrieval-Augmented Generation) を組み合わせる
+- **KGで強化された金融LLM**: ナレッジグラフを用いてLLMの出力を根拠づけ、ハルシネーションを低減し、構造化された金融推論を可能にする
+- **LLMによる自動KG構築**: GPT-4、Claudeなどのモデルを用いたゼロショット関係抽出とオントロジー学習
+- **マルチモーダル金融KG**: 構造化データ (財務諸表)、非構造化テキスト、時系列市場データを統合的なグラフ表現に統合
 
-**Where economics strengthens CS:**
-- Causal reasoning and identification strategies prevent spurious ML predictions
-- Equilibrium thinking provides structural constraints on models
-- Welfare analysis and mechanism design offer normative frameworks
-- Domain knowledge prevents "garbage in, garbage out" in financial ML
+---
 
-**Where CS strengthens economics:**
-- Scalable computation for large-scale network analysis
-- Flexible non-parametric models that capture complex patterns
-- Knowledge representation for organizing vast institutional knowledge
-- NLP and information extraction from unstructured economic text at scale
+## 3. 経済学とコンピュータサイエンスの交差点
 
-**Ongoing tensions:**
-- Interpretability vs. predictive power
-- Structural models vs. reduced-form ML
-- Causal inference vs. pattern recognition
-- Small-sample econometric rigor vs. large-scale data mining
-- Publication culture and incentive differences
+### 3.1 方法論的伝統
 
-### 3.4 Emerging Synthesis
+| 次元 | 経済学 | コンピュータサイエンス |
+|---|---|---|
+| **認識論** | 理論駆動型、演繹的 | データ駆動型、帰納的 |
+| **因果性** | 因果識別 (IV、RDD、DiD) | 予測重視、相関ベース |
+| **モデル** | 均衡モデル、最適化 | 機械学習、スケーラブルなアルゴリズム |
+| **エージェント** | 代表的個人 / ミクロ的基礎づけを持つ異質的エージェント | ネットワーク上のノード、MLの特徴量 |
+| **検証** | 計量経済学的仮説検定 | 訓練/テスト分割、ベンチマーク |
+| **データ** | パネルデータ、国民経済計算、調査 | ウェブスケールデータ、オルタナティブデータ |
+| **出版** | トップ5ジャーナル、長い査読期間 | 学会論文 (NeurIPS、ICML、KDD)、短いサイクル |
 
-A productive synthesis is emerging in several areas:
+### 3.2 収斂する領域
 
-- **Causal ML**: Combining ML flexibility with econometric causal identification (Athey & Imbens, 2019; Chernozhukov et al., 2018)
-- **Structural estimation + ML**: Using ML within structural economic models for estimation
-- **Network econometrics**: Rigorous statistical inference on network data (de Paula, 2017; Graham, 2017)
-- **Economics-informed GNNs**: Incorporating economic theory (equilibrium, no-arbitrage) as inductive biases in graph neural networks
-- **LLMs as economic agents**: Simulating economic behavior with language models (Horton, 2023)
+**経済予測のためのグラフニューラルネットワーク:**
+- サプライチェーンネットワークへのGNN適用によるマクロ予測 (Brintrup et al., 2020)
+- 企業関係グラフを用いた株価予測 (Feng et al., 2019)
+- 借り手-貸し手ネットワーク特徴量による信用リスク評価 (Wang et al., 2021)
+
+**金融規制のためのナレッジグラフ:**
+- オントロジー推論による規制コンプライアンスチェック
+- エンティティ解決とグラフ分析によるマネーロンダリング対策
+- 税の透明性のための実質的所有者ネットワーク (例: OpenCorporates、GLEIF)
+
+**経済テキストのためのNLP:**
+- 中央銀行コミュニケーション分析 (Hansen & McMahon, 2016; Shapiro et al., 2022)
+- 経済センチメントと不確実性の測定 (Baker, Bloom & Davis, 2016)
+- 決算説明会からのサプライチェーン関係の抽出 (Barrot & Sauvagnat, 2016)
+
+**エージェントベース計算経済学:**
+- 金融市場のマルチエージェントシミュレーション (Farmer & Foley, 2009)
+- ABMとネットワークトポロジーの組み合わせ (Thurner, Farmer & Geanakoplos, 2012)
+- 経済環境における強化学習エージェント
+
+### 3.3 相補性と緊張関係
+
+**経済学がCSを強化する点:**
+- 因果推論と識別戦略が、MLにおける見せかけの予測を防止する
+- 均衡的思考がモデルに構造的制約を提供する
+- 厚生分析とメカニズムデザインが規範的枠組みを提供する
+- ドメイン知識が金融MLにおける「ゴミを入れればゴミが出る」問題を防止する
+
+**CSが経済学を強化する点:**
+- 大規模ネットワーク分析のためのスケーラブルな計算
+- 複雑なパターンを捉える柔軟なノンパラメトリックモデル
+- 膨大な制度的知識を整理するための知識表現
+- 非構造化経済テキストからの大規模なNLPおよび情報抽出
+
+**継続する緊張関係:**
+- 解釈可能性 vs. 予測力
+- 構造モデル vs. 誘導形ML
+- 因果推論 vs. パターン認識
+- 小標本の計量経済学的厳密性 vs. 大規模データマイニング
+- 出版文化とインセンティブの違い
+
+### 3.4 生まれつつある統合
+
+いくつかの分野で生産的な統合が生まれつつある:
+
+- **因果的ML**: MLの柔軟性と計量経済学的因果識別の組み合わせ (Athey & Imbens, 2019; Chernozhukov et al., 2018)
+- **構造推定 + ML**: 構造的経済モデル内での推定にMLを活用
+- **ネットワーク計量経済学**: ネットワークデータに対する厳密な統計的推論 (de Paula, 2017; Graham, 2017)
+- **経済学に基づくGNN**: 経済理論 (均衡、無裁定) を帰納的バイアスとしてグラフニューラルネットワークに組み込む
+- **経済エージェントとしてのLLM**: 言語モデルによる経済行動のシミュレーション (Horton, 2023)
 
 ---
 

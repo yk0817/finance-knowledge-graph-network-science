@@ -1,482 +1,481 @@
-# Japan and Asia: Financial Network Science and Knowledge Graphs
 # 日本・アジアにおける金融ネットワーク科学と知識グラフ
 
 ---
 
-## Japan (日本)
+## 日本
 
-Japan has been a global leader in econophysics and economic network analysis since the 1990s, with deep contributions to firm-level production network analysis, high-frequency financial data analysis, and knowledge graph research for financial applications.
-
----
-
-### Econophysics Research Groups
-
-#### Kyoto University / RIETI Econophysics Group
-
-- **Hideaki Aoyama (青山秀明)**
-  - Professor Emeritus, Kyoto University; affiliated with RIETI
-  - Income and wealth distribution networks, firm size distributions, economic network theory
-  - Major contributions to firm-level production network analysis using government statistics
-  - Power-law distributions in Japanese firm sizes and income
-  - Books: *Econophysics and Companies: Statistical Life and Death in Complex Business Networks* (Cambridge University Press, 2010)
-  - Collaborators: Yoshi Fujiwara, Hiroshi Iyetomi, Wataru Souma
-
-#### Tokyo Institute of Technology - Takayasu Lab
-
-- **Hideki Takayasu (高安秀樹) & Misako Takayasu (高安美佐子)**
-  - Among the earliest econophysics researchers in Japan (active since early 1990s)
-  - High-frequency financial data analysis, tick-by-tick data analysis
-  - Market crash prediction using network analysis
-  - Fractal analysis of markets and price fluctuations
-  - Statistical properties of financial time series
-  - Books: *Practical Fruits of Econophysics* (Springer, 2006); *Empirical Science of Financial Fluctuations* (Springer, 2002)
-  - Organized the Nikkei Econophysics series of conferences
-
-#### University of Tokyo
-
-- **Tsutomu Watanabe (渡辺努)**
-  - Graduate School of Economics, University of Tokyo
-  - Price networks, inflation dynamics, scanner data analysis
-  - Production network analysis using firm-level transaction data
-  - "Price Network" project using POS/scanner data (millions of product prices)
-  - Research on price rigidity and sticky prices in Japan
-  - Connections to macroeconomic policy and BOJ price stability research
-
-#### University of Hyogo (formerly Kobe)
-
-- **Yoshikazu Fujiwara (藤原義久)**
-  - Firm network analysis, wealth distribution, economic complexity
-  - Long-standing collaboration with RIETI on production network datasets
-  - Network topology of Japanese inter-firm transaction networks
-  - DebtRank-type analysis on Japanese financial networks
-  - Community detection in large-scale economic networks
-
-#### Kobe University
-
-- **Hideaki Kobayashi (小林照義)**
-  - Financial network analysis, systemic risk modeling
-  - Network topology of the Japanese financial system
-  - Contagion and cascade effects in banking networks
-  - Interbank market structure and stability
-
-#### National Institute of Informatics (NII)
-
-- **Takayuki Mizuno (水野貴之)**
-  - Economic network analysis, international trade networks
-  - Big data approaches to economic networks
-  - Corporate network analysis and ownership networks
-  - International capital flow networks
-  - Collaboration with RIKEN and university research groups
-
-#### Rikkyo University
-
-- **Takayuki Ohnishi (大西立顕)**
-  - Purchase network analysis, economic complexity
-  - Consumer behavior networks using large-scale transaction data
-  - Network analysis of product purchase relationships
-  - Connections between consumer networks and macroeconomic dynamics
-
-#### Hitotsubashi University
-
-- Center for Financial Research and Network Economics
-- Policy-oriented financial network research
-- Corporate governance network analysis
-- Cross-shareholding and ownership network studies
-- Strong connections to financial regulation and policy
+日本は1990年代以来、経済物理学および経済ネットワーク分析においてグローバルリーダーであり、企業間生産ネットワーク分析、高頻度金融データ分析、金融応用のための知識グラフ研究に深い貢献を果たしてきた。
 
 ---
 
-### Government and Institutional Research
+### 経済物理学研究グループ
 
-#### RIETI (Research Institute of Economy, Trade and Industry / 経済産業研究所)
+#### 京都大学 / RIETI 経済物理学グループ
 
-| Aspect | Details |
+- **青山秀明 (Hideaki Aoyama)**
+  - 京都大学名誉教授、RIETI（経済産業研究所）所属
+  - 所得・資産分布ネットワーク、企業規模分布、経済ネットワーク理論
+  - 政府統計を用いた企業間生産ネットワーク分析への主要な貢献
+  - 日本企業規模と所得のべき乗則分布
+  - 著書: *Econophysics and Companies: Statistical Life and Death in Complex Business Networks* (Cambridge University Press, 2010)
+  - 共同研究者: 藤原義久、伊予富博、相馬亘
+
+#### 東京工業大学 - 高安研究室
+
+- **高安秀樹 (Hideki Takayasu) & 高安美佐子 (Misako Takayasu)**
+  - 日本における最初期の経済物理学研究者（1990年代初頭から活動）
+  - 高頻度金融データ分析、ティックデータ分析
+  - ネットワーク分析を用いた市場暴落予測
+  - 市場と価格変動のフラクタル分析
+  - 金融時系列の統計的性質
+  - 著書: *Practical Fruits of Econophysics* (Springer, 2006); *Empirical Science of Financial Fluctuations* (Springer, 2002)
+  - 日経エコノフィジックス会議シリーズの主催
+
+#### 東京大学
+
+- **渡辺努 (Tsutomu Watanabe)**
+  - 東京大学大学院経済学研究科
+  - 価格ネットワーク、インフレーション・ダイナミクス、スキャナーデータ分析
+  - 企業間取引データを用いた生産ネットワーク分析
+  - POS/スキャナーデータを用いた「価格ネットワーク」プロジェクト（数百万の商品価格）
+  - 日本における価格硬直性と粘着価格に関する研究
+  - マクロ経済政策および日本銀行の物価安定研究との関連
+
+#### 兵庫県立大学（旧神戸）
+
+- **藤原義久 (Yoshikazu Fujiwara)**
+  - 企業ネットワーク分析、資産分布、経済複雑性
+  - RIETIとの生産ネットワークデータセットに関する長年の共同研究
+  - 日本の企業間取引ネットワークのネットワークトポロジー
+  - 日本の金融ネットワークにおけるDebtRank型分析
+  - 大規模経済ネットワークにおけるコミュニティ検出
+
+#### 神戸大学
+
+- **小林照義 (Hideaki Kobayashi)**
+  - 金融ネットワーク分析、システミックリスクモデリング
+  - 日本の金融システムのネットワークトポロジー
+  - 銀行ネットワークにおける伝染とカスケード効果
+  - インターバンク市場の構造と安定性
+
+#### 国立情報学研究所 (NII)
+
+- **水野貴之 (Takayuki Mizuno)**
+  - 経済ネットワーク分析、国際貿易ネットワーク
+  - 経済ネットワークへのビッグデータアプローチ
+  - 企業ネットワーク分析と所有ネットワーク
+  - 国際資本フローネットワーク
+  - 理化学研究所および大学研究グループとの共同研究
+
+#### 立教大学
+
+- **大西立顕 (Takayuki Ohnishi)**
+  - 購買ネットワーク分析、経済複雑性
+  - 大規模取引データを用いた消費者行動ネットワーク
+  - 商品購買関係のネットワーク分析
+  - 消費者ネットワークとマクロ経済動態の関連
+
+#### 一橋大学
+
+- 金融研究・ネットワーク経済学センター
+- 政策志向の金融ネットワーク研究
+- コーポレートガバナンスのネットワーク分析
+- 持ち合い株式と所有ネットワークの研究
+- 金融規制・政策との強い結びつき
+
+---
+
+### 政府・機関による研究
+
+#### RIETI（経済産業研究所）
+
+| 項目 | 詳細 |
 |--------|---------|
-| Role | Major funding source for firm network research in Japan |
-| Key Dataset | Inter-firm transaction network (TSR data): ~4M firms, ~5M edges |
-| Research Focus | Supply chain networks, production networks, firm dynamics |
-| Key Projects | "Dynamics of Inter-organizational Networks" led by Aoyama et al. |
-| Policy Impact | Supply chain resilience (post-2011 earthquake), regional economics |
-| Publications | RIETI Discussion Papers series with extensive network analysis |
+| 役割 | 日本における企業ネットワーク研究の主要な資金源 |
+| 主要データセット | 企業間取引ネットワーク（TSRデータ）: 約400万社、約500万エッジ |
+| 研究焦点 | サプライチェーンネットワーク、生産ネットワーク、企業ダイナミクス |
+| 主要プロジェクト | 青山らによる「組織間ネットワークのダイナミクス」 |
+| 政策的影響 | サプライチェーンの強靭性（2011年震災後）、地域経済 |
+| 出版物 | 広範なネットワーク分析を含むRIETIディスカッションペーパーシリーズ |
 
-RIETI has funded some of the largest-scale empirical economic network studies globally, leveraging comprehensive Japanese firm transaction data that covers nearly the entire population of Japanese firms.
+RIETIは、日本企業のほぼ全数をカバーする包括的な企業取引データを活用し、世界的にも最大規模の実証的経済ネットワーク研究に資金を提供してきた。
 
-#### Bank of Japan (日本銀行 / BOJ)
+#### 日本銀行 (BOJ)
 
-- **Payment and Settlement System Analysis**
-  - BOJ-NET (Bank of Japan Financial Network System) analysis
-  - Real-time gross settlement system network topology
-  - Daily interbank payment flow network analysis
-- **Financial System Stability Assessment**
-  - Network-based systemic risk assessment
-  - Interbank network monitoring and stress testing
-  - Cross-shareholding network effects on financial stability
-- **Research Papers**
-  - BOJ Working Paper Series with network analysis contributions
-  - Studies on Japanese interbank market structure
-  - CDS network analysis for Japanese financial institutions
-  - Collaboration with international central bank network research (e.g., BIS)
+- **決済システム分析**
+  - BOJ-NET（日本銀行金融ネットワークシステム）分析
+  - 即時グロス決済システムのネットワークトポロジー
+  - 日次インターバンク決済フローのネットワーク分析
+- **金融システムの安定性評価**
+  - ネットワークベースのシステミックリスク評価
+  - インターバンクネットワークの監視とストレステスト
+  - 持ち合い株式ネットワークが金融安定性に与える影響
+- **研究論文**
+  - ネットワーク分析の貢献を含む日本銀行ワーキングペーパーシリーズ
+  - 日本のインターバンク市場構造に関する研究
+  - 日本の金融機関のCDSネットワーク分析
+  - 国際的な中央銀行ネットワーク研究との連携（例: BIS）
 
-#### RIKEN (理化学研究所)
+#### 理化学研究所 (RIKEN)
 
-- Computational science applied to economic networks
-- Large-scale simulation of economic systems
-- Fugaku supercomputer applications for economic modeling
-- Agent-based models of financial systems at unprecedented scale
-- Collaboration with NII and university econophysics groups
+- 経済ネットワークへの計算科学の応用
+- 経済システムの大規模シミュレーション
+- 経済モデリングのための富岳スーパーコンピュータの活用
+- 前例のない規模での金融システムのエージェントベースモデル
+- 国立情報学研究所および大学の経済物理学グループとの共同研究
 
 ---
 
-### AI / Knowledge Graph Research in Japan
+### 日本におけるAI・知識グラフ研究
 
-#### AIST (National Institute of Advanced Industrial Science and Technology / 産業技術総合研究所)
+#### 産業技術総合研究所 (AIST)
 
-- Knowledge graph research with Japanese-language focus
-- Japanese NLP and named entity recognition for financial texts
-- Collaboration with universities on financial knowledge graph construction
-- Open data and linked data initiatives for Japanese economic data
-- AIST's Artificial Intelligence Research Center (AIRC)
+- 日本語に焦点を当てた知識グラフ研究
+- 金融テキストのための日本語NLPおよび固有表現抽出
+- 金融知識グラフ構築における大学との共同研究
+- 日本の経済データのためのオープンデータおよびLinked Dataイニシアチブ
+- AISTの人工知能研究センター (AIRC)
 
-#### JAIST (Japan Advanced Institute of Science and Technology / 北陸先端科学技術大学院大学)
+#### 北陸先端科学技術大学院大学 (JAIST)
 
-- **FinKG-JP**: Japanese financial knowledge graph project
-- NLP for Japanese financial text (有価証券報告書, 決算短信)
-- Entity extraction from Japanese corporate filings
-- Relation extraction for corporate events and financial relationships
-- Multilingual financial knowledge graph alignment (Japanese-English)
+- **FinKG-JP**: 日本語金融知識グラフプロジェクト
+- 日本語金融テキストのためのNLP（有価証券報告書、決算短信）
+- 日本の企業開示書類からのエンティティ抽出
+- 企業イベントと金融関係のための関係抽出
+- 多言語金融知識グラフのアラインメント（日英）
 
 #### Preferred Networks (PFN)
 
-- Deep learning and graph neural network research (leading Japanese AI company)
-- Graph neural network architectures applicable to financial data
-- Chainer/PyTorch-based GNN frameworks
-- Primary focus on robotics, healthcare, and materials science, with some financial applications
-- Research on scalable graph computation
+- 深層学習とグラフニューラルネットワーク研究（日本を代表するAI企業）
+- 金融データに応用可能なグラフニューラルネットワークアーキテクチャ
+- Chainer/PyTorchベースのGNNフレームワーク
+- 主な焦点はロボティクス、ヘルスケア、材料科学であり、一部金融応用もあり
+- スケーラブルなグラフ計算に関する研究
 
-#### NRI (Nomura Research Institute / 野村総合研究所)
+#### 野村総合研究所 (NRI)
 
-- Financial technology research and consulting
-- AI/KG applications in financial services
-- Industry reports on fintech and regtech in Japan and Asia
-- Digital transformation of Japanese financial institutions
-- Market analysis using network and graph-based methods
+- 金融技術の研究とコンサルティング
+- 金融サービスにおけるAI/知識グラフの応用
+- 日本およびアジアにおけるフィンテックとレグテックに関する業界レポート
+- 日本の金融機関のデジタルトランスフォーメーション
+- ネットワークおよびグラフベースの手法を用いた市場分析
 
 ---
 
-### Key Japanese Datasets
+### 日本の主要データセット
 
-| Dataset | Provider | Description | Coverage |
+| データセット | 提供者 | 説明 | カバレッジ |
 |---------|----------|-------------|----------|
-| TSR Firm Transaction Data | Tokyo Shoko Research (東京商工リサーチ) | ~4M firms, ~5M transaction edges | Near-complete coverage of Japanese firms |
-| Nikkei NEEDS | Nikkei (日本経済新聞社) | Financial data, corporate governance, news | Listed companies, comprehensive |
-| Toyo Keizai CSR Data | Toyo Keizai (東洋経済新報社) | CSR, governance, diversity data | Major Japanese corporations |
-| JPX Stock Distribution Survey | Japan Exchange Group (JPX) | Stock ownership distribution by investor type | All listed companies |
-| EDINET | FSA Japan (金融庁) | Electronic disclosure (有価証券報告書) | All securities report filers |
-| TDB Enterprise Data | Teikoku Databank (帝国データバンク) | Firm-level data, credit ratings, transaction links | ~1.5M firms |
-| BOJ-NET Data | Bank of Japan | Interbank payment flow data | BOJ-NET participants |
-| COMTRADE (Japan) | UN / MOF | Japan trade statistics at commodity level | International trade |
-| e-Stat | Statistics Bureau (総務省統計局) | Government statistics portal | Economy-wide |
+| TSR企業取引データ | 東京商工リサーチ | 約400万社、約500万取引エッジ | 日本企業のほぼ全数をカバー |
+| 日経NEEDS | 日本経済新聞社 | 財務データ、コーポレートガバナンス、ニュース | 上場企業、包括的 |
+| 東洋経済CSRデータ | 東洋経済新報社 | CSR、ガバナンス、ダイバーシティデータ | 主要日本企業 |
+| JPX株式分布状況調査 | Japan Exchange Group (JPX) | 投資家タイプ別株式保有分布 | 全上場企業 |
+| EDINET | 金融庁 | 電子開示（有価証券報告書） | 全有価証券報告書提出者 |
+| TDB企業データ | 帝国データバンク | 企業レベルデータ、信用格付け、取引リンク | 約150万社 |
+| BOJ-NETデータ | 日本銀行 | インターバンク決済フローデータ | BOJ-NET参加者 |
+| COMTRADE（日本） | 国連 / 財務省 | 品目別日本貿易統計 | 国際貿易 |
+| e-Stat | 総務省統計局 | 政府統計ポータル | 経済全体 |
 
 ---
 
-### Notable Japanese Research Themes
+### 日本における主要な研究テーマ
 
-1. **Post-disaster supply chain network analysis** - The 2011 Tohoku earthquake triggered intensive research on supply chain network resilience using TSR/TDB data
-2. **Keiretsu dissolution and transformation** - Tracking the evolution of traditional Japanese corporate groups through network analysis
-3. **Cross-shareholding unwinding** - Network analysis of declining cross-shareholding relationships since the 2000s
-4. **Stewardship Code and Corporate Governance Code effects** - Network-based analysis of governance reform impacts
-5. **Aging society and regional economic networks** - Network analysis of economic decline in rural areas
+1. **災害後のサプライチェーンネットワーク分析** - 2011年東日本大震災を契機に、TSR/TDBデータを用いたサプライチェーンネットワークの強靭性に関する集中的な研究が行われた
+2. **系列の解体と変容** - ネットワーク分析を通じた日本の伝統的企業集団の進化の追跡
+3. **持ち合い株式の解消** - 2000年代以降の持ち合い関係の縮小に関するネットワーク分析
+4. **スチュワードシップ・コードおよびコーポレートガバナンス・コードの効果** - ガバナンス改革の影響に関するネットワークベースの分析
+5. **高齢化社会と地域経済ネットワーク** - 地方の経済衰退に関するネットワーク分析
 
 ---
 
-## China (中国)
+## 中国
 
-### Academic Research
+### 学術研究
 
-#### Tsinghua University (清華大学)
+#### 清華大学 (Tsinghua University)
 
-- **Financial Knowledge Graph Research**
-  - THUNLP (Natural Language Processing Lab): Entity extraction from Chinese financial texts
-  - Knowledge graph construction for Chinese financial markets
-  - Cross-lingual financial knowledge alignment
-- **School of Economics and Management**
-  - Computational finance and financial network research
-  - Chinese stock market network analysis
-  - Financial risk propagation in Chinese banking system
+- **金融知識グラフ研究**
+  - THUNLP（自然言語処理研究室）: 中国語金融テキストからのエンティティ抽出
+  - 中国金融市場のための知識グラフ構築
+  - 言語横断的な金融知識のアラインメント
+- **経済管理学院**
+  - 計算金融と金融ネットワーク研究
+  - 中国株式市場のネットワーク分析
+  - 中国銀行システムにおける金融リスクの伝播
 
-#### Peking University (北京大学)
+#### 北京大学 (Peking University)
 
-- Computational finance, network economics
-- Chinese capital market network analysis
-- Ownership network analysis of Chinese listed companies
-- State-owned enterprise (SOE) network structures
+- 計算金融、ネットワーク経済学
+- 中国資本市場のネットワーク分析
+- 中国上場企業の所有ネットワーク分析
+- 国有企業（SOE）のネットワーク構造
 
-#### Other Key Institutions
+#### その他の主要機関
 
-- **Fudan University**: Financial text mining, sentiment networks
-- **Shanghai Jiao Tong University**: Graph-based financial risk assessment
-- **USTC (University of Science and Technology of China)**: Complex network analysis of Chinese financial markets
-- **Chinese Academy of Sciences (CAS)**: Large-scale economic network simulation
+- **復旦大学 (Fudan University)**: 金融テキストマイニング、センチメントネットワーク
+- **上海交通大学 (Shanghai Jiao Tong University)**: グラフベースの金融リスク評価
+- **中国科学技術大学 (USTC)**: 中国金融市場の複雑ネットワーク分析
+- **中国科学院 (CAS)**: 大規模経済ネットワークシミュレーション
 
-#### Research Focus Areas
+#### 研究重点分野
 
-- Fraud detection using graph analytics (stock market manipulation, insider trading)
-- Risk assessment and credit scoring using knowledge graphs
-- Supply chain finance network analysis
-- Shadow banking network mapping
-- P2P lending network risk analysis
-- Strong government support for AI in finance (fintech regulation, digital currency DCEP/e-CNY)
+- グラフアナリティクスを用いた不正検出（株式市場操作、インサイダー取引）
+- 知識グラフを用いたリスク評価と信用スコアリング
+- サプライチェーンファイナンスのネットワーク分析
+- シャドーバンキングのネットワークマッピング
+- P2Pレンディングのネットワークリスク分析
+- 金融におけるAIへの強力な政府支援（フィンテック規制、デジタル通貨DCEP/e-CNY）
 
-### Industry
+### 産業界
 
-#### Ant Group OpenSPG (Semantic-enhanced Programmable Graph)
+#### Ant Group OpenSPG（Semantic-enhanced Programmable Graph / セマンティック強化プログラマブルグラフ）
 
-| Aspect | Details |
+| 項目 | 詳細 |
 |--------|---------|
-| Scale | Billions of entities, one of the world's largest financial KGs |
-| Applications | Risk management, credit assessment, fraud detection |
-| Technology | Open-sourced graph reasoning framework |
-| Integration | Alipay, Ant Credit Pay, Zhima Credit |
-| Research | Graph-based causal reasoning for financial risk |
+| 規模 | 数十億エンティティ、世界最大級の金融知識グラフ |
+| 応用 | リスク管理、信用評価、不正検出 |
+| 技術 | オープンソース化されたグラフ推論フレームワーク |
+| 統合 | Alipay、Ant Credit Pay、Zhima Credit（芝麻信用） |
+| 研究 | 金融リスクのためのグラフベース因果推論 |
 
-#### Baidu Knowledge Graph
+#### Baidu（百度）知識グラフ
 
-- Chinese financial entity knowledge graph
-- Integration with Baidu search and financial services
-- Event extraction from Chinese financial news
-- Knowledge graph embedding for financial prediction
+- 中国語金融エンティティ知識グラフ
+- Baidu検索および金融サービスとの統合
+- 中国語金融ニュースからのイベント抽出
+- 金融予測のための知識グラフ埋め込み
 
-#### Tencent
+#### Tencent（騰訊）
 
-- Financial risk control using graph analytics (WeChat Pay, WeBank)
-- Social graph integration with financial risk assessment
-- Graph neural networks for anti-money laundering
-- Credit risk modeling using relationship networks
+- グラフアナリティクスを用いた金融リスク管理（WeChat Pay、WeBank）
+- ソーシャルグラフと金融リスク評価の統合
+- アンチマネーロンダリングのためのグラフニューラルネットワーク
+- 関係ネットワークを用いた信用リスクモデリング
 
-#### JD Finance (京東金融)
+#### JD Finance（京東金融）
 
-- Supply chain knowledge graph for JD's logistics network
-- Credit risk KG using e-commerce transaction data
-- Real-time graph analytics for fraud detection
-- Knowledge graph for supply chain finance
+- JDの物流ネットワークのためのサプライチェーン知識グラフ
+- EC取引データを用いた信用リスク知識グラフ
+- 不正検出のためのリアルタイムグラフアナリティクス
+- サプライチェーンファイナンスのための知識グラフ
 
-#### Other Industry Players
+#### その他の産業プレーヤー
 
-- **Ping An Technology**: InsurTech knowledge graph, medical-financial KG
-- **China Merchants Bank**: AI-driven risk management using graph analytics
-- **ICBC**: Largest bank in the world, investing in financial KG for risk management
+- **Ping An Technology（平安科技）**: インシュアテック知識グラフ、医療・金融知識グラフ
+- **China Merchants Bank（招商銀行）**: グラフアナリティクスを用いたAI駆動型リスク管理
+- **ICBC（中国工商銀行）**: 世界最大の銀行、リスク管理のための金融知識グラフに投資
 
-### Conferences and Organizations
+### 学会・組織
 
-| Organization/Conference | Focus |
+| 組織・学会 | 焦点 |
 |------------------------|-------|
-| **CCKS** (China Conference on Knowledge Graph and Semantic Computing) | Premier Chinese KG venue |
-| **OpenKG** | Open Chinese Knowledge Graph community |
-| **SMP** (Social Media Processing) | Including financial text analysis |
-| **NLPCC** (Natural Language Processing and Chinese Computing) | Chinese NLP including financial applications |
-| **CCF** (China Computer Federation) | Umbrella organization for CS conferences |
+| **CCKS** (China Conference on Knowledge Graph and Semantic Computing) | 中国を代表する知識グラフ学会 |
+| **OpenKG** | 中国語オープン知識グラフコミュニティ |
+| **SMP** (Social Media Processing) | 金融テキスト分析を含む |
+| **NLPCC** (Natural Language Processing and Chinese Computing) | 金融応用を含む中国語NLP |
+| **CCF** (China Computer Federation) | 情報科学系学会の統括組織 |
 
-- Strong emphasis on practical applications and large-scale deployment
-- Government-funded initiatives (e.g., New Generation AI Development Plan)
-- Integration with China's social credit system and fintech regulatory framework
+- 実用的応用と大規模展開への強い重点
+- 政府資金によるイニシアチブ（例: 新世代AI発展計画）
+- 中国の社会信用システムおよびフィンテック規制枠組みとの統合
 
 ---
 
-## Hong Kong (香港)
+## 香港
 
-### HKUST FinAI Lab
+### HKUST FinAI Lab（香港科技大学 金融AIラボ）
 
-- **Led by Yuan Zixuan (袁子軒)**
-  - Financial AI research: knowledge graphs for finance, GNN for stock prediction
-  - FinKG projects and benchmarks for financial knowledge graphs
-  - Cross-border research connecting mainland China and international finance
-  - Research on Hong Kong and Greater China financial markets
-  - Publications in top AI/NLP venues (ACL, EMNLP, KDD)
+- **袁子軒 (Yuan Zixuan) 主導**
+  - 金融AI研究: 金融のための知識グラフ、株価予測のためのGNN
+  - FinKGプロジェクトおよび金融知識グラフのベンチマーク
+  - 中国本土と国際金融を結ぶ国境を越えた研究
+  - 香港およびグレーターチャイナの金融市場に関する研究
+  - トップAI/NLP学会（ACL、EMNLP、KDD）への発表
 
-### Other Hong Kong Institutions
+### その他の香港の機関
 
-| Institution | Focus Areas |
+| 機関 | 研究分野 |
 |-------------|-------------|
-| **HKU Business School** | Corporate governance in Asia-Pacific, ownership networks |
-| **CUHK** | Financial engineering, network analysis, Chinese financial markets |
-| **City University of Hong Kong** | Complex network analysis, computational finance |
-| **PolyU** | Financial technology, blockchain network analysis |
-| **HKMA** (Hong Kong Monetary Authority) | Payment system network analysis, financial stability |
+| **HKU Business School（香港大学ビジネススクール）** | アジア太平洋地域のコーポレートガバナンス、所有ネットワーク |
+| **CUHK（香港中文大学）** | 金融工学、ネットワーク分析、中国金融市場 |
+| **City University of Hong Kong（香港城市大学）** | 複雑ネットワーク分析、計算金融 |
+| **PolyU（香港理工大学）** | 金融技術、ブロックチェーンネットワーク分析 |
+| **HKMA（香港金融管理局）** | 決済システムのネットワーク分析、金融安定性 |
 
-### Hong Kong's Unique Position
+### 香港のユニークな位置づけ
 
-- International financial center bridging East and West
-- Dual listing platform (Hong Kong Stock Connect with Shanghai/Shenzhen)
-- Cross-border capital flow network analysis
-- RMB internationalization network hub
-- Common law framework with proximity to Chinese markets
+- 東西を結ぶ国際金融センター
+- デュアルリスティングプラットフォーム（上海・深圳とのストックコネクト）
+- 国境を越える資本フローのネットワーク分析
+- 人民元国際化のネットワークハブ
+- 中国市場に近接したコモンロー法体系
 
 ---
 
-## Singapore (シンガポール)
+## シンガポール
 
-### NUS FinTech Lab
+### NUS FinTech Lab（シンガポール国立大学フィンテックラボ）
 
-- **National University of Singapore**
-  - FinTech research including graph analytics for banking
-  - Collaboration with MAS (Monetary Authority of Singapore)
-  - Digital banking and payment network research
-  - Cross-border payment network optimization
-  - Faculty: many internationally recognized researchers in computational finance
+- **National University of Singapore (NUS)**
+  - 銀行向けグラフアナリティクスを含むフィンテック研究
+  - MAS（シンガポール金融管理局）との共同研究
+  - デジタルバンキングおよび決済ネットワーク研究
+  - 国境を越える決済ネットワークの最適化
+  - 計算金融分野で国際的に著名な研究者が多数在籍
 
-### AIDF (Asian Institute of Digital Finance)
+### AIDF（Asian Institute of Digital Finance / アジアデジタル金融研究所）
 
-- NUS-affiliated research institute
-- AI and digital finance research across Southeast Asia
-- Cross-institutional collaboration across Asia
-- Research themes: digital payments, AI risk management, blockchain networks
-- Industry partnerships with major banks and fintech firms
+- NUS傘下の研究機関
+- 東南アジア全域にわたるAIおよびデジタル金融研究
+- アジア全域の機関横断的な共同研究
+- 研究テーマ: デジタル決済、AIリスク管理、ブロックチェーンネットワーク
+- 主要銀行およびフィンテック企業との産業パートナーシップ
 
-### CRI (Credit Research Initiative)
+### CRI（Credit Research Initiative / 信用リスク研究イニシアチブ）
 
-| Aspect | Details |
+| 項目 | 詳細 |
 |--------|---------|
-| Affiliation | NUS Risk Management Institute |
-| Focus | Default risk network analysis |
-| Coverage | Asian credit market interconnectedness |
-| Output | Public default probability data for Asian firms |
-| Network Analysis | Contagion effects in Asian credit markets |
-| Data | Covers ~60,000+ exchange-listed firms globally |
+| 所属 | NUSリスク管理研究所 |
+| 焦点 | デフォルトリスクのネットワーク分析 |
+| カバレッジ | アジア信用市場の相互連関性 |
+| 成果 | アジア企業の公開デフォルト確率データ |
+| ネットワーク分析 | アジア信用市場における伝染効果 |
+| データ | 世界の上場企業約60,000社以上をカバー |
 
-### MAS (Monetary Authority of Singapore)
+### MAS（Monetary Authority of Singapore / シンガポール金融管理局）
 
-- **Regulatory Sandbox Approach**
-  - Innovation-friendly regulation for fintech experimentation
-  - Graph-based regulatory technology (RegTech) development
+- **レギュラトリー・サンドボックス・アプローチ**
+  - フィンテック実験のためのイノベーション促進型規制
+  - グラフベースのレグテック（RegTech）開発
 - **Project Ubin**
-  - CBDC (Central Bank Digital Currency) payment network experiments
-  - Distributed ledger technology for interbank settlement
-  - Multi-currency payment network prototyping
-  - Collaboration with Bank of Canada (Project Jasper) and others
-- **RegTech and SupTech Initiatives**
-  - Supervisory technology using network analysis
-  - Anti-money laundering network analytics
-  - COSMIC platform for collaborative AML network analysis
+  - CBDC（中央銀行デジタル通貨）決済ネットワーク実験
+  - 銀行間決済のための分散型台帳技術
+  - 多通貨決済ネットワークのプロトタイピング
+  - カナダ銀行（Project Jasper）等との連携
+- **レグテックおよびスプテックのイニシアチブ**
+  - ネットワーク分析を用いた監督技術
+  - アンチマネーロンダリングのネットワーク分析
+  - 協調型AMLネットワーク分析のためのCOSMICプラットフォーム
 
-### Other Singapore Institutions
+### その他のシンガポールの機関
 
-- **NTU (Nanyang Technological University)**: Graph-based financial analytics, AI for trading
-- **SMU (Singapore Management University)**: Financial network econometrics
-- **SUTD**: Computational approaches to financial systems
+- **NTU（南洋理工大学）**: グラフベースの金融分析、取引のためのAI
+- **SMU（シンガポール経営大学）**: 金融ネットワーク計量経済学
+- **SUTD（シンガポール工科デザイン大学）**: 金融システムへの計算的アプローチ
 
 ---
 
-## Korea (韓国)
+## 韓国
 
-### SNU Data Mining Lab
+### SNU Data Mining Lab（ソウル大学データマイニング研究室）
 
-- **Seoul National University (서울대학교)**
-  - Financial network mining and analysis
-  - Stock market prediction using graph methods
-  - Korean corporate network analysis (chaebol structures)
-  - Social network analysis applied to Korean financial markets
-  - Research on Korean stock market co-movement networks
+- **ソウル大学 (Seoul National University / 서울대학교)**
+  - 金融ネットワークマイニングと分析
+  - グラフ手法を用いた株式市場予測
+  - 韓国企業ネットワーク分析（財閥構造）
+  - 韓国金融市場に適用されたソーシャルネットワーク分析
+  - 韓国株式市場の連動性ネットワークに関する研究
 
 ### KAIST
 
-- **Korea Advanced Institute of Science and Technology (한국과학기술원)**
-  - AI for finance research group
-  - Graph analytics for Korean financial markets
-  - Chaebol ownership network analysis and visualization
-  - Deep learning on graph-structured financial data
-  - Research on Korean bond market networks
+- **韓国科学技術院 (Korea Advanced Institute of Science and Technology / 한국과학기술원)**
+  - 金融のためのAI研究グループ
+  - 韓国金融市場のためのグラフアナリティクス
+  - 財閥所有ネットワークの分析と可視化
+  - グラフ構造金融データに対する深層学習
+  - 韓国債券市場ネットワークに関する研究
 
-### Korean Government and Regulatory Bodies
+### 韓国の政府・規制機関
 
-| Organization | Role in Network/Graph Research |
+| 組織 | ネットワーク/グラフ研究における役割 |
 |-------------|-------------------------------|
-| **KFTC** (Korea Fair Trade Commission / 공정거래위원회) | Chaebol ownership disclosure, circular ownership data |
-| **BOK** (Bank of Korea / 한국은행) | Financial stability network analysis, payment system monitoring |
-| **FSS** (Financial Supervisory Service / 금융감독원) | Regulatory network analysis, systemic risk monitoring |
-| **KRX** (Korea Exchange / 한국거래소) | Market microstructure network data |
-| **KOSIS** (Korean Statistical Information Service) | Economic network data |
+| **KFTC**（公正取引委員会 / 공정거래위원회） | 財閥の所有構造開示、循環出資データ |
+| **BOK**（韓国銀行 / 한국은행） | 金融安定性ネットワーク分析、決済システム監視 |
+| **FSS**（金融監督院 / 금융감독원） | 規制ネットワーク分析、システミックリスク監視 |
+| **KRX**（韓国取引所 / 한국거래소） | 市場マイクロストラクチャーのネットワークデータ |
+| **KOSIS**（韓国統計情報サービス） | 経済ネットワークデータ |
 
-### Chaebol Network Analysis
+### 財閥ネットワーク分析
 
-Korean chaebols represent some of the most complex corporate ownership structures globally:
+韓国の財閥は、世界で最も複雑な企業所有構造の一つを形成している:
 
-- **Major Chaebols**: Samsung (삼성), Hyundai (현대), LG, SK, Lotte (롯데), Hanwha (한화)
-- **Complex circular ownership structures**: Firms within a chaebol hold shares in each other, creating intricate ownership loops
-- **KFTC disclosure data**: Annual publication of cross-shareholding structures for top 30 chaebols
-- **Research topics**:
-  - Mapping circular ownership paths and tunneling risk
-  - Control vs. cash-flow rights divergence
-  - Network centrality of holding companies
-  - Effects of ownership reform regulations
-  - Comparison with pre-reform Japanese keiretsu
+- **主要財閥**: Samsung（삼성）、Hyundai（현대）、LG、SK、Lotte（롯데）、Hanwha（한화）
+- **複雑な循環出資構造**: 財閥内の企業が相互に株式を保有し、複雑な所有ループを形成
+- **KFTC開示データ**: 上位30財閥の持ち合い構造の年次公表
+- **研究テーマ**:
+  - 循環出資経路とトンネリングリスクのマッピング
+  - 支配権とキャッシュフロー権の乖離
+  - 持株会社のネットワーク中心性
+  - 所有構造改革規制の効果
+  - 改革前の日本の系列との比較
 
 ---
 
-## Cross-Regional Themes
+## 地域横断的テーマ
 
-### Comparison of East Asian Corporate Networks
+### 東アジア企業ネットワークの比較
 
-| Feature | Japan (Keiretsu / 系列) | Korea (Chaebol / 재벌) | China (SOE Groups / 国有企业集团) |
+| 特徴 | 日本（系列） | 韓国（財閥 / 재벌） | 中国（国有企業集団 / 国有企业集团） |
 |---------|------------------------|----------------------|-------------------------------|
-| **Structure** | Horizontal (kinyu) / Vertical (seisan) | Family-controlled conglomerate | State-controlled hierarchical |
-| **Ownership** | Cross-shareholding (declining) | Circular ownership (regulated) | Government hierarchy via SASAC |
-| **Central Entity** | Main bank / General trading company (商社) | Holding company / Founding family | SASAC (国资委) / Party committee |
-| **Peak Period** | 1960s-1990s | 1970s-present | 1990s-present |
-| **Reform Pressure** | Stewardship Code / CG Code (2014-) | KFTC regulations / Circular ownership ban | Mixed ownership reform (混合所有制改革) |
-| **Network Density** | Declining since 2000s | High (but under reform pressure) | Complex, multi-layered |
-| **Key Data Sources** | TSR, TDB, Nikkei | KFTC, KRX, DART | CSRC, CSMAR, CNINFO |
-| **Research Tradition** | Econophysics, production networks | Corporate governance, ownership | State capitalism, political connections |
+| **構造** | 水平型（金融系列）/ 垂直型（生産系列） | 創業家支配の財閥 | 国家支配の階層型 |
+| **所有構造** | 持ち合い株式（減少傾向） | 循環出資（規制対象） | SASACを通じた政府の階層的支配 |
+| **中核的主体** | メインバンク / 総合商社 | 持株会社 / 創業家 | SASAC（国資委）/ 党委員会 |
+| **最盛期** | 1960年代-1990年代 | 1970年代-現在 | 1990年代-現在 |
+| **改革圧力** | スチュワードシップ・コード / CGコード（2014年-） | KFTC規制 / 循環出資禁止 | 混合所有制改革 |
+| **ネットワーク密度** | 2000年代以降減少 | 高い（ただし改革圧力下） | 複雑、多層的 |
+| **主要データソース** | TSR、TDB、日経 | KFTC、KRX、DART | CSRC、CSMAR、CNINFO |
+| **研究の伝統** | 経済物理学、生産ネットワーク | コーポレートガバナンス、所有構造 | 国家資本主義、政治的コネクション |
 
-### Pan-Asian Financial Network Research Opportunities
+### 汎アジア金融ネットワーク研究の機会
 
-#### Cross-Border Ownership Networks
-- Asian cross-border FDI and portfolio investment networks
-- Mapping capital flow networks across ASEAN+3
-- Hong Kong and Singapore as network intermediaries
-- Tax haven connections in Asian corporate structures
+#### 国境を越える所有ネットワーク
+- アジアの国境を越えたFDI（外国直接投資）およびポートフォリオ投資ネットワーク
+- ASEAN+3における資本フローネットワークのマッピング
+- ネットワーク仲介者としての香港とシンガポール
+- アジア企業構造におけるタックスヘイブンとの接続
 
-#### Belt and Road Initiative (BRI) Financial Networks
-- Mapping BRI project financing networks
-- Chinese development finance institution lending networks
-- Infrastructure investment network effects across participating countries
-- Debt sustainability network analysis for BRI borrowers
+#### 一帯一路構想（BRI）の金融ネットワーク
+- BRIプロジェクトファイナンスネットワークのマッピング
+- 中国の開発金融機関の融資ネットワーク
+- 参加国全体にわたるインフラ投資のネットワーク効果
+- BRI借入国の債務持続可能性に関するネットワーク分析
 
-#### ASEAN Financial Integration Networks
-- ASEAN Banking Integration Framework (ABIF) network analysis
-- Cross-border banking network expansion in Southeast Asia
-- Payment system interconnection (QR code payment networks)
-- Capital market integration network analysis
+#### ASEAN金融統合ネットワーク
+- ASEAN Banking Integration Framework (ABIF) のネットワーク分析
+- 東南アジアにおける国境を越えた銀行ネットワークの拡大
+- 決済システムの相互接続（QRコード決済ネットワーク）
+- 資本市場統合のネットワーク分析
 
-#### Asian Bond Market Interconnectedness
-- Asian Bond Markets Initiative (ABMI) network effects
-- Government bond market co-movement networks
-- Credit spread transmission networks across Asian markets
-- Currency swap network among Asian central banks (Chiang Mai Initiative)
+#### アジア債券市場の相互連関性
+- Asian Bond Markets Initiative (ABMI) のネットワーク効果
+- 国債市場の連動性ネットワーク
+- アジア市場全体のクレジットスプレッド伝播ネットワーク
+- アジア中央銀行間の通貨スワップネットワーク（チェンマイ・イニシアチブ）
 
-#### Comparative Governance Reform Analysis
-- Corporate governance code adoption networks across Asia
-- Stewardship code diffusion patterns (Japan -> other Asian markets)
-- ESG disclosure network effects and peer influence
-- Institutional investor engagement network analysis
+#### ガバナンス改革の比較分析
+- アジア全域におけるコーポレートガバナンス・コード導入のネットワーク
+- スチュワードシップ・コードの普及パターン（日本 -> 他のアジア市場）
+- ESG開示のネットワーク効果とピア効果
+- 機関投資家エンゲージメントのネットワーク分析
 
 ---
 
-### Key Conferences and Venues for Asian Financial Network Research
+### アジア金融ネットワーク研究の主要な学会・場
 
-| Conference / Workshop | Location | Focus |
+| 学会 / ワークショップ | 場所 | 焦点 |
 |----------------------|----------|-------|
-| Nikkei Econophysics | Tokyo | Econophysics, financial network analysis |
-| APFA (Asia-Pacific Financial Association) | Rotating (Asia) | Financial economics, network finance |
-| Asian FA (Asian Finance Association) | Rotating (Asia) | Finance research in Asian markets |
-| CCKS | China | Knowledge graphs, semantic computing |
-| JSAI (Japanese Society for Artificial Intelligence) | Japan | AI including financial KG research |
-| JAFEE (Japan Association of Financial Econometrics and Engineering) | Japan | Financial engineering, network methods |
-| AsianNLP / AACL | Rotating (Asia) | Asian language NLP including financial text |
-| AECONF (Asian Econophysics Colloquium) | Rotating (Asia) | Econophysics research in Asia |
+| 日経エコノフィジックス | 東京 | 経済物理学、金融ネットワーク分析 |
+| APFA (Asia-Pacific Financial Association) | アジア持ち回り | 金融経済学、ネットワーク金融 |
+| Asian FA (Asian Finance Association) | アジア持ち回り | アジア市場における金融研究 |
+| CCKS | 中国 | 知識グラフ、セマンティックコンピューティング |
+| JSAI（人工知能学会） | 日本 | 金融知識グラフ研究を含むAI |
+| JAFEE（日本金融・証券計量・工学学会） | 日本 | 金融工学、ネットワーク手法 |
+| AsianNLP / AACL | アジア持ち回り | 金融テキストを含むアジア言語NLP |
+| AECONF (Asian Econophysics Colloquium) | アジア持ち回り | アジアにおける経済物理学研究 |
 
 ---
 
-### Selected Key References
+### 主要参考文献
 
 #### Japan
 
@@ -504,12 +503,12 @@ Korean chaebols represent some of the most complex corporate ownership structure
 
 ---
 
-### Research Gaps and Future Directions
+### 研究のギャップと今後の方向性
 
-1. **Cross-border firm network mapping** - Linking Japanese TSR data with Chinese CSMAR data and Korean KFTC data to create pan-Asian firm networks
-2. **Multilingual financial knowledge graphs** - Bridging Japanese (日本語), Chinese (中文), and Korean (한국어) financial ontologies
-3. **Real-time supply chain network monitoring** - Post-COVID applications across Asian supply chains
-4. **Digital currency network effects** - Analyzing impacts of China's e-CNY, Japan's digital yen exploration, and Korea's CBDC pilot on payment networks
-5. **ESG network propagation** - How ESG practices and disclosure diffuse through Asian corporate networks
-6. **Comparative RegTech** - Cross-jurisdictional regulatory network analysis across Asian financial authorities
-7. **Asian financial center competition** - Network analysis of how Tokyo, Shanghai, Hong Kong, Singapore, and Seoul compete and complement as financial hubs
+1. **国境を越えた企業ネットワークのマッピング** - 日本のTSRデータ、中国のCSMARデータ、韓国のKFTCデータを連携させ、汎アジア企業ネットワークを構築
+2. **多言語金融知識グラフ** - 日本語、中国語（中文）、韓国語（한국어）の金融オントロジーの橋渡し
+3. **リアルタイムサプライチェーンネットワーク監視** - コロナ後のアジアのサプライチェーンにおける応用
+4. **デジタル通貨のネットワーク効果** - 中国のe-CNY、日本のデジタル円検討、韓国のCBDCパイロットが決済ネットワークに与える影響の分析
+5. **ESGのネットワーク伝播** - アジアの企業ネットワークを通じたESG慣行と開示の拡散
+6. **レグテックの比較研究** - アジアの金融当局間における管轄横断的な規制ネットワーク分析
+7. **アジア金融センター間の競争** - 東京、上海、香港、シンガポール、ソウルが金融ハブとしてどのように競争し補完し合うかのネットワーク分析

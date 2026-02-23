@@ -1,594 +1,594 @@
-# Mathematical Foundations
+# 数学的基礎
 
-This chapter provides the mathematical underpinnings for financial network science — from classical graph theory through spectral methods, random matrix theory, knowledge graph formalisms, graph neural networks, and the theory of dynamic and multilayer networks.
-
----
-
-## 1. Graph Theory Fundamentals
-
-### Basic Definitions
-
-- **Graph**: $G = (V, E)$ where $V$ is a set of vertices (nodes) and $E \subseteq V \times V$ is a set of edges (links).
-- **Undirected graph**: Edges are unordered pairs $\{u, v\}$; the relationship is symmetric.
-- **Directed graph (digraph)**: Edges are ordered pairs $(u, v)$; direction matters (e.g., lending flows, ownership stakes).
-- **Weighted graph**: Each edge carries a weight $w_{ij} \in \mathbb{R}$ (e.g., correlation strength, exposure size).
-- **Bipartite graph**: $V = V_1 \cup V_2$ with $V_1 \cap V_2 = \emptyset$ and edges only between $V_1$ and $V_2$ (e.g., banks and assets, firms and directors).
-- **Hypergraph**: Edges (hyperedges) can connect any number of nodes simultaneously (e.g., a syndicated loan involving multiple banks).
-
-### Matrix Representations
-
-- **Adjacency matrix** $\mathbf{A}$: $A_{ij} = 1$ (or $w_{ij}$) if edge $(i,j) \in E$, else 0. Symmetric for undirected graphs.
-- **Degree matrix** $\mathbf{D}$: Diagonal matrix with $D_{ii} = \sum_j A_{ij}$ (the degree of node $i$).
-- **Laplacian matrix** $\mathbf{L} = \mathbf{D} - \mathbf{A}$: Positive semidefinite for undirected graphs; encodes diffusion dynamics.
-  - **Normalized Laplacian**: $\mathcal{L} = \mathbf{D}^{-1/2}\mathbf{L}\mathbf{D}^{-1/2} = \mathbf{I} - \mathbf{D}^{-1/2}\mathbf{A}\mathbf{D}^{-1/2}$
-  - **Random walk Laplacian**: $\mathbf{L}_{rw} = \mathbf{D}^{-1}\mathbf{L} = \mathbf{I} - \mathbf{D}^{-1}\mathbf{A}$
-- **Incidence matrix** $\mathbf{B}$: $N \times M$ matrix (N nodes, M edges); $B_{ie} = \pm 1$ indicating endpoints of edge $e$. Relates to the Laplacian via $\mathbf{L} = \mathbf{B}\mathbf{B}^T$.
-
-### Paths, Walks, Cycles, and Connectivity
-
-- **Walk**: A sequence of adjacent vertices (vertices and edges may repeat).
-- **Path**: A walk with no repeated vertices.
-- **Cycle**: A closed walk with no repeated vertices except start = end.
-- **Connected graph**: There exists a path between every pair of vertices. For digraphs: **strongly connected** (directed path in both directions) vs. **weakly connected** (connected when ignoring edge direction).
-- **Connected components**: Maximal connected subgraphs.
-- **Shortest path distance** $d(u,v)$: Minimum number of edges (or minimum total weight) on any path from $u$ to $v$.
-- **Diameter**: $\max_{u,v} d(u,v)$ — the longest shortest path in the graph.
-
-### Trees and Spanning Trees
-
-- **Tree**: A connected acyclic graph. A tree on $N$ nodes has exactly $N-1$ edges.
-- **Spanning tree**: A subgraph that is a tree and includes all vertices of $G$.
-- **Minimum Spanning Tree (MST)**: The spanning tree minimizing total edge weight. Algorithms: Kruskal's $O(E \log E)$, Prim's $O(E + V \log V)$.
-- **Cayley's formula**: The complete graph $K_n$ has $n^{n-2}$ spanning trees.
-
-### Planarity and Graph Embeddings
-
-- **Planar graph**: Can be drawn in the plane without edge crossings.
-- **Kuratowski's theorem**: A graph is planar iff it contains no subdivision of $K_5$ or $K_{3,3}$.
-- **Euler's formula**: For connected planar graphs, $V - E + F = 2$ (where $F$ = number of faces).
-- **Graph embeddings**: Representing graphs on surfaces of higher genus. Relevant to PMFG and TMFG construction in financial networks.
+本章では、金融ネットワーク科学の数学的基盤を提供する。古典的グラフ理論からスペクトル手法、ランダム行列理論、知識グラフの形式化、グラフニューラルネットワーク、そして動的ネットワークおよび多層ネットワークの理論までを扱う。
 
 ---
 
-## 2. Centrality Measures
+## 1. グラフ理論の基礎
 
-Centrality quantifies the "importance" of a node within a network. Different centrality measures capture different notions of importance.
+### 基本的な定義
 
-### Degree Centrality
+- **グラフ**: $G = (V, E)$、ここで $V$ は頂点（ノード）の集合、$E \subseteq V \times V$ は辺（リンク）の集合。
+- **無向グラフ**: 辺は順序のない対 $\{u, v\}$ であり、関係は対称的。
+- **有向グラフ（ダイグラフ）**: 辺は順序のある対 $(u, v)$ であり、方向が重要（例: 融資フロー、所有持分）。
+- **重み付きグラフ**: 各辺が重み $w_{ij} \in \mathbb{R}$ を持つ（例: 相関の強さ、エクスポージャーの大きさ）。
+- **二部グラフ**: $V = V_1 \cup V_2$ かつ $V_1 \cap V_2 = \emptyset$ で、辺は $V_1$ と $V_2$ の間にのみ存在する（例: 銀行と資産、企業と取締役）。
+- **ハイパーグラフ**: 辺（ハイパーエッジ）は任意の数のノードを同時に接続できる（例: 複数の銀行が参加するシンジケートローン）。
 
-- **Definition**: $C_D(i) = k_i = \sum_j A_{ij}$
-- **In-degree** (directed): $k_i^{in} = \sum_j A_{ji}$ — how many edges point to $i$.
-- **Out-degree** (directed): $k_i^{out} = \sum_j A_{ij}$ — how many edges originate from $i$.
-- **Weighted degree** (strength): $s_i = \sum_j w_{ij}$
-- Simple and fast ($O(N)$); captures local importance but not global position.
+### 行列表現
 
-### Betweenness Centrality
+- **隣接行列** $\mathbf{A}$: 辺 $(i,j) \in E$ の場合 $A_{ij} = 1$（または $w_{ij}$）、それ以外は0。無向グラフでは対称。
+- **次数行列** $\mathbf{D}$: $D_{ii} = \sum_j A_{ij}$（ノード $i$ の次数）を要素とする対角行列。
+- **ラプラシアン行列** $\mathbf{L} = \mathbf{D} - \mathbf{A}$: 無向グラフでは半正定値。拡散ダイナミクスを記述する。
+  - **正規化ラプラシアン**: $\mathcal{L} = \mathbf{D}^{-1/2}\mathbf{L}\mathbf{D}^{-1/2} = \mathbf{I} - \mathbf{D}^{-1/2}\mathbf{A}\mathbf{D}^{-1/2}$
+  - **ランダムウォーク・ラプラシアン**: $\mathbf{L}_{rw} = \mathbf{D}^{-1}\mathbf{L} = \mathbf{I} - \mathbf{D}^{-1}\mathbf{A}$
+- **接続行列** $\mathbf{B}$: $N \times M$ 行列（Nノード、M辺）。$B_{ie} = \pm 1$ で辺 $e$ の端点を示す。ラプラシアンとの関係: $\mathbf{L} = \mathbf{B}\mathbf{B}^T$。
 
-- **Shortest-path betweenness**: $C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}$ where $\sigma_{st}$ is the number of shortest paths from $s$ to $t$ and $\sigma_{st}(v)$ is the number passing through $v$.
-- Identifies **bottleneck** nodes: removal of high-betweenness nodes disrupts information/risk flow.
-- **Flow betweenness**: Uses maximum flow instead of shortest paths — captures all possible routes, not just geodesics.
-- Computational cost: $O(NE)$ for unweighted, $O(NE + N^2 \log N)$ for weighted (Brandes' algorithm).
+### パス、ウォーク、サイクル、連結性
 
-### Closeness Centrality
+- **ウォーク**: 隣接する頂点の列（頂点と辺が繰り返されてもよい）。
+- **パス**: 頂点が繰り返されないウォーク。
+- **サイクル**: 始点と終点が同じで、それ以外に頂点の繰り返しがない閉じたウォーク。
+- **連結グラフ**: すべての頂点対の間にパスが存在する。有向グラフの場合: **強連結**（双方向に有向パスが存在）と**弱連結**（辺の方向を無視すると連結）。
+- **連結成分**: 極大連結部分グラフ。
+- **最短パス距離** $d(u,v)$: $u$ から $v$ へのパス上の辺の最小数（または最小総重み）。
+- **直径**: $\max_{u,v} d(u,v)$ — グラフ内の最長最短パス。
 
-- **Definition**: $C_C(i) = \frac{N-1}{\sum_{j \neq i} d(i,j)}$ — inverse of average distance to all other nodes.
-- **Harmonic closeness**: $C_H(i) = \frac{1}{N-1}\sum_{j \neq i} \frac{1}{d(i,j)}$ — handles disconnected graphs (infinite distances become zero contribution).
-- **Information centrality**: Based on information contained in all paths (not just shortest), using the graph's effective resistance.
+### 木と全域木
 
-### Eigenvector Centrality
+- **木**: 連結な非巡回グラフ。$N$ ノードの木はちょうど $N-1$ 本の辺を持つ。
+- **全域木**: $G$ のすべての頂点を含む木である部分グラフ。
+- **最小全域木 (MST)**: 辺の総重みを最小化する全域木。アルゴリズム: Kruskalの $O(E \log E)$、Primの $O(E + V \log V)$。
+- **Cayleyの公式**: 完全グラフ $K_n$ は $n^{n-2}$ 個の全域木を持つ。
 
-- **Definition**: $\mathbf{A}\mathbf{x} = \lambda_1 \mathbf{x}$ — the eigenvector corresponding to the largest eigenvalue of the adjacency matrix.
-- A node is important if it is connected to other important nodes (self-referential definition resolved by eigenvalue decomposition).
-- **Bonacich power index**: $c_i(\alpha, \beta) = \sum_j (\alpha + \beta c_j) A_{ij}$ — parameterized centrality that interpolates between degree ($\beta = 0$) and eigenvector centrality.
-- Converges via power iteration; requires the graph to be connected (by Perron-Frobenius theorem, the leading eigenvector is positive).
+### 平面性とグラフの埋め込み
+
+- **平面グラフ**: 辺の交差なしに平面上に描画できるグラフ。
+- **Kuratowskiの定理**: グラフが平面的であるのは、$K_5$ または $K_{3,3}$ の細分を含まない場合に限る。
+- **Eulerの公式**: 連結平面グラフにおいて $V - E + F = 2$（$F$ = 面の数）。
+- **グラフの埋め込み**: より高い種数の曲面上でのグラフ表現。金融ネットワークにおけるPMFGおよびTMFGの構成に関連。
+
+---
+
+## 2. 中心性指標
+
+中心性は、ネットワーク内におけるノードの「重要性」を定量化する。異なる中心性指標は異なる重要性の概念を捉える。
+
+### 次数中心性
+
+- **定義**: $C_D(i) = k_i = \sum_j A_{ij}$
+- **入次数**（有向）: $k_i^{in} = \sum_j A_{ji}$ — $i$ を指す辺の数。
+- **出次数**（有向）: $k_i^{out} = \sum_j A_{ij}$ — $i$ から出発する辺の数。
+- **重み付き次数**（強度）: $s_i = \sum_j w_{ij}$
+- 単純で高速（$O(N)$）。局所的な重要性を捉えるが、大域的な位置は捉えない。
+
+### 媒介中心性
+
+- **最短パス媒介中心性**: $C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}$、ここで $\sigma_{st}$ は $s$ から $t$ への最短パスの数、$\sigma_{st}(v)$ は $v$ を通過する最短パスの数。
+- **ボトルネック**ノードを識別: 高い媒介中心性を持つノードの除去は情報/リスクの流れを阻害する。
+- **フロー媒介中心性**: 最短パスの代わりに最大フローを使用 — 測地線だけでなく、すべての可能な経路を捉える。
+- 計算コスト: 重みなしで $O(NE)$、重み付きで $O(NE + N^2 \log N)$（Brandesのアルゴリズム）。
+
+### 近接中心性
+
+- **定義**: $C_C(i) = \frac{N-1}{\sum_{j \neq i} d(i,j)}$ — 他のすべてのノードまでの平均距離の逆数。
+- **調和的近接中心性**: $C_H(i) = \frac{1}{N-1}\sum_{j \neq i} \frac{1}{d(i,j)}$ — 非連結グラフに対応（無限距離はゼロの寄与となる）。
+- **情報中心性**: すべてのパス（最短パスだけでなく）に含まれる情報に基づき、グラフの実効抵抗を使用。
+
+### 固有ベクトル中心性
+
+- **定義**: $\mathbf{A}\mathbf{x} = \lambda_1 \mathbf{x}$ — 隣接行列の最大固有値に対応する固有ベクトル。
+- あるノードが重要であるのは、他の重要なノードと接続されている場合（自己参照的な定義が固有値分解により解決される）。
+- **Bonacichべき指数**: $c_i(\alpha, \beta) = \sum_j (\alpha + \beta c_j) A_{ij}$ — 次数（$\beta = 0$）と固有ベクトル中心性を補間するパラメータ付き中心性。
+- べき乗反復で収束。グラフが連結である必要がある（Perron-Frobeniusの定理により、主固有ベクトルは正）。
 
 ### PageRank
 
-- Introduced by **Brin & Page (1998)** for ranking web pages.
-- **Random walk interpretation**: PageRank is the stationary distribution of a random walker who, at each step, follows a random outgoing link with probability $\alpha$ and teleports to a uniformly random node with probability $1-\alpha$.
+- **Brin & Page (1998)** によりウェブページランキングのために導入。
+- **ランダムウォーク解釈**: PageRankは、各ステップで確率 $\alpha$ でランダムな出力リンクをたどり、確率 $1-\alpha$ で一様ランダムなノードにテレポートするランダムウォーカーの定常分布。
 $$\mathbf{p} = \alpha \mathbf{D}^{-1}\mathbf{A}^T \mathbf{p} + \frac{1-\alpha}{N}\mathbf{1}$$
-- **DebtRank as financial analogue**: Battiston et al. (2012) adapted the recursive centrality logic of PageRank to quantify systemic importance of financial institutions — a node's systemic impact depends on the impact of those it is connected to.
-- Damping factor $\alpha$ (typically 0.85) controls the balance between local and global importance.
+- **金融版としてのDebtRank**: Battiston et al. (2012) はPageRankの再帰的中心性ロジックを金融機関のシステミックな重要性の定量化に適用した — あるノードのシステミックな影響は、接続先のノードの影響に依存する。
+- 減衰係数 $\alpha$（通常0.85）は局所的重要性と大域的重要性のバランスを制御する。
 
-### Katz Centrality
+### Katz中心性
 
-- **Definition**: $C_{Katz}(i) = \sum_{k=1}^{\infty} \sum_{j} \alpha^k (A^k)_{ji}$
-- Counts **all walks** of all lengths from other nodes to $i$, with attenuation factor $\alpha^k$ for walks of length $k$.
-- Requires $\alpha < 1/\lambda_1$ for convergence.
-- Closed form: $\mathbf{c} = ((\mathbf{I} - \alpha\mathbf{A}^T)^{-1} - \mathbf{I})\mathbf{1}$
+- **定義**: $C_{Katz}(i) = \sum_{k=1}^{\infty} \sum_{j} \alpha^k (A^k)_{ji}$
+- 他のノードから $i$ への**すべてのウォーク**をすべての長さにわたって数え、長さ $k$ のウォークに対して減衰因子 $\alpha^k$ を適用。
+- 収束には $\alpha < 1/\lambda_1$ が必要。
+- 閉じた形: $\mathbf{c} = ((\mathbf{I} - \alpha\mathbf{A}^T)^{-1} - \mathbf{I})\mathbf{1}$
 
-### HITS (Hub and Authority Scores)
+### HITS（ハブとオーソリティスコア）
 
-- **Kleinberg (1999)**: Hyperlink-Induced Topic Search.
-- Two scores per node:
-  - **Authority score** $a_i$: high if pointed to by good hubs.
-  - **Hub score** $h_i$: high if pointing to good authorities.
-- Mutual reinforcement: $\mathbf{a} = \mathbf{A}^T\mathbf{h}$, $\mathbf{h} = \mathbf{A}\mathbf{a}$
-- Converges to leading eigenvectors of $\mathbf{A}^T\mathbf{A}$ (authorities) and $\mathbf{A}\mathbf{A}^T$ (hubs).
-- Financial application: In directed ownership or lending networks, authorities are key borrowers/investees and hubs are key lenders/investors.
+- **Kleinberg (1999)**: Hyperlink-Induced Topic Search。
+- 各ノードに2つのスコア:
+  - **オーソリティスコア** $a_i$: 良いハブから指されている場合に高い。
+  - **ハブスコア** $h_i$: 良いオーソリティを指している場合に高い。
+- 相互強化: $\mathbf{a} = \mathbf{A}^T\mathbf{h}$, $\mathbf{h} = \mathbf{A}\mathbf{a}$
+- $\mathbf{A}^T\mathbf{A}$（オーソリティ）と $\mathbf{A}\mathbf{A}^T$（ハブ）の主固有ベクトルに収束。
+- 金融への応用: 有向の所有権や融資ネットワークにおいて、オーソリティは主要な借り手/投資先であり、ハブは主要な貸し手/投資家である。
 
-### Applications in Finance
+### 金融への応用
 
-| Centrality | Financial Application |
+| 中心性 | 金融への応用 |
 |---|---|
-| Degree | Identifying most-connected banks in interbank networks |
-| Betweenness | Finding critical intermediaries whose failure disrupts the system |
-| Closeness | Assessing how quickly shocks propagate from a given institution |
-| Eigenvector | Identifying systemically important institutions (connected to other important ones) |
-| PageRank / DebtRank | Quantifying cascading systemic impact |
-| HITS | Distinguishing key lenders (hubs) from key borrowers (authorities) |
+| 次数 | インターバンクネットワークにおける最も接続の多い銀行の識別 |
+| 媒介 | その破綻がシステムを阻害する重要な仲介者の発見 |
+| 近接 | 特定の金融機関からショックがどれだけ速く伝播するかの評価 |
+| 固有ベクトル | システム上重要な金融機関の識別（他の重要な金融機関と接続） |
+| PageRank / DebtRank | カスケード的なシステミックインパクトの定量化 |
+| HITS | 主要な貸し手（ハブ）と主要な借り手（オーソリティ）の区別 |
 
 ---
 
-## 3. Community Detection
+## 3. コミュニティ検出
 
-### Modularity Optimization
+### モジュラリティ最適化
 
-- **Modularity** $Q$: Measures the fraction of edges within communities minus the expected fraction under a null model:
+- **モジュラリティ** $Q$: コミュニティ内の辺の割合からヌルモデルでの期待割合を引いた値を測定:
 $$Q = \frac{1}{2m}\sum_{ij}\left[A_{ij} - \frac{k_i k_j}{2m}\right]\delta(c_i, c_j)$$
-  where $m = \frac{1}{2}\sum_{ij} A_{ij}$, $k_i$ is the degree of node $i$, and $\delta(c_i, c_j) = 1$ if $i$ and $j$ are in the same community.
+  ここで $m = \frac{1}{2}\sum_{ij} A_{ij}$、$k_i$ はノード $i$ の次数、$\delta(c_i, c_j) = 1$ は $i$ と $j$ が同じコミュニティに属する場合。
 
-- **Newman-Girvan algorithm**: Iteratively remove edges with highest betweenness; dendrogram yields community structure. $O(N^2 E)$ — slow for large networks.
-- **Louvain algorithm** (Blondel et al., 2008): Fast greedy modularity optimization. Two phases: (1) local node moves to maximize modularity gain, (2) aggregate communities into super-nodes. Repeat. Near-linear time.
-- **Leiden algorithm** (Traag et al., 2019): Improved version of Louvain that guarantees well-connected communities and avoids poorly connected or disconnected communities.
+- **Newman-Girvanアルゴリズム**: 最も高い媒介中心性を持つ辺を反復的に除去し、デンドログラムからコミュニティ構造を得る。$O(N^2 E)$ — 大規模ネットワークでは遅い。
+- **Louvainアルゴリズム** (Blondel et al., 2008): 高速な貪欲モジュラリティ最適化。2つのフェーズ: (1) モジュラリティの利得を最大化する局所的なノード移動、(2) コミュニティをスーパーノードに集約。これを繰り返す。ほぼ線形時間。
+- **Leidenアルゴリズム** (Traag et al., 2019): Louvainの改良版。よく接続されたコミュニティを保証し、接続性の弱いまたは非連結なコミュニティを回避。
 
-### Spectral Methods
+### スペクトル手法
 
-- **Spectral clustering**: Use the eigenvectors of the graph Laplacian $\mathbf{L}$ (or normalized Laplacian) to embed nodes in a low-dimensional space, then apply k-means.
-- The **Fiedler vector** (eigenvector of second-smallest Laplacian eigenvalue) provides the optimal 2-way graph cut (continuous relaxation of the NP-hard minimum cut problem).
-- Multi-way partitioning: use the $k$ smallest non-trivial eigenvectors for $k$-community detection.
+- **スペクトルクラスタリング**: グラフラプラシアン $\mathbf{L}$（または正規化ラプラシアン）の固有ベクトルを使用してノードを低次元空間に埋め込み、k-meansを適用。
+- **Fiedlerベクトル**（ラプラシアンの2番目に小さい固有値の固有ベクトル）は、NP困難な最小カット問題の連続緩和として最適な2分割を提供。
+- 多方向分割: $k$-コミュニティ検出のために最小の非自明な $k$ 個の固有ベクトルを使用。
 
-### Stochastic Block Models (SBM)
+### 確率的ブロックモデル (SBM)
 
-- **Planted partition model**: Nodes divided into groups; edge probability depends only on group membership. Edges within groups with probability $p$, between groups with probability $q$.
-- **Degree-corrected SBM**: Accounts for heterogeneous degree distributions within communities — more realistic for real-world networks.
-- **Inference**: Maximum likelihood or Bayesian estimation. Avoids the resolution limit of modularity.
-- **Detectability threshold**: Information-theoretic limit below which community structure cannot be detected (Decelle et al., 2011).
+- **植え付け分割モデル**: ノードをグループに分割し、辺の確率はグループ所属のみに依存する。グループ内辺確率 $p$、グループ間辺確率 $q$。
+- **次数補正SBM**: コミュニティ内の不均一な次数分布を考慮 — 実世界のネットワークにより適合。
+- **推定**: 最尤推定またはベイズ推定。モジュラリティの分解能限界を回避。
+- **検出可能性閾値**: コミュニティ構造が検出できなくなる情報理論的限界 (Decelle et al., 2011)。
 
-### Label Propagation
+### ラベル伝播
 
-- Each node adopts the label most common among its neighbors; iterate until convergence.
-- Very fast ($O(E)$ per iteration) but non-deterministic — results vary across runs.
-- Useful for very large networks where modularity optimization is too slow.
+- 各ノードがその近傍で最も一般的なラベルを採用し、収束するまで反復。
+- 非常に高速（反復あたり $O(E)$）だが非決定的 — 実行ごとに結果が異なる。
+- モジュラリティ最適化が遅すぎる非常に大規模なネットワークに有用。
 
-### Overlapping Communities
+### 重複コミュニティ
 
-- **BigCLAM** (Yang & Leskovec, 2013): Community detection via matrix factorization allowing nodes to belong to multiple communities.
-- **DEMON** (Coscia, Rossetti, Giannotti, Pedreschi, 2012): Democratic Estimate of the Modular Organization of a Network — bottom-up label propagation for overlapping communities.
-- Important for finance: a bank can belong to multiple communities (by geography, asset class, counterparty type).
+- **BigCLAM** (Yang & Leskovec, 2013): 行列分解によるコミュニティ検出で、ノードが複数のコミュニティに所属可能。
+- **DEMON** (Coscia, Rossetti, Giannotti, Pedreschi, 2012): 重複コミュニティのためのボトムアップ型ラベル伝播 — Democratic Estimate of the Modular Organization of a Network。
+- 金融にとって重要: 銀行は複数のコミュニティに属し得る（地域別、資産クラス別、カウンターパーティタイプ別）。
 
-### Financial Applications
+### 金融への応用
 
-| Method | Financial Application |
+| 手法 | 金融への応用 |
 |---|---|
-| Modularity (Louvain/Leiden) | Identifying market sectors from correlation networks |
-| Spectral clustering | Segmenting banking systems by structural role |
-| SBM | Modeling interbank lending community structure |
-| Overlapping communities | Banks in multiple functional groups (lending, derivatives, payments) |
-| All methods | Ownership cluster detection, supply chain community identification |
+| モジュラリティ (Louvain/Leiden) | 相関ネットワークからの市場セクターの識別 |
+| スペクトルクラスタリング | 構造的役割による銀行システムのセグメンテーション |
+| SBM | インターバンク融資のコミュニティ構造のモデリング |
+| 重複コミュニティ | 複数の機能グループ（融資、デリバティブ、決済）に属する銀行 |
+| 全手法 | 所有クラスターの検出、サプライチェーンのコミュニティ識別 |
 
 ---
 
-## 4. Network Models
+## 4. ネットワークモデル
 
-### Erdos-Renyi (ER) Random Graph
+### Erdos-Renyi (ER) ランダムグラフ
 
-- $G(N, p)$: Each of $\binom{N}{2}$ possible edges exists independently with probability $p$.
-- **Phase transitions**: Giant connected component emerges at $p = 1/N$. At $p = \ln(N)/N$, the graph becomes almost surely connected.
-- Degree distribution: Binomial → Poisson for large $N$.
-- Clustering coefficient: $C = p$ — no excess clustering (unlike real networks).
-- Used as a null model for comparison but unrealistic for financial networks.
+- $G(N, p)$: $\binom{N}{2}$ 個の可能な辺がそれぞれ独立に確率 $p$ で存在。
+- **相転移**: $p = 1/N$ で巨大連結成分が出現。$p = \ln(N)/N$ でグラフはほぼ確実に連結となる。
+- 次数分布: 二項分布 → 大きな $N$ ではPoisson分布。
+- クラスタリング係数: $C = p$ — 過剰なクラスタリングはない（実際のネットワークとは異なる）。
+- 比較のためのヌルモデルとして使用されるが、金融ネットワークには非現実的。
 
-### Barabasi-Albert (BA) Model
+### Barabasi-Albert (BA) モデル
 
-- **Preferential attachment**: New nodes connect to existing nodes with probability proportional to their degree.
-- Produces **scale-free networks** with power-law degree distribution: $P(k) \sim k^{-3}$.
-- "Rich get richer" — captures the emergence of hub nodes.
-- Financial relevance: some financial networks show heavy-tailed degree distributions (major banks with many counterparties), though true power laws are debated.
+- **優先的接続**: 新しいノードが既存ノードの次数に比例する確率で接続。
+- べき乗則の次数分布を持つ**スケールフリーネットワーク**を生成: $P(k) \sim k^{-3}$。
+- 「富める者がさらに富む」 — ハブノードの出現を捉える。
+- 金融への関連性: 一部の金融ネットワークはヘビーテールの次数分布を示す（多くのカウンターパーティを持つ大手銀行）が、真のべき乗則かは議論がある。
 
-### Watts-Strogatz (WS) Model
+### Watts-Strogatz (WS) モデル
 
-- Start with a regular ring lattice; rewire each edge with probability $\beta$.
-- Produces **small-world networks**: high clustering coefficient (like lattices) + short average path length (like random graphs).
-- Captures the "six degrees of separation" phenomenon observed in many social and financial networks.
+- 正則リング格子から出発し、各辺を確率 $\beta$ で再配線。
+- **スモールワールドネットワーク**を生成: 高いクラスタリング係数（格子に類似）+ 短い平均パス長（ランダムグラフに類似）。
+- 多くのソーシャルおよび金融ネットワークで観察される「六次の隔たり」現象を捉える。
 
-### Configuration Model
+### コンフィギュレーションモデル
 
-- **Preserves an arbitrary degree sequence**: Given a degree sequence $\{k_1, k_2, \ldots, k_N\}$, generate a random graph uniformly from all graphs with that sequence.
-- Used as a null model that preserves degree heterogeneity — tests whether observed properties (clustering, communities) go beyond what degree distribution alone explains.
-- Can produce multi-edges and self-loops; variants correct for this.
+- **任意の次数列を保存**: 次数列 $\{k_1, k_2, \ldots, k_N\}$ が与えられたとき、その次数列を持つすべてのグラフから一様にランダムグラフを生成。
+- 次数の不均一性を保存するヌルモデルとして使用 — 観察された特性（クラスタリング、コミュニティ）が次数分布だけで説明できる範囲を超えているかをテスト。
+- マルチエッジや自己ループを生成する可能性があり、これを修正する変種が存在。
 
-### Stochastic Block Model (SBM)
+### 確率的ブロックモデル (SBM)
 
-- Generative model for community structure: assign each node to a group; edge probability depends on group pair.
-- The most principled framework for community detection (avoids modularity resolution limit).
-- **Degree-corrected SBM**: More realistic — allows within-group degree variation.
-- **Hierarchical SBM**: Nested community structure at multiple scales.
+- コミュニティ構造のための生成モデル: 各ノードをグループに割り当て、辺の確率はグループ対に依存。
+- コミュニティ検出のための最も原理的な枠組み（モジュラリティの分解能限界を回避）。
+- **次数補正SBM**: より現実的 — グループ内の次数のばらつきを許容。
+- **階層的SBM**: 複数のスケールでの入れ子型コミュニティ構造。
 
-### Exponential Random Graph Models (ERGM)
+### 指数ランダムグラフモデル (ERGM)
 
-- **Maximum entropy models** with constraints: specify sufficient statistics (edge count, triangle count, degree sequence) and find the maximum entropy distribution over graphs consistent with those statistics.
+- 制約付きの**最大エントロピーモデル**: 十分統計量（辺の数、三角形の数、次数列）を指定し、それらの統計量と整合するグラフ上の最大エントロピー分布を求める。
 $$P(G) = \frac{1}{Z}\exp\left(\sum_k \theta_k s_k(G)\right)$$
-  where $s_k(G)$ are graph statistics and $\theta_k$ are parameters.
-- Fit via MCMC (Markov Chain Monte Carlo).
-- Financial applications: modeling interbank networks with prescribed properties (reciprocity, clustering, core-periphery structure).
+  ここで $s_k(G)$ はグラフ統計量、$\theta_k$ はパラメータ。
+- MCMC（マルコフ連鎖モンテカルロ法）で適合。
+- 金融への応用: 所定の特性（互恵性、クラスタリング、コア-ペリフェリー構造）を持つインターバンクネットワークのモデリング。
 
-### Financial Applications
+### 金融への応用
 
-| Model | Financial Application |
+| モデル | 金融への応用 |
 |---|---|
-| ER | Null model benchmark for financial network properties |
-| BA | Modeling emergence of hub banks and concentrated counterparty relationships |
-| WS | Small-world structure of ownership and directorship networks |
-| Configuration model | Testing significance of financial network patterns beyond degree effects |
-| SBM | Inferring latent group structure in interbank and trading networks |
-| ERGM | Modeling formation of OTC derivative networks, trade networks |
+| ER | 金融ネットワーク特性のためのヌルモデルベンチマーク |
+| BA | ハブ銀行の出現と集中したカウンターパーティ関係のモデリング |
+| WS | 所有権や取締役兼任ネットワークのスモールワールド構造 |
+| コンフィギュレーションモデル | 次数効果を超えた金融ネットワークパターンの有意性検定 |
+| SBM | インターバンクおよび取引ネットワークにおける潜在的グループ構造の推定 |
+| ERGM | OTCデリバティブネットワーク、貿易ネットワークの形成モデリング |
 
 ---
 
-## 5. Spectral Graph Theory
+## 5. スペクトルグラフ理論
 
-### Graph Laplacian and Its Eigenvalues
+### グラフラプラシアンとその固有値
 
-The Laplacian $\mathbf{L} = \mathbf{D} - \mathbf{A}$ is central to spectral graph theory. For an undirected graph:
+ラプラシアン $\mathbf{L} = \mathbf{D} - \mathbf{A}$ はスペクトルグラフ理論の中心である。無向グラフの場合:
 
-- $\mathbf{L}$ is positive semidefinite: all eigenvalues $0 = \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_N$.
-- Multiplicity of the zero eigenvalue equals the number of connected components.
-- The eigenvectors form an orthonormal basis for "graph signals."
+- $\mathbf{L}$ は半正定値: すべての固有値 $0 = \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_N$。
+- ゼロ固有値の重複度は連結成分の数に等しい。
+- 固有ベクトルは「グラフ信号」の正規直交基底を形成。
 
-### Algebraic Connectivity (Fiedler Value)
+### 代数的連結度（Fiedler値）
 
-- $\lambda_2$ is the **algebraic connectivity** or **Fiedler value** — the smallest non-zero Laplacian eigenvalue.
-- Larger $\lambda_2$ → better connected graph (harder to disconnect by removing edges).
-- The corresponding eigenvector (Fiedler vector) provides the optimal bipartition of the graph.
-- Financial application: $\lambda_2$ of an interbank network measures systemic robustness — a low Fiedler value suggests the network can be easily fragmented.
+- $\lambda_2$ は**代数的連結度**または**Fiedler値** — 最小の非ゼロラプラシアン固有値。
+- $\lambda_2$ が大きいほど → グラフの連結性が高い（辺の除去による切断が困難）。
+- 対応する固有ベクトル（Fiedlerベクトル）はグラフの最適な二分割を提供。
+- 金融への応用: インターバンクネットワークの $\lambda_2$ はシステミックな頑健性を測定する — 低いFiedler値はネットワークが容易に分断され得ることを示唆。
 
-### Cheeger Inequality and Graph Partitioning
+### Cheeger不等式とグラフ分割
 
-- **Cheeger constant** $h(G) = \min_S \frac{|\partial S|}{\min(\text{vol}(S), \text{vol}(\bar{S}))}$ measures the "bottleneck" of a graph.
-- **Cheeger inequality**: $\frac{\lambda_2}{2} \leq h(G) \leq \sqrt{2\lambda_2}$
-- Links the spectral gap to combinatorial graph partitioning — spectral clustering has provable approximation guarantees.
+- **Cheeger定数** $h(G) = \min_S \frac{|\partial S|}{\min(\text{vol}(S), \text{vol}(\bar{S}))}$ はグラフの「ボトルネック」を測定する。
+- **Cheeger不等式**: $\frac{\lambda_2}{2} \leq h(G) \leq \sqrt{2\lambda_2}$
+- スペクトルギャップを組合せ的なグラフ分割に結びつける — スペクトルクラスタリングには証明可能な近似保証がある。
 
-### Spectral Gap and Mixing Time
+### スペクトルギャップと混合時間
 
-- The **spectral gap** $\lambda_2$ (or $1 - \lambda_2$ for normalized Laplacian) controls the mixing time of random walks on the graph.
-- Larger spectral gap → faster mixing → shocks dissipate more quickly.
-- Financial application: a well-connected financial network (large spectral gap) distributes shocks rapidly, while a poorly connected one (small spectral gap) traps shocks locally.
+- **スペクトルギャップ** $\lambda_2$（または正規化ラプラシアンでの $1 - \lambda_2$）はグラフ上のランダムウォークの混合時間を支配する。
+- スペクトルギャップが大きいほど → 混合が速い → ショックがより早く消散する。
+- 金融への応用: よく接続された金融ネットワーク（大きなスペクトルギャップ）はショックを素早く分散させ、接続の弱いネットワーク（小さなスペクトルギャップ）はショックを局所的に閉じ込める。
 
-### Applications in Financial Networks
+### 金融ネットワークへの応用
 
-- **Diffusion processes**: The heat equation on graphs, $\frac{d\mathbf{x}}{dt} = -\mathbf{L}\mathbf{x}$, models risk propagation; the Laplacian spectrum determines diffusion speed.
-- **Stability analysis**: Eigenvalues of the network Laplacian determine the stability of equilibria in coupled dynamical systems on networks (e.g., synchronized market behavior).
-- **Graph signal processing**: Fourier analysis on graphs using Laplacian eigenvectors — filtering financial signals on network domains.
+- **拡散過程**: グラフ上の熱方程式 $\frac{d\mathbf{x}}{dt} = -\mathbf{L}\mathbf{x}$ はリスク伝播をモデル化し、ラプラシアンスペクトルが拡散速度を決定する。
+- **安定性分析**: ネットワークラプラシアンの固有値が、ネットワーク上の結合力学系の平衡の安定性を決定する（例: 市場行動の同期化）。
+- **グラフ信号処理**: ラプラシアン固有ベクトルを用いたグラフ上のFourier分析 — ネットワークドメイン上の金融信号のフィルタリング。
 
 ---
 
-## 6. Random Matrix Theory for Networks
+## 6. ネットワークのためのランダム行列理論
 
-### Marchenko-Pastur Law
+### Marchenko-Pastur則
 
-For an $N \times T$ random matrix $\mathbf{X}$ with i.i.d. entries and $Q = N/T$, the eigenvalue distribution of $\frac{1}{T}\mathbf{X}\mathbf{X}^T$ converges to:
+$N \times T$ のi.i.d.エントリを持つランダム行列 $\mathbf{X}$ と $Q = N/T$ に対して、$\frac{1}{T}\mathbf{X}\mathbf{X}^T$ の固有値分布は以下に収束する:
 
 $$\rho(\lambda) = \frac{Q}{2\pi\sigma^2} \frac{\sqrt{(\lambda_+ - \lambda)(\lambda - \lambda_-)}}{\lambda}$$
 
-where $\lambda_{\pm} = \sigma^2(1 \pm \sqrt{1/Q})^2$.
+ここで $\lambda_{\pm} = \sigma^2(1 \pm \sqrt{1/Q})^2$。
 
-This provides the **null hypothesis** for correlation matrix eigenvalues — deviations from the Marchenko-Pastur bulk indicate genuine structure.
+これは相関行列の固有値に対する**帰無仮説**を提供する — Marchenko-Pasturバルクからの偏差は真の構造を示す。
 
-### Tracy-Widom Distribution
+### Tracy-Widom分布
 
-- Describes the fluctuations of the **largest eigenvalue** of random matrices.
-- Used to test whether the largest eigenvalue of a financial correlation matrix is significantly above the Marchenko-Pastur edge (i.e., whether there is a detectable "market factor").
-- Three universality classes: $\text{TW}_1$ (real symmetric), $\text{TW}_2$ (complex Hermitian), $\text{TW}_4$ (quaternion self-dual).
+- ランダム行列の**最大固有値**のゆらぎを記述する。
+- 金融相関行列の最大固有値がMarchenko-Pastur端を有意に超えるかどうか（すなわち検出可能な「市場ファクター」が存在するか）を検定するために使用。
+- 3つの普遍性クラス: $\text{TW}_1$（実対称）、$\text{TW}_2$（複素エルミート）、$\text{TW}_4$（四元数自己双対）。
 
-### Spiked Covariance Models
+### スパイク共分散モデル
 
-- **Model**: True covariance $\boldsymbol{\Sigma} = \mathbf{I} + \sum_{k=1}^{r} \theta_k \mathbf{v}_k\mathbf{v}_k^T$ — identity plus rank-$r$ perturbation.
-- **BBP transition** (Baik, Ben Arous, Peche, 2005): A spike $\theta_k$ is detectable iff $\theta_k > \sqrt{Q}$. Below this threshold, the spike eigenvalue merges with the Marchenko-Pastur bulk.
-- Financial implication: weak factors (e.g., small sector effects) become undetectable when $N/T$ is not small enough.
+- **モデル**: 真の共分散 $\boldsymbol{\Sigma} = \mathbf{I} + \sum_{k=1}^{r} \theta_k \mathbf{v}_k\mathbf{v}_k^T$ — 単位行列にランク $r$ の摂動を加えたもの。
+- **BBP転移** (Baik, Ben Arous, Peche, 2005): スパイク $\theta_k$ が検出可能なのは $\theta_k > \sqrt{Q}$ の場合に限る。この閾値以下では、スパイク固有値はMarchenko-Pasturバルクに融合する。
+- 金融への示唆: 弱いファクター（例: 小さなセクター効果）は $N/T$ が十分小さくない場合に検出不可能となる。
 
-### Free Probability Theory
+### 自由確率論
 
-- Non-commutative probability theory developed by Voiculescu.
-- **Free convolution**: Determines the eigenvalue distribution of sums or products of random matrices when they are "freely independent."
-- Enables analytical computation of eigenvalue distributions for structured random matrices (e.g., signal + noise).
-- Applied to optimal estimation of covariance matrices (Bun, Bouchaud, Potters, 2017).
+- Voiculescuにより開発された非可換確率論。
+- **自由畳み込み**: ランダム行列が「自由独立」である場合に、和または積の固有値分布を決定する。
+- 構造化されたランダム行列（例: 信号 + ノイズ）の固有値分布の解析的計算を可能にする。
+- 共分散行列の最適推定に適用 (Bun, Bouchaud, Potters, 2017)。
 
-### Applications
+### 応用
 
-| Application | RMT Tool |
+| 応用 | ランダム行列理論のツール |
 |---|---|
-| Denoising correlation matrices | Marchenko-Pastur bulk removal, eigenvalue clipping |
-| Factor detection | Spiked model, BBP transition |
-| Community detection | Eigenvalue separation from bulk indicates group structure |
-| Dynamic network estimation | Time-varying RMT for evolving correlation structure |
-| Covariance estimation | Free probability-based optimal shrinkage (RIE) |
+| 相関行列のデノイジング | Marchenko-Pasturバルクの除去、固有値クリッピング |
+| ファクターの検出 | スパイクモデル、BBP転移 |
+| コミュニティ検出 | バルクからの固有値の分離がグループ構造を示す |
+| 動的ネットワーク推定 | 時変相関構造のための時変ランダム行列理論 |
+| 共分散推定 | 自由確率に基づく最適シュリンケージ (RIE) |
 
 ---
 
-## 7. Knowledge Graph Formalisms
+## 7. 知識グラフの形式化
 
 ### RDF (Resource Description Framework)
 
-- Data model based on **subject-predicate-object triples**: `(JPMorgan, hasExposureTo, GoldmanSachs)`.
-- Global identifiers via URIs/IRIs.
-- Can be stored as directed labeled graphs.
-- Foundation of the Semantic Web.
-- Schema: RDFS (RDF Schema) provides class hierarchies and domain/range constraints.
+- **主語-述語-目的語のトリプル**に基づくデータモデル: `(JPMorgan, hasExposureTo, GoldmanSachs)`。
+- URI/IRIによるグローバル識別子。
+- 有向ラベル付きグラフとして格納可能。
+- Semantic Web（セマンティックウェブ）の基盤。
+- スキーマ: RDFS (RDF Schema) がクラス階層とドメイン/レンジ制約を提供。
 
-### Property Graphs
+### プロパティグラフ
 
-- Nodes and edges carry **key-value property dictionaries**.
-- More flexible than RDF for real-world modeling: edges can have multiple attributes (exposure amount, maturity date, seniority).
-- Native model for graph databases (Neo4j, Amazon Neptune, TigerGraph).
-- No built-in schema enforcement (schema-optional).
+- ノードと辺が**キーバリュー型のプロパティ辞書**を持つ。
+- 実世界のモデリングにおいてRDFよりも柔軟: 辺が複数の属性を持てる（エクスポージャー額、満期日、優先順位）。
+- グラフデータベース（Neo4j、Amazon Neptune、TigerGraph）のネイティブモデル。
+- 組み込みのスキーマ強制なし（スキーマはオプション）。
 
 ### OWL (Web Ontology Language)
 
-- Built on RDF; adds **ontological reasoning** capabilities.
-- **Description Logic (DL) expressivity**: OWL profiles (EL, QL, RL, DL) trade off expressiveness vs. computational complexity.
-- Enables automated inference: if "BankA isSubsidiaryOf BankB" and "BankB isRegulatedBy FED", infer "BankA isIndirectlyRegulatedBy FED".
-- Financial ontologies: FIBO (Financial Industry Business Ontology) is OWL-based.
+- RDFの上に構築され、**オントロジー推論**機能を追加。
+- **記述論理 (DL) の表現力**: OWLプロファイル（EL、QL、RL、DL）は表現力と計算複雑性のトレードオフ。
+- 自動推論を可能にする: 「BankA isSubsidiaryOf BankB」かつ「BankB isRegulatedBy FED」であれば、「BankA isIndirectlyRegulatedBy FED」を推論。
+- 金融オントロジー: FIBO (Financial Industry Business Ontology) はOWLベース。
 
 ### SPARQL
 
-- **Query language for RDF** data.
-- Pattern matching on triple patterns: `SELECT ?bank WHERE { ?bank rdf:type fin:Bank . ?bank fin:hasExposureTo fin:GoldmanSachs . }`
-- Supports aggregation, optional patterns, subqueries, federated queries across endpoints.
+- **RDF**データのための**クエリ言語**。
+- トリプルパターンに対するパターンマッチング: `SELECT ?bank WHERE { ?bank rdf:type fin:Bank . ?bank fin:hasExposureTo fin:GoldmanSachs . }`
+- 集計、オプショナルパターン、サブクエリ、エンドポイント間のフェデレーテッドクエリをサポート。
 
 ### Cypher / Gremlin
 
-- **Cypher**: Declarative query language for property graphs (Neo4j). Pattern: `MATCH (a:Bank)-[:LENDS_TO]->(b:Bank) RETURN a, b`
-- **Gremlin**: Imperative/functional traversal language for property graphs (Apache TinkerPop). Pattern: `g.V().hasLabel('Bank').out('LENDS_TO')`
-- Both support path queries, aggregation, and complex traversals essential for financial network analysis.
+- **Cypher**: プロパティグラフのための宣言的クエリ言語（Neo4j）。パターン: `MATCH (a:Bank)-[:LENDS_TO]->(b:Bank) RETURN a, b`
+- **Gremlin**: プロパティグラフのための命令型/関数型トラバーサル言語（Apache TinkerPop）。パターン: `g.V().hasLabel('Bank').out('LENDS_TO')`
+- 両方ともパスクエリ、集計、金融ネットワーク分析に不可欠な複雑なトラバーサルをサポート。
 
-### Knowledge Graph Embeddings
+### 知識グラフ埋め込み
 
-- Map entities and relations into continuous vector spaces for link prediction, entity alignment, and reasoning.
+- エンティティと関係を連続ベクトル空間にマッピングし、リンク予測、エンティティアラインメント、推論に使用。
 
-| Model | Scoring Function | Key Feature |
+| モデル | スコアリング関数 | 主な特徴 |
 |---|---|---|
-| **TransE** (Bordes et al., 2013) | $\|\mathbf{h} + \mathbf{r} - \mathbf{t}\|$ | Translation-based, simple, effective |
-| **TransR** (Lin et al., 2015) | $\|\mathbf{M}_r\mathbf{h} + \mathbf{r} - \mathbf{M}_r\mathbf{t}\|$ | Relation-specific projection spaces |
-| **RotatE** (Sun et al., 2019) | $\|\mathbf{h} \circ \mathbf{r} - \mathbf{t}\|$ | Rotation in complex space; models symmetry, inversion, composition |
-| **ComplEx** (Trouillon et al., 2016) | $\text{Re}(\langle\mathbf{h}, \mathbf{r}, \bar{\mathbf{t}}\rangle)$ | Complex-valued; handles asymmetric relations |
+| **TransE** (Bordes et al., 2013) | $\|\mathbf{h} + \mathbf{r} - \mathbf{t}\|$ | 翻訳ベース、シンプル、効果的 |
+| **TransR** (Lin et al., 2015) | $\|\mathbf{M}_r\mathbf{h} + \mathbf{r} - \mathbf{M}_r\mathbf{t}\|$ | 関係固有の射影空間 |
+| **RotatE** (Sun et al., 2019) | $\|\mathbf{h} \circ \mathbf{r} - \mathbf{t}\|$ | 複素空間での回転。対称性、逆関係、合成をモデル化 |
+| **ComplEx** (Trouillon et al., 2016) | $\text{Re}(\langle\mathbf{h}, \mathbf{r}, \bar{\mathbf{t}}\rangle)$ | 複素数値。非対称関係に対応 |
 
-- Financial applications: predicting missing financial relationships, supply chain link prediction, ownership chain completion.
+- 金融への応用: 欠落した金融関係の予測、サプライチェーンリンク予測、所有チェーンの補完。
 
-### Financial KG Representation Choices
+### 金融知識グラフの表現選択
 
-| Aspect | RDF/OWL | Property Graph |
+| 側面 | RDF/OWL | プロパティグラフ |
 |---|---|---|
-| Standards compliance | W3C standards, FIBO ontology | Vendor-specific |
-| Reasoning | Built-in inference via DL reasoners | Limited (application-level) |
-| Flexibility | Schema-heavy | Schema-light |
-| Query performance | SPARQL can be slow on complex queries | Optimized for traversals |
-| Typical use | Regulatory reporting, data integration | Analytics, real-time queries |
+| 標準準拠 | W3C標準、FIBOオントロジー | ベンダー固有 |
+| 推論 | DL推論器による組み込み推論 | 限定的（アプリケーションレベル） |
+| 柔軟性 | スキーマ重視 | スキーマ軽量 |
+| クエリ性能 | 複雑なクエリではSPARQLが遅い場合がある | トラバーサルに最適化 |
+| 一般的な用途 | 規制報告、データ統合 | 分析、リアルタイムクエリ |
 
 ---
 
-## 8. Graph Neural Network Architectures
+## 8. グラフニューラルネットワークアーキテクチャ
 
-### GCN (Graph Convolutional Network)
+### GCN（グラフ畳み込みネットワーク）
 
-- **Kipf & Welling (2017)**: Semi-supervised classification with graph convolutional networks.
-- Layer-wise propagation: $\mathbf{H}^{(l+1)} = \sigma(\tilde{\mathbf{D}}^{-1/2}\tilde{\mathbf{A}}\tilde{\mathbf{D}}^{-1/2}\mathbf{H}^{(l)}\mathbf{W}^{(l)})$
-  where $\tilde{\mathbf{A}} = \mathbf{A} + \mathbf{I}$ (self-loops) and $\tilde{\mathbf{D}}$ is its degree matrix.
-- **Spectral interpretation**: Approximation of spectral graph convolutions using first-order Chebyshev polynomials.
-- **Spatial interpretation**: Each node aggregates features from its immediate neighbors.
-- Financial application: credit risk prediction on bank-firm networks, fraud detection.
+- **Kipf & Welling (2017)**: グラフ畳み込みネットワークによる半教師付き分類。
+- 層ごとの伝播: $\mathbf{H}^{(l+1)} = \sigma(\tilde{\mathbf{D}}^{-1/2}\tilde{\mathbf{A}}\tilde{\mathbf{D}}^{-1/2}\mathbf{H}^{(l)}\mathbf{W}^{(l)})$
+  ここで $\tilde{\mathbf{A}} = \mathbf{A} + \mathbf{I}$（自己ループ）、$\tilde{\mathbf{D}}$ はその次数行列。
+- **スペクトル的解釈**: 1次Chebyshev多項式を用いたスペクトルグラフ畳み込みの近似。
+- **空間的解釈**: 各ノードが直接の近傍から特徴量を集約。
+- 金融への応用: 銀行-企業ネットワークにおける信用リスク予測、不正検出。
 
-### GAT (Graph Attention Network)
+### GAT（グラフアテンションネットワーク）
 
-- **Velickovic et al. (2018)**: Graph Attention Networks.
-- **Attention-weighted aggregation**: Different neighbors contribute differently to a node's representation.
+- **Velickovic et al. (2018)**: Graph Attention Networks。
+- **アテンション重み付き集約**: 異なる近傍がノードの表現に異なる度合いで寄与。
 $$\alpha_{ij} = \frac{\exp(\text{LeakyReLU}(\mathbf{a}^T[\mathbf{W}\mathbf{h}_i \| \mathbf{W}\mathbf{h}_j]))}{\sum_{k \in \mathcal{N}(i)} \exp(\text{LeakyReLU}(\mathbf{a}^T[\mathbf{W}\mathbf{h}_i \| \mathbf{W}\mathbf{h}_k]))}$$
-- Multi-head attention for stability and expressiveness.
-- Financial application: learning which financial relationships matter most for a given prediction task.
+- 安定性と表現力のためのマルチヘッドアテンション。
+- 金融への応用: 特定の予測タスクにおいてどの金融関係が最も重要かを学習。
 
 ### GraphSAGE
 
-- **Hamilton, Ying & Leskovec (2017)**: Inductive Representation Learning on Large Graphs.
-- **Inductive learning**: Can generalize to unseen nodes (unlike transductive methods like GCN).
-- **Sampling**: Samples a fixed number of neighbors at each layer, enabling scalability to large graphs.
-- Aggregator variants: mean, LSTM, pooling.
-- Financial application: new entity classification (e.g., newly listed companies), dynamic portfolio universes.
+- **Hamilton, Ying & Leskovec (2017)**: 大規模グラフにおける帰納的表現学習。
+- **帰納的学習**: 未知のノードに汎化可能（GCNのような帰還的手法とは異なる）。
+- **サンプリング**: 各層で固定数の近傍をサンプリングし、大規模グラフへのスケーラビリティを実現。
+- 集約器のバリエーション: 平均、LSTM、プーリング。
+- 金融への応用: 新規エンティティの分類（例: 新規上場企業）、動的なポートフォリオユニバース。
 
-### GIN (Graph Isomorphism Network)
+### GIN（グラフ同型ネットワーク）
 
 - **Xu et al. (2019)**: How Powerful are Graph Neural Networks?
-- **Maximally expressive** among message-passing GNNs — as powerful as the Weisfeiler-Leman graph isomorphism test.
-- Update: $\mathbf{h}_v^{(k)} = \text{MLP}^{(k)}\left((1 + \epsilon^{(k)}) \cdot \mathbf{h}_v^{(k-1)} + \sum_{u \in \mathcal{N}(v)} \mathbf{h}_u^{(k-1)}\right)$
-- Financial application: graph-level classification tasks (e.g., classifying entire corporate structures as risky/safe).
+- メッセージパッシングGNNの中で**最大の表現力** — Weisfeiler-Lemanグラフ同型テストと同等の能力。
+- 更新: $\mathbf{h}_v^{(k)} = \text{MLP}^{(k)}\left((1 + \epsilon^{(k)}) \cdot \mathbf{h}_v^{(k-1)} + \sum_{u \in \mathcal{N}(v)} \mathbf{h}_u^{(k-1)}\right)$
+- 金融への応用: グラフレベルの分類タスク（例: 企業グループ全体のリスク/安全の分類）。
 
-### Message Passing Neural Networks (MPNN)
+### メッセージパッシングニューラルネットワーク (MPNN)
 
-- **Gilmer et al. (2017)**: Neural Message Passing for Quantum Chemistry.
-- **General framework** unifying most GNN architectures:
-  1. **Message**: $\mathbf{m}_v^{(t+1)} = \sum_{w \in \mathcal{N}(v)} M_t(\mathbf{h}_v^{(t)}, \mathbf{h}_w^{(t)}, \mathbf{e}_{vw})$
-  2. **Update**: $\mathbf{h}_v^{(t+1)} = U_t(\mathbf{h}_v^{(t)}, \mathbf{m}_v^{(t+1)})$
-  3. **Readout**: $\hat{y} = R(\{\mathbf{h}_v^{(T)} | v \in G\})$
-- Provides a vocabulary for describing and comparing GNN variants.
+- **Gilmer et al. (2017)**: Neural Message Passing for Quantum Chemistry。
+- ほとんどのGNNアーキテクチャを統合する**一般的な枠組み**:
+  1. **メッセージ**: $\mathbf{m}_v^{(t+1)} = \sum_{w \in \mathcal{N}(v)} M_t(\mathbf{h}_v^{(t)}, \mathbf{h}_w^{(t)}, \mathbf{e}_{vw})$
+  2. **更新**: $\mathbf{h}_v^{(t+1)} = U_t(\mathbf{h}_v^{(t)}, \mathbf{m}_v^{(t+1)})$
+  3. **リードアウト**: $\hat{y} = R(\{\mathbf{h}_v^{(T)} | v \in G\})$
+- GNNのバリアントを記述し比較するための語彙を提供。
 
-### Heterogeneous GNNs
+### 異種グラフ向けGNN
 
-- **HAN (Heterogeneous Attention Network)**: Wang et al. (2019) — hierarchical attention over meta-paths in heterogeneous graphs.
-- **HGT (Heterogeneous Graph Transformer)**: Hu et al. (2020) — transformer-based message passing with type-specific parameters.
-- Handle multi-type node/edge graphs naturally — essential for financial KGs with diverse entity and relationship types (banks, firms, regulators; lending, ownership, derivatives).
+- **HAN (Heterogeneous Attention Network)**: Wang et al. (2019) — 異種グラフにおけるメタパスに対する階層的アテンション。
+- **HGT (Heterogeneous Graph Transformer)**: Hu et al. (2020) — タイプ固有のパラメータを持つTransformerベースのメッセージパッシング。
+- 多タイプのノード/辺を持つグラフを自然に扱う — 多様なエンティティと関係タイプ（銀行、企業、規制当局; 融資、所有、デリバティブ）を持つ金融知識グラフに不可欠。
 
-### Temporal GNNs
+### 時間的GNN
 
-- **TGAT (Temporal Graph Attention)**: Xu et al. (2020) — attention over temporal neighborhoods with time encoding.
-- **TGN (Temporal Graph Network)**: Rossi et al. (2020) — memory module for tracking node states over time.
-- **DyRep**: Trivedi et al. (2019) — representation learning over dynamic graphs via temporal point processes.
-- Financial application: modeling evolving financial networks (e.g., interbank lending patterns, time-varying correlations, governance structure changes).
+- **TGAT (Temporal Graph Attention)**: Xu et al. (2020) — 時間エンコーディングを持つ時間的近傍に対するアテンション。
+- **TGN (Temporal Graph Network)**: Rossi et al. (2020) — ノード状態を時間的に追跡するメモリモジュール。
+- **DyRep**: Trivedi et al. (2019) — 時間点過程を用いた動的グラフ上の表現学習。
+- 金融への応用: 進化する金融ネットワークのモデリング（例: インターバンク融資パターン、時変相関、ガバナンス構造の変化）。
 
-### Financial Applications Summary
+### 金融への応用まとめ
 
-| Architecture | Financial Application |
+| アーキテクチャ | 金融への応用 |
 |---|---|
-| GCN | Credit scoring, fraud detection on transaction graphs |
-| GAT | Identifying important financial relationships via attention |
-| GraphSAGE | Inductive inference for new financial entities |
-| GIN | Classification of corporate group structures |
-| MPNN | General framework for financial network prediction |
-| Heterogeneous GNNs | Multi-type financial knowledge graph reasoning |
-| Temporal GNNs | Dynamic risk assessment, evolving network modeling |
+| GCN | 取引グラフ上の信用スコアリング、不正検出 |
+| GAT | アテンションによる重要な金融関係の識別 |
+| GraphSAGE | 新しい金融エンティティの帰納的推論 |
+| GIN | 企業グループ構造の分類 |
+| MPNN | 金融ネットワーク予測のための一般的な枠組み |
+| 異種GNN | 多タイプの金融知識グラフ推論 |
+| 時間的GNN | 動的リスク評価、進化するネットワークのモデリング |
 
 ---
 
-## 9. Temporal and Dynamic Networks
+## 9. 時間的・動的ネットワーク
 
-### Time-Varying Graphs
+### 時変グラフ
 
-- **Snapshot representation**: A sequence of static graphs $G_1, G_2, \ldots, G_T$ at discrete time steps. Simple but loses inter-snapshot dynamics.
-- **Continuous-time representation**: Edges are events with timestamps — $(u, v, t)$. Preserves fine-grained temporal information.
-- **Interval representation**: Edges active over intervals $[t_s, t_e]$.
-- Tradeoff: snapshot models are simpler to analyze; continuous-time models are more expressive.
+- **スナップショット表現**: 離散的な時間ステップにおける静的グラフの列 $G_1, G_2, \ldots, G_T$。単純だがスナップショット間のダイナミクスが失われる。
+- **連続時間表現**: 辺はタイムスタンプ付きのイベント — $(u, v, t)$。きめ細かい時間情報を保持。
+- **区間表現**: 辺が区間 $[t_s, t_e]$ にわたって活性。
+- トレードオフ: スナップショットモデルは分析が容易、連続時間モデルはより表現力が高い。
 
-### Temporal Motifs and Causal Paths
+### 時間的モチーフと因果パス
 
-- **Temporal motifs**: Subgraph patterns that respect time ordering. E.g., $A \to B$ at $t_1$, then $B \to C$ at $t_2 > t_1$ forms a temporal two-hop path.
-- **Causal paths**: Sequences of edges where each subsequent edge occurs after the previous one (time-respecting paths). The set of causal paths can be much smaller than the set of static paths.
-- **Temporal reachability**: Node $v$ is temporally reachable from $u$ if there exists a causal path from $u$ to $v$.
-- Financial application: contagion can only follow causal paths — analyzing only static paths overestimates systemic risk.
+- **時間的モチーフ**: 時間順序を尊重する部分グラフパターン。例: 時刻 $t_1$ に $A \to B$、次に $t_2 > t_1$ に $B \to C$ で時間的2ホップパスを形成。
+- **因果パス**: 各後続の辺が前の辺の後に発生する辺の列（時間順序を尊重するパス）。因果パスの集合は静的パスの集合よりもはるかに小さい場合がある。
+- **時間的到達可能性**: $u$ から $v$ への因果パスが存在する場合、ノード $v$ はノード $u$ から時間的に到達可能。
+- 金融への応用: 伝染は因果パスのみを通じて伝播する — 静的パスのみの分析はシステミックリスクを過大評価する。
 
-### Dynamic Community Detection
+### 動的コミュニティ検出
 
-- **Evolutionary clustering**: Balance between current snapshot quality and consistency with previous time step.
-- **Temporal SBM**: Stochastic block model with time-varying community memberships and transition probabilities.
-- **Change point detection**: Identify times when community structure undergoes significant reorganization.
-- Financial application: detecting regime shifts in market sector structure, identifying emerging banking communities.
+- **進化的クラスタリング**: 現在のスナップショットの品質と前の時間ステップとの整合性のバランス。
+- **時間的SBM**: 時変のコミュニティ所属と遷移確率を持つ確率的ブロックモデル。
+- **変化点検出**: コミュニティ構造が大きな再編を受ける時点の識別。
+- 金融への応用: 市場セクター構造のレジームシフトの検出、新興銀行コミュニティの識別。
 
-### Temporal Centrality Measures
+### 時間的中心性指標
 
-- **Temporal betweenness**: Based on time-respecting shortest paths.
-- **Temporal closeness**: Average temporal distance (earliest arrival time) rather than shortest-hop distance.
-- **Temporal PageRank**: Random walk with temporal constraints — can only follow edges forward in time.
-- **Katz centrality on temporal graphs**: Count time-respecting walks with temporal attenuation.
+- **時間的媒介中心性**: 時間順序を尊重する最短パスに基づく。
+- **時間的近接中心性**: 最短ホップ距離ではなく平均時間的距離（最早到着時間）。
+- **時間的PageRank**: 時間的制約付きのランダムウォーク — 時間方向にのみ辺をたどれる。
+- **時間的グラフ上のKatz中心性**: 時間的減衰を伴う時間順序を尊重するウォークの計数。
 
-### Applications in Finance
+### 金融への応用
 
-- **Evolving financial networks**: Interbank lending topology changes before, during, and after crises.
-- **Governance structure changes**: Corporate board interlocks, ownership networks that rewire over time.
-- **Dynamic correlation networks**: Time-varying MSTs and filtered graphs track market regime evolution.
-- **Temporal arbitrage**: Time-respecting paths in cross-market networks reveal arbitrage opportunities that static analysis misses.
+- **進化する金融ネットワーク**: 危機の前、最中、後のインターバンク融資トポロジーの変化。
+- **ガバナンス構造の変化**: 時間とともに再配線される企業取締役兼任ネットワーク、所有ネットワーク。
+- **動的相関ネットワーク**: 時変MSTとフィルタードグラフが市場レジームの進化を追跡。
+- **時間的裁定取引**: クロスマーケットネットワークにおける時間順序を尊重するパスが、静的分析では見逃される裁定機会を明らかにする。
 
 ---
 
-## 10. Multilayer and Multiplex Networks
+## 10. 多層・マルチプレックスネットワーク
 
-### Mathematical Formulation
+### 数学的定式化
 
-- A multiplex network consists of $L$ layers sharing the same node set $V$:
+- マルチプレックスネットワークは、同じノード集合 $V$ を共有する $L$ 層から構成される:
 $$\mathcal{G} = (V, E_1, E_2, \ldots, E_L)$$
-- **Supra-adjacency matrix**: Block matrix representation:
+- **スープラ隣接行列**: ブロック行列表現:
 $$\mathcal{A} = \begin{pmatrix} \mathbf{A}_1 & \mathbf{C}_{12} & \cdots & \mathbf{C}_{1L} \\ \mathbf{C}_{21} & \mathbf{A}_2 & \cdots & \mathbf{C}_{2L} \\ \vdots & \vdots & \ddots & \vdots \\ \mathbf{C}_{L1} & \mathbf{C}_{L2} & \cdots & \mathbf{A}_L \end{pmatrix}$$
-  where $\mathbf{A}_\alpha$ is the adjacency matrix of layer $\alpha$ and $\mathbf{C}_{\alpha\beta}$ encodes interlayer coupling.
-- For multiplex networks (same nodes across layers), the interlayer coupling is typically diagonal: $\mathbf{C}_{\alpha\beta} = \omega_{\alpha\beta}\mathbf{I}$.
+  ここで $\mathbf{A}_\alpha$ は層 $\alpha$ の隣接行列、$\mathbf{C}_{\alpha\beta}$ は層間結合をエンコードする。
+- マルチプレックスネットワーク（全層で同じノード）では、層間結合は通常対角行列: $\mathbf{C}_{\alpha\beta} = \omega_{\alpha\beta}\mathbf{I}$。
 
-### Interlayer Coupling and Dependencies
+### 層間結合と依存関係
 
-- **Coupling strength** $\omega$: Controls the degree of interaction between layers.
-- Limits: $\omega \to 0$ yields independent layers; $\omega \to \infty$ yields an aggregate single-layer network.
-- **Asymmetric coupling**: Layer $\alpha$ may influence layer $\beta$ more than vice versa (e.g., equity volatility spilling into credit markets).
+- **結合強度** $\omega$: 層間の相互作用の度合いを制御。
+- 極限: $\omega \to 0$ で独立した層、$\omega \to \infty$ で集約された単一層ネットワーク。
+- **非対称結合**: 層 $\alpha$ が層 $\beta$ により強く影響する場合がある（例: 株式のボラティリティが信用市場に波及）。
 
-### Multiplex Centrality Measures
+### マルチプレックス中心性指標
 
-- **Multiplex degree**: $k_i^{multi} = \sum_\alpha k_i^\alpha$ — total degree across all layers.
-- **Multiplex PageRank**: PageRank on the supra-adjacency matrix, with interlayer teleportation.
-- **Versatility**: Identifies nodes that are central in many layers simultaneously (De Domenico et al., 2015).
-- **Layer-weighted centrality**: Weight layers by importance before aggregation.
+- **マルチプレックス次数**: $k_i^{multi} = \sum_\alpha k_i^\alpha$ — 全層にわたる合計次数。
+- **マルチプレックスPageRank**: 層間テレポーテーションを含むスープラ隣接行列上のPageRank。
+- **汎用性（Versatility）**: 多くの層で同時に中心的なノードを識別 (De Domenico et al., 2015)。
+- **層重み付き中心性**: 集約前に層を重要度で重み付け。
 
-### Layer Reducibility
+### 層の簡約可能性
 
-- **Structural reducibility** (De Domenico et al., 2015): Quantifies when two layers are structurally redundant and can be merged without information loss.
-- Uses **Jensen-Shannon divergence** between layers' von Neumann entropy.
-- Financial application: determine whether equity and debt exposure layers provide non-redundant information for systemic risk.
+- **構造的簡約可能性** (De Domenico et al., 2015): 2つの層が構造的に冗長であり、情報損失なく統合可能であるかを定量化。
+- 層間のvon Neumannエントロピーの**Jensen-Shannonダイバージェンス**を使用。
+- 金融への応用: 株式と債務のエクスポージャー層がシステミックリスクに対して非冗長な情報を提供するかを判定。
 
-### Diffusion on Multiplex Networks
+### マルチプレックスネットワーク上の拡散
 
-- **Supra-Laplacian**: $\mathcal{L} = \mathcal{D} - \mathcal{A}$ — the Laplacian of the supra-adjacency matrix.
-- Diffusion governed by $\frac{d\mathbf{x}}{dt} = -\mathcal{L}\mathbf{x}$ — shocks propagate both within and across layers.
-- **Super-diffusion**: Diffusion on the multiplex can be faster than on any individual layer (Gomez et al., 2013).
-- Financial implication: systemic risk propagation through multiplex financial networks can be faster and more destructive than single-layer analysis suggests.
+- **スープラ・ラプラシアン**: $\mathcal{L} = \mathcal{D} - \mathcal{A}$ — スープラ隣接行列のラプラシアン。
+- 拡散は $\frac{d\mathbf{x}}{dt} = -\mathcal{L}\mathbf{x}$ に従う — ショックは層内および層間の両方で伝播。
+- **超拡散**: マルチプレックス上の拡散は個々の層のいずれよりも速くなり得る (Gomez et al., 2013)。
+- 金融への示唆: マルチプレックス金融ネットワークを通じたシステミックリスクの伝播は、単一層の分析が示唆するよりも速く、破壊的であり得る。
 
-### Applications in Finance
+### 金融への応用
 
-- **Multi-type financial relationships**: Equity cross-holdings, debt claims, derivatives exposures, and interbank lending as separate layers.
-- **Cross-layer amplification**: Distress in the interbank layer triggers fire sales in the asset layer, which feeds back to the equity layer.
-- **Systemic risk on multiplex**: Poledna et al. (2015) showed that single-layer DebtRank underestimates systemic risk by up to 90% compared to multiplex DebtRank.
-
----
-
-## 11. Network Robustness and Cascading Failures
-
-### Percolation Theory
-
-- **Site percolation**: Each node is removed independently with probability $1-p$. At what $p_c$ does a giant connected component exist?
-- **Bond percolation**: Each edge is removed independently with probability $1-p$.
-- **Percolation threshold** $p_c$: Depends on network topology. For ER graphs, $p_c = 1/\langle k \rangle$. For scale-free networks with $\gamma \leq 3$, $p_c \to 0$ (robust to random removal but vulnerable to targeted attack).
-- Financial analogy: bank failures (site percolation) or relationship severing (bond percolation) and the resulting network fragmentation.
-
-### Cascading Failure Models
-
-- **Sandpile model**: Nodes have capacity thresholds; exceeding capacity causes load redistribution to neighbors, potentially triggering further failures.
-- **Load redistribution**: When a node fails, its load is redistributed to remaining nodes (proportional to capacity or connectivity), potentially overloading them.
-- **Threshold models**: A node fails when the fraction of its failed neighbors exceeds a threshold $\phi$ — Watts' cascade model.
-- Financial analogy: bank failure redistributes obligations to counterparties, who may then fail under the additional burden.
-
-### Network Resilience: Targeted vs. Random Attack
-
-- **Random failure**: Remove nodes uniformly at random. Scale-free networks are highly robust (due to the abundance of low-degree nodes).
-- **Targeted attack**: Remove nodes in decreasing order of degree (or betweenness). Scale-free networks are extremely vulnerable — removal of a few hub nodes shatters the network.
-- **Financial implication**: The financial system may be robust to random small-bank failures but catastrophically vulnerable to the failure of a few systemically important institutions ("too-big-to-fail").
-
-### Core-Periphery Structure and "Too-Interconnected-to-Fail"
-
-- Many financial networks exhibit **core-periphery structure**: a dense core of large, interconnected institutions surrounded by a sparse periphery.
-- Core nodes are **too-interconnected-to-fail**: their removal disconnects periphery nodes from the system.
-- **Craig & von Peter (2014)**: Formal statistical model for core-periphery structure in interbank networks.
-- Policy implication: systemic importance depends not just on size but on network position.
-
-### DebtRank as Cascade Model
-
-- **Battiston, Puliga, Kaushik, Tasca & Caldarelli (2012)**: DebtRank — a recursive cascade model for financial distress.
-- Each node $i$ has a distress level $h_i \in [0, 1]$ and equity $E_i$.
-- Distress propagates: $h_j(t+1) = \min\left(1, h_j(t) + \sum_i W_{ij} h_i(t)\right)$ where $W_{ij} = \frac{A_{ij}}{E_j}$ is the relative exposure.
-- Unlike simple contagion, DebtRank captures **continuous distress propagation** (not just binary default/no-default).
-- Extensions: multi-round DebtRank, nonlinear DebtRank, multiplex DebtRank.
-
-### Contagion Models: SIR/SIS on Financial Networks
-
-- **SIR (Susceptible-Infected-Recovered)**: A solvent bank (S) can become distressed (I) through exposure to distressed neighbors, and eventually defaults or is resolved (R). One-time contagion.
-- **SIS (Susceptible-Infected-Susceptible)**: Banks can recover and become susceptible again — models recurring financial stress.
-- **Epidemic threshold**: $\beta/\gamma > 1/\lambda_1(\mathbf{A})$ where $\beta$ is infection rate, $\gamma$ is recovery rate, and $\lambda_1$ is the spectral radius. Below this threshold, contagion dies out.
-- **Heterogeneous mean-field**: Accounts for degree heterogeneity — highly connected banks are more likely to be infected and to spread contagion.
-
-### Stress Testing Through Network Failure Analysis
-
-- **Scenario-based stress testing**: Apply an external shock (e.g., sovereign default, interest rate spike) and simulate cascade through the network.
-- **Sequential default algorithm**: Process defaults one at a time, checking after each whether additional banks breach their solvency/liquidity thresholds.
-- **Multi-round simulations**: Allow for feedback loops — asset fire sales depress prices, causing further losses, triggering more defaults.
-- **Network-enhanced stress tests**: Combine traditional balance-sheet stress testing with network contagion models (Cont, Moussa & Santos, 2013).
-- **Regulatory applications**: EBA/ECB stress tests increasingly incorporate network effects. Identify which initial shocks cause the largest cascades.
+- **多種類の金融関係**: 株式持ち合い、債権、デリバティブエクスポージャー、インターバンク融資を別々の層として扱う。
+- **層間増幅**: インターバンク層における苦境が資産層での投げ売りを引き起こし、それが株式層にフィードバックする。
+- **マルチプレックス上のシステミックリスク**: Poledna et al. (2015) は、単一層のDebtRankがマルチプレックスDebtRankと比較してシステミックリスクを最大90%過小評価することを示した。
 
 ---
 
-## Summary
+## 11. ネットワークの頑健性とカスケード故障
 
-The mathematical foundations presented in this chapter provide the formal toolkit for financial network science:
+### パーコレーション理論
 
-- **Graph theory** provides the language and structural concepts.
-- **Centrality measures** identify systemically important nodes.
-- **Community detection** reveals the modular organization of financial systems.
-- **Network models** provide null models and generative mechanisms.
-- **Spectral graph theory** connects network structure to dynamical properties.
-- **Random matrix theory** enables principled signal-noise separation in financial correlation matrices.
-- **Knowledge graph formalisms** structure heterogeneous financial data for reasoning and querying.
-- **Graph neural networks** learn from network-structured financial data end-to-end.
-- **Temporal network theory** captures the evolving nature of financial relationships.
-- **Multilayer network theory** models the multi-faceted interconnections in the financial system.
-- **Robustness and cascade theory** provides the framework for understanding and stress-testing systemic fragility.
+- **サイトパーコレーション**: 各ノードが確率 $1-p$ で独立に除去される。どの $p_c$ で巨大連結成分が存在するか？
+- **ボンドパーコレーション**: 各辺が確率 $1-p$ で独立に除去される。
+- **パーコレーション閾値** $p_c$: ネットワークトポロジーに依存。ERグラフでは $p_c = 1/\langle k \rangle$。$\gamma \leq 3$ のスケールフリーネットワークでは $p_c \to 0$（ランダム除去には頑健だが標的型攻撃には脆弱）。
+- 金融のアナロジー: 銀行破綻（サイトパーコレーション）または関係の断絶（ボンドパーコレーション）とその結果としてのネットワーク分断。
 
-These foundations are interconnected: spectral theory underlies both community detection and GNNs; RMT informs network construction from correlation matrices; cascade models build on percolation theory and network robustness. Mastery of these foundations enables rigorous analysis of financial networks across all scales and domains.
+### カスケード故障モデル
+
+- **砂山モデル**: ノードには容量閾値があり、容量超過時に負荷が近傍に再分配され、さらなる故障を引き起こす可能性がある。
+- **負荷再分配**: ノードが故障すると、その負荷が残りのノードに再分配される（容量または接続性に比例）、これにより過負荷が発生する可能性がある。
+- **閾値モデル**: 故障した近傍の割合が閾値 $\phi$ を超えるとノードが故障する — Wattsのカスケードモデル。
+- 金融のアナロジー: 銀行の破綻がカウンターパーティに債務を再分配し、追加負担により彼らも破綻する可能性がある。
+
+### ネットワークの復元力: 標的型攻撃 vs ランダム攻撃
+
+- **ランダム故障**: 一様ランダムにノードを除去。スケールフリーネットワークは非常に頑健（低次数ノードの豊富さによる）。
+- **標的型攻撃**: 次数（または媒介中心性）の降順でノードを除去。スケールフリーネットワークは極めて脆弱 — 少数のハブノードの除去でネットワークが崩壊。
+- **金融への示唆**: 金融システムはランダムな小規模銀行の破綻には頑健であるが、少数のシステム上重要な金融機関の破綻には壊滅的に脆弱である（「大きすぎて潰せない」）。
+
+### コア-ペリフェリー構造と「相互接続が密すぎて潰せない」
+
+- 多くの金融ネットワークは**コア-ペリフェリー構造**を示す: 大規模で相互接続された機関の密なコアと、疎なペリフェリーに囲まれている。
+- コアノードは**相互接続が密すぎて潰せない**: その除去によりペリフェリーノードがシステムから切断される。
+- **Craig & von Peter (2014)**: インターバンクネットワークにおけるコア-ペリフェリー構造の正式な統計モデル。
+- 政策的示唆: システミックな重要性はサイズだけでなくネットワーク上の位置にも依存する。
+
+### カスケードモデルとしてのDebtRank
+
+- **Battiston, Puliga, Kaushik, Tasca & Caldarelli (2012)**: DebtRank — 金融苦境のための再帰的カスケードモデル。
+- 各ノード $i$ は苦境レベル $h_i \in [0, 1]$ と自己資本 $E_i$ を持つ。
+- 苦境が伝播: $h_j(t+1) = \min\left(1, h_j(t) + \sum_i W_{ij} h_i(t)\right)$、ここで $W_{ij} = \frac{A_{ij}}{E_j}$ は相対的エクスポージャー。
+- 単純な伝染とは異なり、DebtRankは**連続的な苦境の伝播**を捉える（二値的なデフォルト/非デフォルトだけでなく）。
+- 拡張: 多ラウンドDebtRank、非線形DebtRank、マルチプレックスDebtRank。
+
+### 金融ネットワーク上の伝染モデル: SIR/SIS
+
+- **SIR（感受性-感染-回復）**: 健全な銀行（S）が、苦境にある近傍へのエクスポージャーを通じて苦境（I）に陥り、最終的にデフォルトまたは処理される（R）。一回限りの伝染。
+- **SIS（感受性-感染-感受性）**: 銀行が回復して再び感受性を持つ — 繰り返す金融ストレスをモデル化。
+- **エピデミック閾値**: $\beta/\gamma > 1/\lambda_1(\mathbf{A})$、ここで $\beta$ は感染率、$\gamma$ は回復率、$\lambda_1$ はスペクトル半径。この閾値以下では伝染は消滅する。
+- **不均一平均場**: 次数の不均一性を考慮 — 接続の多い銀行は感染しやすく、伝染を広めやすい。
+
+### ネットワーク故障分析によるストレステスト
+
+- **シナリオベースのストレステスト**: 外部ショック（例: ソブリンデフォルト、金利急上昇）を適用し、ネットワークを通じたカスケードをシミュレーション。
+- **逐次デフォルトアルゴリズム**: デフォルトを1件ずつ処理し、各回の後に追加の銀行がソルベンシー/流動性の閾値を下回るかを確認。
+- **多ラウンドシミュレーション**: フィードバックループを許容 — 資産の投げ売りが価格を押し下げ、さらなる損失を引き起こし、追加のデフォルトを誘発。
+- **ネットワーク強化型ストレステスト**: 従来のバランスシート・ストレステストとネットワーク伝染モデルを組み合わせる (Cont, Moussa & Santos, 2013)。
+- **規制への応用**: EBA/ECBのストレステストはネットワーク効果を徐々に取り入れている。どの初期ショックが最大のカスケードを引き起こすかを識別。
+
+---
+
+## まとめ
+
+本章で提示した数学的基礎は、金融ネットワーク科学のための形式的なツールキットを提供する:
+
+- **グラフ理論**は言語と構造的概念を提供する。
+- **中心性指標**はシステム上重要なノードを識別する。
+- **コミュニティ検出**は金融システムのモジュラー構造を明らかにする。
+- **ネットワークモデル**はヌルモデルと生成メカニズムを提供する。
+- **スペクトルグラフ理論**はネットワーク構造と動的特性を結びつける。
+- **ランダム行列理論**は金融相関行列における原理的な信号・ノイズ分離を可能にする。
+- **知識グラフの形式化**は異種金融データを推論とクエリのために構造化する。
+- **グラフニューラルネットワーク**はネットワーク構造化された金融データからエンドツーエンドで学習する。
+- **時間的ネットワーク理論**は金融関係の進化する性質を捉える。
+- **多層ネットワーク理論**は金融システムにおける多面的な相互接続をモデル化する。
+- **頑健性とカスケード理論**はシステミックな脆弱性の理解とストレステストの枠組みを提供する。
+
+これらの基礎は相互に関連している: スペクトル理論はコミュニティ検出とGNNの両方の基盤であり、ランダム行列理論は相関行列からのネットワーク構築に情報を提供し、カスケードモデルはパーコレーション理論とネットワーク頑健性の上に構築されている。これらの基礎を習得することで、あらゆるスケールとドメインにわたる金融ネットワークの厳密な分析が可能となる。

@@ -1,285 +1,285 @@
-# Quantitative Methods for Financial Networks
+# 金融ネットワークのための定量的手法
 
-This chapter covers the core quantitative techniques used to construct, filter, and analyze financial networks — from correlation-based graph construction and portfolio optimization to random matrix theory, multilayer networks, and market microstructure.
+本章では、金融ネットワークの構築、フィルタリング、分析に用いられる中核的な定量技法を取り上げる——相関ベースのグラフ構築やポートフォリオ最適化から、ランダム行列理論、多層ネットワーク、市場マイクロストラクチャーまで。
 
 ---
 
-## 1. Minimum Spanning Tree and Correlation Networks
+## 1. 最小全域木と相関ネットワーク
 
-### Foundational Framework: Mantegna (1999)
+### 基礎的フレームワーク：Mantegna（1999年）
 
-The modern era of correlation-based financial networks begins with Mantegna's seminal paper "Hierarchical structure in financial markets" (1999). The construction pipeline is:
+相関ベースの金融ネットワークの現代的研究は、Mantegnaの画期的論文 "Hierarchical structure in financial markets"（1999年）に始まる。構築パイプラインは以下の通り：
 
-1. **Cross-correlation matrix**: Compute pairwise Pearson correlations $\rho_{ij}$ of log-returns for $N$ assets over a rolling window.
-2. **Distance matrix**: Transform correlations into a metric distance:
+1. **相互相関行列**：ローリングウィンドウにわたる$N$資産の対数リターンのペアワイズPearson相関$\rho_{ij}$を計算。
+2. **距離行列**：相関を距離指標に変換：
 $$d_{ij} = \sqrt{2(1 - \rho_{ij})}$$
-   This satisfies the three axioms of a metric (non-negativity, symmetry, triangle inequality).
-3. **Minimum Spanning Tree (MST)**: Apply Kruskal's or Prim's algorithm to extract the MST — a connected acyclic subgraph with $N-1$ edges that minimizes total distance.
+   これは距離の3公理（非負性、対称性、三角不等式）を満たす。
+3. **最小全域木（MST）**：KruskalまたはPrimのアルゴリズムを適用してMSTを抽出——総距離を最小化する$N-1$本のエッジを持つ連結非巡回部分グラフ。
 
-The resulting MST reveals **hierarchical clustering of stocks by sector and industry**, providing a parsimonious representation of market structure from $O(N^2)$ correlations down to $O(N)$ edges.
+得られるMSTは**セクターと産業による株式の階層的クラスタリング**を明らかにし、$O(N^2)$の相関を$O(N)$のエッジに縮約した簡潔な市場構造の表現を提供する。
 
-### Planar Maximally Filtered Graph (PMFG)
+### 平面最大フィルタグラフ（PMFG）
 
-Tumminello, Aste, Di Matteo & Mantegna (2005) introduced the PMFG as a richer alternative to the MST:
+Tumminello, Aste, Di Matteo & Mantegna（2005年）は、MSTのより豊かな代替としてPMFGを導入した：
 
-- Retains $3(N-2)$ edges (vs. $N-1$ for MST) while remaining **planar** (embeddable on a sphere without edge crossings).
-- Always contains the MST as a subgraph.
-- Captures additional topological features: **cliques** (3-cliques and 4-cliques) and **loops** that encode higher-order correlation structure.
-- Better preserves local neighborhood information compared to the MST.
+- MSTの$N-1$本に対し$3(N-2)$本のエッジを保持しつつ、**平面性**（エッジ交差なく球面上に埋め込み可能）を維持。
+- 常にMSTを部分グラフとして含む。
+- 追加のトポロジー的特徴を捕捉：高次の相関構造を符号化する**クリーク**（3-クリークおよび4-クリーク）と**ループ**。
+- MSTと比較してローカルな近傍情報をより良く保存。
 
-### Triangulated Maximally Filtered Graph (TMFG)
+### 三角分割最大フィルタグラフ（TMFG）
 
-Massara, Di Matteo & Aste (2016) proposed the TMFG:
+Massara, Di Matteo & Aste（2016年）はTMFGを提案した：
 
-- Efficient $O(N^2)$ construction algorithm based on iterative vertex insertion.
-- Produces a chordal (triangulated) planar graph.
-- Better captures **local clustering structure** and produces positive-definite filtered correlation matrices.
-- Particularly useful when a sparse but information-rich graph representation is needed.
+- 反復的な頂点挿入に基づく効率的な$O(N^2)$構築アルゴリズム。
+- 弦的（三角分割された）平面グラフを生成。
+- **局所的クラスタリング構造**をより良く捕捉し、正定値フィルタ相関行列を生成。
+- 疎でありながら情報量の多いグラフ表現が必要な場合に特に有用。
 
-### Applications
+### 応用
 
-| Application | Method | Key Insight |
+| 応用 | 手法 | 主要な洞察 |
 |---|---|---|
-| Portfolio diversification | MST topology analysis | Peripheral assets on the MST are less correlated → better diversification |
-| Market regime detection | Dynamic MST tracking | MST topology changes (normalized tree length, degree distribution) signal regime shifts |
-| Crisis detection | MST shrinkage | During market stress, MST contracts as correlations spike — the "ultrametric shrinkage" effect |
-| Sector rotation | Time-varying MST | Changing hub structure and cluster membership reveal sector leadership rotation |
-| Risk management | PMFG/TMFG filtering | Cleaner correlation structure for downstream covariance estimation |
+| ポートフォリオ分散 | MSTトポロジー分析 | MST上の周辺資産は相関が低い → より良い分散効果 |
+| 市場レジーム検出 | 動的MST追跡 | MSTトポロジーの変化（正規化木長、次数分布）がレジーム転換を示唆 |
+| 危機検出 | MSTの縮退 | 市場ストレス時、相関が急上昇しMSTが収縮——「超計量縮退」効果 |
+| セクターローテーション | 時変MST | ハブ構造とクラスター所属の変化がセクターリーダーシップの交代を明示 |
+| リスク管理 | PMFG/TMFGフィルタリング | 下流の共分散推定のためのよりクリーンな相関構造 |
 
-### Key Papers
+### 主要論文
 
-| Paper | Authors | Year | Contribution |
+| 論文 | 著者 | 年 | 貢献 |
 |---|---|---|---|
-| Hierarchical structure in financial markets | Mantegna | 1999 | MST from correlation distance — founding paper |
-| A tool for filtering information in complex systems | Tumminello, Aste, Di Matteo, Mantegna | 2005 | PMFG construction and properties |
-| Network filtering for big data: TMFG | Massara, Di Matteo, Aste | 2016 | TMFG algorithm and positive-definiteness |
-| Dynamics of the MST of the US stock market | Onnela, Chakraborti, Kaski, Kertesz, Kanto | 2003 | Dynamic MST analysis, crisis detection |
-| Clustering and information in correlation-based financial networks | Tumminello, Lillo, Mantegna | 2010 | Comparison of MST, PMFG, thresholded networks |
+| Hierarchical structure in financial markets | Mantegna | 1999 | 相関距離からのMST——創始論文 |
+| A tool for filtering information in complex systems | Tumminello, Aste, Di Matteo, Mantegna | 2005 | PMFGの構築と特性 |
+| Network filtering for big data: TMFG | Massara, Di Matteo, Aste | 2016 | TMFGアルゴリズムと正定値性 |
+| Dynamics of the MST of the US stock market | Onnela, Chakraborti, Kaski, Kertesz, Kanto | 2003 | 動的MST分析、危機検出 |
+| Clustering and information in correlation-based financial networks | Tumminello, Lillo, Mantegna | 2010 | MST、PMFG、閾値ネットワークの比較 |
 
 ---
 
-## 2. Network-Based Portfolio Optimization
+## 2. ネットワークベースのポートフォリオ最適化
 
-### Hierarchical Risk Parity (HRP)
+### 階層的リスクパリティ（HRP）
 
-Marcos Lopez de Prado (2016) introduced HRP in "Building Diversified Portfolios that Outperform Out-of-Sample":
+Marcos Lopez de Prado（2016年）は "Building Diversified Portfolios that Outperform Out-of-Sample" においてHRPを導入した：
 
-1. **Tree clustering**: Compute a hierarchical clustering (single linkage) of the correlation matrix.
-2. **Quasi-diagonalization**: Reorder the covariance matrix according to the dendrogram to place correlated assets adjacent.
-3. **Recursive bisection**: Allocate risk top-down by splitting the sorted assets and allocating inversely proportional to cluster variance.
+1. **ツリークラスタリング**：相関行列の階層的クラスタリング（単連結法）を計算。
+2. **準対角化**：デンドログラムに従って共分散行列を並べ替え、相関の高い資産を隣接させる。
+3. **再帰的二分法**：ソートされた資産を分割し、クラスター分散に逆比例してリスクをトップダウンで配分。
 
-**Key advantages**:
-- Does not require matrix inversion (unlike Markowitz mean-variance optimization).
-- Robust to estimation error in the covariance matrix — a machine learning approach to portfolio construction.
-- Consistently outperforms traditional mean-variance in out-of-sample tests.
-- Exploits the **hierarchical structure of asset correlations** rather than treating the covariance matrix as unstructured.
+**主要な利点**：
+- 行列の逆行列を必要としない（Markowitz平均分散最適化とは異なる）。
+- 共分散行列の推定誤差に対してロバスト——ポートフォリオ構築への機械学習アプローチ。
+- アウトオブサンプルテストにおいて従来の平均分散を一貫して上回る。
+- 共分散行列を非構造的に扱うのではなく、**資産相関の階層的構造**を活用。
 
-### Hierarchical Equal Risk Contribution (HERC)
+### 階層的均等リスク寄与（HERC）
 
-Raffinot (2017) extended HRP with **risk budgeting**:
+Raffinot（2017年）はHRPを**リスクバジェッティング**で拡張した：
 
-- Combines hierarchical clustering with equal risk contribution (ERC) within clusters.
-- More flexible risk allocation — can target equal risk contribution at each level of the hierarchy.
-- Bridges between HRP and traditional risk parity approaches.
+- 階層的クラスタリングをクラスター内の均等リスク寄与（ERC）と組み合わせ。
+- より柔軟なリスク配分——階層の各レベルで均等リスク寄与を目指すことが可能。
+- HRPと従来のリスクパリティアプローチを橋渡し。
 
-### Network Risk Parity
+### ネットワークリスクパリティ
 
-- Uses **graph centrality measures** (degree, eigenvector, betweenness) to inform risk allocation.
-- Penalizes highly connected assets: nodes with high centrality contribute more to systemic risk and receive lower portfolio weight.
-- Variants:
-  - Degree-weighted risk parity: allocate inversely to weighted degree.
-  - Betweenness-penalized allocation: reduce weight of assets that serve as "bridges" between clusters.
-  - Eigenvector centrality-adjusted risk budgeting.
+- **グラフ中心性指標**（次数、固有ベクトル、媒介中心性）を用いてリスク配分に情報を付与。
+- 高度に接続された資産にペナルティ：中心性の高いノードはシステミックリスクへの寄与が大きく、ポートフォリオウェイトを低く設定。
+- バリエーション：
+  - 次数加重リスクパリティ：加重次数に逆比例して配分。
+  - 媒介中心性ペナルティ付き配分：クラスター間の「ブリッジ」として機能する資産のウェイトを削減。
+  - 固有ベクトル中心性調整リスクバジェッティング。
 
-### Signed Network Portfolios
+### 符号付きネットワークポートフォリオ
 
-- Financial correlation networks have both **positive and negative correlations** — naturally modeled as **signed edges**.
-- **Community detection on signed networks**: Group assets such that intra-community edges are positive (correlated) and inter-community edges are negative (hedging).
-- **Balance theory applications**: Heider's balance theory — "the enemy of my enemy is my friend" — provides structural constraints on portfolio grouping.
-- Frustrated edges (violations of balance) signal arbitrage or mispricing opportunities.
+- 金融相関ネットワークは**正と負の両方の相関**を持つ——自然に**符号付きエッジ**としてモデル化される。
+- **符号付きネットワーク上のコミュニティ検出**：コミュニティ内のエッジが正（相関）、コミュニティ間のエッジが負（ヘッジ）となるように資産をグループ化。
+- **バランス理論の応用**：Heiderのバランス理論——「敵の敵は味方」——がポートフォリオのグループ分けに構造的制約を提供。
+- フラストレーションエッジ（バランスの違反）が裁定機会またはミスプライシングを示唆。
 
-### Graph Neural Network Portfolios
+### グラフニューラルネットワークポートフォリオ
 
-- **GNN-based asset allocation**: Construct a financial relation graph (correlation, supply chain, sector membership) and learn portfolio weights end-to-end.
-- The GNN learns both the **optimal network structure** (via attention or learnable adjacency) and **portfolio weights** jointly.
-- Architectures: GAT for attention-weighted neighbor aggregation, GraphSAGE for inductive learning across varying asset universes.
-- Advantages: can incorporate heterogeneous financial relationships (fundamental, technical, alternative data) in a unified graph framework.
+- **GNNベースの資産配分**：金融関係グラフ（相関、サプライチェーン、セクター所属）を構築し、ポートフォリオウェイトをエンドツーエンドで学習。
+- GNNは**最適なネットワーク構造**（アテンションまたは学習可能な隣接行列を介して）と**ポートフォリオウェイト**を共同で学習。
+- アーキテクチャ：アテンション加重近傍集約のためのGAT、変動する資産ユニバースにわたる帰納的学習のためのGraphSAGE。
+- 利点：異種の金融関係（ファンダメンタル、テクニカル、オルタナティブデータ）を統一的なグラフフレームワークに組み込むことが可能。
 
-### Key Papers
+### 主要論文
 
-| Paper | Authors | Year | Contribution |
+| 論文 | 著者 | 年 | 貢献 |
 |---|---|---|---|
-| Building Diversified Portfolios that Outperform Out-of-Sample | Lopez de Prado | 2016 | HRP algorithm |
-| Hierarchical clustering-based asset allocation | Raffinot | 2017 | HERC extension |
-| Network-based risk parity | Various | 2018+ | Centrality-informed allocation |
-| Portfolio optimization with graph neural networks | Various | 2020+ | End-to-end GNN portfolio learning |
-| Signed networks in finance | Harary (balance theory), applications in finance | — | Signed graph portfolio grouping |
+| Building Diversified Portfolios that Outperform Out-of-Sample | Lopez de Prado | 2016 | HRPアルゴリズム |
+| Hierarchical clustering-based asset allocation | Raffinot | 2017 | HERC拡張 |
+| Network-based risk parity | Various | 2018+ | 中心性に基づく配分 |
+| Portfolio optimization with graph neural networks | Various | 2020+ | エンドツーエンドGNNポートフォリオ学習 |
+| Signed networks in finance | Harary (balance theory), applications in finance | — | 符号付きグラフによるポートフォリオグループ化 |
 
 ---
 
-## 3. Random Matrix Theory
+## 3. ランダム行列理論
 
-### Foundational Work: Laloux, Cizeau, Bouchaud & Potters (1999)
+### 基礎的研究：Laloux, Cizeau, Bouchaud & Potters（1999年）
 
-"Noise Dressing of Financial Correlation Matrices" — a landmark paper from **CFM (Capital Fund Management)** research:
+"Noise Dressing of Financial Correlation Matrices"——**CFM (Capital Fund Management)** リサーチによる画期的論文：
 
-- The empirical correlation matrix $\mathbf{C}$ of $N$ asset returns over $T$ observations contains substantial noise when $N/T = Q$ is not negligible.
-- **Marchenko-Pastur distribution**: For a purely random matrix (i.i.d. returns), the eigenvalue density follows:
+- $N$資産のリターンの$T$観測にわたる経験的相関行列$\mathbf{C}$は、$N/T = Q$が無視できない場合に相当なノイズを含む。
+- **Marchenko-Pastur分布**：純粋にランダムな行列（i.i.d.リターン）の場合、固有値密度は以下に従う：
 $$\rho(\lambda) = \frac{Q}{2\pi\sigma^2} \frac{\sqrt{(\lambda_+ - \lambda)(\lambda - \lambda_-)}}{\lambda}$$
-  where $\lambda_{\pm} = \sigma^2(1 \pm \sqrt{1/Q})^2$.
-- Eigenvalues within the Marchenko-Pastur bulk are **noise**; those exceeding $\lambda_+$ carry genuine signal (market factor, sector factors).
-- This provides a principled method for **separating signal from noise** in correlation matrices.
+  ここで $\lambda_{\pm} = \sigma^2(1 \pm \sqrt{1/Q})^2$。
+- Marchenko-Pasturバルク内の固有値は**ノイズ**であり、$\lambda_+$を超えるものは真のシグナル（市場ファクター、セクターファクター）を持つ。
+- これは相関行列における**シグナルとノイズの分離**のための原理的方法を提供する。
 
-### Denoising Methods
+### ノイズ除去手法
 
-| Method | Description | Reference |
+| 手法 | 説明 | 参考文献 |
 |---|---|---|
-| Eigenvalue clipping | Replace bulk eigenvalues with their average (or zeros), preserving trace | Laloux et al. (1999) |
-| Rotationally Invariant Estimator (RIE) | Optimal shrinkage of each eigenvalue using free probability theory | Bun, Bouchaud & Potters (2017) |
-| Ledoit-Wolf shrinkage | Linear shrinkage toward structured target (identity, constant correlation) | Ledoit & Wolf (2004) |
-| Oracle Approximating Shrinkage (OAS) | Improved shrinkage with better bias-variance tradeoff | Chen, Wiesel, Eldar & Hero (2010) |
-| Nonlinear shrinkage | Analytically optimal nonlinear shrinkage using Stieltjes transform | Ledoit & Wolf (2012, 2020) |
+| 固有値クリッピング | バルク固有値をその平均（またはゼロ）で置換し、トレースを保存 | Laloux et al. (1999) |
+| 回転不変推定量（RIE） | 自由確率論を用いた各固有値の最適縮小 | Bun, Bouchaud & Potters (2017) |
+| Ledoit-Wolf縮小 | 構造化ターゲット（単位行列、定数相関）への線形縮小 | Ledoit & Wolf (2004) |
+| Oracle Approximating Shrinkage (OAS) | 改善されたバイアス-分散トレードオフによる縮小 | Chen, Wiesel, Eldar & Hero (2010) |
+| 非線形縮小 | Stieltjes変換を用いた解析的最適非線形縮小 | Ledoit & Wolf (2012, 2020) |
 
-### Applications in Network Construction
+### ネットワーク構築への応用
 
-- **Cleaned correlation matrices → better network topology**: Denoised matrices produce more stable and meaningful MSTs and PMFGs.
-- **Improved MST construction**: MSTs from denoised matrices show more consistent sector clustering and less temporal instability.
-- **Dynamic RMT for time-varying network estimation**: Track the evolution of the eigenvalue spectrum and eigenvectors to detect structural breaks in the network.
+- **クリーニングされた相関行列 → より良いネットワークトポロジー**：ノイズ除去された行列は、より安定的で意味のあるMSTおよびPMFGを生成する。
+- **改善されたMST構築**：ノイズ除去行列からのMSTは、より一貫したセクタークラスタリングとより少ない時間的不安定性を示す。
+- **時変ネットワーク推定のための動的RMT**：固有値スペクトルと固有ベクトルの変遷を追跡し、ネットワークの構造変化を検出。
 
-### Spiked Models and Factor Structure
+### スパイクモデルとファクター構造
 
-- **Spiked covariance model**: A few large eigenvalues (spikes) emerge above the Marchenko-Pastur sea, corresponding to market-wide and sector factors.
-- **BBP transition** (Baik, Ben Arous & Peche, 2005): Phase transition in detectability of spikes — below a critical SNR, spikes merge into the bulk and become undetectable.
-- Connection to **factor models**: The top eigenvectors correspond to PCA factors (market, value, size, momentum), linking RMT to asset pricing.
+- **スパイク共分散モデル**：少数の大きな固有値（スパイク）がMarchenko-Pasturの海の上に出現し、市場全体およびセクターファクターに対応する。
+- **BBP転移**（Baik, Ben Arous & Peche, 2005年）：スパイクの検出可能性における相転移——臨界SNRを下回るとスパイクはバルクに溶け込み検出不能になる。
+- **ファクターモデル**との関連：上位固有ベクトルはPCAファクター（市場、バリュー、サイズ、モメンタム）に対応し、RMTと資産価格理論を結びつける。
 
-### Key Papers
+### 主要論文
 
-| Paper | Authors | Year | Contribution |
+| 論文 | 著者 | 年 | 貢献 |
 |---|---|---|---|
-| Noise dressing of financial correlation matrices | Laloux, Cizeau, Bouchaud, Potters | 1999 | RMT applied to finance — foundational |
-| Universal and non-universal properties of cross-correlations | Plerou, Gopikrishnan, Rosenow, Amaral, Guhr, Stanley | 1999 | Empirical eigenvalue analysis of stock correlations |
-| Cleaning large correlation matrices | Bun, Bouchaud, Potters | 2017 | RIE and optimal estimation |
-| A well-conditioned estimator for large-dimensional covariance matrices | Ledoit, Wolf | 2004 | Shrinkage estimators |
-| Nonlinear shrinkage estimation of large-dimensional covariance matrices | Ledoit, Wolf | 2012 | Analytically optimal nonlinear shrinkage |
+| Noise dressing of financial correlation matrices | Laloux, Cizeau, Bouchaud, Potters | 1999 | RMTの金融への適用——基礎論文 |
+| Universal and non-universal properties of cross-correlations | Plerou, Gopikrishnan, Rosenow, Amaral, Guhr, Stanley | 1999 | 株式相関の経験的固有値分析 |
+| Cleaning large correlation matrices | Bun, Bouchaud, Potters | 2017 | RIEと最適推定 |
+| A well-conditioned estimator for large-dimensional covariance matrices | Ledoit, Wolf | 2004 | 縮小推定量 |
+| Nonlinear shrinkage estimation of large-dimensional covariance matrices | Ledoit, Wolf | 2012 | 解析的最適非線形縮小 |
 
 ---
 
-## 4. Multiplex and Multilayer Networks
+## 4. マルチプレックスネットワークと多層ネットワーク
 
-### Motivation
+### 動機
 
-Financial institutions are connected through **multiple types of relationships simultaneously**: equity cross-holdings, debt claims, derivatives exposures, interbank lending, and payment flows. Analyzing any single layer in isolation misses critical cross-layer interactions.
+金融機関は**複数の種類の関係を同時に**通じて接続されている：株式の相互保有、債権、デリバティブエクスポージャー、インターバンク融資、決済フロー。いずれか単一の層を孤立して分析すると、重要なクロスレイヤー相互作用を見落とす。
 
-### BIS Working Paper No. 603
+### BISワーキングペーパーNo. 603
 
-The Bank for International Settlements published a key working paper on **multilayer network analysis of financial interconnectedness**, demonstrating that systemic risk assessments based on single-layer analysis can be severely misleading.
+Bank for International Settlements（国際決済銀行）は、**金融の相互連関性に関する多層ネットワーク分析**に関する重要なワーキングペーパーを発表し、単一層分析に基づくシステミックリスク評価が深刻な誤りを招きうることを示した。
 
-### Multilayer Systemic Risk
+### 多層システミックリスク
 
-- **Different layers**:
-  - Equity layer: cross-shareholdings, stock return correlations
-  - Debt layer: bond holdings, credit exposures
-  - Derivatives layer: OTC and exchange-traded counterparty networks
-  - Interbank layer: overnight lending, repo markets
-  - Payment layer: real-time gross settlement flows
+- **異なる層**：
+  - 株式層：相互株式保有、株式リターンの相関
+  - 債務層：債券保有、信用エクスポージャー
+  - デリバティブ層：OTCおよび上場取引のカウンターパーティネットワーク
+  - インターバンク層：オーバーナイト融資、レポ市場
+  - 決済層：即時グロス決済フロー
 
-- **Cross-layer contagion and amplification**: Distress in one layer (e.g., interbank defaults) spills over to other layers (e.g., derivatives counterparty risk, fire sales in equity).
-- **DebtRank on multiplex networks**: Extended DebtRank algorithm that accounts for cascading losses across multiple exposure types simultaneously.
+- **クロスレイヤー伝染と増幅**：ある層での苦境（例：インターバンクのデフォルト）が他の層（例：デリバティブのカウンターパーティリスク、株式のファイアセール）に波及。
+- **マルチプレックスネットワーク上のDebtRank**：複数のエクスポージャータイプにわたるカスケーディング損失を同時に考慮する拡張DebtRankアルゴリズム。
 
-### Bipartite Networks
+### 二部ネットワーク
 
-- **Bank-asset networks**: Banks connected to assets they hold — a bipartite (two-mode) graph.
-- **Investor-asset overlap**: Overlapping portfolios create indirect connections between institutions through common asset holdings.
-- Bipartite projection yields the one-mode network of institutions (weighted by portfolio overlap), which drives fire-sale contagion.
+- **銀行-資産ネットワーク**：銀行が保有する資産に接続される二部（二モード）グラフ。
+- **投資家-資産の重複**：重複するポートフォリオが共通資産保有を通じて機関間の間接的な接続を生む。
+- 二部射影により機関の一モードネットワーク（ポートフォリオの重複で重み付け）が得られ、これがファイアセール伝染を駆動する。
 
-### Temporal Multiplex
+### 時間的マルチプレックス
 
-- Adding the **time dimension** to multilayer structure: each layer evolves independently with cross-layer coupling.
-- Enables analysis of how multilayer financial networks rewire during crises.
+- 多層構造に**時間次元**を追加：各層がクロスレイヤー結合を伴いながら独立に変遷。
+- 危機時に多層金融ネットワークがどのように再配線されるかの分析を可能にする。
 
-### Key Concepts
+### 主要概念
 
-| Concept | Description |
+| 概念 | 説明 |
 |---|---|
-| Interlayer coupling | Strength of dependencies between layers (e.g., equity-debt feedback) |
-| Layer aggregation | Combining layers into a single network — information loss vs. tractability |
-| Multiplex centrality | Centrality measures that account for node importance across all layers |
-| Layer reducibility | Quantifying redundancy between layers — are they structurally similar? |
+| レイヤー間結合 | レイヤー間の依存関係の強さ（例：株式-債務のフィードバック） |
+| レイヤー集約 | 複数のレイヤーを単一ネットワークに統合——情報損失 vs. 扱いやすさ |
+| マルチプレックス中心性 | すべてのレイヤーにわたるノードの重要性を考慮した中心性指標 |
+| レイヤー縮約可能性 | レイヤー間の冗長性の定量化——構造的に類似しているか？ |
 
-### Key Papers
+### 主要論文
 
-| Paper | Authors | Year | Contribution |
+| 論文 | 著者 | 年 | 貢献 |
 |---|---|---|---|
-| The multiplex structure of interbank networks | Bargigli, di Iasio, Infante, Lillo, Pierobon | 2015 | Multiplex analysis of Italian interbank market |
-| Multilayer network analysis of financial interconnectedness | BIS Working Paper No. 603 | 2016 | Systemic risk in multilayer financial networks |
-| Multiplexity and systemic risk | Poledna, Molina-Borboa, Martinez-Jaramillo, van der Leij, Thurner | 2015 | DebtRank on multiplex interbank networks |
-| Leveraging the network: a stress-test framework | Cont, Moussa, Santos | 2013 | Bipartite bank-asset stress testing |
-| Fire sales, indirect contagion and systemic risk | Cont, Schaanning | 2017 | Overlapping portfolios and fire-sale spirals |
+| The multiplex structure of interbank networks | Bargigli, di Iasio, Infante, Lillo, Pierobon | 2015 | イタリアのインターバンク市場のマルチプレックス分析 |
+| Multilayer network analysis of financial interconnectedness | BIS Working Paper No. 603 | 2016 | 多層金融ネットワークにおけるシステミックリスク |
+| Multiplexity and systemic risk | Poledna, Molina-Borboa, Martinez-Jaramillo, van der Leij, Thurner | 2015 | マルチプレックスインターバンクネットワーク上のDebtRank |
+| Leveraging the network: a stress-test framework | Cont, Moussa, Santos | 2013 | 二部銀行-資産ストレステスト |
+| Fire sales, indirect contagion and systemic risk | Cont, Schaanning | 2017 | 重複ポートフォリオとファイアセールスパイラル |
 
 ---
 
-## 5. Market Microstructure Networks
+## 5. 市場マイクロストラクチャーネットワーク
 
-### Limit Order Book (LOB) Networks
+### 指値注文ブック（LOB）ネットワーク
 
-- **Order flow networks**: Reconstructing "who trades with whom" from order book data.
-  - Nodes: market participants (identifiable in some markets via trader IDs).
-  - Edges: bilateral trades, weighted by volume or frequency.
-- **Information flow through order book dynamics**: Lead-lag relationships between order book events across assets or venues reveal information propagation paths.
-- **High-frequency trading network effects**:
-  - HFT firms act as hubs in the trading network, providing liquidity but also transmitting shocks.
-  - Co-location and latency arbitrage create asymmetric network structures.
-  - Flash crash propagation follows network topology.
+- **注文フローネットワーク**：注文ブックデータから「誰が誰と取引しているか」を再構築。
+  - ノード：市場参加者（一部市場ではトレーダーIDで識別可能）。
+  - エッジ：二者間取引、取引量または頻度で重み付け。
+- **注文ブックダイナミクスを通じた情報フロー**：資産間または取引所間の注文ブックイベントにおけるリード・ラグ関係が情報伝播経路を明らかにする。
+- **高頻度取引のネットワーク効果**：
+  - HFT企業は取引ネットワークのハブとして機能し、流動性を提供する一方でショックも伝達。
+  - コロケーションとレイテンシー裁定が非対称なネットワーク構造を生む。
+  - フラッシュクラッシュの伝播はネットワークトポロジーに従う。
 
-### OTC Dealer Networks
+### OTCディーラーネットワーク
 
-- **Interdealer broker networks** in fixed income, FX, and derivatives markets:
-  - OTC markets lack a central limit order book — trades occur bilaterally through dealer intermediation.
-  - The resulting network exhibits strong **core-periphery structure**: a dense core of large dealers connected to a sparse periphery of smaller participants.
+- 債券、外国為替、デリバティブ市場における**インターディーラーブローカーネットワーク**：
+  - OTC市場には中央の指値注文ブックがなく、取引はディーラーの仲介を通じて二者間で行われる。
+  - 結果として得られるネットワークは強い**コア・ペリフェリー構造**を示す：大規模ディーラーの密なコアがより小規模な参加者の疎なペリフェリーに接続。
 
-- **Li & Schurhoff (2019)**: "Dealer Networks" — analysis of municipal bond markets:
-  - Documented intermediation chains: bonds pass through multiple dealers before reaching end investors.
-  - Network position determines transaction costs: peripheral clients pay higher markups.
-  - Central dealers earn rents from their network position.
+- **Li & Schurhoff（2019年）**："Dealer Networks"——地方債市場の分析：
+  - 仲介チェーンの文書化：債券はエンド投資家に到達する前に複数のディーラーを経由。
+  - ネットワーク上の位置が取引コストを決定：周辺の顧客はより高いマークアップを支払う。
+  - 中心的なディーラーはネットワーク上の位置からレントを獲得。
 
-- **Network effects on pricing and liquidity**:
-  - Bid-ask spreads depend on the dealer's centrality in the trading network.
-  - Liquidity is not a property of an asset alone but of the network through which it trades.
-  - Network fragility: removal of core dealers can cause liquidity to evaporate.
+- **価格設定と流動性に対するネットワーク効果**：
+  - ビッドアスクスプレッドは取引ネットワークにおけるディーラーの中心性に依存。
+  - 流動性は資産単体の性質ではなく、それが取引されるネットワークの性質。
+  - ネットワークの脆弱性：コアディーラーの除去により流動性が蒸発しうる。
 
-### Dark Pool Networks
+### ダークプールネットワーク
 
-- **Fragmented equity markets**: Trading occurs across lit exchanges, dark pools, and internalizers — creating a networked market ecosystem.
-- **Information leakage across venues**: Order flow in one venue signals to informed traders in others; the topology of this information network affects execution quality.
-- **Optimal execution in networked markets**: Smart order routing as a network optimization problem — how to split orders across interconnected venues to minimize market impact.
+- **断片化された株式市場**：取引はリット取引所、ダークプール、インターナライザーにまたがって行われ、ネットワーク化された市場エコシステムを形成。
+- **取引所間の情報漏洩**：ある取引所での注文フローが他の取引所のインフォームドトレーダーにシグナルを送る；この情報ネットワークのトポロジーが執行品質に影響。
+- **ネットワーク化された市場における最適執行**：スマートオーダールーティングをネットワーク最適化問題として捉える——マーケットインパクトを最小化するために相互接続された取引所間に注文をどう分割するか。
 
-### Market Maker Networks and Liquidity Provision
+### マーケットメイカーネットワークと流動性供給
 
-- Market makers form networks through their overlapping obligations and inventory management.
-- Intermarket maker information sharing and competitive dynamics shape bid-ask spreads.
-- Network effects in market making: failure of one market maker propagates through inventory imbalances to connected makers.
+- マーケットメイカーは重複する義務と在庫管理を通じてネットワークを形成。
+- マーケットメイカー間の情報共有と競争ダイナミクスがビッドアスクスプレッドを形成。
+- マーケットメイキングにおけるネットワーク効果：一つのマーケットメイカーの破綻は在庫の不均衡を通じて接続されたメイカーに伝播。
 
-### Key Papers
+### 主要論文
 
-| Paper | Authors | Year | Contribution |
+| 論文 | 著者 | 年 | 貢献 |
 |---|---|---|---|
-| Dealer Networks | Li, Schurhoff | 2019 | Municipal bond dealer network structure and pricing |
-| The network of interdealer trades | Iori, de Masi, Precup, Gabbi, Caldarelli | 2008 | Italian interbank e-MID network |
-| Core-periphery structure in OTC markets | Craig, von Peter | 2014 | Core-periphery model for interbank markets |
-| High-frequency trading and market quality | Various | 2010s | HFT network effects on market microstructure |
-| Fragmentation and market quality | O'Hara, Ye | 2011 | Effects of market fragmentation |
-| The network origins of aggregate fluctuations | Acemoglu, Carvalho, Ozdaglar, Tahbaz-Salehi | 2012 | Network propagation of microstructural shocks |
+| Dealer Networks | Li, Schurhoff | 2019 | 地方債ディーラーネットワーク構造と価格設定 |
+| The network of interdealer trades | Iori, de Masi, Precup, Gabbi, Caldarelli | 2008 | イタリアのインターバンクe-MIDネットワーク |
+| Core-periphery structure in OTC markets | Craig, von Peter | 2014 | インターバンク市場のコア・ペリフェリーモデル |
+| High-frequency trading and market quality | Various | 2010s | HFTの市場マイクロストラクチャーへのネットワーク効果 |
+| Fragmentation and market quality | O'Hara, Ye | 2011 | 市場断片化の影響 |
+| The network origins of aggregate fluctuations | Acemoglu, Carvalho, Ozdaglar, Tahbaz-Salehi | 2012 | マイクロストラクチャーショックのネットワーク伝播 |
 
 ---
 
-## Summary
+## まとめ
 
-The quantitative methods surveyed in this chapter form the analytical backbone of financial network science:
+本章で概観した定量的手法は、金融ネットワーク科学の分析的基盤を形成する：
 
-- **Correlation networks** (MST, PMFG, TMFG) provide principled ways to extract meaningful structure from noisy correlation matrices.
-- **Network-based portfolio optimization** (HRP, HERC, network risk parity, GNN portfolios) leverages graph structure for more robust asset allocation.
-- **Random matrix theory** enables signal-noise separation, improving both network construction and covariance estimation.
-- **Multiplex and multilayer networks** capture the multi-faceted nature of financial interconnections and their cross-layer contagion dynamics.
-- **Market microstructure networks** reveal the hidden topology of trading relationships and their impact on pricing, liquidity, and systemic stability.
+- **相関ネットワーク**（MST、PMFG、TMFG）は、ノイズの多い相関行列から意味のある構造を抽出するための原理的方法を提供する。
+- **ネットワークベースのポートフォリオ最適化**（HRP、HERC、ネットワークリスクパリティ、GNNポートフォリオ）は、より堅牢な資産配分のためにグラフ構造を活用する。
+- **ランダム行列理論**はシグナルとノイズの分離を可能にし、ネットワーク構築と共分散推定の両方を改善する。
+- **マルチプレックスおよび多層ネットワーク**は、金融の相互接続の多面的な性質とそのクロスレイヤー伝染ダイナミクスを捕捉する。
+- **市場マイクロストラクチャーネットワーク**は、取引関係の隠れたトポロジーと、それが価格設定、流動性、システミック安定性に与える影響を明らかにする。
 
-These methods are not isolated — they interact synergistically. RMT-cleaned correlations produce better MSTs; MST topology informs HRP clustering; multiplex analysis reveals contagion channels invisible in single-layer networks; microstructure networks provide the empirical substrate on which macro-level financial networks rest.
+これらの手法は孤立したものではなく、相乗的に相互作用する。RMTでクリーニングされた相関はより良いMSTを生み出し、MSTトポロジーはHRPのクラスタリングに情報を提供し、マルチプレックス分析は単一層ネットワークでは見えない伝染チャネルを明らかにし、マイクロストラクチャーネットワークはマクロレベルの金融ネットワークが依拠する経験的基盤を提供する。
