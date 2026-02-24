@@ -1,0 +1,54 @@
+site_name: 金融 × 知識グラフ × ネットワーク科学
+site_url: https://yk0817.github.io/finance-knowledge-graph-network-science/
+repo_url: https://github.com/yk0817/finance-knowledge-graph-network-science
+theme:
+  name: material
+  language: ja
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: ダークモードに切替
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: ライトモードに切替
+  features:
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - content.code.copy
+nav:
+  - ホーム: index.md
+  - ドキュメント:
+    - 概観と歴史: 01-overview.md
+    - 経済学の視点: 02-economics.md
+    - コンピュータサイエンスの視点: 03-computer-science.md
+    - コーポレートガバナンス: 04-corporate-governance.md
+    - 新興分野: 05-emerging-fields.md
+    - 計量手法: 06-quantitative-methods.md
+    - 日本・アジアの研究: 07-japan-asia.md
+    - 数学的基礎: 08-mathematical-foundations.md
+  - リソース:
+    - 主要研究者: resources/researchers.md
+    - データセット: resources/datasets.md
+    - ツール＆プラットフォーム: resources/tools-and-platforms.md
+    - 学会・ワークショップ: resources/conferences.md
+    - 主要論文: resources/papers.md
+    - オントロジー＆標準: resources/ontologies.md
+  - チュートリアル:
+    - 株価相関ネットワーク: notebooks/01-correlation-network.ipynb
+    - 企業所有ネットワーク: notebooks/02-ownership-network.ipynb
+    - 取締役兼任ネットワーク: notebooks/03-board-interlocks.ipynb
+    - GNN不正検知: notebooks/04-gnn-fraud-detection.ipynb
+    - 金融KG構築: notebooks/05-kg-construction.ipynb
+plugins:
+  - search:
+      lang: ja
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - admonitions
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

@@ -59,12 +59,28 @@
 
 | リソース | 概要 |
 |----------|------|
-| [主要研究者](resources/researchers.md) | 主要な研究者・研究グループ |
-| [データセット](resources/datasets.md) | 金融ネットワーク用の公開・商用データセット |
-| [ツール＆プラットフォーム](resources/tools-and-platforms.md) | ソフトウェア、ライブラリ、プラットフォーム |
-| [学会・ワークショップ](resources/conferences.md) | 関連する学会・イベント |
-| [主要論文](resources/papers.md) | 重要論文・最新論文の精選リスト |
-| [オントロジー＆標準](resources/ontologies.md) | 金融オントロジー、分類体系、データ標準 |
+| [主要研究者](docs/resources/researchers.md) | 主要な研究者・研究グループ |
+| [データセット](docs/resources/datasets.md) | 金融ネットワーク用の公開・商用データセット |
+| [ツール＆プラットフォーム](docs/resources/tools-and-platforms.md) | ソフトウェア、ライブラリ、プラットフォーム |
+| [学会・ワークショップ](docs/resources/conferences.md) | 関連する学会・イベント |
+| [主要論文](docs/resources/papers.md) | 重要論文・最新論文の精選リスト |
+| [オントロジー＆標準](docs/resources/ontologies.md) | 金融オントロジー、分類体系、データ標準 |
+
+### チュートリアル（Jupyter Notebook）
+
+| # | ノートブック | テーマ | データソース |
+|---|------------|--------|------------|
+| 01 | [株価相関ネットワーク](docs/notebooks/01-correlation-network.ipynb) | 株価相関ネットワークとMST | Yahoo Finance |
+| 02 | [企業所有ネットワーク](docs/notebooks/02-ownership-network.ipynb) | 企業所有ネットワーク分析 | Wikidata / GLEIF LEI |
+| 03 | [取締役兼任ネットワーク](docs/notebooks/03-board-interlocks.ipynb) | 取締役兼任ネットワーク | サンプルCSV |
+| 04 | [GNN不正検知](docs/notebooks/04-gnn-fraud-detection.ipynb) | GNNによる不正検知入門 | Elliptic Bitcoin Dataset |
+| 05 | [金融KG構築](docs/notebooks/05-kg-construction.ipynb) | 金融テキストからのKG構築 | SEC EDGAR |
+
+## Webサイト
+
+ドキュメントは GitHub Pages でも公開しています：
+
+**[https://yk0817.github.io/finance-knowledge-graph-network-science/](https://yk0817.github.io/finance-knowledge-graph-network-science/)**
 
 ## コントリビューション
 

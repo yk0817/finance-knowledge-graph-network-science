@@ -60,12 +60,28 @@ This repository provides a structured survey of the research landscape at the in
 
 | Resource | Description |
 |----------|-------------|
-| [Key Researchers](resources/researchers.md) | Leading scholars and research groups |
-| [Datasets](resources/datasets.md) | Public and commercial datasets for financial networks |
-| [Tools & Platforms](resources/tools-and-platforms.md) | Software, libraries, and platforms |
-| [Conferences & Workshops](resources/conferences.md) | Relevant venues and events |
-| [Key Papers](resources/papers.md) | Curated reading list of seminal and recent papers |
-| [Ontologies & Standards](resources/ontologies.md) | Financial ontologies, taxonomies, and data standards |
+| [Key Researchers](docs/resources/researchers.md) | Leading scholars and research groups |
+| [Datasets](docs/resources/datasets.md) | Public and commercial datasets for financial networks |
+| [Tools & Platforms](docs/resources/tools-and-platforms.md) | Software, libraries, and platforms |
+| [Conferences & Workshops](docs/resources/conferences.md) | Relevant venues and events |
+| [Key Papers](docs/resources/papers.md) | Curated reading list of seminal and recent papers |
+| [Ontologies & Standards](docs/resources/ontologies.md) | Financial ontologies, taxonomies, and data standards |
+
+### Tutorials (Jupyter Notebooks)
+
+| # | Notebook | Theme | Data Source |
+|---|----------|-------|-------------|
+| 01 | [Correlation Network](docs/notebooks/01-correlation-network.ipynb) | Stock correlation network & MST | Yahoo Finance |
+| 02 | [Ownership Network](docs/notebooks/02-ownership-network.ipynb) | Corporate ownership network analysis | Wikidata / GLEIF LEI |
+| 03 | [Board Interlocks](docs/notebooks/03-board-interlocks.ipynb) | Board interlock network | Sample CSV |
+| 04 | [GNN Fraud Detection](docs/notebooks/04-gnn-fraud-detection.ipynb) | GNN-based fraud detection | Elliptic Bitcoin Dataset |
+| 05 | [KG Construction](docs/notebooks/05-kg-construction.ipynb) | KG construction from financial text | SEC EDGAR |
+
+## Web Site
+
+Documentation is also available as a website via GitHub Pages:
+
+**[https://yk0817.github.io/finance-knowledge-graph-network-science/](https://yk0817.github.io/finance-knowledge-graph-network-science/)**
 
 ## Contributing
 

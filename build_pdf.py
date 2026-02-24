@@ -20,12 +20,12 @@ DOC_FILES = [
 ]
 
 RESOURCE_FILES = [
-    "resources/researchers.md",
-    "resources/datasets.md",
-    "resources/tools-and-platforms.md",
-    "resources/conferences.md",
-    "resources/papers.md",
-    "resources/ontologies.md",
+    "docs/resources/researchers.md",
+    "docs/resources/datasets.md",
+    "docs/resources/tools-and-platforms.md",
+    "docs/resources/conferences.md",
+    "docs/resources/papers.md",
+    "docs/resources/ontologies.md",
 ]
 
 CSS = """
