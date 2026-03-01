@@ -93,6 +93,9 @@
 | Goto, G., Koh, E. & Puchniak, D. | 2020 | Diversity of Shareholder Stewardship in Asia: Faux Convergence | Vanderbilt Journal of Transnational Law | アジア各国における英国型スチュワードシップの「見せかけの収斂（faux convergence）」現象を指摘 |
 | Raddant, M. & Takahashi, H. | 2022 | Corporate Boards, Interorganizational Ties and Profitability: The Case of Japan | Empirical Economics | 日本企業約4,000社の取締役兼任・株式持合いネットワークのSNA; 中心性と収益性の関係、スモールワールド特性と旧系列構造の残存 |
 | Yazawa, K., Araragi, T., Itakura, K., Usuki, M., Hattori, T. & Mizuno, T. | 2024 | Detecting Financial Misconduct Using NLP and Machine Learning: Evidence from Japan | SSRN Working Paper | 有価証券報告書からNLP+MLで財務不正検出; MD&A・ガバナンス記述の言語的特徴が有効、日本の開示文書へのNLP適用の先駆的研究 |
+| 中川, 平野 & 高野 | 2025 | 本邦金融分野における大規模言語モデルに関するサーベイと展望 | JXiv プレプリント (DOI: 10.51094/jxiv.1268) | 69本の日本語金融NLP論文を体系的に分類; 有価証券報告書の質問応答・情報抽出・センチメント分析等を網羅的にサーベイ |
+| Doi, T. & Yakabi, K. | 2024 | Assessing the Changes in Nature-Related Disclosures: Text Analysis in Japanese Corporate Annual Reports | SSRN Working Paper (ID: 4908478) | 有価証券報告書の自然関連開示テキストの時系列変化をテキスト分析で評価; 日本企業の開示文書へのテキスト分析適用事例 |
+| Suzuki, M. et al. | 2024 | FinDeBERTa v2 | — | 日本語金融テキストに特化したDeBERTa系事前学習モデル; 金融文書のセンチメント分析・テキスト分類で汎用モデルを上回る性能 |
 
 ---
 
