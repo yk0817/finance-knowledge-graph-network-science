@@ -81,6 +81,21 @@
 
 ---
 
+## スチュワードシップ・コードとコーポレートガバナンス
+
+| 著者 | 年 | タイトル | 発表媒体 | 主要な貢献 |
+|------|-----|---------|----------|-----------|
+| Tsukioka, Y. | 2020 | The Impact of Japan's Stewardship Code on Shareholder Voting | International Review of Economics & Finance | SC受入れ信託銀行・保険会社の低収益企業への反対票増加を実証; コードが議決権行使を促進する効果 |
+| Shiraishi, M., Ikeda, N., Arikawa, Y. & Inoue, K. | 2019 | Stewardship Code, Institutional Investors, and Firm Value: International Evidence | RIETI Discussion Paper 19-E-077 | 56か国パネルデータでDIDによりSC導入効果を国際的に実証; 機関投資家保有比率の高い企業の企業価値向上 |
+| Ahrens, J.-P., Filatotchev, I. & Thomsen, S. | 2022 | Increasing Shareholder Focus: The Repercussions of the 2015 Corporate Governance Reform in Japan | Journal of Management and Governance | 日本企業3,405社で2015年CG改革の効果を実証; 社外取締役比率増加と収益性向上、大企業の雇用創出減少の副作用 |
+| Becht, M., Franks, J., Miyajima, H. & Suzuki, K. | 2021 | Outsourcing Active Ownership in Japan | ECGI Finance Working Paper No. 766/2021 | 日本のエンゲージメントサービスの効果分析; エンゲージメント成果公表時CAR約2.6%、「アクティブ・オーナーシップのアウトソーシング」モデルの有効性 |
+| Goto, G. | 2019 | The Logic and Limits of Stewardship Codes: The Case of Japan | Berkeley Business Law Journal | 英国と日本のSCの根本的目的の相違; 英国はリスクテイク抑制、日本はステークホルダー→株主利益中心への転換 |
+| Goto, G., Koh, E. & Puchniak, D. | 2020 | Diversity of Shareholder Stewardship in Asia: Faux Convergence | Vanderbilt Journal of Transnational Law | アジア各国における英国型スチュワードシップの「見せかけの収斂（faux convergence）」現象を指摘 |
+| Raddant, M. & Takahashi, H. | 2022 | Corporate Boards, Interorganizational Ties and Profitability: The Case of Japan | Empirical Economics | 日本企業約4,000社の取締役兼任・株式持合いネットワークのSNA; 中心性と収益性の関係、スモールワールド特性と旧系列構造の残存 |
+| Yazawa, K., Araragi, T., Itakura, K., Usuki, M., Hattori, T. & Mizuno, T. | 2024 | Detecting Financial Misconduct Using NLP and Machine Learning: Evidence from Japan | SSRN Working Paper | 有価証券報告書からNLP+MLで財務不正検出; MD&A・ガバナンス記述の言語的特徴が有効、日本の開示文書へのNLP適用の先駆的研究 |
+
+---
+
 ## 金融ナレッジグラフ
 
 | 著者 | 年 | タイトル | 発表媒体 | 主要な貢献 |
@@ -212,4 +227,4 @@
 
 ---
 
-*最終更新: 2026-02-23*
+*最終更新: 2026-03-01*
