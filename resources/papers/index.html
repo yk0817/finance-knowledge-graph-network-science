@@ -1,0 +1,2785 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yk0817.github.io/finance-knowledge-graph-network-science/resources/papers/">
+      
+      
+        <link rel="prev" href="../conferences/">
+      
+      
+        <link rel="next" href="../ontologies/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>主要論文 - 金融 × 知識グラフ × ネットワーク科学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="金融 × 知識グラフ × ネットワーク科学" class="md-header__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            金融 × 知識グラフ × ネットワーク科学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              主要論文
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="金融 × 知識グラフ × ネットワーク科学" class="md-nav__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    金融 × 知識グラフ × ネットワーク科学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概観と歴史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    経済学の視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-computer-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コンピュータサイエンスの視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-corporate-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コーポレートガバナンス
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-emerging-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    新興分野
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-quantitative-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    計量手法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-japan-asia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本・アジアの研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-mathematical-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学的基礎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    リソース
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    リソース
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../researchers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要研究者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データセット
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-and-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ツール＆プラットフォーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学会・ワークショップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要論文
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要論文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネットワーク科学の基礎
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融ネットワーク理論とシステミックリスク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相関ネットワーク、最小全域木、情報フィルタリング
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コーポレートガバナンスと所有ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スチュワードシップ・コードとコーポレートガバナンス
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融ナレッジグラフ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融のためのグラフニューラルネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生産ネットワークと経済複雑性
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ブロックチェーン、決済、DeFiネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日本・アジアの金融ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        グラフ表現学習と埋め込み
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネットワークベースのリスク指標
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新興分野: ESG、気候変動、サプライチェーンネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オントロジー＆標準
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    研究ノート
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究計画書
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-notes/data-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データソース調査
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-notes/ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    アイデア
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    チュートリアル
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    チュートリアル
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/01-correlation-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    株価相関ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/02-ownership-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業所有ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/03-board-interlocks.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    取締役兼任ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/04-gnn-fraud-detection.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNN不正検知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/05-kg-construction.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融KG構築
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネットワーク科学の基礎
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融ネットワーク理論とシステミックリスク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相関ネットワーク、最小全域木、情報フィルタリング
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コーポレートガバナンスと所有ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スチュワードシップ・コードとコーポレートガバナンス
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融ナレッジグラフ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融のためのグラフニューラルネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        生産ネットワークと経済複雑性
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ブロックチェーン、決済、DeFiネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        日本・アジアの金融ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        グラフ表現学習と埋め込み
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネットワークベースのリスク指標
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新興分野: ESG、気候変動、サプライチェーンネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">金融ネットワーク科学とナレッジグラフにおける主要論文</h1>
+<p>サブフィールドごとに整理された影響力のある論文のキュレーションコレクション。各エントリには著者、年、タイトル、発表媒体、主要な貢献を含む。</p>
+<hr />
+<h2 id="_2">ネットワーク科学の基礎</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Watts, D. &amp; Strogatz, S.</td>
+<td>1998</td>
+<td>Collective dynamics of 'small-world' networks</td>
+<td>Nature</td>
+<td>スモールワールドネットワークモデルの導入; クラスタリングと短い経路長</td>
+</tr>
+<tr>
+<td>Barabási, A.-L. &amp; Albert, R.</td>
+<td>1999</td>
+<td>Emergence of scaling in random networks</td>
+<td>Science</td>
+<td>スケールフリーネットワーク; 優先的接続メカニズム</td>
+</tr>
+<tr>
+<td>Newman, M.E.J. &amp; Girvan, M.</td>
+<td>2004</td>
+<td>Finding and evaluating community structure in networks</td>
+<td>Physical Review E</td>
+<td>コミュニティ検出のためのモジュラリティ指標; Girvan-Newmanアルゴリズム</td>
+</tr>
+<tr>
+<td>Newman, M.E.J.</td>
+<td>2006</td>
+<td>Modularity and community structure in networks</td>
+<td>PNAS</td>
+<td>モジュラリティのスペクトル最適化; コミュニティ検出の基礎</td>
+</tr>
+<tr>
+<td>Blondel, V. et al.</td>
+<td>2008</td>
+<td>Fast unfolding of communities in large networks</td>
+<td>JSTAT</td>
+<td>コミュニティ検出のためのLouvainアルゴリズム; 広く採用</td>
+</tr>
+<tr>
+<td>Fortunato, S.</td>
+<td>2010</td>
+<td>Community detection in graphs</td>
+<td>Physics Reports</td>
+<td>コミュニティ検出手法の包括的レビュー</td>
+</tr>
+<tr>
+<td>Boccaletti, S. et al.</td>
+<td>2006</td>
+<td>Complex networks: Structure and dynamics</td>
+<td>Physics Reports</td>
+<td>ネットワーク科学の基礎の包括的レビュー</td>
+</tr>
+<tr>
+<td>Albert, R. &amp; Barabási, A.-L.</td>
+<td>2002</td>
+<td>Statistical mechanics of complex networks</td>
+<td>Reviews of Modern Physics</td>
+<td>ネットワークトポロジーと統計の基礎的レビュー</td>
+</tr>
+<tr>
+<td>Buldyrev, S.V. et al.</td>
+<td>2010</td>
+<td>Catastrophic cascade of failures in interdependent networks</td>
+<td>Nature</td>
+<td>相互依存ネットワークの脆弱性; カスケード障害</td>
+</tr>
+<tr>
+<td>Kivelä, M. et al.</td>
+<td>2014</td>
+<td>Multilayer networks</td>
+<td>Journal of Complex Networks</td>
+<td>多層/マルチプレックスネットワーク分析のフレームワーク</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">金融ネットワーク理論とシステミックリスク</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allen, F. &amp; Gale, D.</td>
+<td>2000</td>
+<td>Financial contagion</td>
+<td>Journal of Political Economy</td>
+<td>インターバンクネットワークを通じた金融伝染の最初の形式的モデル; 完全vs不完全ネットワーク</td>
+</tr>
+<tr>
+<td>Eisenberg, L. &amp; Noe, T.</td>
+<td>2001</td>
+<td>Systemic risk in financial systems</td>
+<td>Management Science</td>
+<td>インターバンク債務のための清算支払ベクトルモデル; 均衡の存在と一意性</td>
+</tr>
+<tr>
+<td>Battiston, S. et al.</td>
+<td>2012</td>
+<td>DebtRank: Too central to fail? Financial networks, the FED and systemic risk</td>
+<td>Scientific Reports</td>
+<td>システム的重要性のためのDebtRank中心性指標; FRBの緊急融資への適用</td>
+</tr>
+<tr>
+<td>Battiston, S. et al.</td>
+<td>2012</td>
+<td>The network of global corporate control</td>
+<td>PLOS ONE</td>
+<td>多国籍企業のグローバル所有ネットワークのボウタイ構造; 147社がTNCの40%を支配(Vitali, Glattfelder, Battiston)</td>
+</tr>
+<tr>
+<td>Acemoglu, D., Ozdaglar, A. &amp; Tahbaz-Salehi, A.</td>
+<td>2015</td>
+<td>Systemic risk and stability in financial networks</td>
+<td>American Economic Review</td>
+<td>相転移: 分散化は一定の閾値まで有効; 頑健かつ脆弱なネットワーク</td>
+</tr>
+<tr>
+<td>Elliott, M., Golub, B. &amp; Jackson, M.</td>
+<td>2014</td>
+<td>Financial networks and contagion</td>
+<td>American Economic Review</td>
+<td>クロスホールディングと統合が伝染に及ぼす影響; 不連続カスケード</td>
+</tr>
+<tr>
+<td>Haldane, A. &amp; May, R.</td>
+<td>2011</td>
+<td>Systemic risk in banking ecosystems</td>
+<td>Nature</td>
+<td>生態学と金融のアナロジー; too interconnected to fail; 複雑性-安定性トレードオフ</td>
+</tr>
+<tr>
+<td>Billio, M. et al.</td>
+<td>2012</td>
+<td>Econometric measures of connectedness and systemic risk in the finance and insurance sectors</td>
+<td>Journal of Financial Economics</td>
+<td>システム的接続性を計測するためのグレンジャー因果性ネットワーク; PCAベースの指標</td>
+</tr>
+<tr>
+<td>Cont, R. et al.</td>
+<td>2013</td>
+<td>Running for the exit: Distressed selling and endogenous correlation in financial markets</td>
+<td>Mathematical Finance</td>
+<td>投げ売りと内生的ネットワーク相関; 重複ポートフォリオ伝染</td>
+</tr>
+<tr>
+<td>Gai, P. &amp; Kapadia, S.</td>
+<td>2010</td>
+<td>Contagion in financial networks</td>
+<td>Proceedings of the Royal Society A</td>
+<td>ランダム金融ネットワークにおける伝染ダイナミクス; 相転移</td>
+</tr>
+<tr>
+<td>Bardoscia, M. et al.</td>
+<td>2017</td>
+<td>Pathways towards instability in financial networks</td>
+<td>Nature Communications</td>
+<td>フォワードルッキング型伝染モデル; デフォルトなしのストレス伝播</td>
+</tr>
+<tr>
+<td>Glasserman, P. &amp; Young, H.P.</td>
+<td>2016</td>
+<td>Contagion in financial networks</td>
+<td>Journal of Economic Literature</td>
+<td>金融伝染モデルのサーベイ; システミックリスクへのネットワークアプローチ</td>
+</tr>
+<tr>
+<td>Upper, C.</td>
+<td>2011</td>
+<td>Simulation methods to assess the danger of contagion in interbank markets</td>
+<td>Journal of Financial Stability</td>
+<td>インターバンク伝染シミュレーション文献のレビュー</td>
+</tr>
+<tr>
+<td>Martinez-Jaramillo, S. et al.</td>
+<td>2014</td>
+<td>An empirical study of the Mexican banking system's network and its implications for systemic risk</td>
+<td>Journal of Economic Dynamics and Control</td>
+<td>メキシコ金融システムのマルチプレックス分析</td>
+</tr>
+<tr>
+<td>Caccioli, F. et al.</td>
+<td>2014</td>
+<td>Stability analysis of financial contagion due to overlapping portfolios</td>
+<td>Journal of Banking &amp; Finance</td>
+<td>重複ポートフォリオ伝染; 二部グラフによる銀行-資産ネットワーク</td>
+</tr>
+<tr>
+<td>Roukny, T. et al.</td>
+<td>2013</td>
+<td>Default cascades in complex networks: Topology and systemic risk</td>
+<td>Scientific Reports</td>
+<td>ネットワークトポロジーがカスケードダイナミクスに与える影響</td>
+</tr>
+<tr>
+<td>Battiston, S. et al.</td>
+<td>2016</td>
+<td>Complexity theory and financial regulation</td>
+<td>Science</td>
+<td>金融規制への複雑性科学の視点; 政策的含意</td>
+</tr>
+<tr>
+<td>Squartini, T. et al.</td>
+<td>2018</td>
+<td>Reconstruction methods for networks: The case of economic and financial systems</td>
+<td>Physics Reports</td>
+<td>不完全データからのネットワーク再構成のレビュー</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">相関ネットワーク、最小全域木、情報フィルタリング</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mantegna, R.</td>
+<td>1999</td>
+<td>Hierarchical structure in financial markets</td>
+<td>European Physical Journal B</td>
+<td>株式相関ネットワークの最小全域木(MST); 最初の相関ベースネットワーク</td>
+</tr>
+<tr>
+<td>Tumminello, M. et al.</td>
+<td>2005</td>
+<td>A tool for filtering information in complex systems</td>
+<td>PNAS</td>
+<td>平面最大フィルタリンググラフ(PMFG); MSTより情報豊富でノイズをフィルタリング</td>
+</tr>
+<tr>
+<td>Aste, T. et al.</td>
+<td>2005</td>
+<td>Correlation structure and dynamics in volatile markets</td>
+<td>New Journal of Physics</td>
+<td>危機時の相関ダイナミクス; MSTトポロジーの変化</td>
+</tr>
+<tr>
+<td>Massara, G., Di Matteo, T. &amp; Aste, T.</td>
+<td>2016</td>
+<td>Network filtering for big data: Triangulated Maximally Filtered Graph</td>
+<td>Journal of Complex Networks</td>
+<td>TMFG: 効率的な弦グラフ情報フィルタリング; O(n^2)構築</td>
+</tr>
+<tr>
+<td>Laloux, L. et al.</td>
+<td>1999</td>
+<td>Noise dressing of financial correlation matrices</td>
+<td>Physical Review Letters</td>
+<td>相関行列からのノイズフィルタリングのためのランダム行列理論(RMT)</td>
+</tr>
+<tr>
+<td>Plerou, V. et al.</td>
+<td>1999</td>
+<td>Universal and nonuniversal properties of cross correlations in financial time series</td>
+<td>Physical Review Letters</td>
+<td>株式相互相関のRMT分析; 固有値分析</td>
+</tr>
+<tr>
+<td>López de Prado, M.</td>
+<td>2016</td>
+<td>Building diversified portfolios that outperform out of sample</td>
+<td>Journal of Portfolio Management</td>
+<td>MSTベースクラスタリングを用いたHierarchical Risk Parity (HRP)によるポートフォリオ構築</td>
+</tr>
+<tr>
+<td>Pozzi, F., Di Matteo, T. &amp; Aste, T.</td>
+<td>2013</td>
+<td>Spread of risk across financial markets: Better to invest in the peripheries</td>
+<td>Scientific Reports</td>
+<td>ネットワークの周辺部vs中心部の投資戦略</td>
+</tr>
+<tr>
+<td>Kenett, D.Y. et al.</td>
+<td>2010</td>
+<td>Dominating clasp of the financial sector revealed by partial correlation analysis</td>
+<td>PLOS ONE</td>
+<td>真の依存関係を明らかにする偏相関ネットワーク</td>
+</tr>
+<tr>
+<td>Musmeci, N. et al.</td>
+<td>2015</td>
+<td>Risk diversification: A study of persistence with a filtered correlation-network approach</td>
+<td>Journal of Network Theory in Finance</td>
+<td>フィルタリング相関ネットワーク構造の持続性</td>
+</tr>
+<tr>
+<td>Bonanno, G. et al.</td>
+<td>2004</td>
+<td>Networks of equities in financial markets</td>
+<td>European Physical Journal B</td>
+<td>MSTによる金融ネットワークの分類学; セクタークラスタリング</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">コーポレートガバナンスと所有ネットワーク</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vitali, S., Glattfelder, J.B. &amp; Battiston, S.</td>
+<td>2011</td>
+<td>The network of global corporate control</td>
+<td>PLOS ONE</td>
+<td>多国籍企業のグローバル所有ネットワークのマッピング; ボウタイトポロジー; 147のスーパーエンティティ</td>
+</tr>
+<tr>
+<td>Mizruchi, M.</td>
+<td>1996</td>
+<td>What do interlocks do? An analysis, critique, and assessment of research on interlocking directorates</td>
+<td>Annual Review of Sociology</td>
+<td>取締役兼任研究の包括的レビュー</td>
+</tr>
+<tr>
+<td>Davis, G., Yoo, M. &amp; Baker, W.</td>
+<td>2003</td>
+<td>The small world of the American corporate elite, 1982–2001</td>
+<td>Strategic Organization</td>
+<td>米国企業取締役会ネットワークのスモールワールド特性</td>
+</tr>
+<tr>
+<td>Larcker, D., So, E. &amp; Wang, C.</td>
+<td>2013</td>
+<td>Boardroom centrality and firm performance</td>
+<td>Journal of Accounting and Economics</td>
+<td>取締役会ネットワークの中心性が企業業績を予測</td>
+</tr>
+<tr>
+<td>Heemskerk, E. &amp; Takes, F.</td>
+<td>2016</td>
+<td>The corporate elite community structure of global capitalism</td>
+<td>New Political Economy</td>
+<td>グローバル資本主義における企業エリートネットワークのコミュニティ構造</td>
+</tr>
+<tr>
+<td>Fichtner, J., Heemskerk, E. &amp; Garcia-Bernardo, J.</td>
+<td>2017</td>
+<td>Hidden power of the Big Three? Passive index funds, re-concentration of corporate ownership</td>
+<td>Business and Politics</td>
+<td>BlackRock、Vanguard、State Streetの所有集中</td>
+</tr>
+<tr>
+<td>Kogut, B. &amp; Walker, G.</td>
+<td>2001</td>
+<td>The small world of Germany and the durability of national networks</td>
+<td>American Sociological Review</td>
+<td>ドイツ企業ネットワークのスモールワールド構造</td>
+</tr>
+<tr>
+<td>Glattfelder, J.B. &amp; Battiston, S.</td>
+<td>2009</td>
+<td>Backbone of complex networks of corporations</td>
+<td>Physical Review E</td>
+<td>企業所有ネットワークからのバックボーン抽出</td>
+</tr>
+<tr>
+<td>Garcia-Bernardo, J. et al.</td>
+<td>2017</td>
+<td>Uncovering offshore financial centers</td>
+<td>Scientific Reports</td>
+<td>ネットワーク分析が隠されたオフショアセンターを明らかに</td>
+</tr>
+<tr>
+<td>Takes, F. &amp; Heemskerk, E.</td>
+<td>2016</td>
+<td>Centrality in the global network of corporate control</td>
+<td>Social Network Analysis and Mining</td>
+<td>グローバル企業支配ネットワークの中心性分析</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">スチュワードシップ・コードとコーポレートガバナンス</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tsukioka, Y.</td>
+<td>2020</td>
+<td>The Impact of Japan's Stewardship Code on Shareholder Voting</td>
+<td>International Review of Economics &amp; Finance</td>
+<td>SC受入れ信託銀行・保険会社の低収益企業への反対票増加を実証; コードが議決権行使を促進する効果</td>
+</tr>
+<tr>
+<td>Shiraishi, M., Ikeda, N., Arikawa, Y. &amp; Inoue, K.</td>
+<td>2019</td>
+<td>Stewardship Code, Institutional Investors, and Firm Value: International Evidence</td>
+<td>RIETI Discussion Paper 19-E-077</td>
+<td>56か国パネルデータでDIDによりSC導入効果を国際的に実証; 機関投資家保有比率の高い企業の企業価値向上</td>
+</tr>
+<tr>
+<td>Ahrens, J.-P., Filatotchev, I. &amp; Thomsen, S.</td>
+<td>2022</td>
+<td>Increasing Shareholder Focus: The Repercussions of the 2015 Corporate Governance Reform in Japan</td>
+<td>Journal of Management and Governance</td>
+<td>日本企業3,405社で2015年CG改革の効果を実証; 社外取締役比率増加と収益性向上、大企業の雇用創出減少の副作用</td>
+</tr>
+<tr>
+<td>Becht, M., Franks, J., Miyajima, H. &amp; Suzuki, K.</td>
+<td>2021</td>
+<td>Outsourcing Active Ownership in Japan</td>
+<td>ECGI Finance Working Paper No. 766/2021</td>
+<td>日本のエンゲージメントサービスの効果分析; エンゲージメント成果公表時CAR約2.6%、「アクティブ・オーナーシップのアウトソーシング」モデルの有効性</td>
+</tr>
+<tr>
+<td>Goto, G.</td>
+<td>2019</td>
+<td>The Logic and Limits of Stewardship Codes: The Case of Japan</td>
+<td>Berkeley Business Law Journal</td>
+<td>英国と日本のSCの根本的目的の相違; 英国はリスクテイク抑制、日本はステークホルダー→株主利益中心への転換</td>
+</tr>
+<tr>
+<td>Goto, G., Koh, E. &amp; Puchniak, D.</td>
+<td>2020</td>
+<td>Diversity of Shareholder Stewardship in Asia: Faux Convergence</td>
+<td>Vanderbilt Journal of Transnational Law</td>
+<td>アジア各国における英国型スチュワードシップの「見せかけの収斂（faux convergence）」現象を指摘</td>
+</tr>
+<tr>
+<td>Raddant, M. &amp; Takahashi, H.</td>
+<td>2022</td>
+<td>Corporate Boards, Interorganizational Ties and Profitability: The Case of Japan</td>
+<td>Empirical Economics</td>
+<td>日本企業約4,000社の取締役兼任・株式持合いネットワークのSNA; 中心性と収益性の関係、スモールワールド特性と旧系列構造の残存</td>
+</tr>
+<tr>
+<td>Yazawa, K., Araragi, T., Itakura, K., Usuki, M., Hattori, T. &amp; Mizuno, T.</td>
+<td>2024</td>
+<td>Detecting Financial Misconduct Using NLP and Machine Learning: Evidence from Japan</td>
+<td>SSRN Working Paper</td>
+<td>有価証券報告書からNLP+MLで財務不正検出; MD&amp;A・ガバナンス記述の言語的特徴が有効、日本の開示文書へのNLP適用の先駆的研究</td>
+</tr>
+<tr>
+<td>中川, 平野 &amp; 高野</td>
+<td>2025</td>
+<td>本邦金融分野における大規模言語モデルに関するサーベイと展望</td>
+<td>JXiv プレプリント (DOI: 10.51094/jxiv.1268)</td>
+<td>69本の日本語金融NLP論文を体系的に分類; 有価証券報告書の質問応答・情報抽出・センチメント分析等を網羅的にサーベイ</td>
+</tr>
+<tr>
+<td>Doi, T. &amp; Yakabi, K.</td>
+<td>2024</td>
+<td>Assessing the Changes in Nature-Related Disclosures: Text Analysis in Japanese Corporate Annual Reports</td>
+<td>SSRN Working Paper (ID: 4908478)</td>
+<td>有価証券報告書の自然関連開示テキストの時系列変化をテキスト分析で評価; 日本企業の開示文書へのテキスト分析適用事例</td>
+</tr>
+<tr>
+<td>Suzuki, M. et al.</td>
+<td>2024</td>
+<td>FinDeBERTa v2</td>
+<td>—</td>
+<td>日本語金融テキストに特化したDeBERTa系事前学習モデル; 金融文書のセンチメント分析・テキスト分類で汎用モデルを上回る性能</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">金融ナレッジグラフ</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cheng, X. et al.</td>
+<td>2024</td>
+<td>FinDKG: Dynamic Knowledge Graphs with Large Language Models for Detecting Global Trends in Financial Markets</td>
+<td>arXiv/ACM</td>
+<td>LLM駆動のニュースからの動的金融KG構築</td>
+</tr>
+<tr>
+<td>Ren, H. et al.</td>
+<td>2021</td>
+<td>FinKG: A Knowledge Graph for the Financial Domain</td>
+<td>—</td>
+<td>金融ナレッジグラフのスキーマと構築方法論</td>
+</tr>
+<tr>
+<td>Chen, Z. et al.</td>
+<td>2020</td>
+<td>Enterprise Knowledge Graph for Ownership Analysis</td>
+<td>EDBT</td>
+<td>エンタープライズスケールの所有ナレッジグラフ; エンティティ解決</td>
+</tr>
+<tr>
+<td>Bennett, M.</td>
+<td>2013</td>
+<td>The Financial Industry Business Ontology: Best Practice for Big Data</td>
+<td>Journal of Banking Regulation</td>
+<td>金融データ標準化のためのFIBOオントロジー</td>
+</tr>
+<tr>
+<td>Deng, S. et al.</td>
+<td>2019</td>
+<td>Knowledge-Driven Stock Trend Prediction and Explanation via Temporal Convolutional Network</td>
+<td>WWW</td>
+<td>時間的モデリングによるKG強化型株価予測</td>
+</tr>
+<tr>
+<td>Li, W. et al.</td>
+<td>2022</td>
+<td>FinKnowledge: A Financial Knowledge Graph Construction Framework</td>
+<td>—</td>
+<td>エンドツーエンドの金融KG構築パイプライン</td>
+</tr>
+<tr>
+<td>Hogan, A. et al.</td>
+<td>2021</td>
+<td>Knowledge Graphs</td>
+<td>ACM Computing Surveys</td>
+<td>KG手法の包括的サーベイ（金融応用を含む）</td>
+</tr>
+<tr>
+<td>Noy, N. et al.</td>
+<td>2019</td>
+<td>Industry-scale Knowledge Graphs: Lessons and Challenges</td>
+<td>Communications of ACM</td>
+<td>大規模エンタープライズナレッジグラフ展開からの教訓</td>
+</tr>
+<tr>
+<td>Liu, X. et al.</td>
+<td>2021</td>
+<td>FinBERT-KG: Finance Domain Knowledge Graph Construction via Pre-trained Language Model</td>
+<td>—</td>
+<td>BERTベースの金融KG構築</td>
+</tr>
+<tr>
+<td>Cao, Y. et al.</td>
+<td>2020</td>
+<td>KGAT: Knowledge Graph Attention Network for Recommendation</td>
+<td>KDD</td>
+<td>金融KG推論に適用可能なKGアテンションメカニズム</td>
+</tr>
+<tr>
+<td>Ye, H. et al.</td>
+<td>2023</td>
+<td>Financial Knowledge Graph Reasoning</td>
+<td>—</td>
+<td>時間的金融ナレッジグラフ上の推論</td>
+</tr>
+<tr>
+<td>Popov, A.</td>
+<td>2024</td>
+<td>Building Financial Knowledge Graphs with Ontology-Driven Approaches</td>
+<td>Graphwise Blog</td>
+<td>オントロジー駆動型KGの金融実践事例</td>
+</tr>
+<tr>
+<td>Osman, C., Ghiran, A. &amp; Buchmann, R.</td>
+<td>2024</td>
+<td>An Enterprise Modeling Approach for ESG Accounting Using Knowledge Graphs</td>
+<td>CEUR-WS Vol-3855</td>
+<td>エンタープライズモデリング+KGによるESG会計フレームワーク</td>
+</tr>
+<tr>
+<td>Mohsin, S., Jami, S.I., Wasi, S. &amp; Siddiqui, M.S.</td>
+<td>2024</td>
+<td>OBIE-based Knowledge Graph Construction from Annual Bank Reports</td>
+<td>PeerJ Computer Science</td>
+<td>年次銀行報告書からのOBIE+KG構築パイプライン</td>
+</tr>
+<tr>
+<td>Kertkeidkachorn, N. et al.</td>
+<td>2023</td>
+<td>FinKG: A Core Financial Knowledge Graph for Financial Analysis</td>
+<td>IEEE ICSC</td>
+<td>専門家検証済みOWLオントロジーによる高品質金融KG; 株価予測で有用性実証</td>
+</tr>
+<tr>
+<td>Xu, Z. &amp; Ichise, R.</td>
+<td>2025</td>
+<td>FinCaKG-Onto: Financial Expertise Depiction via Causality Knowledge Graph and Domain Ontology</td>
+<td>Applied Intelligence</td>
+<td>FIBO統合+BERT因果検出による因果KG; オントロジー整合性95.6%</td>
+</tr>
+<tr>
+<td>Elhammadi, S. et al.</td>
+<td>2020</td>
+<td>A High Precision Pipeline for Financial Knowledge Graph Construction</td>
+<td>COLING</td>
+<td>金融ニュース28.8万件→34.2万関係抽出; 精度78%の高精度KGパイプライン</td>
+</tr>
+<tr>
+<td>Abrouk, L. et al.</td>
+<td>2023</td>
+<td>OntoFiC: An Ontology for Financial Fraud Detection and Customer Behavior Modeling</td>
+<td>IEEE/ACM ASONAM</td>
+<td>OWL+SWRLルール推論によるSWIFT不正取引検出</td>
+</tr>
+<tr>
+<td>Kertkeidkachorn, N. et al.</td>
+<td>2023</td>
+<td>FinKG-JP: A Japanese Financial Knowledge Graph</td>
+<td>JSAI</td>
+<td>EDINETデータ活用; FinKGオントロジーの日本市場拡張</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_8">金融のためのグラフニューラルネットワーク</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kipf, T. &amp; Welling, M.</td>
+<td>2017</td>
+<td>Semi-Supervised Classification with Graph Convolutional Networks</td>
+<td>ICLR</td>
+<td>GCNアーキテクチャ; 金融グラフ学習の基礎</td>
+</tr>
+<tr>
+<td>Hamilton, W., Ying, R. &amp; Leskovec, J.</td>
+<td>2017</td>
+<td>Inductive Representation Learning on Large Graphs</td>
+<td>NeurIPS</td>
+<td>GraphSAGE; 大規模金融グラフのためのスケーラブルなノード埋め込み</td>
+</tr>
+<tr>
+<td>Veličković, P. et al.</td>
+<td>2018</td>
+<td>Graph Attention Networks</td>
+<td>ICLR</td>
+<td>GAT; グラフのためのアテンションベースメッセージパッシング</td>
+</tr>
+<tr>
+<td>Chen, D. et al.</td>
+<td>2018</td>
+<td>Incorporating Corporation Relationship via Graph Convolutional Neural Networks for Stock Price Prediction</td>
+<td>CIKM</td>
+<td>企業関係グラフを用いたGCNによる株価予測</td>
+</tr>
+<tr>
+<td>Feng, F. et al.</td>
+<td>2019</td>
+<td>Temporal Relational Ranking for Stock Prediction</td>
+<td>ACM TKDD</td>
+<td>株式市場ランキングのための時間的グラフモデル</td>
+</tr>
+<tr>
+<td>Sawhney, R. et al.</td>
+<td>2020</td>
+<td>Deep Attentive Learning for Stock Movement Prediction From Social Media Text and Company Correlations</td>
+<td>EMNLP</td>
+<td>テキストと株式相関グラフを組み合わせたGNN</td>
+</tr>
+<tr>
+<td>Wang, D. et al.</td>
+<td>2021</td>
+<td>Temporal-Relational Hypergraph Neural Network for Stock Movement Prediction</td>
+<td>—</td>
+<td>金融予測のためのハイパーグラフニューラルネットワーク</td>
+</tr>
+<tr>
+<td>Liu, Z. et al.</td>
+<td>2021</td>
+<td>Fraud Detection with Graph Neural Networks</td>
+<td>—</td>
+<td>トランザクションネットワークにおけるGNNベースの不正検出</td>
+</tr>
+<tr>
+<td>Weber, M. et al.</td>
+<td>2019</td>
+<td>Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks</td>
+<td>KDD MLF Workshop</td>
+<td>ビットコイントランザクショングラフでのAMLのためのGCN（Ellipticデータセット）</td>
+</tr>
+<tr>
+<td>Pareja, A. et al.</td>
+<td>2020</td>
+<td>EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs</td>
+<td>AAAI</td>
+<td>進化する金融ネットワークのための時間的GCN</td>
+</tr>
+<tr>
+<td>Cheng, D. et al.</td>
+<td>2020</td>
+<td>Graph Neural Network for Fraud Detection via Scalable Graph Learning</td>
+<td>—</td>
+<td>大規模金融不正検出のためのスケーラブルなGNN</td>
+</tr>
+<tr>
+<td>Yang, R. et al.</td>
+<td>2021</td>
+<td>Financial Risk Analysis for SMEs with Graph-based Supply Chain Mining</td>
+<td>IJCAI</td>
+<td>中小企業の信用リスク評価のためのサプライチェーングラフ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">生産ネットワークと経済複雑性</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acemoglu, D. et al.</td>
+<td>2012</td>
+<td>The network origins of aggregate fluctuations</td>
+<td>Econometrica</td>
+<td>ミクロショックが生産ネットワークを通じて伝播しマクロ変動を引き起こす</td>
+</tr>
+<tr>
+<td>Carvalho, V.</td>
+<td>2014</td>
+<td>From micro to macro via production networks</td>
+<td>Journal of Economic Perspectives</td>
+<td>生産ネットワークトポロジーがマクロ経済成果をどう形成するかのサーベイ</td>
+</tr>
+<tr>
+<td>Hidalgo, C. &amp; Hausmann, R.</td>
+<td>2009</td>
+<td>The building blocks of economic complexity</td>
+<td>PNAS</td>
+<td>プロダクトスペースと経済複雑性; 国の多角化が成長を予測</td>
+</tr>
+<tr>
+<td>Hausmann, R. et al.</td>
+<td>2014</td>
+<td>The Atlas of Economic Complexity</td>
+<td>MIT Press</td>
+<td>プロダクトスペースにおける各国のマッピング; 成長予測</td>
+</tr>
+<tr>
+<td>Tacchella, A. et al.</td>
+<td>2012</td>
+<td>A new metrics for countries' fitness and products' complexity</td>
+<td>Scientific Reports</td>
+<td>ECIの非線形代替としてのFitness-Complexityアルゴリズム</td>
+</tr>
+<tr>
+<td>Baqaee, D. &amp; Farhi, E.</td>
+<td>2019</td>
+<td>The macroeconomic impact of microeconomic shocks</td>
+<td>Econometrica</td>
+<td>生産ネットワークを通じたショックの非線形伝播</td>
+</tr>
+<tr>
+<td>Carvalho, V. &amp; Tahbaz-Salehi, A.</td>
+<td>2019</td>
+<td>Production networks: A primer</td>
+<td>Annual Review of Economics</td>
+<td>生産ネットワーク経済学の包括的入門</td>
+</tr>
+<tr>
+<td>Atalay, E. et al.</td>
+<td>2011</td>
+<td>Network structure of production</td>
+<td>PNAS</td>
+<td>米国生産ネットワークの実証的構造; 裾の重い次数分布</td>
+</tr>
+<tr>
+<td>Fujiwara, Y. &amp; Aoyama, H.</td>
+<td>2010</td>
+<td>Large-scale structure of a nation-wide production network</td>
+<td>European Physical Journal B</td>
+<td>日本の生産ネットワークの構造と特性</td>
+</tr>
+<tr>
+<td>Inoue, H. &amp; Todo, Y.</td>
+<td>2019</td>
+<td>Firm-level propagation of shocks through supply-chain networks</td>
+<td>Nature Sustainability</td>
+<td>自然災害後のサプライチェーンショック伝播</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="defi">ブロックチェーン、決済、DeFiネットワーク</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Soramäki, K. et al.</td>
+<td>2007</td>
+<td>The topology of interbank payment flows</td>
+<td>Physica A</td>
+<td>Fedwire大口決済システムの最初のネットワーク分析</td>
+</tr>
+<tr>
+<td>Nakamoto, S.</td>
+<td>2008</td>
+<td>Bitcoin: A peer-to-peer electronic cash system</td>
+<td>—</td>
+<td>ビットコインホワイトペーパー; ブロックチェーンネットワークの基礎</td>
+</tr>
+<tr>
+<td>Ron, D. &amp; Shamir, A.</td>
+<td>2013</td>
+<td>Quantitative analysis of the full bitcoin transaction graph</td>
+<td>Financial Cryptography</td>
+<td>ビットコイントランザクションネットワークトポロジーの初期分析</td>
+</tr>
+<tr>
+<td>Paquet-Clouston, M. et al.</td>
+<td>2019</td>
+<td>Ransomware payments in the Bitcoin ecosystem</td>
+<td>Journal of Cybersecurity</td>
+<td>ビットコインネットワークを通じたランサムウェア支払いの追跡</td>
+</tr>
+<tr>
+<td>Weber, M. et al.</td>
+<td>2019</td>
+<td>Anti-Money Laundering in Bitcoin</td>
+<td>KDD MLF Workshop</td>
+<td>Ellipticデータセットと不正取引検出のためのGCN</td>
+</tr>
+<tr>
+<td>Nadini, M. et al.</td>
+<td>2021</td>
+<td>Mapping the NFT revolution</td>
+<td>Scientific Reports</td>
+<td>NFT市場構造のネットワーク分析</td>
+</tr>
+<tr>
+<td>Somin, S. et al.</td>
+<td>2018</td>
+<td>Network analysis of ERC20 tokens trading on Ethereum blockchain</td>
+<td>Springer</td>
+<td>ERC20トークン送金ネットワークの特性</td>
+</tr>
+<tr>
+<td>Barbereau, T. et al.</td>
+<td>2022</td>
+<td>DeFi, not so decentralized: The measured distribution of voting rights</td>
+<td>HICSS</td>
+<td>DeFiプロトコルにおけるガバナンスの集中</td>
+</tr>
+<tr>
+<td>Aramonte, S. et al.</td>
+<td>2021</td>
+<td>DeFi risks and the decentralisation illusion</td>
+<td>BIS Quarterly Review</td>
+<td>DeFiコンポーザビリティのシステミックリスク分析</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_10">日本・アジアの金融ネットワーク</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aoyama, H. et al.</td>
+<td>2010</td>
+<td>Econophysics and companies: Statistical life and death in complex business networks</td>
+<td>Cambridge University Press</td>
+<td>日本の企業ネットワーク経済物理学の包括的な扱い</td>
+</tr>
+<tr>
+<td>Takayasu, H. &amp; Takayasu, M.</td>
+<td>2006</td>
+<td>Empirical science of financial fluctuations</td>
+<td>Springer</td>
+<td>日本金融市場のフラクタルおよびスケーリング分析</td>
+</tr>
+<tr>
+<td>Fujiwara, Y. et al.</td>
+<td>2009</td>
+<td>Structure and temporal change of the credit network between banks and large firms in Japan</td>
+<td>Economics</td>
+<td>日本の銀行-企業間信用ネットワークのダイナミクス</td>
+</tr>
+<tr>
+<td>Watanabe, T. et al.</td>
+<td>2013</td>
+<td>Price and network dynamics in the Japanese CDS market</td>
+<td>—</td>
+<td>日本のCDSネットワークと価格伝達</td>
+</tr>
+<tr>
+<td>Ohnishi, T. et al.</td>
+<td>2010</td>
+<td>Hubs and authorities in the world trade web using a weighted HITS algorithm</td>
+<td>Journal of Informetrics</td>
+<td>貿易ネットワークのハブ-オーソリティ分析</td>
+</tr>
+<tr>
+<td>Mizuno, T. et al.</td>
+<td>2014</td>
+<td>Structure of global buyer-seller networks</td>
+<td>PLOS ONE</td>
+<td>貿易データからのグローバルなバイヤー・セラーネットワーク構造</td>
+</tr>
+<tr>
+<td>Lincoln, J. &amp; Gerlach, M.</td>
+<td>2004</td>
+<td>Japan's Network Economy</td>
+<td>Cambridge University Press</td>
+<td>系列ネットワーク構造の包括的分析</td>
+</tr>
+<tr>
+<td>Souma, W. et al.</td>
+<td>2006</td>
+<td>Complex networks and economics</td>
+<td>Physica A</td>
+<td>日本株式市場の相関ベースネットワーク</td>
+</tr>
+<tr>
+<td>Inoue, H. &amp; Todo, Y.</td>
+<td>2020</td>
+<td>The propagation of economic impacts through supply chains</td>
+<td>Journal of Artificial Societies and Social Simulation</td>
+<td>サプライチェーン伝播のエージェントベースモデル</td>
+</tr>
+<tr>
+<td>Aoyama, H., Fujiwara, Y. &amp; Iyetomi, H.</td>
+<td>2015</td>
+<td>Macro-econophysics</td>
+<td>Cambridge University Press</td>
+<td>日本の生産ネットワークのマクロレベル経済物理学</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_11">グラフ表現学習と埋め込み</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grover, A. &amp; Leskovec, J.</td>
+<td>2016</td>
+<td>node2vec: Scalable Feature Learning for Networks</td>
+<td>KDD</td>
+<td>バイアス付きランダムウォーク埋め込み; 金融エンティティネットワークに適用可能</td>
+</tr>
+<tr>
+<td>Perozzi, B., Al-Rfou, R. &amp; Skiena, S.</td>
+<td>2014</td>
+<td>DeepWalk: Online Learning of Social Representations</td>
+<td>KDD</td>
+<td>ランダムウォーク＋skip-gramによるノード埋め込み</td>
+</tr>
+<tr>
+<td>Bordes, A. et al.</td>
+<td>2013</td>
+<td>Translating Embeddings for Modeling Multi-relational Data</td>
+<td>NeurIPS</td>
+<td>TransEナレッジグラフ埋め込みモデル</td>
+</tr>
+<tr>
+<td>Sun, Z. et al.</td>
+<td>2019</td>
+<td>RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space</td>
+<td>ICLR</td>
+<td>回転ベースのKG埋め込み; 対称性/合成の処理</td>
+</tr>
+<tr>
+<td>Xu, K. et al.</td>
+<td>2019</td>
+<td>How Powerful are Graph Neural Networks?</td>
+<td>ICLR</td>
+<td>GNNの表現力の理論的分析; GINアーキテクチャ</td>
+</tr>
+<tr>
+<td>Ying, R. et al.</td>
+<td>2018</td>
+<td>Graph Convolutional Neural Networks for Web-Scale Recommender Systems</td>
+<td>KDD</td>
+<td>PinSage: 産業スケールのGNN; 金融推薦に適用可能</td>
+</tr>
+<tr>
+<td>Schlichtkrull, M. et al.</td>
+<td>2018</td>
+<td>Modeling Relational Data with Graph Convolutional Networks</td>
+<td>ESWC</td>
+<td>多関係グラフのためのR-GCN; 金融KGに適用可能</td>
+</tr>
+<tr>
+<td>Trivedi, R. et al.</td>
+<td>2019</td>
+<td>DyRep: Learning Representations over Dynamic Graphs</td>
+<td>ICLR</td>
+<td>時間的点過程＋GNNによる動的グラフ表現</td>
+</tr>
+<tr>
+<td>Kazemi, S. et al.</td>
+<td>2020</td>
+<td>Representation Learning for Dynamic Graphs: A Survey</td>
+<td>JMLR</td>
+<td>動的グラフ表現学習手法のサーベイ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_12">ネットワークベースのリスク指標</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adrian, T. &amp; Brunnermeier, M.</td>
+<td>2016</td>
+<td>CoVaR</td>
+<td>American Economic Review</td>
+<td>条件付きバリューアットリスクによるシステミックリスク指標</td>
+</tr>
+<tr>
+<td>Acharya, V. et al.</td>
+<td>2017</td>
+<td>Measuring systemic risk</td>
+<td>Review of Financial Studies</td>
+<td>SRISK: 資本不足に基づくシステミックリスク指標</td>
+</tr>
+<tr>
+<td>Diebold, F. &amp; Yilmaz, K.</td>
+<td>2014</td>
+<td>On the network topology of variance decompositions</td>
+<td>Journal of Econometrics</td>
+<td>接続性計測のための分散分解ネットワーク</td>
+</tr>
+<tr>
+<td>Demirer, M. et al.</td>
+<td>2018</td>
+<td>Estimating global bank network connectedness</td>
+<td>Journal of Applied Econometrics</td>
+<td>分散分解に基づくグローバル銀行ネットワーク</td>
+</tr>
+<tr>
+<td>Brownlees, C. &amp; Engle, R.</td>
+<td>2017</td>
+<td>SRISK: A conditional capital shortfall measure of systemic risk</td>
+<td>Review of Financial Studies</td>
+<td>SRISK手法とグローバル銀行分析</td>
+</tr>
+<tr>
+<td>Hautsch, N., Schaumburg, J. &amp; Schienle, M.</td>
+<td>2015</td>
+<td>Financial network systemic risk contributions</td>
+<td>Review of Finance</td>
+<td>テールリスクネットワークによる実現システミックリスク寄与</td>
+</tr>
+<tr>
+<td>Greenwood, R., Landier, A. &amp; Thesmar, D.</td>
+<td>2015</td>
+<td>Vulnerable banks</td>
+<td>Journal of Financial Economics</td>
+<td>重複ポートフォリオによる投げ売り脆弱性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="esg">新興分野: ESG、気候変動、サプライチェーンネットワーク</h2>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>発表媒体</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Battiston, S. et al.</td>
+<td>2017</td>
+<td>A climate stress-test of the financial system</td>
+<td>Nature Climate Change</td>
+<td>金融システムのネットワークベース気候ストレステスト</td>
+</tr>
+<tr>
+<td>Dietz, S. et al.</td>
+<td>2016</td>
+<td>'Climate value at risk' of global financial assets</td>
+<td>Nature Climate Change</td>
+<td>金融ネットワークを通じた気候リスク伝播</td>
+</tr>
+<tr>
+<td>Bolton, P. &amp; Kacperczyk, M.</td>
+<td>2021</td>
+<td>Do investors care about carbon risk?</td>
+<td>Journal of Financial Economics</td>
+<td>炭素排出ネットワークと資産価格設定</td>
+</tr>
+<tr>
+<td>Monasterolo, I. &amp; de Angelis, L.</td>
+<td>2020</td>
+<td>Blind to carbon risk?</td>
+<td>Ecological Economics</td>
+<td>金融ネットワークを通じた気候政策リスクの伝播</td>
+</tr>
+<tr>
+<td>Reinders, H.J. et al.</td>
+<td>2023</td>
+<td>Climate risk in the financial system</td>
+<td>Annual Review of Financial Economics</td>
+<td>気候-金融ネットワーク研究のサーベイ</td>
+</tr>
+<tr>
+<td>Barrot, J.-N. &amp; Sauvagnat, J.</td>
+<td>2016</td>
+<td>Input specificity and the propagation of idiosyncratic shocks in production networks</td>
+<td>Quarterly Journal of Economics</td>
+<td>サプライチェーン途絶の伝播; 地震を利用した自然実験</td>
+</tr>
+<tr>
+<td>Inoue, H. &amp; Todo, Y.</td>
+<td>2020</td>
+<td>Propagation of COVID-19 supply chain shocks</td>
+<td>—</td>
+<td>サプライチェーンネットワークを通じたCOVID-19の影響</td>
+</tr>
+<tr>
+<td>Angioni, S. et al.</td>
+<td>2024</td>
+<td>Analyzing ESG Discourse in US and UK News through Knowledge Graphs</td>
+<td>CEUR-WS Vol-3697</td>
+<td>米英ニュースのESG言説をKG化して比較分析</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>最終更新: 2026-03-14</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

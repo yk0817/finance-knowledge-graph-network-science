@@ -1,0 +1,4389 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yk0817.github.io/finance-knowledge-graph-network-science/04-corporate-governance/">
+      
+      
+        <link rel="prev" href="../03-computer-science/">
+      
+      
+        <link rel="next" href="../05-emerging-fields/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>コーポレートガバナンス - 金融 × 知識グラフ × ネットワーク科学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-header__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            金融 × 知識グラフ × ネットワーク科学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              コーポレートガバナンス
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-nav__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    金融 × 知識グラフ × ネットワーク科学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概観と歴史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    経済学の視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-computer-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コンピュータサイエンスの視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コーポレートガバナンス
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コーポレートガバナンス
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. 基礎研究
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. 基礎研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1 グローバル企業支配のネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-corpnet-university-of-amsterdam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2 CORPNET 研究グループ（University of Amsterdam）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3-stanford-corporate-governance-research-initiative-cgri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3 Stanford Corporate Governance Research Initiative (CGRI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. 取締役会インターロックネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. 取締役会インターロックネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.1 理論的基盤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.2 方法論
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.3 主要な発見
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.4 主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. 所有ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C. 所有ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1-ubo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.1 実質的受益所有者（UBO）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.2 相互持合い分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.3 ピラミッド構造とデュアルクラス株式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.4 所有ネットワークのデータソース
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. 系列と株式持合い（日本固有）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="D. 系列と株式持合い（日本固有）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.1 歴史的背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.2 系列のグラフ理論分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3-20012023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.3 日本の株式持ち合いネットワーク 2001–2023年
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d4-jpx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.4 JPXガバナンス・コードとネットワークへの影響
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.5 可視化とデータツール
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. 機関投資家とガバナンスネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="E. 機関投資家とガバナンスネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.1 理論的基盤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.2 ネットワーク科学的アプローチ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.3 日本の制度的背景とネットワーク変化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e4-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.4 非構造データからのKG構築
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.5 政策評価への応用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.6 主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.7 データセット
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F. GNN × ガバナンス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="F. GNN × ガバナンス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.1 グラフニューラルネットワークによる信用格付け
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f2-company-as-tribe-gnnth-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.2 Company-as-Tribe: 木構造誘導型階層的GNN（TH-GNN）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f3-gnnhhgnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.3 階層的異種GNN（HHGNN）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.4 企業不正検出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f5-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.5 ガバナンスにおけるその他のGNN応用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G. 知識グラフ × ガバナンス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="G. 知識グラフ × ガバナンス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g1-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G.1 企業所有のためのエンタープライズKG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2-firmographica2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G.2 Firmographica（2025年）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g3-esg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G.3 ESGガバナンス知識グラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g4-llm-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G.4 LLM + GraphRAG によるガバナンスコンプライアンス
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H. プラットフォームとツール
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="H. プラットフォームとツール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#h1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H.1 調査・コンプライアンスプラットフォーム
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H.2 ガバナンスデータプロバイダー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. データセット
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J. オントロジーと標準規格
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="J. オントロジーと標準規格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#j1-fibofinancial-industry-business-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J.1 FIBO（Financial Industry Business Ontology、金融業界ビジネスオントロジー）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j2-bodsbeneficial-ownership-data-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J.2 BODS（Beneficial Ownership Data Standard、実質的受益所有データ基準）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j3-finregontfinancial-regulation-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J.3 FinRegOnt（Financial Regulation Ontology、金融規制オントロジー）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J.4 その他の関連標準規格
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K. 研究ギャップと今後の方向性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K. 研究ギャップと今後の方向性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.1 ガバナンス固有のオントロジーの不在
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.2 ガバナンスのための時間的知識グラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k3-kggnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.3 日本のガバナンス改革 × 最新のKG/GNN手法（ほぼ未開拓）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k4-llm-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.4 LLM × ガバナンスKG構築
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.5 国際比較ガバナンスネットワークフレームワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foundational
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#board-interlocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Board Interlocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ownership-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ownership Networks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#japan-keiretsu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Japan / Keiretsu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnn-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNN × Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-graph-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Graph × Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standards-and-ontologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards and Ontologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-emerging-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    新興分野
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quantitative-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    計量手法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-japan-asia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本・アジアの研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-mathematical-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学的基礎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    リソース
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    リソース
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/researchers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要研究者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データセット
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/tools-and-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ツール＆プラットフォーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学会・ワークショップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要論文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/ontologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オントロジー＆標準
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    研究ノート
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究計画書
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/data-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データソース調査
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    アイデア
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    チュートリアル
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    チュートリアル
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/01-correlation-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    株価相関ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/02-ownership-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業所有ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/03-board-interlocks.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    取締役兼任ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/04-gnn-fraud-detection.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNN不正検知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/05-kg-construction.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融KG構築
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. 基礎研究
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. 基礎研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.1 グローバル企業支配のネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-corpnet-university-of-amsterdam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.2 CORPNET 研究グループ（University of Amsterdam）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3-stanford-corporate-governance-research-initiative-cgri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A.3 Stanford Corporate Governance Research Initiative (CGRI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. 取締役会インターロックネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. 取締役会インターロックネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.1 理論的基盤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.2 方法論
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.3 主要な発見
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.4 主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. 所有ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C. 所有ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1-ubo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.1 実質的受益所有者（UBO）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.2 相互持合い分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.3 ピラミッド構造とデュアルクラス株式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C.4 所有ネットワークのデータソース
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. 系列と株式持合い（日本固有）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="D. 系列と株式持合い（日本固有）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.1 歴史的背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.2 系列のグラフ理論分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3-20012023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.3 日本の株式持ち合いネットワーク 2001–2023年
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d4-jpx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.4 JPXガバナンス・コードとネットワークへの影響
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D.5 可視化とデータツール
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. 機関投資家とガバナンスネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="E. 機関投資家とガバナンスネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.1 理論的基盤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.2 ネットワーク科学的アプローチ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.3 日本の制度的背景とネットワーク変化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e4-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.4 非構造データからのKG構築
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.5 政策評価への応用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.6 主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E.7 データセット
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F. GNN × ガバナンス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="F. GNN × ガバナンス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.1 グラフニューラルネットワークによる信用格付け
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f2-company-as-tribe-gnnth-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.2 Company-as-Tribe: 木構造誘導型階層的GNN（TH-GNN）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f3-gnnhhgnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.3 階層的異種GNN（HHGNN）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.4 企業不正検出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f5-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F.5 ガバナンスにおけるその他のGNN応用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G. 知識グラフ × ガバナンス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="G. 知識グラフ × ガバナンス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g1-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G.1 企業所有のためのエンタープライズKG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2-firmographica2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G.2 Firmographica（2025年）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g3-esg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G.3 ESGガバナンス知識グラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g4-llm-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G.4 LLM + GraphRAG によるガバナンスコンプライアンス
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H. プラットフォームとツール
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="H. プラットフォームとツール">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#h1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H.1 調査・コンプライアンスプラットフォーム
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H.2 ガバナンスデータプロバイダー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. データセット
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J. オントロジーと標準規格
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="J. オントロジーと標準規格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#j1-fibofinancial-industry-business-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J.1 FIBO（Financial Industry Business Ontology、金融業界ビジネスオントロジー）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j2-bodsbeneficial-ownership-data-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J.2 BODS（Beneficial Ownership Data Standard、実質的受益所有データ基準）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j3-finregontfinancial-regulation-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J.3 FinRegOnt（Financial Regulation Ontology、金融規制オントロジー）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J.4 その他の関連標準規格
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K. 研究ギャップと今後の方向性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K. 研究ギャップと今後の方向性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.1 ガバナンス固有のオントロジーの不在
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.2 ガバナンスのための時間的知識グラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k3-kggnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.3 日本のガバナンス改革 × 最新のKG/GNN手法（ほぼ未開拓）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k4-llm-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.4 LLM × ガバナンスKG構築
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K.5 国際比較ガバナンスネットワークフレームワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foundational
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#board-interlocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Board Interlocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ownership-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ownership Networks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#japan-keiretsu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Japan / Keiretsu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnn-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNN × Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-graph-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Graph × Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standards-and-ontologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards and Ontologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">コーポレートガバナンス × 知識グラフ × ネットワーク科学</h1>
+<p><strong>Corporate Governance × Knowledge Graphs × Network Science</strong></p>
+<hr />
+<h2 id="a">A. 基礎研究</h2>
+<h3 id="a1">A.1 グローバル企業支配のネットワーク</h3>
+<p><strong>Vitali, Glattfelder &amp; Battiston (2011)</strong>, "The Network of Global Corporate Control," <em>PLoS ONE</em>, 6(10), e25995.</p>
+<p>この画期的な研究は、多国籍企業（TNCs）のグローバルな所有構造にネットワーク科学を適用し、経済的権力の著しい集中を明らかにした：</p>
+<ul>
+<li><strong>データ</strong>: Orbis データベース（Bureau van Dijk）から特定された43,060社のTNCs、600,508件の所有関係で接続（ノードは企業、有向加重エッジは株式保有を表す）</li>
+<li><strong>方法論</strong>:</li>
+<li>Orbis データから有向所有ネットワークを構築</li>
+<li><em>ネットワーク支配力</em> を計算する再帰アルゴリズムを適用 — 連鎖、ピラミッド、相互持合いによる間接的な所有経路を考慮し、各株主に帰属する企業の意思決定権力の割合を算出</li>
+<li><em>強連結成分（SCC）</em> を同定 — 所有連鎖を通じてすべてのメンバーが他のすべてのメンバーに到達可能な、密に絡み合ったコア</li>
+<li><strong>主要な発見</strong>:</li>
+<li>ネットワークは <strong>「蝶ネクタイ（bow-tie）」構造</strong> を示す：1,318社からなる小規模で密に接続されたコア（SCC）に、イン成分（コアを所有する企業）とアウト成分（コアに所有される企業）が外側に放射状に広がる</li>
+<li><strong>147社の緊密に結びついた企業</strong>（主に金融機関）の超実体が、ネットワーク内の全TNCs総経済価値の約40%を共同支配</li>
+<li><strong>737の上位保有者</strong>がネットワーク価値の80%を支配</li>
+<li>上位50の支配者には Barclays PLC、Capital Group、FMR Corp（Fidelity）、AXA、State Street、JPMorgan Chase、その他主要金融機関が含まれる</li>
+<li>集中度はランダムネットワークモデルの予測よりはるかに大きい — 所有ネットワークはランダムでも単なる階層的でもなく、超接続されたコアを含む</li>
+<li><strong>影響</strong>: 約6,000以上の引用数；主要メディアで広く報道；経済的権力の集中、所有集中による体系的リスク、グローバル企業ネットワークの透明性の必要性に関する政策議論を喚起。ネットワーク手法を用いた企業所有研究にとっての基礎的な参照文献となっている。</li>
+</ul>
+<h3 id="a2-corpnet-university-of-amsterdam">A.2 CORPNET 研究グループ（University of Amsterdam）</h3>
+<p><strong>CORPNET</strong>（Corporate Network Governance）研究グループは、<strong>Eelke Heemskerk</strong> が率いる、企業ネットワーク研究において最も生産的な学術グループの一つである：</p>
+<ul>
+<li><strong>規模</strong>: Orbis データベースから <strong>7,700万件の所有関係</strong> を分析しており、これまでに行われたグローバル企業所有のマッピングとして最も包括的なものの一つ</li>
+<li><strong>主要な研究テーマ</strong>:</li>
+<li><strong>グローバル企業所有ネットワークのトポロジー</strong>: Vitali et al. の分析をより豊富なデータとより洗練された手法で拡張</li>
+<li><strong>オフショア金融センターの階層構造</strong>: どの法域が企業投資フローの導管として、またはシンクとして機能するかを特定し、グローバルな租税回避のアーキテクチャを明らかにする</li>
+<li><strong>国営企業ネットワーク</strong>: 政府が複雑な所有連鎖を通じてどのように経済的支配力を行使するかをマッピング</li>
+<li><strong>タックスヘイブンネットワーク</strong>: グローバル企業構造における導管としての特定法域（オランダ、ルクセンブルク、アイルランド、ケイマン諸島、英領ヴァージン諸島）の役割を定量化</li>
+<li><strong>エリートネットワーク</strong>: 企業取締役、株主、政治的アクターがいかに相互接続された権力構造を形成するかを研究</li>
+<li><strong>主な出版物</strong>:</li>
+<li>Garcia-Bernardo, Fichtner, Takes &amp; Heemskerk (2017). "Uncovering Offshore Financial Centers: Conduits and Sinks in the Global Corporate Ownership Network." <em>Scientific Reports</em>, 7, 6246.</li>
+<li>Heemskerk, Takes &amp; Fichtner (2017). "The Offshore-Intensity Ratio." European Tax Observatory working paper.</li>
+<li>Fichtner, Heemskerk &amp; Garcia-Bernardo (2017). "Hidden power of the Big Three? Passive index funds, re-concentration of corporate ownership, and new financial risk." <em>Business and Politics</em>, 19(2), 298–326.</li>
+<li><strong>主要データセット</strong>: Orbis Bureau van Dijk（現Moody's）、GLEIF LEI、各国企業登記簿</li>
+</ul>
+<h3 id="a3-stanford-corporate-governance-research-initiative-cgri">A.3 Stanford Corporate Governance Research Initiative (CGRI)</h3>
+<p><strong>Stanford CGRI</strong> は Stanford Graduate School of Business および Stanford Law School の一部であり、ガバナンス、ネットワーク、経済的成果の交差点で影響力のある研究を行っている：</p>
+<ul>
+<li><strong>取締役会の多様性研究</strong>: 取締役会の構成 — 性別、民族、専門性 — が企業業績およびガバナンスの質にどう関係するかの体系的研究</li>
+<li><strong>CEO報酬ネットワーク</strong>: 取締役会のインターロック、共有取締役を通じたピアベンチマーキング、報酬コンサルタントネットワークがCEO報酬にどう影響するかの分析</li>
+<li><strong>ガバナンス評価とネットワーク効果</strong>: ガバナンス品質スコア（ISS、MSCI）が企業ネットワークを通じてどう伝播するか、ある企業のガバナンス改善が接続された企業に波及するかどうかの検証</li>
+<li><strong>取締役労働市場</strong>: 企業取締役市場がネットワークとしてどう機能するか — 評判、コネクション、取締役経験が任命を決定する — の研究</li>
+</ul>
+<hr />
+<h2 id="b">B. 取締役会インターロックネットワーク</h2>
+<h3 id="b1">B.1 理論的基盤</h3>
+<p><strong>取締役会インターロック</strong> — 一人の個人が二つ以上の企業の取締役会に参加することで形成されるつながり — の研究は、コーポレートガバナンスのネットワーク分析において最も歴史が長く、最も発展した分野の一つである。</p>
+<p><strong>主要な理論的枠組み:</strong></p>
+<ul>
+<li>
+<p><strong>社会ネットワーク分析（SNA）</strong>: 企業取締役会へのSNAの適用は、全上場企業とその取締役の集合を二部ネットワークとして扱う。この二部ネットワークを企業モードに射影すると企業インターロックネットワークが得られ、取締役モードに射影すると取締役共同メンバーシップネットワークが得られる。</p>
+</li>
+<li>
+<p><strong>「オールドボーイズネットワーク」仮説</strong>: 企業エリートは、共有する取締役会メンバーシップ、学歴（例：Ivy League、Oxbridge、東京大学）、クラブメンバーシップを通じて結束した社会ネットワークを形成する。取締役会インターロックは、共通の世界観と相互利益を強化するエリートの社会的結束の構造的発現と見なされる。</p>
+</li>
+<li>
+<p><strong>資源依存理論</strong>（Pfeffer &amp; Salancik, 1978）: 組織は環境の不確実性と資源依存を管理するために戦略的に取締役会インターロックを構築する。規制の不確実性に直面する企業は政府とのコネクションを持つ取締役を任命し、資金調達を求める企業は銀行家を取締役会に任命する。インターロックは情報の流れを促進し、取引コストを削減し、不確実性の源泉を取り込む <strong>境界架橋メカニズム</strong> として機能する。</p>
+</li>
+<li>
+<p><strong>階級覇権理論</strong>（Domhoff, 1967; Useem, 1984）: 取締役会インターロックは、企業エリート間のコミュニケーションチャネルを構築することで資本家階級の結束を維持し、共通利益（例：ロビー活動、政治献金、労働政策）に関する協調行動を可能にする。インターロックネットワークは、個別企業の利益を超越するビジネスリーダーの「インナーサークル」の構造的基盤として機能する。</p>
+</li>
+<li>
+<p><strong>エージェンシー理論とモニタリング</strong>: インターロックは相互不可侵条約を生み出すことでガバナンスを弱める可能性がある — 「あなたのCEOの報酬に異議を唱えなければ、あなたも私のCEOの報酬に異議を唱えないでしょう。」企業AとBの取締役が相互に相手の取締役会に参加する相互インターロックは、エージェンシーの観点から特に問題がある。</p>
+</li>
+</ul>
+<h3 id="b2">B.2 方法論</h3>
+<p><strong>指数ランダムグラフモデル（ERGM）:</strong>
+ネットワーク形成の統計モデルであり、ネットワーク統計量（例：密度、相互性、推移性、ホモフィリー）の関数として、あるネットワークが観察される確率をモデル化する。ERGMにより、研究者はインターロックが形成される <em>理由</em> についての仮説を検証できる — 類似の産業、規模、地理の企業は、偶然に期待されるよりも多くのインターロックを形成するか？</p>
+<p><strong>中心性指標:</strong>
+- <strong>次数中心性</strong>: インターロックの数（企業の場合）または取締役席の数（取締役の場合）。次数が高い企業／取締役はよく接続されている。
+- <strong>媒介中心性</strong>: ノードが他のノード間の最短経路上に位置する頻度。媒介中心性の高い取締役は、そうでなければ分離されたクラスターを接続する「架け橋」である。
+- <strong>近接中心性</strong>: 他のすべてのノードへの平均距離。情報アクセスの速度を測定する。
+- <strong>固有ベクトル中心性</strong>: 他のよく接続されたノードに接続されていること。権力構造内での影響力を捕捉する。</p>
+<p><strong>コミュニティ検出:</strong>
+インターロックネットワークに適用されるアルゴリズム（Louvain、Infomap、スペクトル法、確率的ブロックモデル）で、密に接続された企業のクラスターを特定する。これらのクラスターは、ガバナンス体制、産業グループ、地理的地域、または歴史的同盟（例：日本の系列、ラテンアメリカのgrupos）に対応することが多い。</p>
+<p><strong>二部ネットワーク分析:</strong>
+取締役-企業の所属ネットワークは本来的に二部（2種類のノード：取締役と企業）である。二部特有の手法 — 二部モジュラリティ、Newman重み付き二部射影、二モード中心性指標など — は、一モード射影で失われる構造的情報を保持する。</p>
+<p><strong>時間的ネットワーク分析:</strong>
+取締役会ネットワークは、取締役の就退任、企業の合併・解散、ガバナンス規範の変化に伴い進化する。時間的ネットワーク手法は、インターロックパターンの時間的推移を追跡し、構造的断裂（例：危機後のガバナンス改革）、トレンド（例：インターロック密度の低下）、経路依存性を特定する。</p>
+<h3 id="b3">B.3 主要な発見</h3>
+<p>取締役会インターロックは、幅広い企業成果との相関が示されている：</p>
+<ul>
+<li><strong>役員報酬の収斂</strong>: 複数の取締役会に参加する取締役は報酬慣行に関する情報を持ち運び、インターロックされた企業間でCEO報酬の収斂をもたらす（Hallock, 1997; Bizjak, Lemmon &amp; Whitby, 2009）</li>
+<li><strong>戦略の類似性</strong>: インターロックされた企業は、多角化パターン、資本構成の選択、市場参入決定を含むより類似した戦略を採用する（Haunschild &amp; Beckman, 1998）</li>
+<li><strong>M&amp;Aパターン</strong>: 取締役会のつながりは合併・買収活動を予測する — インターロックされた企業は類似の取引類型を追求し、相互に合併する可能性が高い（Haunschild, 1993; Cai &amp; Sevilir, 2012）</li>
+<li><strong>ポイズンピルの採用と防衛策</strong>: 買収防衛策はインターロックネットワークを通じて広がり、インターロックされたパートナーが採用した後に企業はポイズンピルを採用する（Davis, 1991）</li>
+<li><strong>イノベーションの拡散</strong>: 新しい慣行、技術、組織形態はインターロックのつながりを通じて拡散する（Westphal, Gulati &amp; Shortell, 1997）</li>
+<li><strong>財務報告の質</strong>: 会計スキャンダルに関与した企業との取締役会のつながりは、利益操作や修正再表示の可能性を高める（Chiu, Teoh &amp; Tian, 2013）</li>
+<li><strong>ジェンダー多様性とネットワークポジション</strong>: 女性取締役は男性取締役とは異なるネットワークポジションを占める傾向があり、影響力と情報アクセスに影響を与える。女性はすでに女性取締役がいる取締役会に任命されることが多く（ネットワークホモフィリー）、一部の研究ではその存在がガバナンスの質の改善と相関している（Adams &amp; Ferreira, 2009）</li>
+<li><strong>国際的な差異</strong>: 取締役会インターロックネットワークの構造、密度、機能は国によって劇的に異なる。米国と英国は金融機関が支配する比較的疎なネットワークを示し、ドイツは銀行と産業企業を中心に構造化されたより密なネットワーク（<em>Deutschland AG</em> モデル）を特徴とし、日本のネットワークは系列グループを中心に組織され、韓国は広範な家族間相互取締役参加を持つ財閥中心のネットワークを特徴とする。</li>
+</ul>
+<h3 id="b4">B.4 主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>ジャーナル／発表場所</th>
+<th>タイトル</th>
+<th>主要な発見</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mizruchi</td>
+<td>1996</td>
+<td><em>Annual Review of Sociology</em></td>
+<td>"What Do Interlocks Do? An Analysis, Critique, and Assessment of Research on Interlocking Directorates"</td>
+<td>包括的なサーベイ；インターロックは慣行と情報の拡散を促進するが、企業行動への影響は階級覇権理論が示唆するよりも微妙である</td>
+</tr>
+<tr>
+<td>Davis, Yoo &amp; Baker</td>
+<td>2003</td>
+<td><em>Strategic Organization</em></td>
+<td>"The Small World of the American Corporate Elite, 1982–2001"</td>
+<td>米国企業取締役会ネットワークはスモールワールド特性を示す；平均経路長約4；インターロック密度の低下に伴い1982年から2001年にかけてネットワークは大幅に断片化</td>
+</tr>
+<tr>
+<td>Larcker, So &amp; Wang</td>
+<td>2013</td>
+<td><em>Journal of Accounting and Economics</em></td>
+<td>"Boardroom Centrality and Firm Performance"</td>
+<td>ネットワーク中心性（特に固有ベクトル中心性）が高い取締役はより良い企業業績と関連；よく接続された取締役会はより情報に基づいた意思決定を行う</td>
+</tr>
+<tr>
+<td>Hallock</td>
+<td>1997</td>
+<td><em>Journal of Financial and Quantitative Analysis</em></td>
+<td>"Reciprocally Interlocking Boards of Directors and Executive Compensation"</td>
+<td>相互インターロック（AのCEOがBの取締役会に、BのCEOがAの取締役会に参加）はより高いCEO報酬と関連し、相互の便宜供与を示唆</td>
+</tr>
+<tr>
+<td>Davis</td>
+<td>1991</td>
+<td><em>Administrative Science Quarterly</em></td>
+<td>"Agents Without Principles? The Spread of the Poison Pill through the Intercorporate Network"</td>
+<td>ポイズンピルの採用は取締役会インターロックを通じて広がる；接続された企業が採用した後に企業はより採用しやすくなる</td>
+</tr>
+<tr>
+<td>Haunschild</td>
+<td>1993</td>
+<td><em>Administrative Science Quarterly</em></td>
+<td>"Interorganizational Imitation: The Impact of Interlocks on Corporate Acquisition Activity"</td>
+<td>企業は取締役会インターロックを通じて接続された企業の買収戦略を模倣する</td>
+</tr>
+<tr>
+<td>Cai &amp; Sevilir</td>
+<td>2012</td>
+<td><em>Journal of Financial Economics</em></td>
+<td>"Board Connections and M&amp;A Transactions"</td>
+<td>取締役会のつながりを共有する企業間の合併は、より高いアナウンスメントリターンとより良い合併後業績を示す</td>
+</tr>
+<tr>
+<td>Bizjak, Lemmon &amp; Whitby</td>
+<td>2009</td>
+<td><em>Journal of Financial Economics</em></td>
+<td>"Option Backdating and Board Interlocks"</td>
+<td>オプションバックデーティングの慣行は取締役会インターロックを通じて広がる；接続された企業は相関したバックデーティング行動を示す</td>
+</tr>
+<tr>
+<td>Conyon &amp; Muldoon</td>
+<td>2006</td>
+<td><em>Journal of Business Finance &amp; Accounting</em></td>
+<td>"The Small World of Corporate Boards"</td>
+<td>英国の取締役会ネットワークは高いクラスタリングと短い経路長を持つスモールワールド特性を示す；ネットワーク構造はエリートの結束を反映</td>
+</tr>
+<tr>
+<td>Fracassi &amp; Tate</td>
+<td>2012</td>
+<td><em>Journal of Finance</em></td>
+<td>"External Networking and Internal Firm Governance"</td>
+<td>社会的に接続された取締役会（インターロック、学歴、職業上のつながり）はより弱いモニタリングを示す；CEOと取締役会の社会的つながりは企業価値を低下させる</td>
+</tr>
+<tr>
+<td>Santos, Silveira &amp; Barros</td>
+<td>2012</td>
+<td><em>Corporate Governance: An International Review</em></td>
+<td>"Board Interlocking in Brazil"</td>
+<td>ブラジルのコーポレートガバナンスネットワークのマッピング；集中的な所有と家族支配がインターロックパターンを形成</td>
+</tr>
+<tr>
+<td>Kramarz &amp; Thesmar</td>
+<td>2013</td>
+<td><em>Journal of Finance</em></td>
+<td>"Social Networks in the Boardroom"</td>
+<td>社会ネットワーク（grandes écoles）を通じて取締役メンバーとつながるフランスのCEOはより高い報酬を受け、その企業は低パフォーマンスを示す</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c">C. 所有ネットワーク</h2>
+<h3 id="c1-ubo">C.1 実質的受益所有者（UBO）</h3>
+<p><strong>定義</strong>: 実質的受益所有者（Ultimate Beneficial Ownership, UBO）とは、法人とその者との間に何層もの企業構造が存在するかにかかわらず、<strong>法人を最終的に所有または支配する自然人</strong> を特定することを指す。UBO分析は、コーポレートガバナンスにグラフ手法を適用する中核的なアプリケーションである。</p>
+<p><strong>UBO特定における課題:</strong>
+- <strong>多層構造</strong>: 所有連鎖は、複数の法域にまたがる数十の中間持株会社、リミテッドパートナーシップ、信託を経由する場合がある
+- <strong>ノミニー制度</strong>: 法的所有者が非開示の実質的所有者のために行動するノミニーである場合がある
+- <strong>信託構造</strong>: 信託は法的所有権（受託者）と実質的利益（受益者）を分離し、不透明性を生み出す
+- <strong>無記名株式</strong>: 登録所有者のいない株式（現在ではほとんどの法域で禁止または制限されているが、歴史的に保有されている）
+- <strong>循環所有</strong>: 企業AがBを所有し、BがCを所有し、CがAを所有する — 所有グラフにループを生み出し、支配力の計算を複雑にする
+- <strong>閾値の曖昧性</strong>: 法域によって「実質的所有」の定義の閾値が異なる（EUでは25%、一部の文脈では10%）</p>
+<p><strong>UBO計算のためのグラフアルゴリズム:</strong>
+- <strong>経路分析</strong>: 自然人から対象法人へのすべての有向経路を見つけ、経路に沿って分数保有率を乗じることで各ステップの実効所有率を計算
+- <strong>支配力伝播</strong>: 最終所有者から中間法人を通じて支配力を伝播する再帰アルゴリズム（Vitali et al. のアプローチの拡張）で、議決権とキャッシュフロー権の分離に対応
+- <strong>サイクル検出</strong>: 有向グラフの基本回路に対するJohnsonのアルゴリズムなどを用いて循環所有構造を特定・解消
+- <strong>シャプレイ値の計算</strong>: 連合と複雑な構造の存在下での株主の議決権力を、協力ゲーム理論（Shapley-Shubik権力指数）を用いて計算</p>
+<p><strong>規制枠組み:</strong>
+- <strong>EUマネーロンダリング防止指令</strong>:
+  - <strong>4AMLD</strong>（2015年）: 加盟国に中央実質的受益所有者登録簿の設立を要求；UBO閾値を所有または支配の25%と定義
+  - <strong>5AMLD</strong>（2018年）: 実質的受益所有者登録簿を一般にアクセス可能に；要件を信託およびその他の取り決めに拡大
+  - <strong>6AMLD</strong>（2020年）: マネーロンダリングに対する刑事犯罪を調和；実質的受益所有要件の執行を強化
+- <strong>米国 Corporate Transparency Act</strong>（2021年）: 実質的受益所有情報のFinCENへの報告を要求；2024年発効
+- <strong>FATF勧告</strong>: 実質的受益所有の透明性に関する国際基準；金融活動作業部会（Financial Action Task Force）がグローバルな採用を推進</p>
+<p><strong>AMLへの応用:</strong>
+知識グラフとネットワーク分析は、現代のマネーロンダリング対策（AML）システムの中核である。所有ネットワークを構築しUBOアルゴリズムを適用することで、金融機関は以下を特定できる：
+- マネーロンダリングやテロ資金調達に使用されるシェルカンパニー構造
+- 複雑な企業連鎖を通じた制裁回避
+- 隠された企業利益を持つ政治的に重要な人物（PEPs）
+- 所有集中の異常なパターンや急速な構造変更</p>
+<h3 id="c2">C.2 相互持合い分析</h3>
+<p><strong>循環所有構造</strong>は、企業が直接（A↔B）または長い循環（A→B→C→A）を通じて相互に株式を保有する場合に生じる。これらの構造は特定のガバナンス体制（日本、韓国、大陸ヨーロッパ）で一般的であり、さまざまな目的に使用される：</p>
+<ul>
+<li><strong>防衛メカニズム</strong>: 相互持合いは、敵対的買収に抵抗する安定した「友好的な」株主基盤を構築する</li>
+<li><strong>関係の接着剤</strong>: 相互持合いはビジネスパートナー間の長期的コミットメントを示す</li>
+<li><strong>議決権の増幅</strong>: 企業は循環持合いを通じて実効的な議決権を増大させることができる</li>
+</ul>
+<p><strong>議決権とキャッシュフロー権の分離:</strong>
+複雑な所有構造では、所有者が支配する議決の割合（議決権）は、受け取るキャッシュフローの割合（キャッシュフロー権）から大きく乖離する可能性がある。この分離 — 議決権対キャッシュフロー権の比率で測定 — は、支配者が最小限の財務的エクスポージャーで私的利益を引き出すことを可能にするため、重要なガバナンス上の懸念事項である。ネットワーク手法は、すべての所有経路を追跡し両方の指標を計算することでこの分離を定量化する。</p>
+<p><strong>所有ネットワークにおけるShapley-Shubik権力指数:</strong>
+Shapley-Shubik権力指数（協力ゲーム理論由来）は、すべての可能な投票連合におけるピボタル投票者となる確率を計算することで、株主の<em>事前</em>議決権力を測定する。所有ネットワークの文脈では、この指数は間接保有、ピラミッド構造、相互持合いを考慮して企業支配の真の分布を決定する。大規模所有ネットワークに対するシャプレイ値の計算は計算集約的であり、しばしばモンテカルロ近似を必要とする。</p>
+<p><strong>所有集中のネットワーク指標:</strong>
+- <strong>HHI（ハーフィンダール・ハーシュマン指数）</strong> の所有ネットワークへの適用: 最終支配者間の集中度を測定
+- <strong>ネットワーク密度とクラスタリング</strong>: 所有サブグラフ内の密度が高いほど、支配がより緊密であることを示す
+- <strong>巨大成分分析</strong>: 上場企業のうちどの程度の割合が所有リンクを通じて接続されているか？
+- <strong>蝶ネクタイ（bow-tie）分解</strong>: Vitali et al. に倣い、所有ネットワークをコア、イン成分、アウト成分、テンドリルに分解</p>
+<h3 id="c3">C.3 ピラミッド構造とデュアルクラス株式</h3>
+<p><strong>ピラミッド構造:</strong>
+ピラミッド構造は、支配株主がある企業（頂点）を所有し、その企業がさらに子会社を所有し、さらにその子会社が別の子会社を所有する形で存在する。支配者はキャッシュフロー権のごく一部しか保有せずに、ピラミッドの底辺にある企業の意思決定権力を維持できる。例えば：支配者が企業Aの51%を所有し、Aが企業Bの51%を、Bが企業Cの51%を所有する場合 — 支配者はCに対する議決権を持つが、Cのキャッシュフロー権はわずか約13.3%である。</p>
+<p><strong>支配力強化メカニズム:</strong>
+- デュアルクラス株式（株式クラスごとに異なる議決権）
+- ピラミッド構造
+- 相互持合い
+- 議決権上限とロイヤルティ株式
+- 黄金株（政府の拒否権）</p>
+<p><strong>トンネリングと収奪:</strong>
+キャッシュフロー権は限定的だが広範な支配力を持つ支配株主は、「トンネリング」— 支配下の企業から、より多くのキャッシュフロー権を持つ法人への価値移転 — に従事する可能性がある。これは以下を通じて生じうる：
+- 独立当事者間取引でない価格での関連当事者取引
+- グループ内の移転価格操作
+- 選択的配当政策
+- 資産の剥取りまたは有利な合併条件</p>
+<p><strong>世界各国のファミリービジネスグループ:</strong></p>
+<table>
+<thead>
+<tr>
+<th>構造</th>
+<th>地域</th>
+<th>特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>財閥（チェボル）</strong></td>
+<td>韓国</td>
+<td>家族支配の複合企業体（Samsung、Hyundai、SK、LG）；広範な循環的相互持合い；分散したキャッシュフロー権にもかかわらず集中した支配力</td>
+</tr>
+<tr>
+<td><strong>財閥 / 系列</strong></td>
+<td>日本</td>
+<td>戦前の財閥（家族保有の持株会社）は戦後解体；系列（銀行中心、相互持合い）に引き継がれる；セクションD参照</td>
+</tr>
+<tr>
+<td><strong>Grupos económicos</strong></td>
+<td>ラテンアメリカ</td>
+<td>ファミリービジネスグループ（Grupo Slim、Grupo Votorantim）；ピラミッド構造とデュアルクラス株式が一般的</td>
+</tr>
+<tr>
+<td><strong>ビジネスハウス</strong></td>
+<td>インド</td>
+<td>家族支配の複合企業体（Tata、Reliance、Birla）；複雑なピラミッドを通じたプロモーター保有</td>
+</tr>
+<tr>
+<td><strong>国家関連グループ</strong></td>
+<td>中国</td>
+<td>SASAC（国務院国有資産監督管理委員会）を通じた複雑な多層国家所有を持つ国営企業グループ；共産党委員会の影響</td>
+</tr>
+<tr>
+<td><strong>ファミリーホールディングス</strong></td>
+<td>東南アジア</td>
+<td>支配的なファミリーが多角化された複合企業体を支配（Li Ka-shing、Salim Group、CP Group）</td>
+</tr>
+<tr>
+<td><strong>Participações</strong></td>
+<td>大陸ヨーロッパ</td>
+<td>持株会社構造（Agnelli家/Exor、Wallenberg家/Investor AB）；デュアルクラス株式とピラミッド支配</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c4">C.4 所有ネットワークのデータソース</h3>
+<table>
+<thead>
+<tr>
+<th>データセット</th>
+<th>提供者</th>
+<th>カバレッジ</th>
+<th>アクセス</th>
+<th>主な特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orbis</strong></td>
+<td>Bureau van Dijk (Moody's)</td>
+<td>グローバル4億以上の法人</td>
+<td>商業利用（WRDS、機関）</td>
+<td>最も包括的なグローバル所有データ；直接／間接所有連鎖；財務データ；取締役情報</td>
+</tr>
+<tr>
+<td><strong>OpenOwnership Register</strong></td>
+<td>Open Ownership</td>
+<td>2,700万以上の記録、200以上の法域</td>
+<td>オープン（API、一括ダウンロード）</td>
+<td>各国登録簿からの実質的受益所有宣言；BODSを使用して標準化</td>
+</tr>
+<tr>
+<td><strong>GLEIF LEI Database</strong></td>
+<td>Global Legal Entity Identifier Foundation</td>
+<td>250万以上の法人</td>
+<td>オープン（API、一括ダウンロード）</td>
+<td>直接／最終親会社情報を含む法人識別子；標準化された階層構造</td>
+</tr>
+<tr>
+<td><strong>OpenCorporates</strong></td>
+<td>OpenCorporates</td>
+<td>1億7,000万以上の企業</td>
+<td>フリーミアム（API）</td>
+<td>世界中の政府登記簿からの企業登録；基本的な役員情報</td>
+</tr>
+<tr>
+<td><strong>BODS Data</strong></td>
+<td>Open Ownership</td>
+<td>実質的受益所有データ基準</td>
+<td>オープン</td>
+<td>実質的受益所有宣言のための標準化スキーマ；法域間で相互運用可能</td>
+</tr>
+<tr>
+<td><strong>SEC EDGAR</strong></td>
+<td>米国SEC</td>
+<td>全米国上場企業</td>
+<td>オープン</td>
+<td>実質的受益所有報告書（Schedule 13D/13G、Form 3/4/5）；委任状説明書（DEF 14A）</td>
+</tr>
+<tr>
+<td><strong>ICIJ Offshore Leaks</strong></td>
+<td>ICIJ</td>
+<td>80万以上のオフショア法人</td>
+<td>オープン</td>
+<td>パナマ文書、パラダイス文書、パンドラ文書；オフショア所有構造</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="d">D. 系列と株式持合い（日本固有）</h2>
+<p><strong>系列・株式持ち合い</strong></p>
+<h3 id="d1">D.1 歴史的背景</h3>
+<p><strong>財閥から系列へ:</strong></p>
+<p>現代の日本のコーポレートガバナンスの景観は、その歴史的背景なしには理解できない：</p>
+<ul>
+<li>
+<p><strong>財閥</strong>: 戦前の日本は家族支配の産業コングロマリットによって支配されていた — 三菱、三井、住友、安田が「四大財閥」であった。これらは家族保有の持株会社を頂点とするピラミッド構造であり、カスケード式の所有を通じて銀行、保険会社、商社、産業企業を支配していた。財閥は1945年までに日本の企業資産の約25%を支配していた。</p>
+</li>
+<li>
+<p><strong>解体（1945–1952年）</strong>: 連合国占領軍の最高司令官（SCAP/GHQ）は、集中した経済的権力が日本の軍国主義に寄与したとの認識のもと、財閥持株会社の解体を命じた。持株会社整理委員会は83の持株会社を解散し、その株式を一般に分配し、財閥家族メンバーを企業経営から追放した。独占禁止法（1947年）は当初持株会社を禁止した（この禁止は1997年に解除）。</p>
+</li>
+<li>
+<p><strong>系列の出現（1950年代–1960年代）</strong>: 旧財閥企業は独立経営となった後、<strong>株式持ち合い（kabushiki mochiiai）</strong> — 頂点に持株会社を置かない、グループメンバー間の相互株式保有 — を通じて徐々に関係を再構築した。六大水平系列が形成された：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>系列</th>
+<th>中核銀行</th>
+<th>商社</th>
+<th>起源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>三菱</strong></td>
+<td>三菱UFJ</td>
+<td>三菱商事</td>
+<td>三菱財閥</td>
+</tr>
+<tr>
+<td><strong>三井</strong></td>
+<td>三井住友</td>
+<td>三井物産</td>
+<td>三井財閥</td>
+</tr>
+<tr>
+<td><strong>住友</strong></td>
+<td>三井住友</td>
+<td>住友商事</td>
+<td>住友財閥</td>
+</tr>
+<tr>
+<td><strong>芙蓉</strong></td>
+<td>みずほ</td>
+<td>丸紅</td>
+<td>安田財閥</td>
+</tr>
+<tr>
+<td><strong>第一勧銀</strong></td>
+<td>みずほ</td>
+<td>伊藤忠</td>
+<td>戦後形成</td>
+</tr>
+<tr>
+<td><strong>三和</strong></td>
+<td>三菱UFJ</td>
+<td>日商岩井（現双日）</td>
+<td>戦後形成</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>株式持ち合いの機能</strong>:</li>
+<li><strong>買収防衛</strong>: 相互持合いは、敵対的買収者に売却しない安定した「友好的」な株主基盤を構築</li>
+<li><strong>関係の接着剤</strong>: 相互持合いはビジネスパートナー間（取引先、銀行-借入先、合弁パートナー）の長期的コミットメントを示す</li>
+<li><strong>情報共有</strong>: 系列グループメンバーの社長会（shachōkai）が定期的に会合し、情報交換と戦略調整を行う</li>
+<li>
+<p><strong>メインバンクシステム</strong>: メインバンクは貸し手とモニターの両方の役割を果たし、取引先企業の株式を保有し、財務困難時には経営に介入</p>
+</li>
+<li>
+<p><strong>持ち合いのピーク</strong>: 持ち合い比率（上場株式のうち持ち合いで保有される割合）は、1980年代後半から1990年代初頭にかけて東京証券取引所の上場株式総数の約<strong>50–60%</strong>でピークに達した。これは、主要経済国の中で最も密に相互接続された企業所有ネットワークの一つであった。</p>
+</li>
+</ul>
+<h3 id="d2">D.2 系列のグラフ理論分析</h3>
+<p><strong>主要系列グループのネットワークトポロジー:</strong>
+所有ネットワークとして表現すると、系列グループは特徴的なトポロジカルな特徴を示す：</p>
+<ul>
+<li>
+<p><strong>水平的系列</strong>: 近似的な<strong>完全グラフ</strong>またはそれに近い構造 — すべてのメンバーが（ほぼ）すべての他のメンバーの株式を保有。「六大」系列グループはこのパターンを示し、メインバンクと商社が通常より高い次数中心性（より多くの接続とより大きな保有）を持つ。</p>
+</li>
+<li>
+<p><strong>垂直的系列</strong>: 大手メーカー（例：トヨタ、日産、ソニー）を中心とした<strong>ハブアンドスポーク</strong>または<strong>木構造</strong>。親企業が一次サプライヤーに相当な持株を保有し、一次サプライヤーがさらに二次サプライヤーに持株を保有して、階層的なサプライチェーンネットワークを形成。非隣接ティア間の相互持合いはあまり一般的でない。</p>
+</li>
+</ul>
+<p><strong>事例研究: マツダのサプライチェーン系列:</strong>
+マツダのサプライヤーネットワークは、垂直系列構造のよく研究された事例である：
+- マツダは約200社のサプライヤー（一次）に株式持分を保有
+- 一次サプライヤー（マツダモーターパーツ、神崎高級工機などのマツダグループ企業）がさらに二次サプライヤーの株式を保有
+- ネットワーク分析はマツダをハブとしたコア-周辺構造を明らかにする
+- 住友グループへの帰属が金融機関や商社への水平的接続を追加
+- マツダの経営危機（1970年代）後、ネットワークは再編された — フォードの33%の株式保有が越境的な次元を導入</p>
+<p><strong>系列の境界を明らかにするコミュニティ検出:</strong>
+TSE所有ネットワーク全体にコミュニティ検出アルゴリズム（Louvain、Infomap、確率的ブロックモデル）を適用すると、系列グループの境界が明確なコミュニティとして復元される。研究により：
+- 1990年代には、コミュニティ検出が六大グループを別々のコミュニティとして明確に特定
+- 2010年代には、持ち合いの解消、メガバンクの合併、グループ横断的M&amp;Aにより境界が曖昧に
+- 一部の「頑固な」コミュニティは存続しており、特に深いサプライチェーン関係を持つ産業企業（例：トヨタグループ、日本製鉄グループ）で顕著</p>
+<p><strong>主要なコネクターを特定する中心性分析:</strong>
+- <strong>メインバンク</strong>（三菱UFJ、三井住友、みずほ）は一貫して最も高い<strong>固有ベクトル中心性</strong>を示す — 他の高度に接続された企業と接続されている
+- <strong>総合商社</strong>（三菱商事、三井物産、伊藤忠、住友商事、丸紅、双日）は<strong>媒介中心性</strong>で最上位にランクされる — 異なる産業セクターと系列グループを架橋する
+- <strong>生命保険会社</strong>（日本生命、明治安田、第一生命、住友生命）は高次数ノードだが媒介中心性は低い — 広く株式を保有するが、明確なコミュニティを架橋しない</p>
+<h3 id="d3-20012023">D.3 日本の株式持ち合いネットワーク 2001–2023年</h3>
+<p><strong>構造分析:</strong></p>
+<p>日本の企業所有ネットワークは、20年間で劇的な構造変革を遂げた：</p>
+<ul>
+<li><strong>蝶ネクタイ（bow-tie）構造分析</strong>: Vitali et al. (2011) の蝶ネクタイ分解をTSE上場企業に適用すると、持ち合いの解消に伴い強連結コアが縮小しているが、コアは完全には消滅していないことが明らかになる</li>
+<li><strong>PageRank分析</strong>: PageRank（所有リンクをエンドースメントとして扱う）を適用すると、ネットワーク内で最も影響力のある保有者が明らかになる。金融機関 — 特に信託銀行（三菱UFJ信託、三井住友信託）と生命保険会社 — が一貫して上位にランクされるが、外国機関投資家の増加に伴いその支配力は低下</li>
+<li><strong>べき乗則の次数分布</strong>: 所有ネットワークは重い裾を持つ次数分布を示す — 少数の企業が数百社の株式を保有する一方、ほとんどの企業は少数の所有接続しか持たない — スケールフリーネットワークの特性と一致</li>
+</ul>
+<p><strong>解消トレンド: 約60% → 30.8%（2023年）:</strong></p>
+<p>日本のコーポレートガバナンスにおける最も重要な構造変化は、持ち合いの長期的低下である：</p>
+<table>
+<thead>
+<tr>
+<th>期間</th>
+<th>持ち合い比率</th>
+<th>主な要因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1980年代後半–1990年代初頭</td>
+<td>約50–60%</td>
+<td>バブル経済のピーク</td>
+</tr>
+<tr>
+<td>1990年代–2000年代</td>
+<td>約60% → 約45%</td>
+<td>銀行危機；銀行が自己資本要件を満たすために株式売却を余儀なくされる</td>
+</tr>
+<tr>
+<td>2000年代–2010年代</td>
+<td>約45% → 約35%</td>
+<td>外国投資家の圧力；グローバル金融危機；保険会計の変更</td>
+</tr>
+<tr>
+<td>2014年</td>
+<td>約33%</td>
+<td>スチュワードシップ・コード導入</td>
+</tr>
+<tr>
+<td>2015年</td>
+<td>約32%</td>
+<td>コーポレートガバナンス・コード導入；持ち合いに関するコンプライ・オア・エクスプレイン</td>
+</tr>
+<tr>
+<td>2022年</td>
+<td>約31%</td>
+<td>TSE市場再編：プライム、スタンダード、グロース市場区分</td>
+</tr>
+<tr>
+<td>2023年</td>
+<td>約30.8%</td>
+<td>TSEの「資本コスト経営」推進</td>
+</tr>
+</tbody>
+</table>
+<p><strong>解消の主な要因:</strong></p>
+<ol>
+<li>
+<p><strong>1990年代の銀行危機（バブル崩壊）</strong>: 日本の資産価格バブルの崩壊により、銀行はバーゼル自己資本比率規制を満たし不良債権損失を吸収するために、持合い株式の売却を余儀なくされた。これが構造的な解消の端緒となった。</p>
+</li>
+<li>
+<p><strong>外国投資家の圧力</strong>: 日本株の外国人保有比率は1990年の約4%から2023年の約30%に上昇。外国機関投資家（特に米国および欧州の資産運用会社やアクティビスト）は、資本を固定化する「非生産的な」持ち合いの削減を一貫して圧力をかけた。</p>
+</li>
+<li>
+<p><strong>日本版スチュワードシップ・コード（2014年）</strong>: 英国スチュワードシップ・コードをモデルとし、機関投資家にポートフォリオ企業とのエンゲージメントと責任ある議決権行使を促した。これにより持ち合いの「サイレントパートナー」文化が減少。</p>
+</li>
+<li>
+<p><strong>コーポレートガバナンス・コード（2015年、2018年・2021年改訂）</strong>: 上場企業に持ち合いの保有根拠の説明と、戦略的正当性のない持合いの削減を要求。改訂ごとに開示要件が強化された。</p>
+</li>
+<li>
+<p><strong>TSE市場再編（2022年）</strong>: 東京証券取引所は5つの市場区分（第一部、第二部、マザーズ、JASDAQスタンダード、JASDAQグロース）から3つに再編：<strong>プライム</strong>（最高のガバナンス基準）、<strong>スタンダード</strong>、<strong>グロース</strong>。プライム市場上場にはコーポレートガバナンス・コードの最高水準への準拠が必要であり、持ち合いの根拠の意味ある説明が含まれる。</p>
+</li>
+<li>
+<p><strong>「資本コスト経営」推進（2023年）</strong>: 2023年1月、TSEはPBR1倍未満で取引されている企業に対し、資本効率改善のアクションプランの開示を求める通知を発出。資本コストを下回るリターンしか得られないことが多い持ち合いが売却の対象となった。これはおそらく最近の最も影響力のあるカタリストであった。</p>
+</li>
+</ol>
+<p><strong>ネットワークの進化:</strong>
+日本の所有ネットワークは、<strong>密に接続された</strong>（系列グループ内のほぼ完全グラフ）状態から<strong>より疎</strong>な状態へと進化したが、<strong>頑固なコアが残存</strong>している：
+- TSEネットワークのエッジ数（所有リンク）は大幅に減少
+- 平均クラスタリング係数が低下
+- ネットワーク直径が増大（ネットワークの結合が緩くなった）
+- しかし、特にサプライチェーン関係を持つ産業企業間の特定の二者間持ち合いは頑固に存続
+- 生命保険会社と信託銀行は全体的なネットワークの希薄化にもかかわらず高次数ノードのまま</p>
+<p><strong>セクター分析:</strong></p>
+<table>
+<thead>
+<tr>
+<th>セクター</th>
+<th>持ち合いの傾向</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>銀行</strong></td>
+<td>劇的な削減</td>
+<td>自己資本要件による強制売却；メガバンクの合併によりグループ内持合いが解消</td>
+</tr>
+<tr>
+<td><strong>保険</strong>（生命）</td>
+<td>漸進的な削減</td>
+<td>会計変更（時価評価）により含み損益の認識が強制；長期的関係文化により緩やかな削減</td>
+</tr>
+<tr>
+<td><strong>自動車</strong></td>
+<td>選択的な削減</td>
+<td>OEM-サプライヤー関係は依然強固；トヨタグループは相当な保有を維持；一部OEM（例：日産）は大幅に削減</td>
+</tr>
+<tr>
+<td><strong>電子機器</strong></td>
+<td>大幅な削減</td>
+<td>産業再編（シャープ、東芝、オリンパスのスキャンダル）が解消を加速</td>
+</tr>
+<tr>
+<td><strong>鉄鋼・素材</strong></td>
+<td>中程度の削減</td>
+<td>日本製鉄グループは一部保有を維持；業界再編（日本製鉄＋住友金属）がネットワークを再構築</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d4-jpx">D.4 JPXガバナンス・コードとネットワークへの影響</h3>
+<p><strong>コーポレートガバナンス・コード:</strong></p>
+<p>日本のコーポレートガバナンス・コードは2015年に初めて策定され、2018年と2021年に改訂された原則主義のコードで、「コンプライ・オア・エクスプレイン」方式で運用されている。その規定は企業ネットワーク構造に直接影響を与える：</p>
+<ul>
+<li>
+<p><strong>取締役会の独立性要件</strong>: 企業（特にプライム市場上場企業）は、独立社外取締役を少なくとも3分の1任命することが求められる。これにより、従来の系列サークル外からの非業務執行取締役の参入が増え、取締役会ネットワークの多様性が劇的に向上した。</p>
+</li>
+<li>
+<p><strong>持ち合い開示要件</strong>（原則1-4）: 企業は「個別の持ち合い株式について、保有の適否を毎年検証し」、保有の根拠を開示し、持ち合い株式の議決権を適切に行使しなければならない。この原則が持ち合い解消の主要な規制的推進力となっている。</p>
+</li>
+<li>
+<p><strong>改訂原則1-4（2021年）</strong>: 各持ち合いの「経済合理性」と「将来見通し」の開示要件を強化し、保有削減の基準を設定することを要求。企業は年次レビューの結果も開示しなければならない。</p>
+</li>
+<li>
+<p><strong>スチュワードシップ・コードとの連携</strong>: 機関投資家は、ポートフォリオ企業の持ち合いに関するスタンスを含む、議決権行使方針とエンゲージメント活動を開示することが期待される。</p>
+</li>
+</ul>
+<p><strong>ネットワークの密度と構造への影響:</strong>
+- 所有密度が低下する一方で、インターロックネットワークの密度は<em>増加</em>している — コードが独立取締役の任命を推進しているため、多くの独立取締役が複数の取締役会で務め、新たなインターロックを生み出している
+- 所有ネットワークの密度は着実に低下
+- 銀行が株式保有を削減し、企業が資金調達源を多様化するにつれ、ガバナンスにおける「メインバンク」の役割が弱体化
+- 新たなガバナンスアクター — アクティビスト投資家、議決権助言サービス（ISS/Glass Lewis）— が影響力のあるノードとしてネットワークに参入</p>
+<h3 id="d5">D.5 可視化とデータツール</h3>
+<table>
+<thead>
+<tr>
+<th>ツール／ソース</th>
+<th>説明</th>
+<th>アクセス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>日経持ち合い調査</strong></td>
+<td>上場企業間の持ち合いに関する年次調査；所有ネットワークの可視化</td>
+<td>日経（商業利用）</td>
+</tr>
+<tr>
+<td><strong>東洋経済四季報</strong></td>
+<td>主要株主、役員任命、取引関係を含む企業関係データ</td>
+<td>商業利用（東洋経済）</td>
+</tr>
+<tr>
+<td><strong>JPX株式分布状況調査</strong></td>
+<td>投資家類型別（個人、法人、外国人、銀行等）の株式保有分布に関する年次調査</td>
+<td>オープン（JPXウェブサイト）</td>
+</tr>
+<tr>
+<td><strong>EDINET（Electronic Disclosure for Investors' NETwork）</strong></td>
+<td>有価証券報告書、四半期報告書、所有開示のための電子開示システム</td>
+<td>オープン（金融庁）</td>
+</tr>
+<tr>
+<td><strong>TDnet（Timely Disclosure Network）</strong></td>
+<td>重要な企業情報のリアルタイム開示</td>
+<td>オープン（JPX）</td>
+</tr>
+<tr>
+<td><strong>大量保有報告書</strong></td>
+<td>5%閾値の所有開示報告書</td>
+<td>オープン（EDINET）</td>
+</tr>
+<tr>
+<td><strong>学術的可視化の取り組み</strong></td>
+<td>Gephi、NetworkX、D3.jsを用いた系列ネットワークの可視化に関する各種研究プロジェクト</td>
+<td>学術論文</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="e">E. 機関投資家とガバナンスネットワーク</h2>
+<h3 id="e1">E.1 理論的基盤</h3>
+<p>機関投資家（年金基金、投資信託、保険会社、ヘッジファンド等）がコーポレートガバナンスに与える影響は、経済学・経営学の中心的な研究テーマである。ネットワーク科学の視点からは、機関投資家が複数企業に跨って保有するポートフォリオ構造が、企業間に暗黙の「共通所有ネットワーク」を形成する点が特に重要となる。</p>
+<p><strong>主要な理論的枠組み:</strong></p>
+<ul>
+<li>
+<p><strong>Exit vs Voice</strong>（Hirschman, 1970）: 株主は不満のある企業に対して「売却（Exit）」か「発言（Voice）」で対応する。パッシブ運用（インデックスファンド）の拡大により、Exit が困難になった機関投資家は Voice（エンゲージメント・議決権行使）にシフトする必然性が生じている。</p>
+</li>
+<li>
+<p><strong>Common Ownership 仮説</strong>（Azar, Schmalz &amp; Tecu, 2018）: BlackRock、Vanguard、State Street 等の大手機関投資家が同一産業内の競合企業を同時に大量保有する場合、ポートフォリオ全体の価値最大化のため、個別企業間の競争を抑制するインセンティブが生じる。航空業界のデータを用いた実証研究では、共通所有の増加が航空運賃の上昇と相関することが示された。</p>
+</li>
+<li>
+<p><strong>スチュワードシップ理論と受託者責任</strong>: 機関投資家は最終受益者（年金受給者、個人投資家等）に対する受託者責任を負い、投資先企業の長期的価値向上のためにガバナンスを監視する「スチュワード」として行動することが期待される。英国スチュワードシップ・コード（2010年）と日本版スチュワードシップ・コード（2014年）はこの理念を制度化した。</p>
+</li>
+<li>
+<p><strong>Big Three の影響力集中</strong>（Fichtner, Heemskerk &amp; Garcia-Bernardo, 2017）: パッシブ運用の急成長により、BlackRock、Vanguard、State Street の3社（Big Three）がS&amp;P 500構成企業の約88%で上位5位以内の株主となっている。この所有集中は、少数の機関投資家に前例のないガバナンス上の影響力を付与し、新たな形の経済的権力集中をもたらしている。</p>
+</li>
+</ul>
+<h3 id="e2">E.2 ネットワーク科学的アプローチ</h3>
+<p>機関投資家のガバナンスへの影響をネットワーク科学で分析する際の主要なフレームワーク：</p>
+<p><strong>二部グラフと共通所有ネットワーク:</strong></p>
+<p>機関投資家-企業の保有関係は <strong>二部グラフ</strong>（bipartite graph）として自然にモデル化される。投資家ノード <span class="arithmatex">\(i\)</span> と企業ノード <span class="arithmatex">\(j\)</span> の間のエッジ重み <span class="arithmatex">\(w_{ij}\)</span> は保有比率を表す。この二部グラフを企業モードに射影すると <strong>共通所有ネットワーク</strong> が得られ、同一投資家によって保有される企業間にエッジが形成される。エッジの重みは共通所有の程度（例：MHHI delta — Modified Herfindahl-Hirschman Index の差分）で定量化される。</p>
+<p><strong>議決権行使行動のネットワーク:</strong></p>
+<p>機関投資家の議決権行使パターンから <strong>投票類似性ネットワーク</strong> を構築できる。投資家 <span class="arithmatex">\(i\)</span> と <span class="arithmatex">\(j\)</span> の間の類似度は、同一の株主総会議案に対する投票の一致度（賛成/反対/棄権）で測定される。コミュニティ検出を適用すると、類似した投票行動を示す投資家クラスターが特定でき、「横並び投票」の構造を可視化できる。</p>
+<p><strong>情報カスケードモデル:</strong></p>
+<p>議決権行使助言会社（ISS、Glass Lewis）の推奨が機関投資家の投票行動に伝播する過程は、ネットワーク上の <strong>情報カスケード</strong> としてモデル化できる。助言会社ノードから機関投資家ノードへの影響伝播、さらに機関投資家間の相互参照行動を多層ネットワーク上のカスケードダイナミクスとして分析する。</p>
+<p><strong>主要なネットワーク指標:</strong></p>
+<table>
+<thead>
+<tr>
+<th>指標</th>
+<th>定義</th>
+<th>ガバナンスへの含意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>共通所有集中度（MHHI delta）</strong></td>
+<td>共通所有による市場集中度の追加的増加分</td>
+<td>産業内競争への潜在的影響を定量化</td>
+</tr>
+<tr>
+<td><strong>投票同質性指数</strong></td>
+<td>機関投資家間の議決権行使パターンの類似度</td>
+<td>横並び投票・独立判断の程度を測定</td>
+</tr>
+<tr>
+<td><strong>ポートフォリオ重複度</strong></td>
+<td>二投資家間のポートフォリオ構成の重複割合</td>
+<td>利害の一致度と協調行動の可能性を示す</td>
+</tr>
+<tr>
+<td><strong>ネットワーク中心性（共通所有グラフ）</strong></td>
+<td>共通所有ネットワークにおける企業の中心性</td>
+<td>機関投資家の影響を最も受ける企業を特定</td>
+</tr>
+<tr>
+<td><strong>情報ブローカレッジ</strong></td>
+<td>投票ネットワークにおける媒介中心性</td>
+<td>議決権行使の「オピニオンリーダー」を特定</td>
+</tr>
+</tbody>
+</table>
+<h3 id="e3">E.3 日本の制度的背景とネットワーク変化</h3>
+<p>日本における機関投資家の役割は、2014年以降の制度改革により大きく変化した：</p>
+<p><strong>日本版スチュワードシップ・コード:</strong></p>
+<ul>
+<li><strong>2014年制定</strong>: 英国コード（2010年）をモデルに、金融庁が策定。機関投資家に対し、投資先企業との「建設的な対話」と議決権行使方針の公表を求める7つの原則を規定。</li>
+<li><strong>2017年改訂</strong>: アセットオーナー（年金基金等）の役割を明確化。運用機関に対する実効的なモニタリングを要求。</li>
+<li><strong>2020年改訂</strong>: ESG要素の考慮を明示的に要求。サステナビリティ課題への取り組みを強化。</li>
+</ul>
+<p><strong>機関投資家エンゲージメントの変化:</strong></p>
+<p>スチュワードシップ・コード導入前後で、日本の機関投資家の行動は顕著に変化した。GPIF（年金積立金管理運用独立行政法人）をはじめとする大手アセットオーナーがコードを受入表明し、運用機関に対してエンゲージメント活動の強化を要求。議決権行使における反対票比率の上昇、個別議案ごとの賛否理由の開示拡大が進んだ。</p>
+<p><strong>日本版 Common Ownership 構造:</strong></p>
+<p>日本では、信託銀行（日本マスタートラスト信託銀行、日本カストディ銀行）が多数の年金基金・投資信託の資産を名義保有する構造が特徴的である。名義上は信託銀行が大株主として出現するが、実質的な議決権行使判断は背後の運用機関が行う。この多層的な保有構造は、Common Ownership の実態把握を困難にするとともに、ネットワーク分析上も名義保有と実質保有の区別が重要な課題となる。</p>
+<p><strong>外国機関投資家の増加:</strong></p>
+<p>東証上場企業における外国機関投資家の保有比率は、1990年代の約5%から2020年代には約30%に増加した。BlackRock、Vanguard等のグローバル運用会社の参入は、日本の所有ネットワーク構造にグローバルな共通所有パターンを持ち込み、従来の系列・持ち合いネットワークとの重層的な構造を形成している。</p>
+<p><strong>アクティビスト投資家:</strong></p>
+<p>近年、日本市場でのアクティビスト投資家の活動が活発化している。ValueAct Capital、Third Point、Elliott Management 等の海外アクティビストに加え、旧村上ファンド系列の各ファンドが経営改善提案や株主提案を行っている。アクティビストの標的選択行動は、ガバナンスネットワーク構造（低い機関投資家モニタリング、高い持ち合い比率、低い独立取締役比率）と相関し、ネットワーク分析による予測対象となりうる。</p>
+<h3 id="e4-kg">E.4 非構造データからのKG構築</h3>
+<p>機関投資家のガバナンス行動に関する知識グラフを構築するためのデータソースとパイプライン：</p>
+<p><strong>主要データソース:</strong></p>
+<table>
+<thead>
+<tr>
+<th>データソース</th>
+<th>内容</th>
+<th>形式</th>
+<th>課題</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>スチュワードシップ活動報告</strong></td>
+<td>エンゲージメント件数、テーマ、対話内容の概要</td>
+<td>PDF、HTML</td>
+<td>非構造的、定型化されていない</td>
+</tr>
+<tr>
+<td><strong>議決権行使ガイドライン</strong></td>
+<td>各議案類型に対する賛否判断基準</td>
+<td>PDF</td>
+<td>運用機関ごとに形式が異なる</td>
+</tr>
+<tr>
+<td><strong>議決権行使結果の個別開示</strong></td>
+<td>投資先企業ごとの各議案への賛否</td>
+<td>CSV、PDF</td>
+<td>大量データ、フォーマット非統一</td>
+</tr>
+<tr>
+<td><strong>エンゲージメントレター</strong></td>
+<td>投資先企業への要望・提言</td>
+<td>非公開が多い</td>
+<td>アクセス制限</td>
+</tr>
+<tr>
+<td><strong>統合報告書</strong></td>
+<td>企業側のスチュワードシップ対応記述</td>
+<td>PDF</td>
+<td>自由記述、定性情報中心</td>
+</tr>
+</tbody>
+</table>
+<p><strong>LLMベースの関係抽出パイプライン:</strong></p>
+<ol>
+<li><strong>文書収集・前処理</strong>: スチュワードシップ報告書、議決権行使結果をクロール・パース</li>
+<li><strong>エンティティ認識</strong>: 機関投資家名、企業名、議案内容、ガバナンステーマの抽出</li>
+<li><strong>関係抽出</strong>: 「投資家X は 企業Y の 議案Z に 反対票を投じた」「投資家X は 企業Y と テーマT について対話した」等の構造化トリプル生成</li>
+<li><strong>「方針-行動-企業特性」因果チェーンの推論</strong>: 議決権行使ガイドライン（方針）→ 実際の投票行動 → 対象企業のガバナンス特性の三者関係を推論し、方針と行動の一貫性を検証</li>
+</ol>
+<p><strong>日本語NLP課題と現実的アプローチ:</strong></p>
+<ul>
+<li>金融日本語の専門用語辞書の構築（議決権行使、スチュワードシップ関連用語）</li>
+<li>PDF からの表・テキスト抽出における日本語特有の課題（縦書き、ルビ、複雑な表構造）</li>
+<li>ファインチューニング済みLLM（例：日本語特化モデル）とドメイン辞書の組合せによる精度向上</li>
+<li>少量のアノテーションデータによる Few-shot 学習の活用</li>
+</ul>
+<h3 id="e5">E.5 政策評価への応用</h3>
+<p>機関投資家に関する制度改革の効果を、ネットワーク分析と因果推論手法を組み合わせて評価する：</p>
+<p><strong>自然実験としてのスチュワードシップ・コード導入（2014年）:</strong></p>
+<p>日本版スチュワードシップ・コードの導入（2014年2月）は、機関投資家の行動変化を研究するための準自然実験として活用できる。コード受入機関と非受入機関、またはコード導入前後の比較により、制度変更の因果効果を推定する。</p>
+<p><strong>差分の差分法（DID）による因果効果推定:</strong></p>
+<ul>
+<li><strong>処置群</strong>: スチュワードシップ・コード受入を表明した機関投資家が大株主である企業</li>
+<li><strong>対照群</strong>: 非受入機関が大株主である企業、または機関投資家保有比率の低い企業</li>
+<li><strong>アウトカム変数</strong>: 議決権行使における反対票比率、エンゲージメント件数、対象企業のガバナンス指標（独立取締役比率、持ち合い解消率、ROE等）</li>
+<li><strong>ネットワーク指標の変化</strong>: 共通所有ネットワークの密度、クラスタリング係数、コミュニティ構造の変化を時系列で追跡</li>
+</ul>
+<p><strong>議決権行使パターンの Before/After 分析:</strong></p>
+<ul>
+<li>投票類似性ネットワークの構造変化（2014年前後）</li>
+<li>運用機関の「横並び投票」から「独自判断投票」への移行度合い</li>
+<li>ISS/Glass Lewis 推奨への依存度の変化</li>
+</ul>
+<p><strong>国際比較:</strong></p>
+<p>英国スチュワードシップ・コード（2010年）と日本版（2014年）の導入効果を比較し、制度的文脈（所有構造、法制度、市場慣行）が政策効果に与える影響を分析。ネットワーク構造の差異が、同様の政策がもたらす効果の違いをどの程度説明するかを検証する。</p>
+<h3 id="e6">E.6 主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>テーマ</th>
+<th>著者</th>
+<th>年</th>
+<th>論文</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Common Ownership</strong></td>
+<td>Azar, Schmalz &amp; Tecu</td>
+<td>2018</td>
+<td>Anti-Competitive Effects of Common Ownership. <em>Journal of Finance</em>, 73(4), 1513–1565.</td>
+<td>共通所有の増加が航空運賃を3–7%上昇させたことを実証</td>
+</tr>
+<tr>
+<td><strong>Common Ownership</strong></td>
+<td>He &amp; Huang</td>
+<td>2017</td>
+<td>Product Market Competition in a World of Cross-Ownership. <em>Review of Financial Studies</em>, 30(8), 2674–2718.</td>
+<td>共通所有が企業間協調とガバナンス改善を促進する「明るい面」を示す</td>
+</tr>
+<tr>
+<td><strong>Big Three</strong></td>
+<td>Fichtner, Heemskerk &amp; Garcia-Bernardo</td>
+<td>2017</td>
+<td>Hidden power of the Big Three? <em>Business and Politics</em>, 19(2), 298–326.</td>
+<td>Big Three の所有集中と潜在的影響力を定量化</td>
+</tr>
+<tr>
+<td><strong>パッシブ運用</strong></td>
+<td>Appel, Gormley &amp; Keim</td>
+<td>2016</td>
+<td>Passive Investors, Not Passive Owners. <em>Journal of Financial Economics</em>, 121(1), 111–141.</td>
+<td>パッシブファンドがガバナンス改善（独立取締役増、ポイズンピル撤廃等）を促進</td>
+</tr>
+<tr>
+<td><strong>スチュワードシップ</strong></td>
+<td>Gilson &amp; Gordon</td>
+<td>2013</td>
+<td>The Agency Costs of Agency Capitalism. <em>Columbia Law Review</em>, 113(4), 863–927.</td>
+<td>機関投資家の「再集中化」がもたらすエージェンシー問題の新類型を分析</td>
+</tr>
+<tr>
+<td><strong>議決権行使</strong></td>
+<td>Iliev &amp; Lowry</td>
+<td>2015</td>
+<td>Are Mutual Funds Active Voters? <em>Review of Financial Studies</em>, 28(2), 446–485.</td>
+<td>投資信託の議決権行使行動の決定要因を実証分析</td>
+</tr>
+<tr>
+<td><strong>議決権助言</strong></td>
+<td>Malenko &amp; Shen</td>
+<td>2016</td>
+<td>The Role of Proxy Advisory Firms. <em>Review of Financial Studies</em>, 29(12), 3394–3427.</td>
+<td>ISS推奨が議決権行使結果に与える影響のメカニズムを理論・実証分析</td>
+</tr>
+<tr>
+<td><strong>日本のスチュワードシップ</strong></td>
+<td>Miyajima &amp; Hoda</td>
+<td>2015</td>
+<td>Ownership Structure and Corporate Governance in Japan. <em>RIETI Discussion Paper</em>.</td>
+<td>日本の所有構造変化とガバナンス改革の関係を包括的に分析</td>
+</tr>
+<tr>
+<td><strong>ネットワーク分析</strong></td>
+<td>Aminadav &amp; Papaioannou</td>
+<td>2020</td>
+<td>Corporate Control around the World. <em>Journal of Finance</em>, 75(3), 1191–1246.</td>
+<td>127カ国の企業支配ネットワークを構築し、支配構造の国際比較を実施</td>
+</tr>
+<tr>
+<td><strong>アクティビズム</strong></td>
+<td>Brav, Jiang, Partnoy &amp; Thomas</td>
+<td>2008</td>
+<td>Hedge Fund Activism, Corporate Governance, and Firm Performance. <em>Journal of Finance</em>, 63(4), 1729–1775.</td>
+<td>ヘッジファンドアクティビズムのガバナンス改善効果を実証</td>
+</tr>
+</tbody>
+</table>
+<h3 id="e7">E.7 データセット</h3>
+<table>
+<thead>
+<tr>
+<th>データセット</th>
+<th>内容</th>
+<th>アクセス</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SEC 13F Filings</strong></td>
+<td>米国機関投資家（運用資産1億ドル以上）の四半期保有報告</td>
+<td>オープン（EDGAR）</td>
+<td>共通所有ネットワーク構築の基本データ</td>
+</tr>
+<tr>
+<td><strong>SEC Schedule 13D/13G</strong></td>
+<td>5%以上保有の大量保有報告書（13D: アクティビスト、13G: パッシブ）</td>
+<td>オープン（EDGAR）</td>
+<td>アクティビスト活動の識別に有用</td>
+</tr>
+<tr>
+<td><strong>EDINET 大量保有報告書</strong></td>
+<td>日本の5%ルールに基づく大量保有報告書</td>
+<td>オープン（金融庁）</td>
+<td>日本の機関投資家保有構造の把握</td>
+</tr>
+<tr>
+<td><strong>ISS Voting Analytics</strong></td>
+<td>機関投資家の議決権行使記録（企業・議案レベル）</td>
+<td>商業利用（WRDS）</td>
+<td>投票類似性ネットワーク構築に最適</td>
+</tr>
+<tr>
+<td><strong>N-PX Filings</strong></td>
+<td>米国投資信託の議決権行使記録（年次報告）</td>
+<td>オープン（EDGAR）</td>
+<td>SEC規則により開示義務、網羅性が高い</td>
+</tr>
+<tr>
+<td><strong>JPX 株式分布状況調査</strong></td>
+<td>TSE上場企業の投資家類型別保有比率（外国人、信託銀行、個人等）</td>
+<td>オープン（JPX）</td>
+<td>日本市場の所有構造の時系列変化を把握</td>
+</tr>
+<tr>
+<td><strong>金融庁スチュワードシップ・コード受入機関一覧</strong></td>
+<td>コード受入を表明した機関投資家のリスト</td>
+<td>オープン（金融庁）</td>
+<td>DID分析の処置群定義に利用可能</td>
+</tr>
+<tr>
+<td><strong>ICJ 議決権行使結果集計</strong></td>
+<td>日本の機関投資家の議決権行使結果の集計データ</td>
+<td>オープン（ICJ）</td>
+<td>日本市場の投票行動分析</td>
+</tr>
+<tr>
+<td><strong>FactSet Ownership</strong></td>
+<td>グローバル機関投資家の保有データ（13F + 国際データ）</td>
+<td>商業利用</td>
+<td>国際的な共通所有ネットワーク構築に有用</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="f-gnn">F. GNN × ガバナンス</h2>
+<h3 id="f1">F.1 グラフニューラルネットワークによる信用格付け</h3>
+<p><strong>CCR-GNN: グラフニューラルネットワークによる企業信用格付け</strong></p>
+<p>従来の信用格付けは財務比率、業種分類、アナリストの判断に依存している。GNNベースのアプローチは企業ネットワークの関係構造を組み込む：</p>
+<ul>
+<li><strong>アーキテクチャ</strong>: サプライチェーン関係、所有リンク、業種の共同メンバーシップ、地理的近接性で接続された企業の多関係グラフを構築。ノード特徴量には財務比率（レバレッジ、収益性、流動性、カバレッジ）とマクロ経済指標が含まれる。グラフ畳み込み層が近傍からの情報を集約し、企業の信用評価がサプライヤー、顧客、所有パートナーの財務健全性に影響を受けることを可能にする。</li>
+<li><strong>重要な洞察</strong>: 企業の信用力は自社の財務状況だけでなく、ネットワーク近傍の信用力にも依存する — サプライチェーンの混乱、所有連鎖の困窮、業界の伝染はすべて企業グラフを通じて伝播する</li>
+<li><strong>性能</strong>: CCR-GNNは信用格付け予測ベンチマークにおいて従来モデル（ロジスティック回帰、ランダムフォレスト、勾配ブースティング）および表形式ディープラーニング（フィードフォワードニューラルネットワーク）を上回り、ネットワーク効果が企業レベルの特徴量では捕捉できない信用力に関する重要な情報を含むことを実証</li>
+<li><strong>実務的応用</strong>: 銀行や格付機関はネットワーク特徴量を信用リスクモデルに組み込むことで、体系的リスクと伝染リスクをより良く評価できる</li>
+</ul>
+<h3 id="f2-company-as-tribe-gnnth-gnn">F.2 Company-as-Tribe: 木構造誘導型階層的GNN（TH-GNN）</h3>
+<p><strong>TH-GNN</strong> は <strong>KDD 2022</strong> で発表され、企業グループ構造のモデル化に新たなアプローチを導入した：</p>
+<ul>
+<li><strong>メタファー</strong>: 「Company-as-Tribe（企業は部族）」— 企業は孤立した存在ではなく、階層的組織を持つ部族的（グループ）構造のメンバーである。企業の行動は、企業部族（ビジネスグループ、系列、財閥、産業クラスター）内での位置によって形作られる。</li>
+<li><strong>アーキテクチャ</strong>: 木構造誘導型階層的GNN：</li>
+<li>所有データ（親子関係）から企業階層木を構築</li>
+<li>木構造メッセージパッシングを使用して階層的所有連鎖に沿って情報を伝播</li>
+<li>各階層レベルでグラフアテンションメカニズムを適用し、兄弟法人、親法人、子法人の影響を重み付け</li>
+<li>階層的埋め込みとフラット（非階層的）グラフ表現を組み合わせ</li>
+<li><strong>応用</strong>: 中国A株市場データに対する株価予測と信用リスク評価に適用；階層的グループ構造がフラットなグラフ表現では捕捉できない予測情報を含むことを実証</li>
+<li><strong>ガバナンスとの関連</strong>: このモデルはガバナンス研究が対象とする階層的所有構造（ピラミッド、ビジネスグループ）を明示的に捕捉する。グループレベルのガバナンス品質（例：支配家族の行動）が企業階層を通じてどう伝播するかの評価に使用可能。</li>
+</ul>
+<h3 id="f3-gnnhhgnn">F.3 階層的異種GNN（HHGNN）</h3>
+<p>HHGNNは、コーポレートガバナンスデータの全体的な複雑性にグラフニューラルネットワークアーキテクチャを拡張する：</p>
+<ul>
+<li><strong>複数のノードタイプ</strong>: 企業、取締役、株主（機関投資家、個人、政府機関）、監査人、法人、規制機関</li>
+<li><strong>複数のエッジタイプ</strong>: 所有（直接、間接、受益）、取締役会メンバーシップ（業務執行、非業務執行、独立）、監査関係、サプライチェーン接続、顧問委任、法的手続き、合弁事業</li>
+<li><strong>階層的集約</strong>: 情報は複数のスケールで集約される：</li>
+<li><em>ローカルレベル</em>: 直接の近傍（直接株主、取締役会メンバー）</li>
+<li><em>コミュニティレベル</em>: 系列グループ、産業クラスター、地理的地域</li>
+<li><em>グローバルレベル</em>: 市場全体の構造、体系的ポジション</li>
+<li><strong>異種アテンション</strong>: エッジタイプごとに異なるアテンションメカニズム — 所有リンクは取締役会インターロックとは異なる重みが付けられ、サプライチェーン関係とも異なる</li>
+<li><strong>ガバナンスへの応用</strong>: HHGNNは共有グラフ構造を活用して、ガバナンス関連の予測（信用リスク、不正の可能性、ガバナンス品質、ESGスコア）にわたるマルチタスク学習に使用可能</li>
+</ul>
+<h3 id="f4">F.4 企業不正検出</h3>
+<p><strong>"Corporate Fraud Detection in Rich-yet-Noisy Financial Graphs":</strong>
+金融関係データは本質的にノイズが多い — 所有記録が古い可能性、サプライチェーンリンクが不完全な可能性、取締役任命が誤記録されている可能性がある。この論文は、重大なノイズを持つグラフでの不正シグナル検出の課題に取り組む：</p>
+<ul>
+<li><strong>ノイズ処理</strong>: ノイズの多いエッジを重み下げし、情報量の多い接続を増幅するグラフアテンションメカニズムを開発。モデルはエッジの信頼性を潜在変数として推定する。</li>
+<li><strong>不正シグナルの伝播</strong>: ある企業での不正（例：会計操作、インサイダー取引）は、接続された企業に検出可能なシグナル（異常な取引パターン、異常な未収金、関連当事者取引の異常）を生み出す。GNNはこれらのシグナルを企業グラフを通じて伝播する。</li>
+<li><strong>特徴量選択</strong>: 高次元でノイズの多い財務特徴量の課題に対処するため、グラフ構造と共同で特徴量の重要性を学習。財務比率、テキスト特徴量（開示書類から）、市場特徴量が統合される。</li>
+</ul>
+<p><strong>Know-GNN: 説明可能な不正検出のための知識誘導型GNN:</strong>
+- <strong>説明可能性</strong>: 規制遵守の要件（MiFID II、Basel III、SECガイドライン）は、不正検出モデルが解釈可能な説明を提供することを要求する。Know-GNNはドメイン知識（既知の不正パターン、規制ルール、会計基準）を制約と事前情報としてGNNに統合し、予測とともに説明を生成する。
+- <strong>アーキテクチャ</strong>: GNNバックボーンと規制ルールおよび既知の不正類型の知識グラフを組み合わせる。知識グラフは構造化された事前知識（例：「循環取引は通常、間接所有を通じて接続された法人を含む」）を提供し、GNNのアテンションメカニズムを導く。
+- <strong>出力</strong>: 各予測に対して、Know-GNNはサブグラフの説明 — 不正評価に寄与した特定の法人、関係、特徴量 — を生成し、規制審査や法的手続きに適している。</p>
+<h3 id="f5-gnn">F.5 ガバナンスにおけるその他のGNN応用</h3>
+<table>
+<thead>
+<tr>
+<th>応用</th>
+<th>説明</th>
+<th>関連性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>取締役会任命の予測</strong></td>
+<td>過去の取締役-企業二部ネットワークで訓練されたGNNによる将来の取締役会任命予測；ホモフィリー、三者閉包、優先的接続を捕捉</td>
+<td>取締役労働市場とガバナンスネットワーク形成の理解</td>
+</tr>
+<tr>
+<td><strong>ガバナンスネットワークからのESGスコア予測</strong></td>
+<td>所有およびインターロックネットワークを特徴量としてESG格付けを予測；ネットワークポジションとガバナンス品質の相関を活用</td>
+<td>投資分析におけるESG統合</td>
+</tr>
+<tr>
+<td><strong>取締役の有効性スコアリング</strong></td>
+<td>取締役会インターロックネットワーク、企業業績、取締役の経歴特徴量を用いたGNNベースの取締役影響力と有効性のランキング</td>
+<td>取締役会評価と構成の最適化</td>
+</tr>
+<tr>
+<td><strong>ガバナンスリスクの早期警告</strong></td>
+<td>ガバナンスネットワークの変化（突然のインターロック変更、所有構造の再編、異常な取締役退任）を監視する時間的GNNによる早期リスク検出</td>
+<td>規制サーベイランスと投資家デューデリジェンス</td>
+</tr>
+<tr>
+<td><strong>株主アクティビズム予測</strong></td>
+<td>ガバナンスの質、所有集中度、ネットワークポジションに基づき、アクティビスト投資家の標的となりやすい企業を予測</td>
+<td>投資戦略と企業の準備態勢</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="g">G. 知識グラフ × ガバナンス</h2>
+<h3 id="g1-kg">G.1 企業所有のためのエンタープライズKG</h3>
+<p><strong>Bank of Italy の研究（EDBT 2020）:</strong>
+Bank of Italy（イタリア銀行）は監督業務を支援するための所有知識グラフを開発した：</p>
+<ul>
+<li><strong>動機</strong>: イタリアの銀行規制当局は、ガバナンスリスク、集中リスク、関連当事者取引を評価するために、銀行とその支配株主の複雑な所有構造を理解する必要がある</li>
+<li><strong>方法論</strong>:</li>
+<li>異種データソースの統合: Orbis、イタリア企業登記簿（Registro Imprese）、Bank of Italy 内部データベース、Consob（証券規制当局）の開示</li>
+<li><strong>エンティティ解決</strong>: 異なる識別子、命名規則、更新頻度を持つデータベース間でのエンティティマッチング。ブロッキング戦略、文字列類似度、グラフベースのマッチングを使用してソース間でエンティティを解決</li>
+<li>所有関係のOWL/RDF知識グラフを構築し、エンティティカテゴリ（銀行、保険会社、持株会社、自然人）のセマンティックタイプを設定</li>
+<li><strong>KG上でのUBO計算</strong>: 知識グラフ上で再帰的支配力アルゴリズムを実行し、循環と閾値ベースの所有定義に対応して実質的受益所有を計算</li>
+<li><strong>応用</strong>: 所有変更の監督的モニタリング、潜在的利益相反の特定、企業グループの境界評価、規制遵守の検証（例：適格保有の承認）</li>
+<li><strong>技術スタック</strong>: RDFトリプルストア、所有経路分析のためのSPARQLクエリ、KGに統合されたカスタム支配力伝播アルゴリズム</li>
+</ul>
+<h3 id="g2-firmographica2025">G.2 Firmographica（2025年）</h3>
+<p><strong>Firmographica</strong> は金融リスク評価のための最近（2025年）のKGベースフレームワークである：</p>
+<ul>
+<li><strong>焦点</strong>: 空売りリスク評価 — 空売り業者の攻撃リスクが高い企業の特定（空売り業者はしばしばガバナンスの弱点を標的とする）</li>
+<li><strong>アーキテクチャ</strong>:</li>
+<li>企業をガバナンスイベント（取締役会の変更、所有移転、監査委員会の構成、規制措置）、財務指標（未収金の質、収益認識パターン）、市場シグナル（空売り残、オプション活動、アナリストの格下げ）にリンクする時間的知識グラフを構築</li>
+<li>KG推論を通じてコーポレートガバナンス要因を市場リスクにリンク</li>
+<li><strong>時間的次元</strong>: ガバナンスイベントにはタイムスタンプと期間があり、KGはガバナンス状態の変化を時系列で捕捉（例：「企業Xは日付Dに独立取締役Yを追加」）</li>
+<li><strong>マルチソースデータ統合</strong>: SEC開示、委任状説明書、裁判記録、ニュース記事、ソーシャルメディア（投資家フォーラム）、特許出願、政府契約</li>
+<li><strong>空売りリスクモデル</strong>: KG埋め込み（TransE、RotatE、時間的KG埋め込みモデル）と金融時系列を組み合わせて空売り活動を予測</li>
+</ul>
+<h3 id="g3-esg">G.3 ESGガバナンス知識グラフ</h3>
+<p>ESG（環境、社会、ガバナンス）フレームワークは、構造化されたデータ表現にますます依存している：</p>
+<ul>
+<li><strong>ガバナンス慣行のESGフレームワークへのマッピング</strong>: 知識グラフは特定のコーポレートガバナンス慣行（取締役会の独立性、監査委員会の構成、役員報酬体系）をESG格付け基準（MSCI、Sustainalytics、ISS ESG、FTSE Russell）にリンクする</li>
+<li><strong>取締役会構成KG</strong>: 取締役の経歴データ（学歴、職歴、専門知識、人口統計）、取締役会の役割（議長、筆頭独立取締役、委員会メンバーシップ）、ネットワーク接続（共有取締役会、共有雇用者、共有学歴）を含む豊富な知識グラフ</li>
+<li><strong>コンプライアンスモニタリング</strong>: KG推論はガバナンスコンプライアンスを自動チェックできる — 例えば、「この企業の取締役会は少なくとも3分の1が独立取締役か？」はガバナンスKGに対するSPARQLクエリまたはルールベースの推論で回答可能</li>
+<li><strong>規制整合性チェック</strong>: 法域間のガバナンス要件（米国SOX、UK Corporate Governance Code、日本のCGコード、EU CSDDD）を統一的なオントロジーフレームワークにマッピングし、ギャップと矛盾を特定</li>
+</ul>
+<h3 id="g4-llm-graphrag">G.4 LLM + GraphRAG によるガバナンスコンプライアンス</h3>
+<p>大規模言語モデルとグラフベースの検索拡張生成（GraphRAG）の組み合わせは、ガバナンスコンプライアンスに新たな可能性を開く：</p>
+<ul>
+<li>
+<p><strong>ガバナンスKGに対する検索拡張生成</strong>: LLMは構造化されたガバナンス知識グラフにクエリを実行し、回答生成前に関連する事実（取締役会構成、所有連鎖、議決権行使履歴、規制要件）を取得することで、ガバナンス分析におけるハルシネーションを劇的に削減できる</p>
+</li>
+<li>
+<p><strong>委任状説明書の自動分析</strong>: LLMは委任状説明書（DEF 14Aファイリング）を解析して構造化されたガバナンスデータ — 取締役候補者、報酬テーブル、議決項目、株主提案 — を抽出し、ガバナンスKGに投入できる。GraphRAGはその後、抽出されたデータに対する質問応答を可能にする：「独立取締役の割合は？」「役員報酬はピアベンチマークを超えているか？」</p>
+</li>
+<li>
+<p><strong>取締役会評価レポートの生成</strong>: ガバナンスKGを事実の源として使用し、LLMは取締役ネットワーク分析、ピアベンチマーキング、スキルマトリックス評価、多様性指標を組み込んだ包括的な取締役会評価レポートを生成できる</p>
+</li>
+<li>
+<p><strong>規制変更の影響評価</strong>: 規制が変更された場合（例：SECの気候開示に関する新規則、TSEのガバナンス新要件）、GraphRAGはガバナンスKG上で推論することでポートフォリオ企業への影響を評価できる：「ポートフォリオ内のどの企業が新要件に現在準拠していないか？」</p>
+</li>
+<li>
+<p><strong>多法域コンプライアンスチェック</strong>: 複数法域のガバナンス要件に従う多国籍企業に対して、GraphRAGは法域固有の規制KGを統合してコンプライアンスのギャップと矛盾を特定できる：「企業Xは東京、ニューヨーク、ロンドンに上場している — 独立取締役要件の合算は？」</p>
+</li>
+</ul>
+<hr />
+<h2 id="h">H. プラットフォームとツール</h2>
+<h3 id="h1">H.1 調査・コンプライアンスプラットフォーム</h3>
+<table>
+<thead>
+<tr>
+<th>プラットフォーム</th>
+<th>焦点</th>
+<th>主な機能</th>
+<th>技術</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sayari</strong></td>
+<td>サプライチェーン・所有インテリジェンス</td>
+<td>250以上の法域からのグローバル企業記録；UBO計算；リスクスコアリング；制裁スクリーニング；サプライチェーンマッピング</td>
+<td>独自グラフデータベース；MLベースのエンティティ解決</td>
+</tr>
+<tr>
+<td><strong>Linkurious</strong></td>
+<td>調査のためのグラフ可視化</td>
+<td>Neo4jおよび他のグラフデータベースに接続；コンプライアンス調査ワークフロー；ケース管理；ビジュアルリンク分析</td>
+<td>グラフデータベースのフロントエンド；JavaScriptベースの可視化</td>
+</tr>
+<tr>
+<td><strong>Neo4j</strong></td>
+<td>汎用グラフデータベース</td>
+<td>不正検出、AML、カスタマー360のための金融サービスソリューション；Cypherクエリ言語；グラフデータサイエンスライブラリ</td>
+<td>ネイティブグラフストレージ；ACID準拠；GDSプラグインによるグラフアルゴリズム</td>
+</tr>
+<tr>
+<td><strong>GraphAware</strong></td>
+<td>Neo4jベースの分析プラットフォーム</td>
+<td><strong>Hume</strong>: 非構造化テキストを知識グラフに変換するNLP→KGパイプライン；金融犯罪検出；エンティティ解決</td>
+<td>NLPパイプライン + Neo4j；NERおよびREモデル</td>
+</tr>
+<tr>
+<td><strong>Ultipa</strong></td>
+<td>高性能グラフデータベース</td>
+<td>リアルタイム不正検出；UBOのためのディープリンクトラバーサル；中国金融市場での強いプレゼンス；HTAPグラフエンジン</td>
+<td>カスタムグラフエンジン；SQLライクなクエリ言語（UQL）</td>
+</tr>
+<tr>
+<td><strong>TigerGraph</strong></td>
+<td>スケーラブルなグラフ分析</td>
+<td>不正対策およびAMLソリューション；大規模エンティティ解決；リアルタイムディープリンク分析；グラフベース機械学習</td>
+<td>分散グラフデータベース；GSQLクエリ言語；ネイティブ並列計算</td>
+</tr>
+<tr>
+<td><strong>PoolParty</strong></td>
+<td>セマンティックAIプラットフォーム</td>
+<td>タクソノミーとオントロジー管理；非構造化データからの知識グラフ構築；テキストマイニング</td>
+<td>セマンティックミドルウェア；SKOS/OWL；テキスト分析</td>
+</tr>
+<tr>
+<td><strong>Palantir</strong></td>
+<td>データ統合と分析</td>
+<td>AMLコンプライアンス（Gotham）；企業調査（Metropolis）；エンティティ中心のデータ融合</td>
+<td>独自プラットフォーム；グラフベースのデータモデル</td>
+</tr>
+</tbody>
+</table>
+<h3 id="h2">H.2 ガバナンスデータプロバイダー</h3>
+<table>
+<thead>
+<tr>
+<th>プロバイダー</th>
+<th>データ範囲</th>
+<th>カバレッジ</th>
+<th>主な提供内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ISS (Institutional Shareholder Services)</strong></td>
+<td>ガバナンス格付け、議決権助言、投票分析</td>
+<td>グローバル（約44,000社）</td>
+<td>Governance QualityScore；議決権行使推奨；ESG格付け；報酬分析；取締役会分析</td>
+</tr>
+<tr>
+<td><strong>Glass Lewis</strong></td>
+<td>議決権助言、ガバナンスリサーチ</td>
+<td>グローバル（約30,000社）</td>
+<td>独立した議決権行使推奨；ガバナンス分析；ESGデータ；株主エンゲージメント</td>
+</tr>
+<tr>
+<td><strong>Bloomberg</strong></td>
+<td>ガバナンスデータ、ESG、所有、財務</td>
+<td>グローバル</td>
+<td>Bloomberg Governance Scores；取締役会構成データ；所有分析；役員報酬；ESGデータ</td>
+</tr>
+<tr>
+<td><strong>MSCI</strong></td>
+<td>ESG格付け、ガバナンススコア、気候データ</td>
+<td>グローバル（約8,500社）</td>
+<td>ESG Ratings（AAA–CCC）；ガバナンスピラースコア；論争モニタリング；気候指標</td>
+</tr>
+<tr>
+<td><strong>Orbis (BvD/Moody's)</strong></td>
+<td>所有、財務、取締役、コンプライアンス</td>
+<td>グローバル4億以上の法人</td>
+<td>包括的な所有連鎖；UBO計算；取締役データ；財務データ；コンプライアンスリスク指標</td>
+</tr>
+<tr>
+<td><strong>Equilar</strong></td>
+<td>役員報酬、取締役会データ</td>
+<td>米国中心（約5,000社）</td>
+<td>役員報酬分析；取締役会構成；ピアグループ分析；取締役ネットワークマッピング</td>
+</tr>
+<tr>
+<td><strong>BoardEx</strong></td>
+<td>取締役ネットワーク、経歴データ</td>
+<td>グローバル（150万以上のプロファイル）</td>
+<td>取締役関係マッピング；経歴プロファイル；取締役会構成分析；後継者計画データ</td>
+</tr>
+<tr>
+<td><strong>Diligent</strong></td>
+<td>取締役会管理、ガバナンスインテリジェンス</td>
+<td>グローバル</td>
+<td>取締役会ポータルソフトウェア；法人管理；ガバナンスデータ；ESG報告；コンプライアンス管理</td>
+</tr>
+<tr>
+<td><strong>S&amp;P Capital IQ</strong></td>
+<td>財務、所有、主要な動向</td>
+<td>グローバル</td>
+<td>企業財務；所有データ；取引データ；主要な動向；サプライチェーンマッピング</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="i">I. データセット</h2>
+<table>
+<thead>
+<tr>
+<th>データセット</th>
+<th>レコード数</th>
+<th>説明</th>
+<th>アクセス</th>
+<th>URL／備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Open Ownership Register</strong></td>
+<td>2,700万以上</td>
+<td>200以上の法域からの実質的受益所有宣言；BODSの下で標準化</td>
+<td>オープン（API、一括）</td>
+<td>register.openownership.org</td>
+</tr>
+<tr>
+<td><strong>GLEIF LEI</strong></td>
+<td>250万以上</td>
+<td>直接および最終親会社の関係データを含む法人識別子；ISO 17442規格</td>
+<td>オープン（API、一括）</td>
+<td>gleif.org</td>
+</tr>
+<tr>
+<td><strong>Transparency Fabric 2.0</strong></td>
+<td>—</td>
+<td>グラフベースの実質的受益所有データ基準；追加の関係タイプでBODSを拡張</td>
+<td>オープン</td>
+<td>Open Ownership イニシアティブ</td>
+</tr>
+<tr>
+<td><strong>OpenCorporates</strong></td>
+<td>1億7,000万以上</td>
+<td>世界中の政府登記簿からの企業登録；役員データ；公報通知</td>
+<td>フリーミアム（API）</td>
+<td>opencorporates.com</td>
+</tr>
+<tr>
+<td><strong>NRG Metrics</strong></td>
+<td>—</td>
+<td>新興市場企業のガバナンス格付け、ESGデータ、企業イベント</td>
+<td>商業利用</td>
+<td>nrgmetrics.com</td>
+</tr>
+<tr>
+<td><strong>ISS Governance Data</strong></td>
+<td>—</td>
+<td>取締役会構成、議決権行使記録、報酬データ、ガバナンス格付け；WRDSから利用可能</td>
+<td>商業利用（WRDS）</td>
+<td>issgovernance.com</td>
+</tr>
+<tr>
+<td><strong>Orbis (BvD)</strong></td>
+<td>4億以上</td>
+<td>所有連鎖、財務データ、取締役データ、コンプライアンス指標；最も包括的なグローバルソース</td>
+<td>商業利用（WRDS、機関）</td>
+<td>bvdinfo.com</td>
+</tr>
+<tr>
+<td><strong>Harvard Law School Forum on Corporate Governance</strong></td>
+<td>—</td>
+<td>コーポレートガバナンスに関する研究論文、データセット、解説</td>
+<td>オープン</td>
+<td>corpgov.law.harvard.edu</td>
+</tr>
+<tr>
+<td><strong>JPX株式分布状況調査</strong></td>
+<td>—</td>
+<td>全TSE上場企業の投資家類型別株式保有分布に関する年次調査</td>
+<td>オープン（JPX）</td>
+<td>jpx.co.jp</td>
+</tr>
+<tr>
+<td><strong>BoardEx</strong></td>
+<td>150万以上のプロファイル</td>
+<td>取締役の経歴データ、取締役会メンバーシップ、ネットワーク接続、職歴</td>
+<td>商業利用</td>
+<td>boardex.com</td>
+</tr>
+<tr>
+<td><strong>SEC EDGAR Filings</strong></td>
+<td>—</td>
+<td>米国企業の開示：10-K（年次）、10-Q（四半期）、DEF 14A（委任状）、Schedule 13D/13G（所有）、Form 3/4/5（インサイダー）</td>
+<td>オープン</td>
+<td>sec.gov/edgar</td>
+</tr>
+<tr>
+<td><strong>WRDS (Wharton Research Data Services)</strong></td>
+<td>—</td>
+<td>マルチデータベースプラットフォーム：CRSP、Compustat、ISS、BoardEx、IBES、TAQ、Orbis等多数</td>
+<td>学術利用（機関購読）</td>
+<td>wrds-web.wharton.upenn.edu</td>
+</tr>
+<tr>
+<td><strong>ICIJ Offshore Leaks Database</strong></td>
+<td>80万以上</td>
+<td>パナマ文書、パラダイス文書、パンドラ文書からの法人；オフショア所有構造</td>
+<td>オープン</td>
+<td>offshoreleaks.icij.org</td>
+</tr>
+<tr>
+<td><strong>FactSet</strong></td>
+<td>—</td>
+<td>所有データ、サプライチェーン関係、財務データ、見積もり</td>
+<td>商業利用</td>
+<td>factset.com</td>
+</tr>
+<tr>
+<td><strong>Refinitiv (LSEG) Ownership Data</strong></td>
+<td>—</td>
+<td>機関およびインサイダー所有データ；詳細な保有者プロファイル</td>
+<td>商業利用</td>
+<td>refinitiv.com</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="j">J. オントロジーと標準規格</h2>
+<h3 id="j1-fibofinancial-industry-business-ontology">J.1 FIBO（Financial Industry Business Ontology、金融業界ビジネスオントロジー）</h3>
+<p><strong>Financial Industry Business Ontology (FIBO)</strong> は、金融業界向けの最も包括的で広く採用されている正式なオントロジーである：</p>
+<ul>
+<li><strong>範囲</strong>: 法人、企業構造、所有、ガバナンス、金融商品、ビジネスプロセス、市場データ、融資、デリバティブ、インデックス</li>
+<li><strong>法人モジュール</strong>: 企業構造（子会社、支店、持株会社）、所有関係（株式、債務、受益）、ガバナンス構造（取締役会、委員会、役員）、規制上のステータスを網羅</li>
+<li><strong>標準化団体</strong>: <strong>EDM Council</strong>（現在はGLEIFのプログラム）が開発・維持し、<strong>OMG（Object Management Group）</strong> の標準として正式化</li>
+<li><strong>技術基盤</strong>: <strong>OWL（Web Ontology Language）</strong> および <strong>RDF（Resource Description Framework）</strong> 上に構築され、自動推論と整合性チェックを可能にする形式的意味論を持つ</li>
+<li><strong>拡張性</strong>: 機関および規制当局がドメイン固有のニーズに合わせて拡張可能に設計（例：系列固有の関係タイプの追加、デュアルクラス株式構造のモデル化）</li>
+<li><strong>採用</strong>: 主要銀行（JPMorgan、Wells Fargo、Deutsche Bank）、規制当局（OFR、GLEIF、Bank of England）、データプロバイダー（Bloomberg、Refinitiv）がデータ調和と相互運用性のために使用</li>
+<li><strong>ガバナンス研究における限界</strong>: FIBOは法人と基本的な所有をカバーしているが、取締役会委員会の構造、取締役独立性基準、議決権メカニズム、株主エンゲージメント慣行、ガバナンスコード遵守といったガバナンス固有の概念の深いモデリングが不足</li>
+</ul>
+<h3 id="j2-bodsbeneficial-ownership-data-standard">J.2 BODS（Beneficial Ownership Data Standard、実質的受益所有データ基準）</h3>
+<p><strong>Beneficial Ownership Data Standard (BODS)</strong> は <strong>Open Ownership</strong> によって開発され、実質的受益所有データの公開のための標準化されたスキーマを提供する：</p>
+<ul>
+<li><strong>形式</strong>: 実質的受益所有関係の宣言方法を定義するJSONベースのスキーマ</li>
+<li><strong>データモデル</strong>: 3つのステートメントタイプ：</li>
+<li><strong>エンティティステートメント</strong>: 法人（企業、信託、パートナーシップ）を記述</li>
+<li><strong>個人ステートメント</strong>: 実質的受益所有者である自然人を記述</li>
+<li><strong>所有または支配のステートメント</strong>: エンティティと個人（または別のエンティティ）の間の関係を記述し、所有割合、議決権、支配の性質を含む</li>
+<li><strong>複雑な構造</strong>: 多層所有、ノミニー制度、信託構造、条件付き利益に対応</li>
+<li><strong>国際的採用</strong>: 英国（Persons with Significant Control 登録簿）、ウクライナ、アルメニア、ナイジェリアなどが実質的受益所有登録簿の基盤として採用</li>
+<li><strong>相互運用性</strong>: 国際的な所有構造の越境的データ共有と分析を可能にするよう設計</li>
+<li><strong>グラフとの互換性</strong>: BODSデータは自然に有向グラフ（または知識グラフ）にマッピングされ、ネットワーク分析やKG構築に直接使用可能</li>
+</ul>
+<h3 id="j3-finregontfinancial-regulation-ontology">J.3 FinRegOnt（Financial Regulation Ontology、金融規制オントロジー）</h3>
+<p><strong>FinRegOnt</strong> は金融規制を構造化された機械可読のリンクトデータとして表現することを目指す：</p>
+<ul>
+<li><strong>範囲</strong>: 規制要件、コンプライアンス義務、報告基準、監督上の期待</li>
+<li><strong>法域横断的マッピング</strong>: 法域間で同等の規制要件をリンク（例：SOX Section 404とJ-SOXのマッピング、UK Corporate Governance Codeの規定と日本のCGコードのマッピング）</li>
+<li><strong>機械可読のコンプライアンスルール</strong>: 自動コンプライアンスチェックを可能に — 例えば、「プライム市場上場企業は少なくとも3分の1の独立取締役を持たなければならない」をガバナンスKGに対してチェック可能な機械実行ルールとしてエンコード</li>
+<li><strong>ルールベースの推論</strong>: OWL推論と組み合わせることで、FinRegOntは企業ガバナンスの事実からコンプライアンス状態を導出可能：取締役会構成と独立性基準が与えられれば、手動評価なしにコンプライアンスを判定できる</li>
+</ul>
+<h3 id="j4">J.4 その他の関連標準規格</h3>
+<table>
+<thead>
+<tr>
+<th>標準規格</th>
+<th>組織</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LEI (Legal Entity Identifier)</strong></td>
+<td>GLEIF / ISO 17442</td>
+<td>法人を一意に識別する20文字の英数字コード；データセット間のエンティティ解決を可能に</td>
+</tr>
+<tr>
+<td><strong>ISIN (International Securities Identification Number)</strong></td>
+<td>ISO 6166</td>
+<td>証券を識別する12文字のコード；株式を発行法人にリンク</td>
+</tr>
+<tr>
+<td><strong>XBRL (eXtensible Business Reporting Language)</strong></td>
+<td>XBRL International</td>
+<td>標準化された財務報告；開示書類から機械可読の財務データ抽出を可能に</td>
+</tr>
+<tr>
+<td><strong>EDGAR Full-Text Search Taxonomy</strong></td>
+<td>SEC</td>
+<td>米国の財務報告のためのタクソノミー；DEF 14Aファイリングにおけるガバナンス関連タグ</td>
+</tr>
+<tr>
+<td><strong>Inline XBRL for CG Reports</strong></td>
+<td>金融庁</td>
+<td>XBRLによる日本のガバナンスレポートのタグ付け；有価証券報告書からの構造化されたガバナンスデータ抽出を可能に</td>
+</tr>
+<tr>
+<td><strong>GRI Standards</strong></td>
+<td>Global Reporting Initiative</td>
+<td>ガバナンス開示（GRI 405: 多様性、GRI 2: ガバナンス）を含むサステナビリティ報告基準</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="k">K. 研究ギャップと今後の方向性</h2>
+<h3 id="k1">K.1 ガバナンス固有のオントロジーの不在</h3>
+<p><strong>課題:</strong>
+金融法人に対するFIBOの成熟度や実質的受益所有に対するBODSの存在にもかかわらず、<strong>コーポレートガバナンスのための包括的で標準化されたオントロジーは存在しない</strong>。現在のオントロジーは「何を」（法人、所有持分）をカバーしているが、「どのように」（ガバナンスメカニズム、意思決定プロセス、ステークホルダーとの相互作用）をカバーしていない。</p>
+<p><strong>不足しているもの:</strong>
+- <strong>取締役会構造のオントロジー</strong>: 取締役会タイプ（一層制、二層制）、委員会構造（監査、指名、報酬、リスク）、役割（議長、筆頭独立取締役、委員長）、および独立性基準（法域により異なる）の正式な表現
+- <strong>議決権メカニズムのオントロジー</strong>: 異なる投票制度（直接投票、累積投票、委任状投票、少数株主の過半数投票）、定足数要件、株主提案プロセスのモデル化
+- <strong>報酬体系のオントロジー</strong>: 基本給、年次賞与、長期インセンティブ（ストックオプション、RSU、業績連動株式）、繰延報酬、クローバック条項、支配権変更条項
+- <strong>ガバナンスコード遵守のオントロジー</strong>: ガバナンスコードの規定とそのコンプライ・オア・エクスプレインのステータスの機械可読な表現
+- <strong>ステークホルダーエンゲージメントのオントロジー</strong>: 株主アクティビズム、委任状争奪戦、セイ・オン・ペイ投票、ESGエンゲージメント、スチュワードシップ活動</p>
+<p><strong>機会:</strong>
+法的、財務的、組織的概念を橋渡しするガバナンスオントロジーは、自動ガバナンス分析、法域間の比較、既存の金融KGとのガバナンスデータの統合を可能にするだろう。</p>
+<h3 id="k2">K.2 ガバナンスのための時間的知識グラフ</h3>
+<p><strong>課題:</strong>
+ガバナンス構造は本質的に時間的である — 取締役会は変化し、取締役は交替し、所有は移転し、ガバナンス政策は進化し、規制は改正される。ガバナンスに関する現在の知識グラフは<strong>主に静的なスナップショット</strong>であり、ある一時点のガバナンスの状態を捕捉するにとどまる。</p>
+<p><strong>必要なもの:</strong>
+- ガバナンスのダイナミクスを捕捉する<strong>時間的KGフレームワーク</strong>: エンティティの有効期間（取締役Xは日付Aから日付Bまで取締役会Yに在任）、イベント駆動型の更新（CEO辞任、所有開示、ガバナンスコードの改正）、時間的クエリ（「日付Dの時点での取締役会構成は？」）
+- <strong>イベント駆動型ガバナンスKGの更新</strong>: リアルタイムデータフィード — EDINETの開示、TDnetの開示、SEC EDGARの開示、ニュース記事 — からKGの更新をトリガー
+- <strong>時間的リンク予測</strong>: 過去の時間的パターンに基づいて将来のガバナンスの変化（例：どの取締役が任命／退任するか、どの持ち合いが解消されるか）を予測
+- <strong>時間的埋め込み手法</strong>: 静的KG埋め込みモデル（TransE、RotatE、ComplEx）を時間的次元で拡張し、ガバナンスのダイナミクスを捕捉（例：TTransE、DE-SimplE、TNTComplEx）</p>
+<h3 id="k3-kggnn">K.3 日本のガバナンス改革 × 最新のKG/GNN手法（ほぼ未開拓）</h3>
+<p><strong>機会:</strong>
+2015年以降の日本の急速なガバナンス改革は、ガバナンス規制と企業ネットワーク構造の相互作用を研究するための<strong>ユニークな自然実験</strong>を生み出している。これは21世紀のどの主要経済国でも最も重要なガバナンス変革と言えるが、現代のKG/GNN手法ではまだ<strong>事実上未開拓</strong>のままである。</p>
+<p><strong>なぜ日本が特に興味深いか:</strong>
+1. <strong>持ち合いの解消</strong>はネットワークダイナミクスを通じて追跡可能 — 企業が持ち合いを解消する際のエッジ重み、ネットワーク密度、コミュニティ構造、中心性の変化を時系列で測定
+2. <strong>取締役会の独立性向上</strong>は取締役ネットワークの進化を通じて測定可能 — 新しい独立取締役がインターロックネットワークに参入し、その構造、多様性、情報の流れの特性を変化させる
+3. <strong>TSE市場再編（2022年）</strong>は構造的断裂として — プライム／スタンダード／グロースへの再編により、プライム市場企業がスタンダード市場企業よりも厳しいガバナンス要件に直面する自然実験が生まれ、差分の差分分析が可能に
+4. <strong>豊富な構造化データ</strong>: 日本の開示要件（有価証券報告書、CG報告書、株主総会招集通知）は、KG構築に適した詳細で機械可読なガバナンスデータを提供
+5. <strong>時間的次元</strong>: 改革は進行中であり、ガバナンスネットワークの変化の多年にわたる時系列を創出
+6. <strong>機関投資家のガバナンス関与の変化</strong>: スチュワードシップ・コード（2014年）導入を契機とした機関投資家の行動変化は、所有ネットワーク、議決権行使ネットワーク、エンゲージメントネットワークの多層的な構造変化として追跡可能（セクションE参照）</p>
+<p><strong>★ これらの改革を現代のKG/GNN手法と組み合わせた研究はほぼ存在しない:</strong>
+- 日本のガバナンス改革を追跡する時間的知識グラフは存在しない
+- ガバナンスの改善が系列ネットワークを通じてどう伝播するかのGNNベースの分析は存在しない
+- コーポレートガバナンス・コードがネットワーク構造と企業成果に与える影響を評価するKG/GNN手法を用いた因果推論研究は存在しない
+- 時間的KGに投入するための日本語ガバナンス文書のLLMベース抽出パイプラインは存在しない
+- 機関投資家の共通所有ネットワークと議決権行使ネットワークを統合した多層ネットワーク分析は存在しない（セクションE.2参照）
+- スチュワードシップ・コード導入前後の機関投資家行動変化に関するKG/GNN研究は存在しない（セクションE.5参照）</p>
+<p><strong>提案される研究方向:</strong>
+日本のガバナンス改革（2015年–現在）の時間的KGとGNNベースの影響分析：
+1. EDINETの開示、ガバナンスレポート、所有開示から時間的KGを構築
+2. ガバナンス改革イベントをKGの時間的エッジとしてモデル化
+3. 時間的GNNを適用して、ガバナンスの変化が企業ネットワークを通じてどう伝播するかを研究
+4. 因果推論手法（差分の差分法、TSE再編前後の回帰不連続デザイン）を用いて、ガバナンス改革がネットワーク構造と企業成果に与える因果効果を特定
+5. 機関投資家の所有・議決権行使・エンゲージメントの多層ネットワークを統合し、スチュワードシップ・コードの導入効果を多面的に評価（セクションE.3–E.5参照）</p>
+<h3 id="k4-llm-kg">K.4 LLM × ガバナンスKG構築</h3>
+<p><strong>機会:</strong>
+大規模言語モデルは、非構造化された日本語文書からガバナンス知識グラフの構築と保守を自動化できる可能性がある：</p>
+<ul>
+<li><strong>ソース文書</strong>:</li>
+<li>有価証券報告書: 詳細なガバナンス情報を含む — 取締役会構成、主要株主、持ち合い、役員報酬、コーポレートガバナンス体制</li>
+<li>招集通知（株主総会招集通知）: 株主総会の議案、取締役選任議案、報酬議案、定款変更</li>
+<li>CG報告書（コーポレートガバナンス報告書）: TSEに提出；ガバナンス体制、CGコード原則に対するコンプライ・オア・エクスプレイン開示、持ち合い方針を含む</li>
+<li>
+<p>プレスリリースとニュース記事: 経営陣の変更、M&amp;Aの発表、ガバナンスイベント</p>
+</li>
+<li>
+<p><strong>課題</strong>:</p>
+</li>
+<li><strong>日本語</strong>: 専門用語（株式持ち合い、独立社外取締役、指名委員会等設置会社）、正式な法律用語、密度の高い表形式を含むドメイン固有の金融日本語</li>
+<li><strong>ドメイン特異性</strong>: ガバナンスの概念は金融・法律のドメイン知識を必要とする；汎用LLMはニュアンスを見落とす可能性</li>
+<li><strong>精度要件</strong>: ガバナンスデータは投資判断と規制遵守に反映される — エラーは現実の結果をもたらす</li>
+<li>
+<p><strong>構造化された抽出</strong>: 半構造化および非構造化テキストからの構造化された関係（取締役-企業-役割-日付）の抽出</p>
+</li>
+<li>
+<p><strong>可能性</strong>:</p>
+</li>
+<li>完全自動化されたガバナンスKGの構築と更新パイプライン</li>
+<li>継続的な文書処理によるほぼリアルタイムのガバナンスモニタリング</li>
+<li>多言語ガバナンス分析（日本語 ↔ 英語 ↔ 中国語）による越境比較の実現</li>
+<li>ガバナンスQ&amp;AとコンプライアンスチェックのためのGraphRAGとの統合</li>
+</ul>
+<h3 id="k5">K.5 国際比較ガバナンスネットワークフレームワーク</h3>
+<p><strong>機会:</strong>
+各国は根本的に異なるコーポレートガバナンス体制を示し、それぞれに特徴的なネットワーク構造を持つ。比較ネットワークフレームワークは、体系的な国際比較分析を可能にする：</p>
+<table>
+<thead>
+<tr>
+<th>ガバナンス体制</th>
+<th>国</th>
+<th>主要なネットワーク特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>アングロサクソン型分散所有</strong></td>
+<td>米国、英国</td>
+<td>疎な所有ネットワーク；機関投資家が支配的；企業支配権の活発な市場；大企業間の密なインターロックネットワーク</td>
+</tr>
+<tr>
+<td><strong>銀行中心型／調整型</strong></td>
+<td>ドイツ</td>
+<td>銀行と保険会社を中心とした密な所有ネットワーク；共同決定制度（監査役会における従業員代表）；<em>Deutschland AG</em> インターロックモデル（現在弱体化中）</td>
+</tr>
+<tr>
+<td><strong>系列型／株式持ち合い</strong></td>
+<td>日本</td>
+<td>水平・垂直系列；持ち合いネットワーク；メインバンクシステム（現在解消中）；セクションD参照</td>
+</tr>
+<tr>
+<td><strong>財閥（チェボル）型／ファミリーコングロマリット</strong></td>
+<td>韓国</td>
+<td>循環的相互持合いを持つ家族支配の複合企業体；ピラミッド構造；集中した支配力</td>
+</tr>
+<tr>
+<td><strong>国家所有型／党によるガバナンス</strong></td>
+<td>中国</td>
+<td>SASACを通じて支配される国有企業（SOEs）；コーポレートガバナンスに組み込まれた共産党委員会；二重ガバナンス構造（党＋企業）</td>
+</tr>
+<tr>
+<td><strong>ファミリービジネスグループ</strong></td>
+<td>インド、東南アジア、ラテンアメリカ</td>
+<td>プロモーターファミリーがピラミッドとデュアルクラス株式を通じて多角化グループを支配；限定的な少数株主保護</td>
+</tr>
+</tbody>
+</table>
+<p><strong>提案フレームワーク:</strong>
+1. <strong>標準化されたネットワーク構築</strong>: 国固有のデータソースから所有およびインターロックネットワークを構築する統一的な方法論により、同一条件での比較を可能に
+2. <strong>体制分類のためのネットワーク指標</strong>: ネットワーク統計量（密度、クラスタリング、次数分布、コミュニティ構造、bow-tie分解、べき乗則指数）を使用してガバナンス体制を定量的に特徴づけ分類
+3. <strong>収斂/分岐分析</strong>: ガバナンスネットワークが時間とともにどう進化し、共通構造に収斂するか（「収斂仮説」）、あるいは持続的な差異を維持するかを追跡
+4. <strong>ショック伝播分析</strong>: 経済ショック（金融危機、パンデミック、規制変更）が異なるガバナンス構造を持つネットワークをどのように異なる形で伝播するかを比較
+5. <strong>ガバナンス改革の影響測定</strong>: ネットワーク分析を使用して、ガバナンス改革（日本のCGコード、韓国の財閥改革、中国の混合所有改革）が企業ネットワーク構造に与える影響を定量化</p>
+<hr />
+<h2 id="references">References</h2>
+<h3 id="foundational">Foundational</h3>
+<ul>
+<li>Vitali, S., Glattfelder, J.B. &amp; Battiston, S. (2011). The network of global corporate control. <em>PLoS ONE</em>, 6(10), e25995.</li>
+<li>Garcia-Bernardo, J., Fichtner, J., Takes, F.W. &amp; Heemskerk, E.M. (2017). Uncovering offshore financial centers: Conduits and sinks in the global corporate ownership network. <em>Scientific Reports</em>, 7, 6246.</li>
+<li>Fichtner, J., Heemskerk, E.M. &amp; Garcia-Bernardo, J. (2017). Hidden power of the Big Three? Passive index funds, re-concentration of corporate ownership, and new financial risk. <em>Business and Politics</em>, 19(2), 298–326.</li>
+</ul>
+<h3 id="board-interlocks">Board Interlocks</h3>
+<ul>
+<li>Mizruchi, M.S. (1996). What do interlocks do? An analysis, critique, and assessment of research on interlocking directorates. <em>Annual Review of Sociology</em>, 22, 271–298.</li>
+<li>Davis, G.F. (1991). Agents without principles? The spread of the poison pill through the intercorporate network. <em>Administrative Science Quarterly</em>, 36(4), 583–613.</li>
+<li>Davis, G.F., Yoo, M. &amp; Baker, W.E. (2003). The small world of the American corporate elite, 1982–2001. <em>Strategic Organization</em>, 1(3), 301–326.</li>
+<li>Larcker, D.F., So, E.C. &amp; Wang, C.C.Y. (2013). Boardroom centrality and firm performance. <em>Journal of Accounting and Economics</em>, 55(2–3), 225–250.</li>
+<li>Hallock, K.F. (1997). Reciprocally interlocking boards of directors and executive compensation. <em>Journal of Financial and Quantitative Analysis</em>, 32(3), 331–344.</li>
+<li>Haunschild, P.R. (1993). Interorganizational imitation: The impact of interlocks on corporate acquisition activity. <em>Administrative Science Quarterly</em>, 38(4), 564–592.</li>
+<li>Cai, Y. &amp; Sevilir, M. (2012). Board connections and M&amp;A transactions. <em>Journal of Financial Economics</em>, 103(2), 327–349.</li>
+<li>Bizjak, J.M., Lemmon, M.L. &amp; Whitby, R.J. (2009). Option backdating and board interlocks. <em>Review of Financial Studies</em>, 22(11), 4821–4847.</li>
+<li>Conyon, M.J. &amp; Muldoon, M.R. (2006). The small world of corporate boards. <em>Journal of Business Finance &amp; Accounting</em>, 33(9–10), 1321–1343.</li>
+<li>Fracassi, C. &amp; Tate, G. (2012). External networking and internal firm governance. <em>Journal of Finance</em>, 67(1), 153–194.</li>
+<li>Kramarz, F. &amp; Thesmar, D. (2013). Social networks in the boardroom. <em>Journal of the European Economic Association</em>, 11(4), 780–807.</li>
+<li>Adams, R.B. &amp; Ferreira, D. (2009). Women in the boardroom and their impact on governance and performance. <em>Journal of Financial Economics</em>, 94(2), 291–309.</li>
+</ul>
+<h3 id="ownership-networks">Ownership Networks</h3>
+<ul>
+<li>Pfeffer, J. &amp; Salancik, G.R. (1978). <em>The External Control of Organizations: A Resource Dependence Perspective</em>. Harper &amp; Row.</li>
+<li>Domhoff, G.W. (1967). <em>Who Rules America?</em> Prentice-Hall.</li>
+<li>Useem, M. (1984). <em>The Inner Circle: Large Corporations and the Rise of Business Political Activity in the U.S. and U.K.</em> Oxford University Press.</li>
+</ul>
+<h3 id="japan-keiretsu">Japan / Keiretsu</h3>
+<ul>
+<li>Lincoln, J.R. &amp; Gerlach, M.L. (2004). <em>Japan's Network Economy: Structure, Persistence, and Change</em>. Cambridge University Press.</li>
+<li>Miyajima, H. &amp; Kuroki, F. (2007). The unwinding of cross-shareholding in Japan: Causes, effects, and implications. In Aoki, M., Jackson, G. &amp; Miyajima, H. (Eds.), <em>Corporate Governance in Japan</em>, Oxford University Press.</li>
+<li>Aoki, M. (1994). The Japanese firm as a system of attributes: A survey and research agenda. In Aoki, M. &amp; Dore, R. (Eds.), <em>The Japanese Firm: Sources of Competitive Strength</em>, Oxford University Press.</li>
+</ul>
+<h3 id="gnn-governance">GNN × Governance</h3>
+<ul>
+<li>Company-as-Tribe: TH-GNN. KDD 2022.</li>
+<li>Corporate Fraud Detection in Rich-yet-Noisy Financial Graphs. Various venues.</li>
+</ul>
+<h3 id="knowledge-graph-governance">Knowledge Graph × Governance</h3>
+<ul>
+<li>Bank of Italy. Enterprise KG for company ownership (EDBT 2020).</li>
+<li>Firmographica (2025). KG-based framework for short-selling risk assessment.</li>
+</ul>
+<h3 id="standards-and-ontologies">Standards and Ontologies</h3>
+<ul>
+<li>EDM Council. Financial Industry Business Ontology (FIBO). https://spec.edmcouncil.org/fibo/</li>
+<li>Open Ownership. Beneficial Ownership Data Standard (BODS). https://standard.openownership.org/</li>
+<li>GLEIF. Global Legal Entity Identifier Foundation. https://www.gleif.org/</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

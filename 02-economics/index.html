@@ -1,0 +1,2637 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yk0817.github.io/finance-knowledge-graph-network-science/02-economics/">
+      
+      
+        <link rel="prev" href="../01-overview/">
+      
+      
+        <link rel="next" href="../03-computer-science/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>経済学の視点 - 金融 × 知識グラフ × ネットワーク科学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-header__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            金融 × 知識グラフ × ネットワーク科学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              経済学の視点
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-nav__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    金融 × 知識グラフ × ネットワーク科学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概観と歴史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    経済学の視点
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    経済学の視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. システミックリスクと金融ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. システミックリスクと金融ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 研究グループ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 研究グループ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finexus-center-for-financial-networks-and-sustainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FINEXUS Center for Financial Networks and Sustainability（金融ネットワークと持続可能性センター、チューリッヒ大学）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lse-systemic-risk-centre-srclse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSE Systemic Risk Centre (SRC)（LSEシステミックリスクセンター）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#princeton-bendheim-center-for-financebendheim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Princeton Bendheim Center for Finance（プリンストン大学Bendheim金融センター）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-science-hub-vienna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity Science Hub Vienna（ウィーン複雑系科学ハブ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imt-school-for-advanced-studies-luccaimt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMT School for Advanced Studies Lucca（IMTルッカ高等研究学院）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 金融ネットワーク理論
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 金融ネットワーク理論">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-matthew-o-jackson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Matthew O. Jackson（スタンフォード大学）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-daron-acemoglumit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Daron Acemoglu（MIT）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-rama-cont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Rama Cont（オックスフォード大学）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-vasco-carvalho-ucl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Vasco Carvalho（ケンブリッジ大学 → UCL）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 経済複雑性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 経済複雑性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-harvard-growth-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Harvard Growth Lab（ハーバード大学成長研究所）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-observatory-of-economic-complexity-oec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Observatory of Economic Complexity (OEC、経済複雑性観測所)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-fitness-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Fitness-Complexity法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 経済学への複雑系アプローチ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 経済学への複雑系アプローチ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-santa-fe-institute-sfi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Santa Fe Institute (SFI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-institute-for-new-economic-thinking-inet-at-oxford" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Institute for New Economic Thinking (INET) at Oxford（オックスフォード新経済思想研究所）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-aix-marseille-school-of-economics-amse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Aix-Marseille School of Economics (AMSE)（エクス＝マルセイユ経済学院）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 複雑性経済学：基本原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 中央銀行とネットワーク分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 中央銀行とネットワーク分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-bank-for-international-settlements-bis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Bank for International Settlements (BIS、国際決済銀行)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-european-central-bank-ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 European Central Bank (ECB、欧州中央銀行)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-office-of-financial-research-ofr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Office of Financial Research (OFR、金融調査局)、米国財務省
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-federal-reserve-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Federal Reserve System（連邦準備制度）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-bank-of-england-boe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Bank of England (BoE、イングランド銀行)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-bank-of-japan-boj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Bank of Japan (BoJ、日本銀行)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 金融ネットワークに関する主要経済学論文
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-computer-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コンピュータサイエンスの視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-corporate-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コーポレートガバナンス
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-emerging-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    新興分野
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quantitative-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    計量手法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-japan-asia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本・アジアの研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-mathematical-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学的基礎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    リソース
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    リソース
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/researchers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要研究者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データセット
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/tools-and-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ツール＆プラットフォーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学会・ワークショップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要論文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/ontologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オントロジー＆標準
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    研究ノート
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究計画書
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/data-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データソース調査
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    アイデア
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    チュートリアル
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    チュートリアル
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/01-correlation-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    株価相関ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/02-ownership-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業所有ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/03-board-interlocks.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    取締役兼任ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/04-gnn-fraud-detection.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNN不正検知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/05-kg-construction.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融KG構築
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. システミックリスクと金融ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. システミックリスクと金融ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 研究グループ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 研究グループ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finexus-center-for-financial-networks-and-sustainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FINEXUS Center for Financial Networks and Sustainability（金融ネットワークと持続可能性センター、チューリッヒ大学）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lse-systemic-risk-centre-srclse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSE Systemic Risk Centre (SRC)（LSEシステミックリスクセンター）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#princeton-bendheim-center-for-financebendheim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Princeton Bendheim Center for Finance（プリンストン大学Bendheim金融センター）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-science-hub-vienna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity Science Hub Vienna（ウィーン複雑系科学ハブ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imt-school-for-advanced-studies-luccaimt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMT School for Advanced Studies Lucca（IMTルッカ高等研究学院）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 金融ネットワーク理論
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 金融ネットワーク理論">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-matthew-o-jackson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Matthew O. Jackson（スタンフォード大学）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-daron-acemoglumit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Daron Acemoglu（MIT）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-rama-cont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Rama Cont（オックスフォード大学）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-vasco-carvalho-ucl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Vasco Carvalho（ケンブリッジ大学 → UCL）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 経済複雑性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 経済複雑性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-harvard-growth-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Harvard Growth Lab（ハーバード大学成長研究所）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-observatory-of-economic-complexity-oec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Observatory of Economic Complexity (OEC、経済複雑性観測所)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-fitness-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Fitness-Complexity法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 経済学への複雑系アプローチ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 経済学への複雑系アプローチ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-santa-fe-institute-sfi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Santa Fe Institute (SFI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-institute-for-new-economic-thinking-inet-at-oxford" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Institute for New Economic Thinking (INET) at Oxford（オックスフォード新経済思想研究所）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-aix-marseille-school-of-economics-amse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Aix-Marseille School of Economics (AMSE)（エクス＝マルセイユ経済学院）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 複雑性経済学：基本原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 中央銀行とネットワーク分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 中央銀行とネットワーク分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-bank-for-international-settlements-bis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Bank for International Settlements (BIS、国際決済銀行)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-european-central-bank-ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 European Central Bank (ECB、欧州中央銀行)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-office-of-financial-research-ofr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Office of Financial Research (OFR、金融調査局)、米国財務省
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-federal-reserve-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Federal Reserve System（連邦準備制度）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-bank-of-england-boe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Bank of England (BoE、イングランド銀行)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56-bank-of-japan-boj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 Bank of Japan (BoJ、日本銀行)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 金融ネットワークに関する主要経済学論文
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">金融ネットワークに対する経済学の視点</h1>
+<h2 id="1">1. システミックリスクと金融ネットワーク</h2>
+<p>システミックリスク――一つまたは複数の金融機関の破綻が連鎖的な破綻を引き起こし、金融システム全体を脅かすリスク――は、本質的にネットワーク現象である。これを理解するには、金融機関を結びつけるエクスポージャー、債務、相互依存関係の網を把握する必要がある。</p>
+<h3 id="11">1.1 研究グループ</h3>
+<h4 id="finexus-center-for-financial-networks-and-sustainability">FINEXUS Center for Financial Networks and Sustainability（金融ネットワークと持続可能性センター、チューリッヒ大学）</h4>
+<p><strong>代表: Stefano Battiston</strong></p>
+<p>FINEXUS Centerは、金融ネットワーク科学において最も影響力のある研究グループといえる。統計物理学の訓練を受けたBattistonは、複雑ネットワーク理論のシステミックリスク測定および気候金融ストレステストへの応用を開拓してきた。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>DebtRank</strong> (Battiston et al., 2012): 金融機関のシステミックな重要性を測定する再帰的な苦境伝播アルゴリズム。単純な中心性指標とは異なり、DebtRankはネットワーク内のフィードバックループと非線形増幅を捕捉する。<em>Scientific Reports</em>に掲載され、マクロプルーデンス分析における標準的ツールとなった。
+- <strong>気候金融リスク</strong> (Battiston et al., 2017): <em>Nature Climate Change</em>に掲載された"A climate stress-test of the financial system"――気候政策ショックが金融ネットワークを通じてどのように伝播するかを初めて体系的に評価した研究。欧州の銀行の化石燃料セクターへのエクスポージャーがシステミックな気候金融リスクを生み出すことを示した。
+- <strong>金融資産のネットワーク評価</strong> (Barucca et al., 2020): 苦境伝播に関する様々なネットワークモデルを共通の評価アプローチの下で統一するフレームワーク。
+- ESGリスク伝達、生物多様性と金融のネットワーク、グリーンファイナンス分類体系に関する進行中の研究。</p>
+<h4 id="lse-systemic-risk-centre-srclse">LSE Systemic Risk Centre (SRC)（LSEシステミックリスクセンター）</h4>
+<p><strong>主要研究者: Jon Danielsson, Jean-Pierre Zigrand, Hyun Song Shin（以前所属）</strong></p>
+<p>SRCは<strong>内生的リスク</strong>に焦点を当てている――リスクは単なる外的な入力ではなく、金融ネットワーク内の市場参加者の集合的行動によって生み出され増幅されるという考え方である。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>内生的リスク理論</strong> (Danielsson, Shin &amp; Zigrand, 2004, 2012): VaR制約と時価会計が順景気循環的なフィードバックループを生み出し、ショックを増幅するモデル。
+- <strong>増幅メカニズム</strong>: 投げ売り外部性、マージンスパイラル、流動性ブラックホールは、個別の銀行破綻ではなくネットワーク相互作用から生じる。
+- リスク測定に対する批判: Danielssonの"The Illusion of Control"――標準的なリスクモデルはネットワークのフィードバックを無視するためテールリスクを体系的に過小評価すると主張。
+- 危機後の規制設計（Basel III、MiFID II）への政策貢献。</p>
+<h4 id="princeton-bendheim-center-for-financebendheim">Princeton Bendheim Center for Finance（プリンストン大学Bendheim金融センター）</h4>
+<p><strong>主要研究者: Markus Brunnermeier, Yuliy Sannikov</strong></p>
+<p><strong>主要な貢献:</strong>
+- <strong>Brunnermeier &amp; Sannikov (2014)</strong>: "A Macroeconomic Model with a Financial Sector" — <em>AER</em> — バランスシートネットワークを通じた増幅を伴う連続時間マクロ金融モデル。レバレッジ駆動の増幅により、小さなショックが大きな危機を引き起こしうることを示した。
+- <strong>Brunnermeier &amp; Oehmke (2013)</strong>: "The Maturity Rat Race" — 短期債務が金融ネットワークにおいて脆弱性を生み出すメカニズムを説明。
+- <strong>CoVaR</strong> (Adrian &amp; Brunnermeier, 2016): 条件付きバリュー・アット・リスク（Conditional Value-at-Risk）――個別金融機関のシステミックリスク寄与を測定し、規制当局に採用された。
+- <strong>流動性スパイラル</strong> (Brunnermeier &amp; Pedersen, 2009): 市場流動性と資金調達流動性のフィードバックがネットワーク全体の流動性危機を生み出す。</p>
+<h4 id="complexity-science-hub-vienna">Complexity Science Hub Vienna（ウィーン複雑系科学ハブ）</h4>
+<p><strong>代表: Stefan Thurner</strong></p>
+<p><strong>主要な貢献:</strong>
+- <strong>DebtRankの拡張</strong> (Thurner &amp; Poledna, 2013; Poledna et al., 2015): 銀行間の信用、デリバティブ、外国為替、証券エクスポージャーを同時に捉える多層金融ネットワークモデル。単層分析ではシステミックリスクが大幅に過小評価されることを示した。
+- <strong>金融市場のエージェントベースモデル</strong> (Thurner, Farmer &amp; Geanakoplos, 2012): マージン制約を持つ異質エージェントが内生的な暴落を生み出すレバレッジサイクルモデル。
+- <strong>実証的金融ネットワーク分析</strong>: オーストリアの包括的な銀行データを使用。
+- <strong>ネットワークベースの課税</strong> (Poledna &amp; Thurner, 2016): ネットワーク上の寄与度に基づくシステミックリスクへのピグー税を提案。</p>
+<h4 id="imt-school-for-advanced-studies-luccaimt">IMT School for Advanced Studies Lucca（IMTルッカ高等研究学院）</h4>
+<p><strong>主要研究者: Guido Caldarelli, Tiziano Squartini</strong></p>
+<p><strong>主要な貢献:</strong>
+- <strong>金融システムのネットワークトポロジー</strong> (Caldarelli &amp; Catanzaro, 2012): 統計物理学の手法を応用して金融ネットワークの次数分布、クラスタリング、コミュニティ構造を特徴づけた。
+- <strong>最大エントロピーネットワーク再構成</strong> (Squartini, Mastrandrea &amp; Garlaschelli, 2011; Cimini et al., 2015): 集計バランスシートデータから最大エントロピー原理を用いて二者間エクスポージャーを再構成する手法。部分的なネットワークデータしか観察できない規制当局にとって極めて重要。
+- <strong>ネットワークベースの手法を用いた強化された自己資本要件</strong> (Squartini et al., 2013)。
+- <strong>銀行と資産の二部ネットワーク分析</strong> (Caccioli et al., 2014): ポートフォリオの重複による伝染。</p>
+<h3 id="12">1.2 主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>掲載誌</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allen &amp; Gale</td>
+<td>2000</td>
+<td>Financial Contagion</td>
+<td><em>J. Political Economy</em></td>
+<td>銀行間伝染の先駆的モデル；完全ネットワークvs不完全ネットワーク</td>
+</tr>
+<tr>
+<td>Eisenberg &amp; Noe</td>
+<td>2001</td>
+<td>Systemic Risk in Financial Systems</td>
+<td><em>Management Science</em></td>
+<td>銀行間債務の清算ベクトルフレームワーク</td>
+</tr>
+<tr>
+<td>Boss, Elsinger, Summer &amp; Thurner</td>
+<td>2004</td>
+<td>Network Topology of the Interbank Market</td>
+<td><em>Quantitative Finance</em></td>
+<td>国内銀行間ネットワークの初の包括的な実証マッピング</td>
+</tr>
+<tr>
+<td>Nier, Yang, Yorulmazer &amp; Alentorn</td>
+<td>2007</td>
+<td>Network Models and Financial Stability</td>
+<td><em>J. Economic Dynamics &amp; Control</em></td>
+<td>ランダム銀行間ネットワークにおける伝染のシミュレーション研究</td>
+</tr>
+<tr>
+<td>Upper</td>
+<td>2011</td>
+<td>Simulation Methods to Assess Systemic Risk</td>
+<td><em>J. Financial Stability</em></td>
+<td>ネットワーク伝染シミュレーション手法のサーベイ</td>
+</tr>
+<tr>
+<td>Haldane &amp; May</td>
+<td>2011</td>
+<td>Systemic Risk in Banking Ecosystems</td>
+<td><em>Nature</em></td>
+<td>生態学と金融の類似性；ネットワークの複雑性は閾値を超えると不安定化をもたらす</td>
+</tr>
+<tr>
+<td>Battiston et al.</td>
+<td>2012</td>
+<td>DebtRank: Too Central to Fail?</td>
+<td><em>Scientific Reports</em></td>
+<td>システミックな重要性を測る再帰的ネットワーク中心性</td>
+</tr>
+<tr>
+<td>Cont, Moussa &amp; Santos</td>
+<td>2013</td>
+<td>Network Structure and Systemic Risk in Banking</td>
+<td><em>Handbook on Systemic Risk</em></td>
+<td>信用伝染vs資金調達伝染のチャネル；ブラジル銀行システム</td>
+</tr>
+<tr>
+<td>Elliott, Golub &amp; Jackson</td>
+<td>2014</td>
+<td>Financial Networks and Contagion</td>
+<td><em>AER</em></td>
+<td>株式持ち合いモデル；統合vs分散のトレードオフ</td>
+</tr>
+<tr>
+<td>Acemoglu, Ozdaglar &amp; Tahbaz-Salehi</td>
+<td>2015</td>
+<td>Systemic Risk and Stability in Financial Networks</td>
+<td><em>AER</em></td>
+<td>相転移：密なネットワークは小さなショックを吸収するが大きなショックを増幅する</td>
+</tr>
+<tr>
+<td>Glasserman &amp; Young</td>
+<td>2016</td>
+<td>Contagion in Financial Networks</td>
+<td><em>J. Economic Literature</em></td>
+<td>包括的サーベイ；連鎖規模の上限</td>
+</tr>
+<tr>
+<td>Battiston et al.</td>
+<td>2016</td>
+<td>Complexity Theory and Financial Regulation</td>
+<td><em>Science</em></td>
+<td>ネットワークベースの金融規制に関する政策マニフェスト</td>
+</tr>
+<tr>
+<td>Barucca et al.</td>
+<td>2020</td>
+<td>Network Valuation in Financial Systems</td>
+<td><em>Mathematical Finance</em></td>
+<td>苦境伝播モデルの統一フレームワーク</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. 金融ネットワーク理論</h2>
+<h3 id="21-matthew-o-jackson">2.1 Matthew O. Jackson（スタンフォード大学）</h3>
+<p>Jacksonは社会・経済ネットワークの理論における第一人者の一人である。彼の教科書 <em>Social and Economic Networks</em> (2008, Princeton University Press) は大学院レベルの標準的な参考書となっている。</p>
+<p><strong>金融ネットワークへの主要な貢献:</strong>
+- <strong>Elliott, Golub &amp; Jackson (2014)</strong>: 金融ネットワークと伝染モデル――株式持ち合いがどのように相互依存性を生み出し、分散化と統合がシステミックな安定性に対して相反する効果を持つかを分析した。
+- <strong>Jackson &amp; Pernoud (2021)</strong>: "Systemic Risk in Financial Networks: A Survey" — ネットワーク理論と金融安定性を結びつける包括的サーベイ。
+- <strong>ネットワーク上のゲーム理論</strong>: 戦略的ネットワーク形成、イノベーションと行動の普及、ネットワーク上のベイズ学習。
+- <strong>ネットワーク中心性と影響力</strong>: ネットワーク上の位置が経済的影響力にどのように転換されるかの形式的分析。</p>
+<h3 id="22-daron-acemoglumit">2.2 Daron Acemoglu（MIT）</h3>
+<p>主に制度の経済学と政治経済学で知られるが、Acemogluは生産ネットワーク理論において基礎的な貢献を行っている。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>Acemoglu, Carvalho, Ozdaglar &amp; Tahbaz-Salehi (2012)</strong>: <em>Econometrica</em>に掲載された"The Network Origins of Aggregate Fluctuations"――投入産出ネットワークが裾の重い次数分布を持つ場合、個別セクターへの固有ショックは平均化されず、マクロ経済全体の変動を生み出すことを示した。Lucas (1977)のミクロショックは相殺されるという従来の通説を覆した。
+- <strong>Acemoglu, Ozdaglar &amp; Tahbaz-Salehi (2015)</strong>: 金融ネットワークの安定性――ネットワーク密度が伝染にどのように影響するかにおける相転移を示す「頑健だが脆い」結果。
+- <strong>Acemoglu, Ozdaglar &amp; Tahbaz-Salehi (2017)</strong>: マクロ経済のテールリスクのミクロ経済的起源。</p>
+<h3 id="23-rama-cont">2.3 Rama Cont（オックスフォード大学）</h3>
+<p>Contは数理ファイナンス、確率論、ネットワーク科学の架け橋となっている。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>Cont, Moussa &amp; Santos (2013)</strong>: ネットワーク構造とシステミックリスク――ブラジル銀行システムの詳細なシミュレーションにより、信用伝染と資金調達伝染の相対的重要性を特定。
+- <strong>Cont &amp; Schaanning (2017)</strong>: 投げ売り、間接的伝染、システミック・ストレステスト――苦境にある銀行による資産の投げ売りが、直接的な二者間エクスポージャーがなくても、ポートフォリオが重複する他の銀行に損失を伝播するモデル。
+- <strong>CCPネットワーク</strong>: 中央清算機関（CCP）の清算ネットワーク分析、CCPのストレステスト、デフォルトファンド配分メカニズムの設計。
+- <strong>システミックリスクの測定</strong>: ネットワーク効果を統合したストレステストフレームワークの開発。</p>
+<h3 id="24-vasco-carvalho-ucl">2.4 Vasco Carvalho（ケンブリッジ大学 → UCL）</h3>
+<p><strong>主要な貢献:</strong>
+- <strong>Acemoglu, Carvalho, Ozdaglar &amp; Tahbaz-Salehi (2012)</strong>: ネットワークの起源に関する基礎的論文を共著。
+- <strong>Carvalho (2014)</strong>: "From Micro to Macro via Production Networks" — <em>Journal of Economic Perspectives</em> — 生産ネットワークを通じてミクロショックがマクロ経済変動を生み出すメカニズムについての平易なサーベイ。
+- <strong>Carvalho, Nirei, Saito &amp; Tahbaz-Salehi (2021)</strong>: サプライチェーンの途絶と総生産――2011年の東日本大震災を生産ネットワーク伝播の自然実験として研究。
+- <strong>変動のグラニュラーな起源</strong>: 生産ネットワークを通じたGabaix (2011)のグラニュラー仮説の拡張。</p>
+<hr />
+<h2 id="3">3. 経済複雑性</h2>
+<h3 id="31-harvard-growth-lab">3.1 Harvard Growth Lab（ハーバード大学成長研究所）</h3>
+<p><strong>主要研究者: Ricardo Hausmann, Cesar Hidalgo（以前所属）</strong></p>
+<p>Growth Labは<strong>経済複雑性</strong>フレームワークを開拓した。このフレームワークは二部ネットワーク分析（国×製品）を用いて経済成長と発展を予測する。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>Economic Complexity Index (ECI、経済複雑性指標)</strong> (Hidalgo &amp; Hausmann, 2009): 国の輸出バスケットに内包された生産的知識を測る指標で、国-製品二部ネットワークのスペクトル特性から導出される。多様かつ偏在性の低い製品を輸出する国は高いスコアを得る。
+- <strong>Product Space（プロダクトスペース）</strong> (Hidalgo, Klinger, Barabási &amp; Hausmann, 2007): 一方を輸出する国が他方も輸出する傾向にある製品同士をつなぐネットワーク。経済発展はプロダクトスペース上の近接性によって制約されることを示した――国は「近い」製品に多角化する。
+- <strong>Atlas of Economic Complexity（経済複雑性のアトラス）</strong> (Hausmann et al., 2013): 世界中の国のプロダクトスペースをマッピングする書籍およびインタラクティブ可視化ツール。
+- <strong>The Building Blocks of Economic Complexity</strong> (Hidalgo &amp; Hausmann, 2009, <em>PNAS</em>): 複雑性指標を計算する「反射法（method of reflections）」アルゴリズムの形式的な展開。
+- <strong>成長予測</strong>: ECIは標準的な制度変数や人的資本指標よりも将来のGDP成長をよく予測する (Hidalgo &amp; Hausmann, 2009)。</p>
+<h3 id="32-observatory-of-economic-complexity-oec">3.2 Observatory of Economic Complexity (OEC、経済複雑性観測所)</h3>
+<p>もともとMIT Media LabでHidalgoらによって開発されたOECは、国際貿易データのインタラクティブなデータ可視化プラットフォームである：</p>
+<ul>
+<li>プロダクトスペース、貿易フロー、経済複雑性指標を可視化</li>
+<li>200以上の国と5000以上の製品をカバー</li>
+<li>HS（統一システム）およびSITC分類を使用</li>
+<li>比較優位（RCA）、貿易相手国、構造転換の軌跡の探索が可能</li>
+<li>現在は独立して運営されており、開発経済学の研究と政策で広く利用されている</li>
+</ul>
+<h3 id="33-fitness-complexity">3.3 Fitness-Complexity法</h3>
+<p><strong>主要研究者: Andrea Tacchella, Luciano Pietronero（Sapienza University of Rome / Enrico Fermi Research Center）</strong></p>
+<p>Hidalgo-Hausmann法の代替として、Fitness-Complexityアプローチは非線形反復アルゴリズムを使用する：</p>
+<p><strong>主要な貢献:</strong>
+- <strong>Tacchella, Cristelli, Caldarelli, Gabrielli &amp; Pietronero (2012)</strong>: <em>Scientific Reports</em>に掲載された"A New Metrics for Countries' Fitness and Products' Complexity"――非線形fitness-complexityアルゴリズムを導入した。国のフィットネスと製品の複雑性は非線形方程式によって結合されており、複雑な製品はフィットネスの高い国のみが輸出するものであり、フィットネスの高い国は複雑な製品を輸出する国である。
+- <strong>Cristelli, Gabrielli, Tacchella, Caldarelli &amp; Pietronero (2013)</strong>: Fitness-Complexity法がGDP成長予測においてECIを上回ることを示した。特に低所得国において顕著であった。
+- <strong>Zaccaria, Cristelli, Tacchella &amp; Pietronero (2014)</strong>: 地方レベルの分析と技術革新に拡張。
+- <strong>世界銀行により採用</strong> (Tacchella et al., 2018): 開発途上国のGDPナウキャスティングおよび予測のために使用。</p>
+<p><strong>ECIとの主な違い:</strong> Fitness-Complexity法は非線形であり、国と製品の対称性を破る。製品の複雑性はそれを輸出する最もフィットネスの低い国によって支配されるべきであると主張する（最大エントロピー的な制約）のに対し、ECIは線形固有ベクトルアプローチを用いる。</p>
+<hr />
+<h2 id="4">4. 経済学への複雑系アプローチ</h2>
+<h3 id="41-santa-fe-institute-sfi">4.1 Santa Fe Institute (SFI)</h3>
+<p><strong>主要研究者: W. Brian Arthur, J. Doyne Farmer（以前所属）, Samuel Bowles</strong></p>
+<p>Santa Fe Instituteは1980年代後半以来、複雑性経済学の知的拠点となっている。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>W. Brian Arthur</strong>: "Increasing Returns and Path Dependence in the Economy" (1994) — 収穫逓減という新古典派の仮定に挑戦した。Arthurは正のフィードバック、収穫逓増、ロックイン効果が経済システムにおいて複数均衡と経路依存性を生み出すことを示した。
+- <strong>Arthur (2015)</strong>: <em>Complexity and the Economy</em> — 複雑性経済学パラダイムを提示する論文集：経済を均衡システムではなく進化する複雑系として捉える。
+- <strong>SFI Economics Programワークショップ (1987年～)</strong>: 物理学者、生物学者、経済学者を集めた先駆的な初期ワークショップが <em>The Economy as an Evolving Complex System</em> シリーズ (Anderson, Arrow &amp; Pines, 1988; Arthur, Durlauf &amp; Lane, 1997) を生み出した。
+- <strong>Farmer, Patelli &amp; Zovko (2005)</strong>: "The predictive power of zero intelligence in financial markets" — 市場構造の多くは個々のエージェントの知能よりも相互作用のルール（ネットワーク/市場マイクロストラクチャー）によって説明できることを示した。</p>
+<h3 id="42-institute-for-new-economic-thinking-inet-at-oxford">4.2 Institute for New Economic Thinking (INET) at Oxford（オックスフォード新経済思想研究所）</h3>
+<p><strong>代表: J. Doyne Farmer</strong></p>
+<p>Oxford Martin School / INET OxfordにおけるFarmerのグループは、エージェントベース計算経済学と複雑性経済学の最前線にいる。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>金融市場のエージェントベースモデル（ABM）</strong>: Farmer &amp; Foley (2009), <em>Nature</em>に掲載された"The economy needs agent-based modelling"――従来のDSGEモデルは危機を予測できず、ABMは異質で相互作用するエージェントをモデル化することでより現実的な代替手段を提供すると主張した。
+- <strong>市場生態学</strong> (Farmer, 2002; Farmer &amp; Lo, 2002): 市場参加者を生態系の種として捉え、戦略が市場ネットワーク内の相互作用に基づいて共存、競争、絶滅する。
+- <strong>レバレッジと暴落</strong> (Thurner, Farmer &amp; Geanakoplos, 2012): レバレッジ制約がネットワーク増幅を通じて内生的な好景気・不景気サイクルを生み出すことを示すABM。
+- <strong>住宅市場ABM</strong> (Baptista et al., 2016): マクロプルーデンス政策分析のための英国住宅市場のエージェントベースモデル。
+- <strong>サプライチェーンネットワーク</strong> (Pichler et al., 2022): パンデミックショック分析とCOVID-19の経済的影響に応用された生産ネットワークのABM。
+- <strong>技術進歩と経済成長</strong> (Farmer &amp; Lafond, 2016): 技術の相互依存ネットワークモデルを用いた技術改善の予測。</p>
+<h3 id="43-aix-marseille-school-of-economics-amse">4.3 Aix-Marseille School of Economics (AMSE)（エクス＝マルセイユ経済学院）</h3>
+<p><strong>主要研究者: Alan Kirman</strong></p>
+<p><strong>主要な貢献:</strong>
+- <strong>Kirman (1992)</strong>: "Whom or What Does the Representative Individual Represent?" — <em>Journal of Economic Perspectives</em> — 代表的個人モデルは異質なエージェント間の相互作用から生じる創発現象を捕捉できないと主張する影響力のある批判。
+- <strong>相互作用に基づく経済学アプローチ</strong> (Kirman, 1997, 2006): 経済を複雑適応系として扱い、エージェントの相互作用（ネットワーク接続としてモデル化）が個々の最適化からは導出できないマクロパターンを生み出すことを提案。
+- <strong>アリモデル</strong> (Kirman, 1993): エージェントの相互作用が金融市場のバブルや暴落に似た群集行動を生み出すことを示すシンプルなモデル。
+- マルセイユの魚市場を相互作用経済学の実証的実験場として用いた広範な研究。</p>
+<h3 id="44">4.4 複雑性経済学：基本原理</h3>
+<p>複雑性経済学パラダイムは、新古典派の一般均衡論とは対照的に、以下を重視する：</p>
+<table>
+<thead>
+<tr>
+<th>原理</th>
+<th>新古典派</th>
+<th>複雑性経済学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>エージェント</strong></td>
+<td>代表的、完全合理的</td>
+<td>異質、限定合理的</td>
+</tr>
+<tr>
+<td><strong>均衡</strong></td>
+<td>システムは一意の均衡に収束</td>
+<td>複数のアトラクター、非均衡ダイナミクス</td>
+</tr>
+<tr>
+<td><strong>相互作用</strong></td>
+<td>市場清算価格を介して</td>
+<td>ネットワーク上の直接的相互作用、局所情報</td>
+</tr>
+<tr>
+<td><strong>動学</strong></td>
+<td>比較静学</td>
+<td>進化的、経路依存的、創発的</td>
+</tr>
+<tr>
+<td><strong>ショック</strong></td>
+<td>外生的</td>
+<td>システムのダイナミクスにより内生的に生成</td>
+</tr>
+<tr>
+<td><strong>政策分析</strong></td>
+<td>最適化ベース</td>
+<td>シミュレーションベース、シナリオ分析</td>
+</tr>
+<tr>
+<td><strong>数学</strong></td>
+<td>微積分、不動点定理</td>
+<td>力学系、エージェントベースシミュレーション、ネットワーク理論</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 中央銀行とネットワーク分析</h2>
+<p>中央銀行は金融安定性とプルーデンス監督の使命に駆動され、金融ネットワーク分析の主要な消費者かつ生産者となっている。</p>
+<h3 id="51-bank-for-international-settlements-bis">5.1 Bank for International Settlements (BIS、国際決済銀行)</h3>
+<p>BISは「中央銀行の中央銀行」として機能し、国際的な金融安定性研究を調整している。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>BIS Consolidated Banking Statistics（BIS国際与信統計）</strong>: グローバルな銀行ネットワークの構築に使用される国際銀行エクスポージャーデータ。
+- <strong>BIS Quarterly Review</strong>: グローバルな金融フローのネットワークベース分析を定期的に公表。
+- <strong>Craig &amp; von Peter (2014)</strong>: "Interbank tiering and money center banks" — BIS研究者による公表で、銀行間ネットワークのコア-ペリフェリー構造を特定。
+- <strong>コルレス銀行ネットワークに関する研究</strong>: クロスボーダー銀行関係の減少と再構築のマッピング。
+- <strong>国際データハブ</strong>: システミックリスク監視のための中央銀行間データ共有を調整（例：International Data Hubイニシアティブ）。</p>
+<h3 id="52-european-central-bank-ecb">5.2 European Central Bank (ECB、欧州中央銀行)</h3>
+<p>ECBは中央銀行業務へのネットワーク分析の実用化において最前線に立っている。</p>
+<p><strong>主要ツールと貢献:</strong>
+- <strong>NATkit (Network Analysis Tool Kit)</strong>: ECBスタッフが開発した金融ネットワーク分析のための内部ソフトウェア――銀行間エクスポージャー、決済フロー、証券保有。Single Supervisory Mechanism (SSM) の下での監督分析に使用。
+- <strong>TARGET2決済ネットワーク分析</strong>: TARGET2大口決済システムのトポロジーとダイナミクスに関する広範な研究：
+  - Iori et al. (2015): TARGET2フローのネットワーク分析
+  - Arciero et al. (2009): 決済システムにおける階層構造とシステミックな重要性
+- <strong>SSM監督データ</strong>: SSMの下、ECBはユーロ圏の主要銀行から粒度の高いエクスポージャーデータを収集し、ネットワークベースのシステミックリスク評価を可能にしている。
+- <strong>Securities Holdings Statistics (SHS、証券保有統計)</strong>: 誰がどの証券を保有しているかの詳細データにより、ポートフォリオの重複と間接的伝染の分析が可能。
+- <strong>Financial Stability Review</strong>: ユーロ圏銀行システムの相互接続性に関するネットワークベース分析を定期的に掲載。</p>
+<h3 id="53-office-of-financial-research-ofr">5.3 Office of Financial Research (OFR、金融調査局)、米国財務省</h3>
+<p>OFRはドッド＝フランク法（2010年）により、明示的にシステミックリスクの監視を目的として設立された。</p>
+<p><strong>主要な貢献:</strong>
+- <strong>Financial Stability Monitor（金融安定性モニター）</strong>: ネットワークベースの指標（相互接続性、伝染指数）を含むシステミックリスク指標のダッシュボード。
+- <strong>ネットワーク可視化ツール</strong>: 金融システムの相互接続をマッピングするインタラクティブツール。
+- <strong>リファレンスデータインフラストラクチャ</strong>: GLEIF（Global Legal Entity Identifier Foundation）を通じたLEI（取引主体識別子）システムの開発――カウンターパーティを一意に識別することでネットワーク構築を可能にする。
+- <strong>研究論文</strong>: 金融ネットワーク分析に関する多数のワーキングペーパー：
+  - Flood et al. (2015): OTCデリバティブ規制へのネットワークベースのアプローチ
+  - Paddrik et al. (2016): CDS市場伝染のエージェントベースモデル
+- <strong>金融エンティティ識別・データ標準</strong>: 金融ネットワーク構築のためのデータ標準の開発と促進。</p>
+<h3 id="54-federal-reserve-system">5.4 Federal Reserve System（連邦準備制度）</h3>
+<p><strong>主要な貢献:</strong>
+- <strong>Fedwire決済ネットワーク研究</strong>:
+  - Soramäki, Bech, Arnold, Glass &amp; Beyeler (2007): "The topology of interbank payment flows" — Fedwire決済ネットワークの基礎的な実証分析。スモールワールド特性、裾の重い次数分布、密なコア-ペリフェリー構造を明らかにした。
+  - Bech &amp; Atalay (2010): フェデラルファンド市場のトポロジー――オーバーナイト貸借のネットワーク分析。
+- <strong>金融相互接続性に関する研究</strong>:
+  - Federal Reserve Boardのスタッフはストレステスト（ネットワーク効果を統合したCCAR/DFASTフレームワーク）にネットワークモデルを使用。
+  - 銀行持株会社、ノンバンク金融機関、マネー・マーケット・ファンドの相互接続性に関する研究。
+- <strong>Financial Accounts of the United States (Z.1)</strong>: 資金循環データは「誰から誰へ」の金融ネットワーク構築の基礎を提供。
+- <strong>Federal Reserve Bank of New York</strong>: ネットワーク分析に特に積極的――Liberty Street Economicsブログは定期的にネットワークベースの金融分析を掲載。</p>
+<h3 id="55-bank-of-england-boe">5.5 Bank of England (BoE、イングランド銀行)</h3>
+<p><strong>主要な貢献:</strong>
+- <strong>Haldane (2009)</strong>: "Rethinking the Financial Network" — ネットワークアプローチに対する規制当局の関心を触発した画期的なスピーチ。
+- <strong>マクロプルーデンス・ネットワーク分析</strong>: BoEのFinancial Policy Committee（金融政策委員会）はシステミックリスク評価ツールキットにネットワークモデルを使用。
+- <strong>保険・再保険ネットワーク</strong>: 保険セクターの相互接続性の分析、損失を伝播しうる再保険チェーンのマッピング。
+- <strong>監督ネットワークモデル</strong>: ストレステストのための英国銀行エクスポージャーをマッピングする内部モデル。
+- <strong>スタッフワーキングペーパー</strong>: 金融ネットワーク分析に関する充実したシリーズ：
+  - Langfield, Liu &amp; Ota (2014): 英国銀行間システムのマッピング
+  - Coen, Coen &amp; Hüser (2024): ストレステストにおけるネットワーク効果
+- <strong>学術界との連携</strong>: 金融ネットワーク研究においてLSE SRC、ケンブリッジ、オックスフォードとの強い結びつき。</p>
+<h3 id="56-bank-of-japan-boj">5.6 Bank of Japan (BoJ、日本銀行)</h3>
+<p><strong>主要な貢献:</strong>
+- <strong>決済システム分析</strong>: BOJ-NET大口決済システムのネットワーク分析。
+- <strong>Inaoka, Ninomiya, Taniguchi, Shimizu &amp; Takayasu (2004)</strong>: 日本の銀行間ネットワークの初期分析。
+- <strong>金融システムレポート</strong>: 日本の金融システムの安定性に関するネットワークベースの分析を定期的に掲載。
+- <strong>金融システムの安定性評価</strong>: ネットワークモデルを用いて日本の銀行、証券会社、保険会社間の伝染リスクを評価。
+- <strong>株式持ち合いに関する研究</strong>: 日本の企業グループ（系列）に固有の複雑な持ち合いネットワーク構造の分析。
+- <strong>複雑系科学者との連携</strong>: BoJの研究者は高安、青山らの日本の複雑系研究者と金融ネットワーク分析について共同研究を行っている。</p>
+<hr />
+<h2 id="6">6. 金融ネットワークに関する主要経済学論文</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>著者</th>
+<th>年</th>
+<th>タイトル</th>
+<th>掲載誌</th>
+<th>主要な貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Allen &amp; Gale</td>
+<td>2000</td>
+<td>Financial Contagion</td>
+<td><em>J. Political Economy</em></td>
+<td>銀行間ネットワーク伝染の最初の形式的モデル</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Eisenberg &amp; Noe</td>
+<td>2001</td>
+<td>Systemic Risk in Financial Systems</td>
+<td><em>Management Science</em></td>
+<td>清算決済ベクトルフレームワーク</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Boss, Elsinger, Summer &amp; Thurner</td>
+<td>2004</td>
+<td>Network Topology of the Interbank Market</td>
+<td><em>Quantitative Finance</em></td>
+<td>オーストリア銀行間ネットワークの実証マッピング</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Soramäki, Bech et al.</td>
+<td>2007</td>
+<td>Topology of Interbank Payment Flows</td>
+<td><em>Physica A</em></td>
+<td>Fedwireネットワークトポロジーの基礎的研究</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Hidalgo, Klinger, Barabási &amp; Hausmann</td>
+<td>2007</td>
+<td>The Product Space Conditions the Development of Nations</td>
+<td><em>Science</em></td>
+<td>構造転換を制約する製品近接ネットワーク</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Haldane</td>
+<td>2009</td>
+<td>Rethinking the Financial Network</td>
+<td><em>BoE Speech</em></td>
+<td>ネットワークアプローチへの規制当局の関心を触発</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Hidalgo &amp; Hausmann</td>
+<td>2009</td>
+<td>The Building Blocks of Economic Complexity</td>
+<td><em>PNAS</em></td>
+<td>二部貿易ネットワークからの経済複雑性指標</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Farmer &amp; Foley</td>
+<td>2009</td>
+<td>The Economy Needs Agent-Based Modelling</td>
+<td><em>Nature</em></td>
+<td>DSGEの代替としてのABMの提唱</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Brunnermeier &amp; Pedersen</td>
+<td>2009</td>
+<td>Market Liquidity and Funding Liquidity</td>
+<td><em>Rev. Financial Studies</em></td>
+<td>流動性スパイラルのフィードバックメカニズム</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Haldane &amp; May</td>
+<td>2011</td>
+<td>Systemic Risk in Banking Ecosystems</td>
+<td><em>Nature</em></td>
+<td>生態学と金融の類似性；複雑性-安定性のトレードオフ</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Acemoglu, Carvalho, Ozdaglar &amp; Tahbaz-Salehi</td>
+<td>2012</td>
+<td>Network Origins of Aggregate Fluctuations</td>
+<td><em>Econometrica</em></td>
+<td>裾の重い生産ネットワークがショック分散を阻む</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Battiston et al.</td>
+<td>2012</td>
+<td>DebtRank: Too Central to Fail?</td>
+<td><em>Scientific Reports</em></td>
+<td>ネットワークベースのシステミック重要性指標</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Tacchella, Cristelli, Caldarelli, Gabrielli &amp; Pietronero</td>
+<td>2012</td>
+<td>A New Metrics for Countries' Fitness and Products' Complexity</td>
+<td><em>Scientific Reports</em></td>
+<td>非線形fitness-complexity法</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Thurner, Farmer &amp; Geanakoplos</td>
+<td>2012</td>
+<td>Leverage Causes Fat Tails and Clustered Volatility</td>
+<td><em>Quantitative Finance</em></td>
+<td>レバレッジ駆動の内生的暴落のABM</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Cont, Moussa &amp; Santos</td>
+<td>2013</td>
+<td>Network Structure and Systemic Risk in Banking</td>
+<td><em>Handbook on Systemic Risk</em></td>
+<td>信用伝染vs資金調達伝染のシミュレーション</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Carvalho</td>
+<td>2014</td>
+<td>From Micro to Macro via Production Networks</td>
+<td><em>J. Economic Perspectives</em></td>
+<td>生産ネットワーク経済学の平易なサーベイ</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Elliott, Golub &amp; Jackson</td>
+<td>2014</td>
+<td>Financial Networks and Contagion</td>
+<td><em>AER</em></td>
+<td>株式持ち合い、統合-分散のトレードオフ</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Acemoglu, Ozdaglar &amp; Tahbaz-Salehi</td>
+<td>2015</td>
+<td>Systemic Risk and Stability in Financial Networks</td>
+<td><em>AER</em></td>
+<td>ネットワーク伝染における相転移</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Poledna, Molina-Borboa, Martínez-Jaramillo, van der Leij &amp; Thurner</td>
+<td>2015</td>
+<td>The Multi-Layer Network Nature of Systemic Risk</td>
+<td><em>J. Financial Stability</em></td>
+<td>多層銀行ネットワークは単層ではシステミックリスクを過小評価する</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Battiston et al.</td>
+<td>2016</td>
+<td>Complexity Theory and Financial Regulation</td>
+<td><em>Science</em></td>
+<td>ネットワークベース規制の政策フレームワーク</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Adrian &amp; Brunnermeier</td>
+<td>2016</td>
+<td>CoVaR</td>
+<td><em>AER</em></td>
+<td>条件付きシステミックリスク指標</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Glasserman &amp; Young</td>
+<td>2016</td>
+<td>Contagion in Financial Networks</td>
+<td><em>J. Economic Literature</em></td>
+<td>連鎖の上限を含む包括的サーベイ</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Battiston et al.</td>
+<td>2017</td>
+<td>A Climate Stress-Test of the Financial System</td>
+<td><em>Nature Climate Change</em></td>
+<td>金融ネットワークを通じた気候リスク伝達</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Jackson &amp; Pernoud</td>
+<td>2021</td>
+<td>Systemic Risk in Financial Networks: A Survey</td>
+<td><em>Annual Rev. Economics</em></td>
+<td>包括的な理論的サーベイ</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Pichler, Pangallo, del Rio-Chanona, Lafond &amp; Farmer</td>
+<td>2022</td>
+<td>Forecasting the Propagation of Pandemic Shocks with a Dynamic Input-Output Model</td>
+<td><em>J. Economic Dynamics &amp; Control</em></td>
+<td>パンデミック影響に関する生産ネットワークのABM</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>Acemoglu, D., Carvalho, V.M., Ozdaglar, A. &amp; Tahbaz-Salehi, A. (2012). The network origins of aggregate fluctuations. <em>Econometrica</em>, 80(5), 1977–2016.</li>
+<li>Acemoglu, D., Ozdaglar, A. &amp; Tahbaz-Salehi, A. (2015). Systemic risk and stability in financial networks. <em>American Economic Review</em>, 105(2), 564–608.</li>
+<li>Adrian, T. &amp; Brunnermeier, M.K. (2016). CoVaR. <em>American Economic Review</em>, 106(7), 1705–1741.</li>
+<li>Allen, F. &amp; Gale, D. (2000). Financial contagion. <em>Journal of Political Economy</em>, 108(1), 1–33.</li>
+<li>Arthur, W.B. (1994). <em>Increasing Returns and Path Dependence in the Economy</em>. University of Michigan Press.</li>
+<li>Arthur, W.B. (2015). <em>Complexity and the Economy</em>. Oxford University Press.</li>
+<li>Barucca, P. et al. (2020). Network valuation in financial systems. <em>Mathematical Finance</em>, 30(4), 1181–1213.</li>
+<li>Battiston, S. et al. (2012). DebtRank: Too central to fail? <em>Scientific Reports</em>, 2, 541.</li>
+<li>Battiston, S. et al. (2016). Complexity theory and financial regulation. <em>Science</em>, 351(6275), 818–819.</li>
+<li>Battiston, S. et al. (2017). A climate stress-test of the financial system. <em>Nature Climate Change</em>, 7, 283–288.</li>
+<li>Boss, M., Elsinger, H., Summer, M. &amp; Thurner, S. (2004). Network topology of the interbank market. <em>Quantitative Finance</em>, 4(6), 677–684.</li>
+<li>Brunnermeier, M.K. &amp; Pedersen, L.H. (2009). Market liquidity and funding liquidity. <em>Review of Financial Studies</em>, 22(6), 2201–2238.</li>
+<li>Brunnermeier, M.K. &amp; Sannikov, Y. (2014). A macroeconomic model with a financial sector. <em>American Economic Review</em>, 104(2), 379–421.</li>
+<li>Carvalho, V.M. (2014). From micro to macro via production networks. <em>Journal of Economic Perspectives</em>, 28(4), 23–48.</li>
+<li>Cont, R., Moussa, A. &amp; Santos, E.B. (2013). Network structure and systemic risk in banking systems. In <em>Handbook on Systemic Risk</em>, Cambridge University Press.</li>
+<li>Craig, B. &amp; von Peter, G. (2014). Interbank tiering and money center banks. <em>Journal of Financial Intermediation</em>, 23(3), 322–347.</li>
+<li>Cristelli, M., Gabrielli, A., Tacchella, A., Caldarelli, G. &amp; Pietronero, L. (2013). Measuring the intangibles: A metrics for the economic complexity of countries and products. <em>PLoS ONE</em>, 8(8), e70726.</li>
+<li>Danielsson, J., Shin, H.S. &amp; Zigrand, J.P. (2004). The impact of risk regulation on price dynamics. <em>Journal of Banking &amp; Finance</em>, 28(5), 1069–1087.</li>
+<li>Eisenberg, L. &amp; Noe, T.H. (2001). Systemic risk in financial systems. <em>Management Science</em>, 47(2), 236–249.</li>
+<li>Elliott, M., Golub, B. &amp; Jackson, M.O. (2014). Financial networks and contagion. <em>American Economic Review</em>, 104(10), 3115–3153.</li>
+<li>Farmer, J.D. &amp; Foley, D. (2009). The economy needs agent-based modelling. <em>Nature</em>, 460, 685–686.</li>
+<li>Glasserman, P. &amp; Young, H.P. (2016). Contagion in financial networks. <em>Journal of Economic Literature</em>, 54(3), 779–831.</li>
+<li>Haldane, A.G. (2009). Rethinking the financial network. Speech at the Financial Student Association, Amsterdam.</li>
+<li>Haldane, A.G. &amp; May, R.M. (2011). Systemic risk in banking ecosystems. <em>Nature</em>, 469, 351–355.</li>
+<li>Hidalgo, C.A. &amp; Hausmann, R. (2009). The building blocks of economic complexity. <em>PNAS</em>, 106(26), 10570–10575.</li>
+<li>Hidalgo, C.A., Klinger, B., Barabási, A.L. &amp; Hausmann, R. (2007). The product space conditions the development of nations. <em>Science</em>, 317(5837), 482–487.</li>
+<li>Jackson, M.O. (2008). <em>Social and Economic Networks</em>. Princeton University Press.</li>
+<li>Jackson, M.O. &amp; Pernoud, A. (2021). Systemic risk in financial networks: A survey. <em>Annual Review of Economics</em>, 13, 171–202.</li>
+<li>Kirman, A. (1992). Whom or what does the representative individual represent? <em>Journal of Economic Perspectives</em>, 6(2), 117–136.</li>
+<li>Poledna, S., Molina-Borboa, J.L., Martínez-Jaramillo, S., van der Leij, M. &amp; Thurner, S. (2015). The multi-layer network nature of systemic risk. <em>Journal of Financial Stability</em>, 20, 70–81.</li>
+<li>Soramäki, K., Bech, M.L., Arnold, J., Glass, R.J. &amp; Beyeler, W.E. (2007). The topology of interbank payment flows. <em>Physica A</em>, 379(1), 317–333.</li>
+<li>Squartini, T., Mastrandrea, R. &amp; Garlaschelli, D. (2011). Unbiased sampling of network ensembles. <em>New Journal of Physics</em>, 17(2), 023052.</li>
+<li>Tacchella, A., Cristelli, M., Caldarelli, G., Gabrielli, A. &amp; Pietronero, L. (2012). A new metrics for countries' fitness and products' complexity. <em>Scientific Reports</em>, 2, 723.</li>
+<li>Thurner, S., Farmer, J.D. &amp; Geanakoplos, J. (2012). Leverage causes fat tails and clustered volatility. <em>Quantitative Finance</em>, 12(5), 695–707.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

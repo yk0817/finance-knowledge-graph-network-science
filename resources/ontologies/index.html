@@ -1,0 +1,2693 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yk0817.github.io/finance-knowledge-graph-network-science/resources/ontologies/">
+      
+      
+        <link rel="prev" href="../papers/">
+      
+      
+        <link rel="next" href="../../research-plan/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>オントロジー＆標準 - 金融 × 知識グラフ × ネットワーク科学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="金融 × 知識グラフ × ネットワーク科学" class="md-header__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            金融 × 知識グラフ × ネットワーク科学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              オントロジー＆標準
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="金融 × 知識グラフ × ネットワーク科学" class="md-nav__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    金融 × 知識グラフ × ネットワーク科学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概観と歴史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    経済学の視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-computer-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コンピュータサイエンスの視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-corporate-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コーポレートガバナンス
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-emerging-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    新興分野
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-quantitative-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    計量手法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-japan-asia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本・アジアの研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-mathematical-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学的基礎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    リソース
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    リソース
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../researchers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要研究者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データセット
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools-and-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ツール＆プラットフォーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学会・ワークショップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要論文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オントロジー＆標準
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オントロジー＆標準
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#financial-industry-business-ontology-fibo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Financial Industry Business Ontology (FIBO)（金融業界ビジネスオントロジー）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Financial Industry Business Ontology (FIBO)（金融業界ビジネスオントロジー）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        説明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fibo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIBOモジュール構造
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        法人モジュール（詳細）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        採用と統合
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficial-ownership-data-standard-bods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beneficial Ownership Data Standard (BODS)（実質的所有者データ標準）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beneficial Ownership Data Standard (BODS)（実質的所有者データ標準）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        説明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステートメントタイプ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        利益タイプ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        採用状況
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finregont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinRegOnt（金融規制オントロジー）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FinRegOnt（金融規制オントロジー）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        説明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融業界標準
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        知識表現標準
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="知識表現標準">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コアセマンティックウェブ標準
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        シリアライゼーション形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ドメイン固有のオントロジーと語彙
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ドメイン固有のオントロジーと語彙">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融ドメイン
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融に関連する分野横断オントロジー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新興標準とイニシアチブ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        標準間のマッピング
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    研究ノート
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究計画書
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-notes/data-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データソース調査
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-notes/ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    アイデア
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    チュートリアル
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    チュートリアル
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/01-correlation-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    株価相関ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/02-ownership-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業所有ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/03-board-interlocks.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    取締役兼任ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/04-gnn-fraud-detection.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNN不正検知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/05-kg-construction.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融KG構築
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#financial-industry-business-ontology-fibo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Financial Industry Business Ontology (FIBO)（金融業界ビジネスオントロジー）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Financial Industry Business Ontology (FIBO)（金融業界ビジネスオントロジー）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        説明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fibo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIBOモジュール構造
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        法人モジュール（詳細）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        採用と統合
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficial-ownership-data-standard-bods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beneficial Ownership Data Standard (BODS)（実質的所有者データ標準）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beneficial Ownership Data Standard (BODS)（実質的所有者データ標準）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        説明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステートメントタイプ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        利益タイプ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        採用状況
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finregont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinRegOnt（金融規制オントロジー）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FinRegOnt（金融規制オントロジー）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        説明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融業界標準
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        知識表現標準
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="知識表現標準">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コアセマンティックウェブ標準
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        シリアライゼーション形式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ドメイン固有のオントロジーと語彙
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ドメイン固有のオントロジーと語彙">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融ドメイン
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        金融に関連する分野横断オントロジー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新興標準とイニシアチブ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        標準間のマッピング
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">金融ナレッジグラフのためのオントロジーと標準規格</h1>
+<p>本文書は、金融ナレッジグラフの構築とクエリに関連するオントロジー、データ標準、表現フレームワークをまとめたものである。</p>
+<hr />
+<h2 id="financial-industry-business-ontology-fibo">Financial Industry Business Ontology (FIBO)（金融業界ビジネスオントロジー）</h2>
+<h3 id="_2">概要</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>詳細</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>正式名称</strong></td>
+<td>Financial Industry Business Ontology</td>
+</tr>
+<tr>
+<td><strong>管理主体</strong></td>
+<td>EDM Council / Object Management Group (OMG)</td>
+</tr>
+<tr>
+<td><strong>形式</strong></td>
+<td>OWL 2 / RDF</td>
+</tr>
+<tr>
+<td><strong>ライセンス</strong></td>
+<td>MIT License（オープンソース）</td>
+</tr>
+<tr>
+<td><strong>URL</strong></td>
+<td>https://spec.edmcouncil.org/fibo/</td>
+</tr>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>https://github.com/edmcouncil/fibo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">説明</h3>
+<p>FIBOは金融業界のための最も包括的な形式オントロジーである。金融概念、商品、エンティティ、および関係の機械可読な定義を提供する。金融機関、規制当局、テクノロジー企業がEDM CouncilおよびOMGのガバナンスの下で共同開発している。</p>
+<h3 id="fibo">FIBOモジュール構造</h3>
+<table>
+<thead>
+<tr>
+<th>モジュール</th>
+<th>対象範囲</th>
+<th>主要クラス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Foundations (FND)</strong></td>
+<td>基本概念: 当事者、日付、関係、数量、契約</td>
+<td>Party, Agent, LegalEntity, Date, Agreement</td>
+</tr>
+<tr>
+<td><strong>Business Entities (BE)</strong></td>
+<td>法人、会社、パートナーシップ、信託、政府機関</td>
+<td>CorporateBody, LegalPerson, Partnership, GovernmentBody</td>
+</tr>
+<tr>
+<td><strong>Financial Business and Commerce (FBC)</strong></td>
+<td>金融サービス、商品、規制機関</td>
+<td>FinancialServiceProvider, RegulatoryAgency, FinancialProduct</td>
+</tr>
+<tr>
+<td><strong>Securities (SEC)</strong></td>
+<td>株式、債券、ファンド、デリバティブ</td>
+<td>Security, Equity, Bond, DerivativeInstrument, Fund</td>
+</tr>
+<tr>
+<td><strong>Derivatives (DER)</strong></td>
+<td>OTCおよび取引所取引デリバティブ、スワップ、オプション、先物</td>
+<td>Swap, Option, Future, CreditDefaultSwap</td>
+</tr>
+<tr>
+<td><strong>Loans (LOAN)</strong></td>
+<td>ローン種類、住宅ローン商品、学資ローン</td>
+<td>Loan, Mortgage, RevolvingCredit</td>
+</tr>
+<tr>
+<td><strong>Indices and Indicators (IND)</strong></td>
+<td>市場指数、経済指標、金利</td>
+<td>MarketIndex, EconomicIndicator, InterestRateBenchmark</td>
+</tr>
+<tr>
+<td><strong>Market Data (MD)</strong></td>
+<td>価格、気配値、取引データ</td>
+<td>Price, Quote, Trade</td>
+</tr>
+<tr>
+<td><strong>Corporate Actions (CAE)</strong></td>
+<td>配当、合併、株式分割</td>
+<td>CorporateAction, Dividend, Merger</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">法人モジュール（詳細）</h3>
+<p>所有ナレッジグラフに特に関連する部分:</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>説明</th>
+<th>関係</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LegalEntity</td>
+<td>法律で認められた全てのエンティティ</td>
+<td>hasRegistrationDate, isRegisteredIn</td>
+</tr>
+<tr>
+<td>CorporateBody</td>
+<td>法人化された組織</td>
+<td>hasDirector, hasShareholder</td>
+</tr>
+<tr>
+<td>OwnershipInterest</td>
+<td>エンティティへの持分</td>
+<td>hasPercentage, isHeldBy</td>
+</tr>
+<tr>
+<td>ControllingInterest</td>
+<td>支配閾値を超える所有</td>
+<td>controlsEntity</td>
+</tr>
+<tr>
+<td>BeneficialOwner</td>
+<td>最終的に所有/支配する人物</td>
+<td>ultimatelyOwns, beneficiallyControls</td>
+</tr>
+<tr>
+<td>RegisteredAgent</td>
+<td>エンティティのために行動する権限を持つ代理人</td>
+<td>actsFor, isRegisteredIn</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">採用と統合</h3>
+<ul>
+<li>主要な銀行、規制当局、データベンダーがセマンティックインターオペラビリティのために使用</li>
+<li>ISO標準（ISO 20022、LEI）との整合</li>
+<li>OWLオントロジーファイル、SKOS語彙、JSON-LDコンテキストとして利用可能</li>
+<li>GLEIF LEIデータおよび規制報告フレームワークとの統合</li>
+</ul>
+<hr />
+<h2 id="beneficial-ownership-data-standard-bods">Beneficial Ownership Data Standard (BODS)（実質的所有者データ標準）</h2>
+<h3 id="_6">概要</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>詳細</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>正式名称</strong></td>
+<td>Beneficial Ownership Data Standard</td>
+</tr>
+<tr>
+<td><strong>管理主体</strong></td>
+<td>Open Ownership</td>
+</tr>
+<tr>
+<td><strong>形式</strong></td>
+<td>JSON Schema</td>
+</tr>
+<tr>
+<td><strong>バージョン</strong></td>
+<td>0.4（最新）</td>
+</tr>
+<tr>
+<td><strong>ライセンス</strong></td>
+<td>Apache 2.0</td>
+</tr>
+<tr>
+<td><strong>URL</strong></td>
+<td>https://standard.openownership.org/</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">説明</h3>
+<p>BODSは実質的所有者情報を公開するための構造化フォーマットを提供する。各国の実質的所有者登録簿間の相互運用性を実現し、所有ナレッジグラフの構築を支援する。</p>
+<h3 id="_8">ステートメントタイプ</h3>
+<table>
+<thead>
+<tr>
+<th>ステートメントタイプ</th>
+<th>目的</th>
+<th>主要フィールド</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Statement</strong></td>
+<td>法人の記述</td>
+<td>entityType, name, jurisdiction, identifiers, foundingDate</td>
+</tr>
+<tr>
+<td><strong>Person Statement</strong></td>
+<td>自然人の記述</td>
+<td>personType, names, nationalities, birthDate, addresses</td>
+</tr>
+<tr>
+<td><strong>Ownership-or-Control Statement</strong></td>
+<td>所有チェーンにおける人物/法人の連結</td>
+<td>subject, interestedParty, interests (shareholding, voting rights, control)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">利益タイプ</h3>
+<table>
+<thead>
+<tr>
+<th>利益タイプ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shareholding</td>
+<td>直接または間接的な持株比率</td>
+</tr>
+<tr>
+<td>votingRights</td>
+<td>議決権比率</td>
+</tr>
+<tr>
+<td>appointmentOfBoard</td>
+<td>取締役の任命/解任権</td>
+</tr>
+<tr>
+<td>otherInfluenceOrControl</td>
+<td>その他の重要な支配形態</td>
+</tr>
+<tr>
+<td>seniorManagingOfficial</td>
+<td>上級管理職の地位</td>
+</tr>
+<tr>
+<td>settlor</td>
+<td>信託の委託者</td>
+</tr>
+<tr>
+<td>trustee</td>
+<td>信託の受託者</td>
+</tr>
+<tr>
+<td>beneficiaryOfLegalArrangement</td>
+<td>信託またはそれに類する制度の受益者</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">採用状況</h3>
+<ul>
+<li>英国（PSC Register）、スロバキア、アルメニア、ラトビア等で使用</li>
+<li>OpenOwnership Registerが複数国のデータを集約</li>
+<li>実質的所有者の透明性イニシアチブ（EITI、FATF）を支援</li>
+</ul>
+<hr />
+<h2 id="finregont">FinRegOnt（金融規制オントロジー）</h2>
+<h3 id="_11">概要</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>詳細</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>正式名称</strong></td>
+<td>Financial Regulation Ontology</td>
+</tr>
+<tr>
+<td><strong>目的</strong></td>
+<td>金融規制の機械可読な表現</td>
+</tr>
+<tr>
+<td><strong>形式</strong></td>
+<td>OWL 2</td>
+</tr>
+<tr>
+<td><strong>対象範囲</strong></td>
+<td>規制要件、コンプライアンス規則、規制機関</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">説明</h3>
+<p>FinRegOntは金融規制要件を機械可読な形式で表現することを目的とし、自動コンプライアンスチェックと規制分析を可能にする。複数の法域と規制機関の規制をカバーしている。</p>
+<h3 id="_13">主要概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regulation</td>
+<td>規制文書または規則</td>
+</tr>
+<tr>
+<td>RegulatoryBody</td>
+<td>規制を発行するエンティティ（SEC、FCA、ECB等）</td>
+</tr>
+<tr>
+<td>Requirement</td>
+<td>特定の義務または禁止</td>
+</tr>
+<tr>
+<td>RegulatedEntity</td>
+<td>規制対象のエンティティ</td>
+</tr>
+<tr>
+<td>ComplianceObligation</td>
+<td>特定のコンプライアンス要件</td>
+</tr>
+<tr>
+<td>ReportingRequirement</td>
+<td>法定報告義務</td>
+</tr>
+<tr>
+<td>Threshold</td>
+<td>定量的な規制閾値</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_14">金融業界標準</h2>
+<table>
+<thead>
+<tr>
+<th>標準</th>
+<th>正式名称</th>
+<th>対象範囲</th>
+<th>管理主体</th>
+<th>形式</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEI</td>
+<td>Legal Entity Identifier</td>
+<td>金融取引における法人の一意識別</td>
+<td>GLEIF (Global LEI Foundation)</td>
+<td>ISO 17442; 20文字英数字</td>
+<td>https://www.gleif.org/</td>
+</tr>
+<tr>
+<td>XBRL</td>
+<td>eXtensible Business Reporting Language</td>
+<td>構造化された財務報告; 財務諸表のタクソノミー</td>
+<td>XBRL International</td>
+<td>XMLベース</td>
+<td>https://www.xbrl.org/</td>
+</tr>
+<tr>
+<td>FpML</td>
+<td>Financial products Markup Language</td>
+<td>OTCデリバティブ取引の記述</td>
+<td>ISDA</td>
+<td>XML Schema</td>
+<td>https://www.fpml.org/</td>
+</tr>
+<tr>
+<td>FIX Protocol</td>
+<td>Financial Information eXchange</td>
+<td>電子取引メッセージ; 注文フロー</td>
+<td>FIX Trading Community</td>
+<td>Tag-value / FIXML</td>
+<td>https://www.fixtrading.org/</td>
+</tr>
+<tr>
+<td>ISO 20022</td>
+<td>Universal financial industry message scheme</td>
+<td>決済、証券、貿易金融、FXメッセージング</td>
+<td>ISO TC68</td>
+<td>XML / ASN.1</td>
+<td>https://www.iso20022.org/</td>
+</tr>
+<tr>
+<td>ISDA CDM</td>
+<td>Common Domain Model</td>
+<td>デリバティブと証券の標準化されたライフサイクルイベント</td>
+<td>ISDA</td>
+<td>JSON / Java / Rosetta DSL</td>
+<td>https://www.isda.org/2019/10/14/isda-common-domain-model/</td>
+</tr>
+<tr>
+<td>ISO 10962 (CFI)</td>
+<td>Classification of Financial Instruments</td>
+<td>金融商品分類コード</td>
+<td>ISO</td>
+<td>6文字コード</td>
+<td>https://www.iso.org/</td>
+</tr>
+<tr>
+<td>ISO 6166 (ISIN)</td>
+<td>International Securities Identification Number</td>
+<td>証券の一意識別</td>
+<td>ANNA (Association of National Numbering Agencies)</td>
+<td>12文字英数字</td>
+<td>https://www.anna-web.org/</td>
+</tr>
+<tr>
+<td>ISO 4217</td>
+<td>Currency Codes</td>
+<td>標準化された通貨識別子</td>
+<td>ISO</td>
+<td>3文字アルファ / 3桁数字</td>
+<td>https://www.iso.org/</td>
+</tr>
+<tr>
+<td>FIGI</td>
+<td>Financial Instrument Global Identifier</td>
+<td>金融商品識別のためのオープン標準</td>
+<td>OMG / Bloomberg</td>
+<td>12文字英数字</td>
+<td>https://www.openfigi.com/</td>
+</tr>
+<tr>
+<td>MiFID II RTS 25</td>
+<td>Regulatory Technical Standards</td>
+<td>金融商品リファレンスデータ</td>
+<td>ESMA</td>
+<td>XML</td>
+<td>https://www.esma.europa.eu/</td>
+</tr>
+<tr>
+<td>GLEIF Relationship Records</td>
+<td>LEI-to-LEI relationship data</td>
+<td>直接/最終親会社、ファンド関係</td>
+<td>GLEIF</td>
+<td>XML / CSV</td>
+<td>https://www.gleif.org/en/lei-data/lei-mapping</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_15">知識表現標準</h2>
+<h3 id="_16">コアセマンティックウェブ標準</h3>
+<table>
+<thead>
+<tr>
+<th>標準</th>
+<th>正式名称</th>
+<th>目的</th>
+<th>W3Cステータス</th>
+<th>金融KGへの関連性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RDF</td>
+<td>Resource Description Framework</td>
+<td>トリプル（主語-述語-目的語）として知識を表現するための基盤</td>
+<td>W3C勧告</td>
+<td>金融エンティティの関係、所有チェーンのコア表現</td>
+</tr>
+<tr>
+<td>OWL</td>
+<td>Web Ontology Language</td>
+<td>クラス、プロパティ、制約、推論を備えた豊富なオントロジーモデリング</td>
+<td>W3C勧告</td>
+<td>FIBOはOWL 2で記述; 金融データ上の推論を可能にする</td>
+</tr>
+<tr>
+<td>RDFS</td>
+<td>RDF Schema</td>
+<td>軽量オントロジー言語; クラス/プロパティ階層</td>
+<td>W3C勧告</td>
+<td>金融エンティティ型階層のためのシンプルなスキーマ</td>
+</tr>
+<tr>
+<td>SPARQL</td>
+<td>SPARQL Protocol and RDF Query Language</td>
+<td>RDFグラフのためのクエリ言語</td>
+<td>W3C勧告</td>
+<td>金融KGへのクエリ; データソース間のフェデレーテッドクエリ</td>
+</tr>
+<tr>
+<td>SKOS</td>
+<td>Simple Knowledge Organization System</td>
+<td>分類体系、シソーラス、統制語彙</td>
+<td>W3C勧告</td>
+<td>金融用語分類体系; 産業分類スキーム</td>
+</tr>
+<tr>
+<td>SHACL</td>
+<td>Shapes Constraint Language</td>
+<td>RDFグラフのデータ検証; シェイプ制約</td>
+<td>W3C勧告</td>
+<td>金融KGデータ品質の検証; 所有データ制約の強制</td>
+</tr>
+<tr>
+<td>JSON-LD</td>
+<td>JSON for Linking Data</td>
+<td>リンクトデータ/RDFのJSONベースシリアライゼーション</td>
+<td>W3C勧告</td>
+<td>APIフレンドリーな金融KGアクセス; ウェブページへの構造化データ埋め込み</td>
+</tr>
+<tr>
+<td>RDF-star</td>
+<td>RDF-star (RDF 1.2候補)</td>
+<td>ステートメントレベルのメタデータ（レイフィケーション）</td>
+<td>W3Cドラフト</td>
+<td>金融関係への信頼度、時間的有効性の注釈付け</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">シリアライゼーション形式</h3>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>説明</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turtle (.ttl)</td>
+<td>人間可読なRDFシリアライゼーション</td>
+<td>金融オントロジーの作成とレビュー</td>
+</tr>
+<tr>
+<td>N-Triples (.nt)</td>
+<td>行ベースのRDFシリアライゼーション</td>
+<td>金融KGデータの一括ロード</td>
+</tr>
+<tr>
+<td>JSON-LD (.jsonld)</td>
+<td>JSONベースのRDFシリアライゼーション</td>
+<td>金融KGアクセスのためのWeb API</td>
+</tr>
+<tr>
+<td>RDF/XML (.rdf)</td>
+<td>XMLベースのRDFシリアライゼーション</td>
+<td>レガシーシステム統合</td>
+</tr>
+<tr>
+<td>N-Quads (.nq)</td>
+<td>名前付きグラフ付きN-Triples</td>
+<td>マルチソース金融KGデータセット</td>
+</tr>
+<tr>
+<td>HDT</td>
+<td>Header-Dictionary-Triples</td>
+<td>大規模金融KGのための圧縮RDF</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_18">ドメイン固有のオントロジーと語彙</h2>
+<h3 id="_19">金融ドメイン</h3>
+<table>
+<thead>
+<tr>
+<th>オントロジー/語彙</th>
+<th>対象範囲</th>
+<th>形式</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FIBO（上記参照）</td>
+<td>包括的な金融業界</td>
+<td>OWL 2</td>
+<td>https://spec.edmcouncil.org/fibo/</td>
+</tr>
+<tr>
+<td>Financial Report Ontology (FRO)</td>
+<td>財務諸表と報告</td>
+<td>OWL</td>
+<td>—</td>
+</tr>
+<tr>
+<td>GoodRelations</td>
+<td>電子商取引、ビジネス関係</td>
+<td>OWL</td>
+<td>http://purl.org/goodrelations/</td>
+</tr>
+<tr>
+<td>Schema.org（金融）</td>
+<td>構造化データ: FinancialProduct、BankAccount等</td>
+<td>RDFa / JSON-LD</td>
+<td>https://schema.org/</td>
+</tr>
+<tr>
+<td>Dublin Core（改良版）</td>
+<td>金融文書とエンティティのメタデータ</td>
+<td>RDF</td>
+<td>https://www.dublincore.org/</td>
+</tr>
+<tr>
+<td>PROV-O</td>
+<td>来歴オントロジー; データリネージ</td>
+<td>OWL</td>
+<td>https://www.w3.org/TR/prov-o/</td>
+</tr>
+<tr>
+<td>ORG (W3C Organization)</td>
+<td>組織構造、役割、メンバーシップ</td>
+<td>OWL</td>
+<td>https://www.w3.org/TR/vocab-org/</td>
+</tr>
+<tr>
+<td>FOAF</td>
+<td>Friend-of-a-Friend; 人物と関係</td>
+<td>RDF</td>
+<td>http://xmlns.com/foaf/spec/</td>
+</tr>
+<tr>
+<td>RegOnto</td>
+<td>規制コンプライアンスオントロジー</td>
+<td>OWL</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_20">金融に関連する分野横断オントロジー</h3>
+<table>
+<thead>
+<tr>
+<th>オントロジー</th>
+<th>対象範囲</th>
+<th>関連性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GeoNames</td>
+<td>地理的エンティティと関係</td>
+<td>金融エンティティの法域マッピング</td>
+</tr>
+<tr>
+<td>NUTS (Eurostat)</td>
+<td>欧州地域分類</td>
+<td>欧州金融エンティティの地理的分類</td>
+</tr>
+<tr>
+<td>NACE / NAICS / SIC</td>
+<td>産業分類システム</td>
+<td>金融ネットワークノードのセクター分類</td>
+</tr>
+<tr>
+<td>DBpedia Ontology</td>
+<td>Wikipediaからの一般知識</td>
+<td>金融KG充実のためのエンティティリンキング</td>
+</tr>
+<tr>
+<td>Wikidata Ontology</td>
+<td>構造化された一般知識</td>
+<td>企業エンティティデータ; クロスリファレンス</td>
+</tr>
+<tr>
+<td>Time Ontology (OWL-Time)</td>
+<td>時間的概念と関係</td>
+<td>所有関係と金融関係の時間的有効性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_21">新興標準とイニシアチブ</h2>
+<table>
+<thead>
+<tr>
+<th>イニシアチブ</th>
+<th>説明</th>
+<th>ステータス</th>
+<th>関連性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verifiable Credentials (W3C)</td>
+<td>主張の暗号的証明; デジタルID</td>
+<td>W3C勧告</td>
+<td>金融KGにおけるKYC/AML本人確認</td>
+</tr>
+<tr>
+<td>DID (Decentralized Identifiers)</td>
+<td>自己主権型IDの標準</td>
+<td>W3C勧告</td>
+<td>DeFi KGのための分散型エンティティ識別</td>
+</tr>
+<tr>
+<td>ISO/IEC 21838（上位オントロジー）</td>
+<td>上位オントロジーフレームワークの標準</td>
+<td>公開済み</td>
+<td>金融オントロジーの基盤整合</td>
+</tr>
+<tr>
+<td>Knowledge Graph standard (ISO/IEC)</td>
+<td>KG概念の新興ISO標準化</td>
+<td>策定中</td>
+<td>金融KG実務の業界標準化</td>
+</tr>
+<tr>
+<td>EU Data Spaces (Financial Data Space)</td>
+<td>金融サービスのための欧州データスペース</td>
+<td>策定中</td>
+<td>越境金融データ共有とKG相互運用性</td>
+</tr>
+<tr>
+<td>Digital Regulatory Reporting (DRR)</td>
+<td>機械実行可能な規制ルール</td>
+<td>パイロットプログラム</td>
+<td>KG推論による自動コンプライアンス</td>
+</tr>
+<tr>
+<td>Open Banking Standards (PSD2/Open Finance)</td>
+<td>金融データ共有のためのAPI標準</td>
+<td>運用中（EU、UK等）</td>
+<td>KG構築のための構造化された金融データアクセス</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_22">標準間のマッピング</h2>
+<p>金融KG構築において標準間の相互関係を理解することは重要である:</p>
+<table>
+<thead>
+<tr>
+<th>ソース標準</th>
+<th>ターゲット標準</th>
+<th>マッピングタイプ</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEI → FIBO</td>
+<td>エンティティ識別からオントロジーへ</td>
+<td>公式アライメント</td>
+<td>GLEIFがLEI-FIBOマッピングを提供</td>
+</tr>
+<tr>
+<td>XBRL → FIBO</td>
+<td>報告タクソノミーからオントロジーへ</td>
+<td>コミュニティ主導</td>
+<td>財務ファクトからオントロジー概念へのマッピング</td>
+</tr>
+<tr>
+<td>ISO 20022 → FIBO</td>
+<td>メッセージスキーマからオントロジーへ</td>
+<td>公式アライメント</td>
+<td>決済・証券メッセージのセマンティクス</td>
+</tr>
+<tr>
+<td>BODS → FIBO BE</td>
+<td>所有データからオントロジーへ</td>
+<td>コミュニティマッピング</td>
+<td>実質的所有者からFIBO Business Entitiesへ</td>
+</tr>
+<tr>
+<td>Schema.org → FIBO</td>
+<td>ウェブ語彙からオントロジーへ</td>
+<td>近似的</td>
+<td>軽量ウェブデータから形式オントロジーへ</td>
+</tr>
+<tr>
+<td>ISDA CDM → FpML</td>
+<td>ドメインモデルからメッセージングへ</td>
+<td>公式</td>
+<td>デリバティブライフサイクルの標準化</td>
+</tr>
+<tr>
+<td>GLEIF → OpenOwnership</td>
+<td>LEIから実質的所有者へ</td>
+<td>新興</td>
+<td>法人と最終実質的所有者の連結</td>
+</tr>
+<tr>
+<td>NACE/NAICS → FIBO</td>
+<td>産業分類からオントロジーへ</td>
+<td>参照</td>
+<td>金融エンティティのセクター分類</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>最終更新: 2026-02-23</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

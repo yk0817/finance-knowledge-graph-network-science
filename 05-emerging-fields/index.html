@@ -1,0 +1,3311 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yk0817.github.io/finance-knowledge-graph-network-science/05-emerging-fields/">
+      
+      
+        <link rel="prev" href="../04-corporate-governance/">
+      
+      
+        <link rel="next" href="../06-quantitative-methods/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>新興分野 - 金融 × 知識グラフ × ネットワーク科学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-header__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            金融 × 知識グラフ × ネットワーク科学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              新興分野
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-nav__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    金融 × 知識グラフ × ネットワーク科学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概観と歴史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    経済学の視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-computer-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コンピュータサイエンスの視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-corporate-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コーポレートガバナンス
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    新興分野
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    新興分野
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-defi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. DeFi（分散型金融）と暗号資産ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. DeFi（分散型金融）と暗号資産ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 主要プロジェクトとプラットフォーム
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 主要プロジェクトとプラットフォーム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphsenseait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GraphSense（AIT ウィーン）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chainalysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chainalysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elliptic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elliptic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-defi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 DeFiコンポーザビリティグラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 トークン移転ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-dexamm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 DEX/AMM流動性ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-mev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 MEV（最大抽出可能価値）リレーネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-nft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 NFT移転・価格設定ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 ブロックチェーンネットワーク分析に関する主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-esg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ESGと気候金融ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ESGと気候金融ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ngfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 NGFS（気候変動リスクに係る金融当局ネットワーク）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-battiston" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Battistonら：金融ネットワークを通じた気候ストレステスト
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-esg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 ESGナレッジグラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 カーボンクレジット取引ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 グリーンボンドネットワークとタクソノミー整合性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 サプライチェーンネットワークを通じた気候リスクの伝達
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-tcfd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 TCFD報告とネットワークベースの気候リスク評価
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. サプライチェーンファイナンスネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. サプライチェーンファイナンスネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 サプライチェーンファイナンスリスク評価のためのGNN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bloomberg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Bloombergサプライチェーンデータとモメンタムファクター
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 貿易金融ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 サプライチェーン途絶の伝播モデル
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-covid-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 COVID-19とサプライチェーンネットワークのレジリエンス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 二重利用：物理的サプライチェーン × 金融サプライチェーンネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 保険・再保険ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 保険・再保険ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-no-1000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 イングランド銀行ワーキングペーパーNo. 1000
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 再保険ネットワークトポロジーとシステミックリスク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 保険リンク証券（ILS）ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 ネットワークモデルによるサイバーリスクの集積
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 カタストロフィーリスクと地理的相関ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cbdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. CBDCと決済ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. CBDCと決済ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-fedwiresoramaki2007" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Fedwireトポロジー（Soramakiら、2007年）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-target2ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 TARGET2（ECB）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cbdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 CBDCネットワーク効果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 クロスボーダー決済ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 クロスボーダー決済ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SWIFTネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コルレス銀行業務
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-rtgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 即時グロス決済（RTGS）ネットワーク最適化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 ステーブルコイン決済ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-regtech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. RegTech（規制テクノロジー）ナレッジグラフ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. RegTech（規制テクノロジー）ナレッジグラフ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-fibo-financial-industry-business-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 FIBO (Financial Industry Business Ontology)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-finregont-financial-regulation-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 FinRegOnt (Financial Regulation Ontology)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 コンプライアンスのためのGraphRAG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-kycaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 KYC/AMLナレッジグラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 規制報告ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 法人識別
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 法人識別">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LEI（取引主体識別子）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bods-beneficial-ownership-data-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BODS (Beneficial Ownership Data Standard)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-suptech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 SupTech（監督テクノロジー）とネットワーク監視
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suptech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SupTechネットワーク監視サマリー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分野横断的テーマ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分野横断的テーマ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新興分野の融合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共通の方法論的課題
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quantitative-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    計量手法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-japan-asia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本・アジアの研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-mathematical-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学的基礎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    リソース
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    リソース
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/researchers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要研究者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データセット
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/tools-and-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ツール＆プラットフォーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学会・ワークショップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要論文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/ontologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オントロジー＆標準
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    研究ノート
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究計画書
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/data-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データソース調査
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    アイデア
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    チュートリアル
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    チュートリアル
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/01-correlation-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    株価相関ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/02-ownership-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業所有ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/03-board-interlocks.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    取締役兼任ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/04-gnn-fraud-detection.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNN不正検知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/05-kg-construction.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融KG構築
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-defi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. DeFi（分散型金融）と暗号資産ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. DeFi（分散型金融）と暗号資産ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 主要プロジェクトとプラットフォーム
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 主要プロジェクトとプラットフォーム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graphsenseait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GraphSense（AIT ウィーン）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chainalysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chainalysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elliptic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elliptic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-defi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 DeFiコンポーザビリティグラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 トークン移転ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-dexamm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 DEX/AMM流動性ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-mev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 MEV（最大抽出可能価値）リレーネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-nft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 NFT移転・価格設定ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 ブロックチェーンネットワーク分析に関する主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-esg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ESGと気候金融ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ESGと気候金融ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ngfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 NGFS（気候変動リスクに係る金融当局ネットワーク）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-battiston" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Battistonら：金融ネットワークを通じた気候ストレステスト
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-esg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 ESGナレッジグラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 カーボンクレジット取引ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 グリーンボンドネットワークとタクソノミー整合性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 サプライチェーンネットワークを通じた気候リスクの伝達
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-tcfd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 TCFD報告とネットワークベースの気候リスク評価
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. サプライチェーンファイナンスネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. サプライチェーンファイナンスネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 サプライチェーンファイナンスリスク評価のためのGNN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bloomberg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Bloombergサプライチェーンデータとモメンタムファクター
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 貿易金融ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 サプライチェーン途絶の伝播モデル
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-covid-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 COVID-19とサプライチェーンネットワークのレジリエンス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 二重利用：物理的サプライチェーン × 金融サプライチェーンネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 保険・再保険ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 保険・再保険ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-no-1000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 イングランド銀行ワーキングペーパーNo. 1000
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 再保険ネットワークトポロジーとシステミックリスク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 保険リンク証券（ILS）ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 ネットワークモデルによるサイバーリスクの集積
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 カタストロフィーリスクと地理的相関ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cbdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. CBDCと決済ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. CBDCと決済ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-fedwiresoramaki2007" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Fedwireトポロジー（Soramakiら、2007年）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-target2ecb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 TARGET2（ECB）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-cbdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 CBDCネットワーク効果
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 クロスボーダー決済ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 クロスボーダー決済ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SWIFTネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コルレス銀行業務
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-rtgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 即時グロス決済（RTGS）ネットワーク最適化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 ステーブルコイン決済ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-regtech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. RegTech（規制テクノロジー）ナレッジグラフ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. RegTech（規制テクノロジー）ナレッジグラフ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-fibo-financial-industry-business-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 FIBO (Financial Industry Business Ontology)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-finregont-financial-regulation-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 FinRegOnt (Financial Regulation Ontology)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 コンプライアンスのためのGraphRAG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-kycaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 KYC/AMLナレッジグラフ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 規制報告ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 法人識別
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 法人識別">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LEI（取引主体識別子）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bods-beneficial-ownership-data-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BODS (Beneficial Ownership Data Standard)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-suptech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 SupTech（監督テクノロジー）とネットワーク監視
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suptech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SupTechネットワーク監視サマリー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分野横断的テーマ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分野横断的テーマ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新興分野の融合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共通の方法論的課題
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">金融ネットワーク科学における新興分野</h1>
+<p>本文書では、ネットワーク科学、ナレッジグラフ、およびグラフ分析が金融システムに適用されている最先端領域を概観する。これらの新興分野は、分散型金融や気候リスクからCBDC決済ネットワーク、規制テクノロジーに至るまで、次世代のイノベーションの波を代表するものである。</p>
+<hr />
+<h2 id="1-defi">1. DeFi（分散型金融）と暗号資産ネットワーク</h2>
+<h3 id="11">1.1 主要プロジェクトとプラットフォーム</h3>
+<h4 id="graphsenseait">GraphSense（AIT ウィーン）</h4>
+<p><strong>GraphSense</strong> は、Austrian Institute of Technology（AIT、オーストリア技術研究所）のBernhard Haslhoferらによって開発されたオープンソースの暗号資産分析プラットフォームである。</p>
+<ul>
+<li><strong>主要機能：</strong></li>
+<li>マルチ通貨ブロックチェーン分析（Bitcoin、Ethereum、Litecoin、Zcash）。</li>
+<li>アドレスクラスタリング：ヒューリスティック分析によりアドレスを実世界のエンティティに紐付け。</li>
+<li>トランザクションフロー可視化：資金フローのインタラクティブなグラフ探索。</li>
+<li>クロスチェーン分析：複数のブロックチェーンにまたがる価値移転の追跡。</li>
+<li><strong>アーキテクチャ：</strong> Apache Sparkベースのバックエンド、Cassandraデータベース、REST API、Webダッシュボード。</li>
+<li><strong>オープンソース：</strong> 学術研究およびコンプライアンス用途として無料で利用可能。</li>
+<li><strong>参考文献：</strong> Haslhofer, B. et al. (2016). "O Bitcoin Where Art Thou? Insight into Large-Scale Transaction Graphs." SEMANTiCS.</li>
+<li><strong>URL：</strong> https://graphsense.info</li>
+</ul>
+<h4 id="chainalysis">Chainalysis</h4>
+<ul>
+<li><strong>位置づけ：</strong> 政府機関、取引所、金融機関にサービスを提供するブロックチェーン分析分野のリーディングカンパニー。</li>
+<li><strong>製品群：</strong></li>
+<li><strong>KYT (Know Your Transaction)：</strong> コンプライアンスのためのリアルタイムトランザクション監視。</li>
+<li><strong>Reactor：</strong> アドレスおよびエンティティ間の暗号資産フローを追跡する調査ツール。</li>
+<li><strong>Kryptos：</strong> 暗号資産アドレスおよびトランザクションのリスクスコアリング。</li>
+<li><strong>ネットワーク分析：</strong> 最大級の暗号資産エンティティグラフを構築・維持し、アドレスを実世界のアイデンティティにマッピング。</li>
+<li><strong>データカバレッジ：</strong> Bitcoin、Ethereum、その他100以上のブロックチェーン。</li>
+<li><strong>ユースケース：</strong> AMLコンプライアンス、制裁スクリーニング、法執行調査。</li>
+</ul>
+<h4 id="elliptic">Elliptic</h4>
+<ul>
+<li><strong>位置づけ：</strong> 機械学習ベースの暗号資産リスクスコアリングおよびコンプライアンスプラットフォーム。</li>
+<li><strong>Ellipticデータセット：</strong> 不正/合法ラベル付きBitcoinトランザクションの公開データセット——GNNベースの不正検知において広く使われるベンチマーク。</li>
+<li>203,769件のトランザクション、234,355本のエッジ。</li>
+<li>不正4,545件、合法42,019件、ラベルなし157,205件のトランザクション。</li>
+<li>100以上の学術論文で使用。</li>
+<li><strong>ネットワーク分析：</strong></li>
+<li>マネーロンダリングパターンの特定のための時間的トランザクショングラフ分析。</li>
+<li>ブリッジプロトコルやDEXを通じたクロスチェーン追跡。</li>
+<li><strong>参考文献：</strong> Weber, M. et al. (2019). "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics." KDD Workshop.</li>
+</ul>
+<h3 id="12-defi">1.2 DeFiコンポーザビリティグラフ</h3>
+<p>DeFiプロトコルは本質的にコンポーザブル（組み合わせ可能）であり、ビルディングブロックのように相互に連携し、複雑な依存関係ネットワークを形成する。</p>
+<ul>
+<li><strong>プロトコル相互作用ネットワーク：</strong> ノードはDeFiプロトコル（Aave、Compound、Uniswap、MakerDAO）、エッジはインタラクション（フラッシュローン、担保、流動性提供）を表す。</li>
+<li><strong>流動性フローネットワーク：</strong> プロトコル間の流動性の移動を追跡し、システミックな流動性リスクを特定。</li>
+<li><strong>コンポーザビリティリスク：</strong> 「DeFiレゴ」の概念は、一つのプロトコルの障害がネットワーク全体に波及する可能性を意味する。ネットワーク分析はこれらの伝染リスクを定量化する。</li>
+<li><strong>スマートコントラクト依存関係グラフ：</strong> どのコントラクトがどのコントラクトを呼び出すかをマッピングし、重要なインフラプロトコルを特定。</li>
+<li><strong>参考文献：</strong> Gudgeon, L. et al. (2020). "DeFi Protocols for Loanable Funds: Interest Rates, Liquidity and Market Efficiency." AFT.</li>
+</ul>
+<h3 id="13">1.3 トークン移転ネットワーク</h3>
+<ul>
+<li><strong>ERC-20フロー分析：</strong> Ethereum上のトークン移転イベントから有向重み付きグラフを構築。ノード＝アドレス、エッジ＝トークン移転、重み＝移転量。</li>
+<li><strong>ネットワーク特性：</strong></li>
+<li>べき乗則次数分布（少数のアドレスが大部分の取引量を処理）。</li>
+<li>トークン移転ネットワークにおけるスモールワールド特性。</li>
+<li>プロトコルエコシステムに対応するコミュニティ構造。</li>
+<li><strong>応用：</strong></li>
+<li>バリュエーションモデルのためのトークン速度測定。</li>
+<li>ネットワークパターン分析によるウォッシュトレーディング検出。</li>
+<li>クジラ追跡：大口保有者とその取引パターンの特定。</li>
+</ul>
+<h3 id="14-dexamm">1.4 DEX/AMM流動性ネットワーク</h3>
+<ul>
+<li><strong>自動マーケットメイカー（AMM）：</strong> Uniswap、Curve、Balancerは流動性プールを作成し、二部ネットワーク（トークン×プール）を形成する。</li>
+<li><strong>流動性ネットワーク分析：</strong></li>
+<li>トークン到達可能性：どのトークンが何ホップでスワップ可能か。</li>
+<li>流動性集中リスク：プール間で流動性がどの程度集中しているか。</li>
+<li>インパーマネントロスネットワーク：相関するプールエクスポージャーがどのように損失を伝播させるか。</li>
+<li><strong>DEXアグリゲータールーティング：</strong> DEX流動性ネットワークにおける最適ルート探索（1inch、Paraswapはグラフアルゴリズムを使用）。</li>
+</ul>
+<h3 id="15-mev">1.5 MEV（最大抽出可能価値）リレーネットワーク</h3>
+<ul>
+<li><strong>MEVサプライチェーン：</strong> トランザクションの順序付けから価値を抽出するために競合するサーチャー、ビルダー、リレーヤーのネットワーク。</li>
+<li><strong>ネットワーク分析：</strong></li>
+<li>サーチャーとビルダーの関係ネットワーク。</li>
+<li>MEVフローグラフ：MEVサプライチェーン全体にわたる価値抽出の追跡。</li>
+<li>検閲分析：どのビルダー/リレーヤーが特定のトランザクションを検閲するか。</li>
+<li><strong>参考文献：</strong> Flashbots research on MEV ecosystem network structure.</li>
+</ul>
+<h3 id="16-nft">1.6 NFT移転・価格設定ネットワーク</h3>
+<ul>
+<li><strong>NFT移転グラフ：</strong> NFTコレクションの所有権移転ネットワークの追跡。</li>
+<li><strong>応用：</strong></li>
+<li>ウォッシュトレーディング検出：NFT市場における循環的移転パターン。</li>
+<li>価格操作ネットワーク：協調的な入札パターン。</li>
+<li>NFT価格設定に対するソーシャルネットワーク効果：著名なコレクターからの影響伝播。</li>
+<li><strong>ネットワーク特性：</strong> 高度にクラスター化されており、ハブアドレス（マーケットプレイス、クジラ）が支配的。</li>
+</ul>
+<h3 id="17">1.7 ブロックチェーンネットワーク分析に関する主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>論文</th>
+<th>焦点</th>
+<th>手法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2013</td>
+<td>Ron &amp; Shamir, "Quantitative Analysis of the Full Bitcoin Transaction Graph"</td>
+<td>Bitcoinネットワークトポロジー</td>
+<td>グラフ統計</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>Kondor et al., "Do the Rich Get Richer? Wealth Distribution in Bitcoin"</td>
+<td>富の分布</td>
+<td>ネットワーク分析</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>Haslhofer et al., "O Bitcoin Where Art Thou?"</td>
+<td>暗号資産分析</td>
+<td>GraphSenseプラットフォーム</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Chen et al., "Understanding Ethereum via Graph Analysis"</td>
+<td>Ethereumネットワーク</td>
+<td>マルチグラフ分析</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>Weber et al., "AML in Bitcoin"</td>
+<td>不正検知</td>
+<td>Bitcoinグラフ上のGCN</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>Gudgeon et al., "DeFi Protocols for Loanable Funds"</td>
+<td>DeFiコンポーザビリティ</td>
+<td>プロトコル相互作用グラフ</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>Victor &amp; Weintraud, "Detecting DeFi Securities Violations"</td>
+<td>DeFi規制</td>
+<td>トランザクショングラフ分析</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>Ao et al., "Temporal Analysis of the Entire Ethereum Blockchain Network"</td>
+<td>Ethereum時間的分析</td>
+<td>動的ネットワーク分析</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Flashbots, "MEV and Me"</td>
+<td>MEVエコシステム</td>
+<td>MEVサプライチェーンネットワーク</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Heimbach et al., "DeFi Lending During The Merge"</td>
+<td>DeFiシステミックリスク</td>
+<td>流動性ネットワーク分析</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-esg">2. ESGと気候金融ネットワーク</h2>
+<h3 id="21-ngfs">2.1 NGFS（気候変動リスクに係る金融当局ネットワーク）</h3>
+<p><strong>NGFS</strong> (Network for Greening the Financial System) は、気候リスクを金融安定性モニタリングに統合するために活動する中央銀行および金融監督当局の連合体である。</p>
+<ul>
+<li><strong>会員構成：</strong> 141の中央銀行・監督当局、22のオブザーバー（2025年時点）。</li>
+<li><strong>気候シナリオ：</strong></li>
+<li>秩序ある移行（2050年ネットゼロ）。</li>
+<li>無秩序な移行（移行の遅延）。</li>
+<li>温室効果の世界（現行政策、各国の自主的な貢献）。</li>
+<li><strong>ネットワークとの関連性：</strong></li>
+<li>気候シナリオは金融ネットワークを通じて伝播：物理的リスク → 資産価値の下落 → ポートフォリオ損失 → カウンターパーティのデフォルト → システミックな伝染。</li>
+<li>NGFSシナリオはネットワークベースの気候ストレステストのインプットとして使用される。</li>
+<li><strong>参考文献：</strong> NGFS (2022). "Climate Scenarios for Central Banks and Supervisors."</li>
+<li><strong>URL：</strong> https://www.ngfs.net</li>
+</ul>
+<h3 id="22-battiston">2.2 Battistonら：金融ネットワークを通じた気候ストレステスト</h3>
+<p>Stefano Battiston（チューリッヒ大学）らは、気候科学と金融ネットワーク分析の統合を先駆的に推進してきた。</p>
+<ul>
+<li><strong>主要な貢献：</strong></li>
+<li><strong>CLIMAFINモデル：</strong> 気候ショックを金融ネットワーク（銀行、ファンド、保険会社）を通じて伝播させる気候ストレステストフレームワーク。</li>
+<li><strong>気候VaR：</strong> 伝染効果を考慮したネットワーク拡張型気候バリュー・アット・リスク。</li>
+<li><strong>座礁炭素資産：</strong> 燃焼不可能な炭素埋蔵量が所有・融資ネットワークを通じて伝播する損失の定量化。</li>
+<li><strong>グリーンスワン：</strong> 気候関連のシステミック金融危機の概念（BISとの共同）。</li>
+<li><strong>ネットワーク手法：</strong></li>
+<li>二部ネットワーク：金融機関 × 気候感応資産。</li>
+<li>伝染カスケード：気候関連の資産価値下落が引き起こすファイアセール。</li>
+<li>多層ネットワーク：物理的リスク＋移行リスクが異なる金融チャネルを通じて伝播。</li>
+<li><strong>主要参考文献：</strong></li>
+<li>Battiston, S. et al. (2017). "A Climate Stress-Test of the Financial System." Nature Climate Change.</li>
+<li>Battiston, S. et al. (2021). "The Price of Complexity in Financial Networks." PNAS.</li>
+</ul>
+<h3 id="23-esg">2.3 ESGナレッジグラフ</h3>
+<ul>
+<li><strong>概念：</strong> ナレッジグラフ構造を通じて企業をESG（環境・社会・ガバナンス）要因に結びつける。</li>
+<li><strong>アーキテクチャ：</strong></li>
+<li>エンティティ：企業、ESG要因、国連SDGs、規制フレームワーク、排出データ。</li>
+<li>関係：emits_CO2、violates_regulation、supplies_to、operates_in、scores_on。</li>
+<li>時間的次元：ESGスコアの経時的変化の追跡。</li>
+<li><strong>応用：</strong></li>
+<li>ネットワークコンテキストを持つESGスコアリング：企業のESGリスクはそのサプライチェーンのESGパフォーマンスに影響される。</li>
+<li>グリーンウォッシング検出：ESGの主張とKG由来の事実との間の矛盾の特定。</li>
+<li>インパクト投資スクリーニング：持続可能な投資の特定のためのマルチホップKGクエリ。</li>
+<li><strong>データソース：</strong> CDP (Carbon Disclosure Project)、SASB基準、GRI報告、TCFD開示。</li>
+</ul>
+<h3 id="24">2.4 カーボンクレジット取引ネットワーク</h3>
+<ul>
+<li><strong>ネットワーク構造：</strong> 参加者（企業、国家、仲介者）がカーボンクレジット取引で接続される。</li>
+<li><strong>分析：</strong></li>
+<li>ネットワーク構造を通じた価格発見。</li>
+<li>炭素市場における市場集中度と流動性。</li>
+<li>不正検出：自主的炭素市場における循環取引パターンの特定。</li>
+<li><strong>プラットフォーム：</strong> EU ETS、自主的炭素市場（Verra、Gold Standard）。</li>
+</ul>
+<h3 id="25">2.5 グリーンボンドネットワークとタクソノミー整合性</h3>
+<ul>
+<li><strong>グリーンボンド発行体・投資家ネットワーク：</strong> グリーンプロジェクトに対して誰が誰に資金を提供するか。</li>
+<li><strong>タクソノミー整合性：</strong> KGを通じて債券をEUタクソノミー、CBI (Climate Bonds Initiative) 基準にマッピング。</li>
+<li><strong>ネットワーク分析：</strong></li>
+<li>グリーンボンド市場の構造と集中度。</li>
+<li>グリーンボンドポートフォリオにおける伝染リスク。</li>
+<li>グリーンボンド価格設定に対する投資家ネットワーク効果。</li>
+</ul>
+<h3 id="26">2.6 サプライチェーンネットワークを通じた気候リスクの伝達</h3>
+<ul>
+<li><strong>物理的リスクの伝播：</strong> 気候イベント（洪水、干ばつ、暴風雨）は特定の地理的地域に影響を与え、サプライチェーンネットワークを通じて伝播する。</li>
+<li><strong>ネットワークモデル：</strong></li>
+<li>サプライチェーングラフ＋気候災害マップ → 影響伝播モデル。</li>
+<li>マルチホップ伝播：Tier 1、Tier 2、Tier Nサプライヤーリスク。</li>
+<li>地理的集中リスク：気候脆弱地域におけるサプライチェーンのボトルネック。</li>
+<li><strong>参考文献：</strong> Pichler, A. et al. (2022). "Forecasting the Propagation of Pandemic Shocks with a Dynamic Input-Output Model." Journal of Economic Behavior &amp; Organization.</li>
+</ul>
+<h3 id="27-tcfd">2.7 TCFD報告とネットワークベースの気候リスク評価</h3>
+<ul>
+<li><strong>TCFD (Task Force on Climate-related Financial Disclosures、気候関連財務情報開示タスクフォース)：</strong> 気候リスク開示のためのフレームワーク。</li>
+<li><strong>ネットワークによる強化：</strong></li>
+<li>KGベースのTCFDコンプライアンスチェック：企業の開示をTCFD要件にマッピング。</li>
+<li>ネットワークモデルを用いたシナリオ分析：NGFSシナリオと金融ネットワーク伝染の組み合わせ。</li>
+<li>ピア比較ネットワーク：業界ネットワーク全体での気候開示品質のベンチマーキング。</li>
+</ul>
+<hr />
+<h2 id="3">3. サプライチェーンファイナンスネットワーク</h2>
+<h3 id="31-gnn">3.1 サプライチェーンファイナンスリスク評価のためのGNN</h3>
+<ul>
+<li><strong>課題：</strong> ネットワーク上の位置と依存構造を考慮した、サプライチェーン参加者の信用リスク評価。</li>
+<li><strong>アプローチ：</strong></li>
+<li>サプライチェーングラフの構築（取引量で重み付けされた買い手-サプライヤーのエッジ）。</li>
+<li>GNNを適用してネットワーク構造を組み込んだノード埋め込みを学習。</li>
+<li>デフォルト確率、支払遅延リスク、または信用力を予測。</li>
+<li><strong>主要な洞察：</strong> 企業のリスクは自社の財務状況だけでなく、ネットワーク上の位置によっても決定される——サプライチェーンの中心ノードは周辺ノードとは異なるリスクに直面する。</li>
+<li><strong>モデル：</strong> 新規サプライチェーン参加者に対する帰納的予測のためのGraphSAGE、注意機構による重み付けリスク集約のためのGAT。</li>
+</ul>
+<h3 id="32-bloomberg">3.2 Bloombergサプライチェーンデータとモメンタムファクター</h3>
+<ul>
+<li><strong>Bloomberg SPLC（サプライチェーン）：</strong> 開示されたサプライヤー・顧客関係の包括的データセット。</li>
+<li><strong>サプライチェーンモメンタムファクター：</strong></li>
+<li>顧客のリターンがサプライヤーのリターンを予測する（情報は遅延を伴いサプライチェーンを通じて流れる）。</li>
+<li>ネットワークベースのアルファ：サプライチェーングラフ構造からトレーディングシグナルを構築。</li>
+<li>ネットワークトポロジーを通じたリード・ラグ関係の特定。</li>
+<li><strong>参考文献：</strong> Cohen, L. &amp; Frazzini, A. (2008). "Economic Links and Predictable Returns." Journal of Finance.</li>
+</ul>
+<h3 id="33">3.3 貿易金融ネットワーク</h3>
+<ul>
+<li><strong>信用状ネットワーク：</strong> 銀行、輸入業者、輸出業者が信用状の発行と確認を通じて接続。</li>
+<li><strong>ファクタリング/リバースファクタリングネットワーク：</strong> 金融機関、アンカーバイヤー、中小企業サプライヤー。</li>
+<li><strong>ネットワーク分析：</strong></li>
+<li>貿易金融チェーンを通じた信用リスクの伝播。</li>
+<li>不正検出：ネットワークパターンを通じた二重融資・架空請求書の特定。</li>
+<li>貿易型マネーロンダリング：トランザクションネットワークにおける異常な取引価格/量パターン。</li>
+</ul>
+<h3 id="34">3.4 サプライチェーン途絶の伝播モデル</h3>
+<ul>
+<li><strong>ネットワーク伝染モデル：</strong></li>
+<li>重要ノード（サプライヤー）の障害時のサプライチェーンネットワークにおけるカスケード故障。</li>
+<li>途絶伝播に適応した感染症モデル（SIR/SIS）。</li>
+<li>サプライチェーンの耐久性に適用されたパーコレーション理論。</li>
+<li><strong>指標：</strong></li>
+<li>ネットワーク堅牢性：ネットワークが断片化するまでに除去可能なノード/エッジの数。</li>
+<li>臨界スコア：最もシステミックに重要なサプライチェーンノードの特定。</li>
+<li>回復ダイナミクス：途絶後にサプライチェーンネットワークがどの程度の速さで再構築されるか。</li>
+</ul>
+<h3 id="35-covid-19">3.5 COVID-19とサプライチェーンネットワークのレジリエンス</h3>
+<ul>
+<li><strong>影響：</strong> COVID-19はグローバルサプライチェーンネットワークの脆弱性を露呈し、ネットワークベースのレジリエンス分析への関心が急増した。</li>
+<li><strong>主要な知見：</strong></li>
+<li>集中型サプライチェーン（少数の支配的サプライヤー）は標的型途絶に対して脆弱。</li>
+<li>地理的クラスタリングが相関故障リスクを生む。</li>
+<li>リスク評価にはマルチティア可視性（Tier 1を超えた範囲）が重要。</li>
+<li><strong>ネットワーク的対応：</strong></li>
+<li>ネットワーク分析に基づく分散化戦略。</li>
+<li>サプライチェーングラフの再構築に基づくニアショアリング意思決定。</li>
+<li>シナリオシミュレーションのためのデジタルツインサプライチェーンネットワーク。</li>
+<li><strong>参考文献：</strong> Inoue, H. &amp; Todo, Y. (2020). "The Propagation of the Economic Impact through Supply Chains: The Case of a Mega-City Lockdown." PLoS ONE.</li>
+</ul>
+<h3 id="36">3.6 二重利用：物理的サプライチェーン × 金融サプライチェーンネットワーク</h3>
+<ul>
+<li><strong>概念：</strong> 物理的な財の流れネットワークと金融フローネットワークは絡み合っており、両方を組み合わせることでより豊かなリスク分析が可能になる。</li>
+<li><strong>多層ネットワーク：</strong></li>
+<li>レイヤー1：物理的サプライチェーン（財の流れ）。</li>
+<li>レイヤー2：金融サプライチェーン（支払いフロー、貿易金融）。</li>
+<li>レイヤー3：情報フロー（注文、予測、契約）。</li>
+<li><strong>応用：</strong> 統合リスク評価、貿易型マネーロンダリング検出、運転資本の最適化。</li>
+</ul>
+<hr />
+<h2 id="4">4. 保険・再保険ネットワーク</h2>
+<h3 id="41-no-1000">4.1 イングランド銀行ワーキングペーパーNo. 1000</h3>
+<p><strong>Bank of England（イングランド銀行）ワーキングペーパーNo. 1000</strong> は、再保険市場におけるネットワーク構造の画期的な分析を提供している。</p>
+<ul>
+<li><strong>タイトル：</strong> "Network structure and fragility of the UK reinsurance market."</li>
+<li><strong>主要な知見：</strong></li>
+<li>再保険市場はコア・ペリフェリーネットワーク構造を示す。</li>
+<li>少数の大規模再保険会社が密に接続されたコアを形成。</li>
+<li>コア再保険会社の破綻はネットワークを通じてカスケードし、損失を増幅させうる。</li>
+<li>ネットワーク構造は市場の価格設定とキャパシティに影響を与える。</li>
+<li><strong>方法論：</strong> 二者間再保険契約データをネットワーク科学ツール（次数分布、媒介中心性、コア・ペリフェリー分解）を用いて分析。</li>
+<li><strong>含意：</strong> システム上重要な再保険会社（G-SIIs）への規制上の焦点。</li>
+<li><strong>参考文献：</strong> Bank of England Staff Working Paper No. 1000 (2022).</li>
+</ul>
+<h3 id="42">4.2 再保険ネットワークトポロジーとシステミックリスク</h3>
+<ul>
+<li><strong>ネットワーク構造：</strong></li>
+<li>二部ネットワーク：保険会社 × 再保険会社。</li>
+<li>階層型：元受保険 → 再保険 → 再々保険（レトロセッション）。</li>
+<li>マルチライン：損害保険、賠償責任保険、生命再保険を異なるエッジタイプとして表現。</li>
+<li><strong>システミックリスク分析：</strong></li>
+<li>共通の再保険エクスポージャーを通じた伝染（共通再保険者問題）。</li>
+<li>スパイラル効果：損失が再保険請求を引き起こし、キャパシティが減少し、保険料が上昇し、さらなる損失を引き起こす。</li>
+<li>再保険セクターのためのネットワークベースのストレステスト。</li>
+<li><strong>主要指標：</strong> 再保険依存度——保険会社の出再がどの程度再保険会社間で集中しているか。</li>
+</ul>
+<h3 id="43-ils">4.3 保険リンク証券（ILS）ネットワーク</h3>
+<ul>
+<li><strong>ILS市場ネットワーク：</strong></li>
+<li>スポンサー（保険会社/再保険会社） → SPV → 投資家。</li>
+<li>カタストロフィー債、インダストリーロスワランティ、担保付再保険。</li>
+<li><strong>ネットワーク分析：</strong></li>
+<li>ILS市場における投資家集中リスク。</li>
+<li>トリガー相関ネットワーク：カタストロフィー債のトリガーがディール間でどのように相関するか。</li>
+<li>ILSファンドの相互連関性とシステミックリスク。</li>
+</ul>
+<h3 id="44">4.4 ネットワークモデルによるサイバーリスクの集積</h3>
+<ul>
+<li><strong>課題：</strong> サイバーリスクは高度に相関しており、単一の脆弱性が同時に多くの組織に影響を与えうる。</li>
+<li><strong>ネットワークアプローチ：</strong></li>
+<li>テクノロジー依存ネットワーク：どの組織がソフトウェア、クラウドプロバイダー、ITインフラを共有しているか。</li>
+<li>サイバーサプライチェーンリスク：ベンダーネットワークを通じた侵害の伝播。</li>
+<li>集積リスク：ネットワーク構造を通じた相関サイバー損失の推定。</li>
+<li><strong>保険への含意：</strong></li>
+<li>ネットワークベースの相関モデルによるサイバー保険の価格設定。</li>
+<li>サイバー保険会社のポートフォリオ集積リスク。</li>
+<li>ネットワーク伝染を用いたサイバーカタストロフィーモデリング。</li>
+</ul>
+<h3 id="45">4.5 カタストロフィーリスクと地理的相関ネットワーク</h3>
+<ul>
+<li><strong>自然災害ネットワーク：</strong></li>
+<li>エクスポージャーネットワーク：どの保険会社/再保険会社が同じ地理的危険に晒されているか。</li>
+<li>相関ネットワーク：危険および地域間の損失の相関。</li>
+<li>レトロセッションチェーン：カタストロフィーリスクが再保険ネットワークを通じてどのように分配されるか。</li>
+<li><strong>気候変動の影響：</strong> 気候変動により地域間で同時に極端な事象が増加するため、カタストロフィーネットワークにおける相関が増大。</li>
+</ul>
+<hr />
+<h2 id="5-cbdc">5. CBDCと決済ネットワーク</h2>
+<h3 id="51-fedwiresoramaki2007">5.1 Fedwireトポロジー（Soramakiら、2007年）</h3>
+<p>決済システムにネットワーク科学を初めて適用した先駆的研究。</p>
+<ul>
+<li><strong>論文：</strong> Soramaki, K. et al. (2007). "The topology of interbank payment flows." Physica A.</li>
+<li><strong>主要な知見：</strong></li>
+<li>Fedwireはスモールワールドネットワーク構造を示す。</li>
+<li>高度に偏った次数分布：少数の銀行がほとんどの決済を処理。</li>
+<li>コア・ペリフェリー構造：少数の主要銀行のコアがネットワーク全体を接続。</li>
+<li>個別フローの日次変動にもかかわらず、ネットワークトポロジーは時間的に顕著に安定。</li>
+<li><strong>影響：</strong> 決済ネットワーク分析の分野を開拓し、世界中の中央銀行のネットワーク監視に影響を与えた。</li>
+<li><strong>データ：</strong> 9,500の参加者、1日あたり700,000件の送金、1日あたり1.3兆ドルの価値（研究時点）。</li>
+</ul>
+<h3 id="52-target2ecb">5.2 TARGET2（ECB）</h3>
+<ul>
+<li><strong>システム：</strong> Trans-European Automated Real-time Gross settlement Express Transfer system（汎欧州即時グロス決済システム）。</li>
+<li><strong>ネットワーク分析：</strong></li>
+<li>階層構造：直接参加者と間接参加者が層状ネットワークを形成。</li>
+<li>流動性リサイクル：決済フローがネットワークの循環を通じていかに流動性効率を生み出すか。</li>
+<li>日中ダイナミクス：取引日を通じてネットワークトポロジーが変化。</li>
+<li>ストレステスト：参加者の破綻をシミュレーションし、ネットワーク全体の流動性影響を測定。</li>
+<li><strong>参考文献：</strong></li>
+<li>ECB Occasional Paper Series on TARGET2 network analysis.</li>
+<li>Arciero, L. et al. (2009). "How to Measure the Unsecured Money Market? The Eurosystem's Implementation and Validation."</li>
+</ul>
+<h3 id="53-cbdc">5.3 CBDCネットワーク効果</h3>
+<ul>
+<li><strong>リテールCBDC：</strong></li>
+<li>採用のネットワーク効果：決済ネットワーク上のクリティカルマスのダイナミクス。</li>
+<li>二面市場ネットワーク分析：加盟店と消費者の採用の相互依存性。</li>
+<li>プライバシー保護ネットワーク分析：個人を特定することなく決済パターンを分析。</li>
+<li><strong>ホールセールCBDC：</strong></li>
+<li>銀行間決済ネットワークの再構築。</li>
+<li>スマートコントラクトによるDvP（資金対証券同時決済）のアトミック決済。</li>
+<li>クロスボーダーCBDCコリドー：二国間・多国間ネットワークトポロジー。</li>
+<li><strong>相互運用性：</strong></li>
+<li>マルチCBDCプラットフォームのネットワーク設計（mBridge、Project Dunbar）。</li>
+<li>ハブ＆スポーク型 vs. ピアツーピア型ネットワークアーキテクチャ。</li>
+<li>外国為替決済：ネットワーク設計によるヘルシュタットリスクの削減。</li>
+<li><strong>参考文献：</strong></li>
+<li>BIS (2022). "Project mBridge: Connecting economies through CBDC."</li>
+<li>Auer, R. et al. (2021). "Multi-CBDC arrangements and the future of cross-border payments." BIS Papers.</li>
+</ul>
+<h3 id="54">5.4 クロスボーダー決済ネットワーク</h3>
+<h4 id="swift">SWIFTネットワーク</h4>
+<ul>
+<li><strong>ネットワーク構造：</strong> 200以上の国・地域で約11,000の金融機関がメッセージングネットワークを通じて接続。</li>
+<li><strong>分析：</strong></li>
+<li>コルレス銀行ネットワークトポロジー。</li>
+<li>決済コリドー分析：国のペア間の取引量と金額フロー。</li>
+<li>デリスキングの影響：コルレス銀行関係の終了がネットワークをどのように再形成するか。</li>
+<li>地政学リスク：ネットワーク断片化シナリオ（制裁、地政学的緊張）。</li>
+</ul>
+<h4 id="_2">コルレス銀行業務</h4>
+<ul>
+<li><strong>ネットワーク上の課題：</strong></li>
+<li>コルレス銀行関係の減少（デリスキングの傾向）。</li>
+<li>集中度の増大：より少数だがより大規模なコルレス銀行。</li>
+<li>金融包摂への含意：遠隔地/小規模経済がネットワーク接続性を喪失。</li>
+<li><strong>ネットワークベースの解決策：</strong></li>
+<li>ハブ最適化：最適なコルレス銀行ハブの配置の特定。</li>
+<li>ネットワーク分析による決済ルーティングの効率化。</li>
+<li>ネットワーク指標を用いたリスクベースのコルレス銀行業務アプローチ。</li>
+</ul>
+<h3 id="55-rtgs">5.5 即時グロス決済（RTGS）ネットワーク最適化</h3>
+<ul>
+<li><strong>流動性最適化：</strong></li>
+<li>ネッティングアルゴリズム：ネットワークベースのネッティングによるグロス流動性ニーズの削減。</li>
+<li>LSM（流動性節約メカニズム）：二者間/多者間ネッティングに基づくキュー相殺。</li>
+<li>グリッドロック解消：循環的な決済依存関係の検出と解消。</li>
+<li><strong>ネットワーク設計：</strong></li>
+<li>階層型参加：直接アクセス vs. 間接アクセスとネットワークへの影響。</li>
+<li>オペレーショナルレジリエンス：参加者障害に対するネットワーク堅牢性。</li>
+<li>移行戦略：RTGS近代化プログラム（英国、ユーロ圏、米国）がネットワークアーキテクチャをどのように再設計するか。</li>
+</ul>
+<h3 id="56">5.6 ステーブルコイン決済ネットワーク</h3>
+<ul>
+<li><strong>ネットワーク分析：</strong></li>
+<li>Ethereumおよびその他チェーン上のUSDT、USDC、DAI移転ネットワーク。</li>
+<li>クロスチェーンステーブルコインフローネットワーク（L1とL2間のブリッジ）。</li>
+<li>DeFiにおけるステーブルコイン：流動性提供ネットワーク、レンディングプロトコルとの統合。</li>
+<li><strong>規制上の含意：</strong></li>
+<li>ネットワーク中心性分析によるシステム上の重要性評価。</li>
+<li>リザーブバッキングネットワーク：どの資産がどのカストディチェーンを通じてステーブルコインを裏付けているか。</li>
+<li>取り付けリスク：ステーブルコインのデペッグイベントからのネットワーク伝染（Terra/USTのケーススタディ）。</li>
+<li><strong>参考文献：</strong> Lyons, R. &amp; Viswanath-Natraj, G. (2023). "What Keeps Stablecoins Stable?" Journal of International Money and Finance.</li>
+</ul>
+<hr />
+<h2 id="6-regtech">6. RegTech（規制テクノロジー）ナレッジグラフ</h2>
+<h3 id="61-fibo-financial-industry-business-ontology">6.1 FIBO (Financial Industry Business Ontology)</h3>
+<ul>
+<li><strong>開発者：</strong> EDM CouncilおよびOMG (Object Management Group)。</li>
+<li><strong>目的：</strong> 金融業界の概念の標準オントロジーであり、セマンティックな相互運用性を実現。</li>
+<li><strong>構成：</strong></li>
+<li><strong>基礎（Foundations）：</strong> 基本的な金融概念（当事者、契約、日付）。</li>
+<li><strong>事業体（Business Entities）：</strong> 法人、企業構造。</li>
+<li><strong>金融商品（Financial Instruments）：</strong> 証券、デリバティブ、ローン。</li>
+<li><strong>指数と指標（Indices and Indicators）：</strong> 市場指数、経済指標。</li>
+<li><strong>コーポレートアクション（Corporate Actions）：</strong> 配当、分割、合併。</li>
+<li><strong>ネットワークとの関連性：</strong></li>
+<li>金融ナレッジグラフのオントロジー基盤を提供。</li>
+<li>機関間のKG相互運用性を実現。</li>
+<li>金融エンティティ関係の標準エッジタイプ。</li>
+<li><strong>採用状況：</strong> 大手銀行（Goldman Sachs、JP Morgan）、規制当局（SEC、BoE）、データプロバイダー。</li>
+<li><strong>URL：</strong> https://spec.edmcouncil.org/fibo/</li>
+</ul>
+<h3 id="62-finregont-financial-regulation-ontology">6.2 FinRegOnt (Financial Regulation Ontology)</h3>
+<ul>
+<li><strong>目的：</strong> 金融規制を構造化されたマシンリーダブルなナレッジとして表現するためのオントロジー。</li>
+<li><strong>カバー範囲：</strong></li>
+<li>規制ルールと要件。</li>
+<li>規制エンティティ（監督当局、被規制企業）。</li>
+<li>コンプライアンス義務と報告要件。</li>
+<li>規制変更とその発効日。</li>
+<li><strong>応用：</strong></li>
+<li>自動コンプライアンスチェック：規制を業務プロセスにマッピング。</li>
+<li>規制変更管理：ルール変更がコンプライアンス要件にどのように影響するかの追跡。</li>
+<li>法域間比較：異なる法域にまたがる同等の規制のマッピング。</li>
+</ul>
+<h3 id="63-graphrag">6.3 コンプライアンスのためのGraphRAG</h3>
+<p><strong>GraphRAG</strong>（Graph-enhanced Retrieval Augmented Generation、グラフ拡張型検索拡張生成）は、LLMベースの規制解釈を改善するためにナレッジグラフを適用する。</p>
+<ul>
+<li><strong>アーキテクチャ：</strong></li>
+<li>規制コーパス → KG構築（エンティティ：規制、要件、対象主体、義務）。</li>
+<li>ユーザークエリ → グラフ走査＋テキスト検索 → KGコンテキストを用いたLLM生成。</li>
+<li><strong>標準RAGに対する利点：</strong></li>
+<li>マルチホップ推論：「EUにおいて保険商品も提供する銀行にはどの規制が適用されるか？」</li>
+<li>関係性を考慮した検索：規制の階層構造と相互参照の理解。</li>
+<li>出所追跡：すべての回答がKGのエッジを通じて特定の規制ソースに紐付け。</li>
+<li><strong>応用：</strong></li>
+<li>コンプライアンスチームのための自動規制解釈。</li>
+<li>規制ギャップ分析：コンプライアンスカバレッジの欠落の特定。</li>
+<li>規制影響評価：提案されたルールが既存のコンプライアンスにどのように影響するかの追跡。</li>
+</ul>
+<h3 id="64-kycaml">6.4 KYC/AMLナレッジグラフ</h3>
+<ul>
+<li><strong>KYC（本人確認）KG：</strong></li>
+<li>エンティティ解決：システム間での顧客レコードの紐付け。</li>
+<li>実質的所有者グラフ：複雑な法人構造を通じた最終的な実質的所有者の追跡。</li>
+<li>PEP（政治的に重要な人物）ネットワーク：顧客をPEPに結びつける関係ネットワーク。</li>
+<li>ネットワークコンテキストを用いた制裁スクリーニング：関係を通じた間接的な制裁エクスポージャーの特定。</li>
+<li><strong>AML（マネーロンダリング対策）KG：</strong></li>
+<li>トランザクションパターンKG：疑わしいトランザクションパターンをグラフ構造として符号化。</li>
+<li>類型ネットワーク：既知のマネーロンダリング類型をサブグラフパターンとして表現。</li>
+<li>アラート調査グラフ：調査担当者に文脈的な関係情報を提供。</li>
+<li>機関横断的AML：機関間でリスクシグナルを共有するための連合KG。</li>
+</ul>
+<h3 id="65">6.5 規制報告ネットワーク</h3>
+<ul>
+<li><strong>報告トポロジー：</strong></li>
+<li>被規制企業 → 規制当局の報告関係が有向ネットワークを形成。</li>
+<li>マルチレギュレーター報告：複数の監督当局（健全性、行為、市場）への報告。</li>
+<li>クロスボーダー報告：国際的な報告ネットワーク（CRS、FATCA、EMIR）。</li>
+<li><strong>ネットワーク最適化：</strong></li>
+<li>ネットワークベースの重複排除による報告負担の軽減。</li>
+<li>ネットワーク分析による報告ギャップの特定。</li>
+<li>共有オントロジー（FIBO、XBRL）による報告の標準化。</li>
+</ul>
+<h3 id="66">6.6 法人識別</h3>
+<h4 id="lei">LEI（取引主体識別子）</h4>
+<ul>
+<li><strong>システム：</strong> 金融取引において法的に区別される主体を一意に識別する20文字コードのグローバルシステム。</li>
+<li><strong>GLEIF (Global LEI Foundation、グローバルLEI財団)：</strong> LEIシステムを管理し、LEIデータベースを維持。</li>
+<li><strong>ネットワークへの応用：</strong></li>
+<li>LEI関係データ：親子関係、ファンド-運用者関係、支店関係がグローバルな法人所有ネットワークを形成。</li>
+<li>最終親会社マッピング：最終支配主体を特定するための所有チェーンの追跡。</li>
+<li>ノード識別子としてのLEI：金融ナレッジグラフ全体での標準化されたエンティティ識別。</li>
+<li><strong>統計：</strong> 250万以上のアクティブLEI（2025年時点）、200以上の法域のエンティティをカバー。</li>
+</ul>
+<h4 id="bods-beneficial-ownership-data-standard">BODS (Beneficial Ownership Data Standard)</h4>
+<ul>
+<li><strong>目的：</strong> 実質的所有権情報を公開するためのオープンデータ標準。</li>
+<li><strong>ネットワークとの関連性：</strong></li>
+<li>所有チェーンの構造化フォーマット：個人 → 企業 → 企業 → など。</li>
+<li>グローバルな実質的所有権ネットワークの構築を可能にする。</li>
+<li>AMLおよび税務コンプライアンスのためのクロスボーダー所有権追跡。</li>
+</ul>
+<h3 id="67-suptech">6.7 SupTech（監督テクノロジー）とネットワーク監視</h3>
+<ul>
+<li><strong>概念：</strong> 金融監督当局がその規制・監督能力を強化するために使用するテクノロジー。</li>
+<li><strong>ネットワーク監視の応用：</strong></li>
+<li>監督当局のためのリアルタイム金融ネットワーク可視化。</li>
+<li>ネットワーク構造の変化に基づく早期警戒システム。</li>
+<li>ネットワーク指標による自動システミックリスク評価。</li>
+<li>相互連関性の監視：金融機関ネットワークの変遷の追跡。</li>
+<li><strong>事例：</strong></li>
+<li><strong>BIS Innovation Hub：</strong> ネットワークベースの監督のためのSupTechプロジェクト。</li>
+<li><strong>ECB SupTech Lab：</strong> 銀行監督のためのAIとネットワーク分析。</li>
+<li><strong>MAS（シンガポール）：</strong> 金融安定性監視のためのネットワーク分析。</li>
+<li><strong>FCA（英国）：</strong> 取引パターンのネットワーク分析による市場サーベイランス。</li>
+<li><strong>監視対象の主要指標：</strong></li>
+<li>相互連関性指数（次数、媒介中心性、固有ベクトル中心性）。</li>
+<li>インターバンクネットワークにおける集中度比率。</li>
+<li>ストレスシナリオ下の伝染シミュレーション結果。</li>
+<li>クロスボーダーエクスポージャーネットワークのダイナミクス。</li>
+</ul>
+<h3 id="suptech">SupTechネットワーク監視サマリー</h3>
+<table>
+<thead>
+<tr>
+<th>監督当局</th>
+<th>ツール/プラットフォーム</th>
+<th>ネットワーク上の焦点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIS Innovation Hub</td>
+<td>各種SupTechプロジェクト</td>
+<td>クロスボーダーネットワーク分析</td>
+</tr>
+<tr>
+<td>ECB</td>
+<td>SupTech Lab</td>
+<td>銀行ネットワーク監督</td>
+</tr>
+<tr>
+<td>MAS シンガポール</td>
+<td>FEAT原則 + 分析</td>
+<td>金融安定性ネットワーク</td>
+</tr>
+<tr>
+<td>FCA 英国</td>
+<td>市場サーベイランス</td>
+<td>取引ネットワークパターン</td>
+</tr>
+<tr>
+<td>Fed（米国）</td>
+<td>Fedwireモニタリング</td>
+<td>決済ネットワークトポロジー</td>
+</tr>
+<tr>
+<td>ESMA</td>
+<td>EMIRデータ分析</td>
+<td>デリバティブネットワーク監視</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">分野横断的テーマ</h2>
+<h3 id="_4">新興分野の融合</h3>
+<p>本文書で記述された新興分野はますます相互に結びついている：</p>
+<table>
+<thead>
+<tr>
+<th>接続</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeFi × ESG</td>
+<td>グリーンDeFiプロトコル、ブロックチェーン上のカーボンクレジットのトークン化</td>
+</tr>
+<tr>
+<td>サプライチェーン × ESG</td>
+<td>サプライチェーンネットワークを通じたスコープ3排出量の追跡</td>
+</tr>
+<tr>
+<td>CBDC × DeFi</td>
+<td>プログラマブルマネー、CBDCプラットフォーム上のDeFi的機能</td>
+</tr>
+<tr>
+<td>保険 × 気候</td>
+<td>保険/再保険ネットワークを通じた気候リスクモデリング</td>
+</tr>
+<tr>
+<td>RegTech × 全分野</td>
+<td>すべての新興領域にわたる規制コンプライアンスのためのナレッジグラフ</td>
+</tr>
+<tr>
+<td>サプライチェーン × CBDC</td>
+<td>プログラマブル決済ネットワーク上の貿易金融</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">共通の方法論的課題</h3>
+<ol>
+<li><strong>データの可用性：</strong> 多くの新興ネットワークは包括的で標準化されたデータを欠いている。</li>
+<li><strong>時間的ダイナミクス：</strong> すべてのネットワークは変化する——動的ネットワーク分析手法が必要。</li>
+<li><strong>多層統合：</strong> 物理的、金融的、情報ネットワークの統合。</li>
+<li><strong>プライバシー保護分析：</strong> 個別データを明かすことなくセンシティブな金融ネットワークを分析。</li>
+<li><strong>スケーラビリティ：</strong> 新興ネットワーク（DeFi、決済システム）は数十億のトランザクションを生成。</li>
+<li><strong>規制の不確実性：</strong> DeFi、CBDC、ESGの急速に変化する規制環境。</li>
+</ol>
+<hr />
+<h2 id="references">References</h2>
+<ol>
+<li>Soramaki, K. et al. (2007). "The topology of interbank payment flows." Physica A, 379(1), 317-333.</li>
+<li>Ron, D. &amp; Shamir, A. (2013). "Quantitative Analysis of the Full Bitcoin Transaction Graph." Financial Cryptography.</li>
+<li>Haslhofer, B. et al. (2016). "O Bitcoin Where Art Thou? Insight into Large-Scale Transaction Graphs." SEMANTiCS.</li>
+<li>Battiston, S. et al. (2017). "A Climate Stress-Test of the Financial System." Nature Climate Change, 7, 283-288.</li>
+<li>Cohen, L. &amp; Frazzini, A. (2008). "Economic Links and Predictable Returns." Journal of Finance, 63(4), 1977-2011.</li>
+<li>Weber, M. et al. (2019). "Anti-Money Laundering in Bitcoin." KDD Workshop on Anomaly Detection in Finance.</li>
+<li>Gudgeon, L. et al. (2020). "DeFi Protocols for Loanable Funds." AFT.</li>
+<li>Inoue, H. &amp; Todo, Y. (2020). "The Propagation of Economic Impact through Supply Chains." PLoS ONE.</li>
+<li>Pichler, A. et al. (2022). "Forecasting the Propagation of Pandemic Shocks." Journal of Economic Behavior &amp; Organization.</li>
+<li>NGFS (2022). "Climate Scenarios for Central Banks and Supervisors."</li>
+<li>BIS (2022). "Project mBridge: Connecting economies through CBDC."</li>
+<li>Auer, R. et al. (2021). "Multi-CBDC arrangements and the future of cross-border payments." BIS Papers.</li>
+<li>Bank of England Staff Working Paper No. 1000 (2022). "Network structure and fragility of the UK reinsurance market."</li>
+<li>Battiston, S. et al. (2021). "The Price of Complexity in Financial Networks." PNAS.</li>
+<li>Lyons, R. &amp; Viswanath-Natraj, G. (2023). "What Keeps Stablecoins Stable?" Journal of International Money and Finance.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

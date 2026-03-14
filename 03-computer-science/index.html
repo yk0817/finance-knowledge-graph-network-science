@@ -1,0 +1,3538 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yk0817.github.io/finance-knowledge-graph-network-science/03-computer-science/">
+      
+      
+        <link rel="prev" href="../02-economics/">
+      
+      
+        <link rel="next" href="../04-corporate-governance/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>コンピュータサイエンスの視点 - 金融 × 知識グラフ × ネットワーク科学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-header__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            金融 × 知識グラフ × ネットワーク科学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              コンピュータサイエンスの視点
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-nav__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    金融 × 知識グラフ × ネットワーク科学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概観と歴史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    経済学の視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コンピュータサイエンスの視点
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コンピュータサイエンスの視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 金融ナレッジグラフプロジェクト
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 金融ナレッジグラフプロジェクト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-findkg-imperial-college-london" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 FinDKG (Imperial College London)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-finkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 FinKG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-finreflectkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 FinReflectKG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-finkario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 FinKario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要表：金融KGプロジェクト
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 学術研究グループ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 学術研究グループ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-stanford-snap-jure-leskovec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Stanford SNAP (Jure Leskovec)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ucl-financial-computing-fabio-caccioli-tomaso-aste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 UCL Financial Computing (Fabio Caccioli, Tomaso Aste)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-oxford-man-institute-of-quantitative-finance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Oxford-Man Institute of Quantitative Finance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-mit-media-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 MIT Media Lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-georgia-tech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Georgia Tech
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-nyu-tandon-school-of-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 NYU Tandon School of Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要表：研究グループ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gnn-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. GNN x 金融
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. GNN x 金融">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gcn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 株価予測のためのGCN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-gat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 不正検出のためのGAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-graphsage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 マネーロンダリング対策のためのGraphSAGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 進化する金融ネットワークのための時間的GNN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 多種類金融エンティティネットワークのための異種GNN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-gnn-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 GNN x 金融の主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 金融NLP → ナレッジグラフ構築
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 金融NLP → ナレッジグラフ構築">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-ner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 金融テキストのための固有表現認識（NER）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 金融文書からの関係抽出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 イベント抽出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 センチメント・オピニオンKG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-llmkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 LLMベースのKG構築
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 ツールとライブラリ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 業界プレイヤー
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 業界プレイヤー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 グラフデータベースおよびKG企業
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 グラフデータベースおよびKG企業">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neo4j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neo4j
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tigergraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TigerGraph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stardog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stardog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ontotext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ontotext
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diffbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffbot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 金融データとアナリティクス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 金融データとアナリティクス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#refinitiv-lseg-london-stock-exchange-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refinitiv / LSEG (London Stock Exchange Group)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomberg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bloomberg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvidia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVIDIA
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 クラウドプラットフォーム
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 クラウドプラットフォーム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-amazon-web-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS (Amazon Web Services)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#morgan-stanley-semantic-arts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Morgan Stanley + Semantic Arts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        業界全体の概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 学会とワークショップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 学会とワークショップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 主要な会場
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 主要な会場">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acm-icaif-international-conference-on-ai-in-finance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACM ICAIF (International Conference on AI in Finance)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kdd-finance-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KDD Finance Day
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finnlp-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinNLP Workshop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 専門的な会場
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 専門的な会場">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-graph-conference-kgc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Graph Conference (KGC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aaai-bridge-program-ai-for-financial-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AAAI Bridge Program: AI for Financial Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eswc-financial-kg-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESWC Financial KG Workshop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee-blockchain-for-finance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IEEE Blockchain for Finance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学会の概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-corporate-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コーポレートガバナンス
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-emerging-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    新興分野
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quantitative-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    計量手法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-japan-asia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本・アジアの研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-mathematical-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学的基礎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    リソース
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    リソース
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/researchers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要研究者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データセット
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/tools-and-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ツール＆プラットフォーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学会・ワークショップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要論文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/ontologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オントロジー＆標準
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    研究ノート
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究計画書
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/data-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データソース調査
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    アイデア
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    チュートリアル
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    チュートリアル
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/01-correlation-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    株価相関ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/02-ownership-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業所有ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/03-board-interlocks.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    取締役兼任ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/04-gnn-fraud-detection.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNN不正検知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/05-kg-construction.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融KG構築
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 金融ナレッジグラフプロジェクト
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 金融ナレッジグラフプロジェクト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-findkg-imperial-college-london" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 FinDKG (Imperial College London)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-finkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 FinKG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-finreflectkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 FinReflectKG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-finkario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 FinKario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要表：金融KGプロジェクト
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 学術研究グループ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 学術研究グループ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-stanford-snap-jure-leskovec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Stanford SNAP (Jure Leskovec)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ucl-financial-computing-fabio-caccioli-tomaso-aste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 UCL Financial Computing (Fabio Caccioli, Tomaso Aste)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-oxford-man-institute-of-quantitative-finance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Oxford-Man Institute of Quantitative Finance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-mit-media-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 MIT Media Lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-georgia-tech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Georgia Tech
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-nyu-tandon-school-of-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 NYU Tandon School of Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要表：研究グループ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gnn-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. GNN x 金融
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. GNN x 金融">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gcn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 株価予測のためのGCN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-gat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 不正検出のためのGAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-graphsage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 マネーロンダリング対策のためのGraphSAGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 進化する金融ネットワークのための時間的GNN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-gnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 多種類金融エンティティネットワークのための異種GNN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-gnn-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 GNN x 金融の主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 金融NLP → ナレッジグラフ構築
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 金融NLP → ナレッジグラフ構築">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-ner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 金融テキストのための固有表現認識（NER）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 金融文書からの関係抽出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 イベント抽出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 センチメント・オピニオンKG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-llmkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 LLMベースのKG構築
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 ツールとライブラリ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 業界プレイヤー
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 業界プレイヤー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-kg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 グラフデータベースおよびKG企業
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 グラフデータベースおよびKG企業">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neo4j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neo4j
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tigergraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TigerGraph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stardog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stardog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ontotext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ontotext
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diffbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffbot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 金融データとアナリティクス
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 金融データとアナリティクス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#refinitiv-lseg-london-stock-exchange-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refinitiv / LSEG (London Stock Exchange Group)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomberg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bloomberg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvidia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVIDIA
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 クラウドプラットフォーム
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 クラウドプラットフォーム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws-amazon-web-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS (Amazon Web Services)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#morgan-stanley-semantic-arts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Morgan Stanley + Semantic Arts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        業界全体の概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 学会とワークショップ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 学会とワークショップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 主要な会場
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 主要な会場">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acm-icaif-international-conference-on-ai-in-finance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACM ICAIF (International Conference on AI in Finance)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kdd-finance-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KDD Finance Day
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finnlp-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FinNLP Workshop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 専門的な会場
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 専門的な会場">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-graph-conference-kgc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Graph Conference (KGC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aaai-bridge-program-ai-for-financial-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AAAI Bridge Program: AI for Financial Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eswc-financial-kg-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESWC Financial KG Workshop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee-blockchain-for-finance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IEEE Blockchain for Finance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学会の概要
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">金融ネットワークとナレッジグラフに対する計算機科学の視点</h1>
+<p>本文書では、ナレッジグラフ、グラフニューラルネットワーク、および金融ネットワーク科学の交差領域を推進する計算ツール、フレームワーク、研究コミュニティを概観する。主要な学術プロジェクト、産業プラットフォーム、およびGNNベースの金融分析における急速に発展する状況を取り上げる。</p>
+<hr />
+<h2 id="1">1. 金融ナレッジグラフプロジェクト</h2>
+<h3 id="11-findkg-imperial-college-london">1.1 FinDKG (Imperial College London)</h3>
+<p><strong>FinDKG</strong>（Financial Dynamic Knowledge Graph、金融動的ナレッジグラフ）は、Imperial College London（インペリアル・カレッジ・ロンドン）のコンピューティング学部による研究プロジェクトであり、金融ニュースや文書から時間的ナレッジグラフを構築するものである。</p>
+<ul>
+<li><strong>中核的イノベーション:</strong> 時間的リンク予測を伴う動的KG構築。市場への影響が顕在化する前にイベントを検出可能にする。</li>
+<li><strong>アーキテクチャ:</strong> NLPパイプライン（固有表現認識＋関係抽出）→ 時間的KG → 時間的グラフニューラルネットワークによるリンク予測。</li>
+<li><strong>主要な機能:</strong></li>
+<li>時間的リンク予測：将来のエンティティ間関係の予測（例：買収対象、信用イベント）。</li>
+<li>イベント検出：進化するKG構造から新興金融イベントを識別。</li>
+<li>トレンド分析：エンティティ間の関係性が時間とともにどのように変化するかを追跡。</li>
+<li><strong>データソース:</strong> 金融ニュース（Reuters、Bloomberg）、SEC提出書類、決算説明会議事録。</li>
+<li><strong>参考文献:</strong> Cheng, D. et al. (2024). "FinDKG: Dynamic Knowledge Graphs with Large Language Models for Detecting Global Trends in Financial Markets." arXiv:2407.10909.</li>
+</ul>
+<h3 id="12-finkg">1.2 FinKG</h3>
+<p><strong>FinKG</strong>は、リスク分析および金融エコシステム全体にわたるエンティティリンキングのために設計された金融ナレッジグラフである。</p>
+<ul>
+<li><strong>焦点:</strong> 金融エンティティ（企業、金融商品、人物）をリスク要因、規制イベント、マクロ経済指標に結びつけること。</li>
+<li><strong>エンティティリンキング:</strong> 異種データソース（ニュース、提出書類、市場データ）間での金融エンティティの曖昧性解消。</li>
+<li><strong>リスク応用:</strong> 信用リスクの伝播、カウンターパーティリスクのマッピング、感染経路の特定。</li>
+<li><strong>オントロジー:</strong> 標準化されたエンティティおよび関係タイプのためにFIBO（Financial Industry Business Ontology、金融業界ビジネスオントロジー）に基づく。</li>
+</ul>
+<h3 id="13-finreflectkg">1.3 FinReflectKG</h3>
+<p><strong>FinReflectKG</strong>は、金融推論のための反省的ナレッジグラフパラダイムを導入する。</p>
+<ul>
+<li><strong>反省メカニズム:</strong> KGが下流の推論タスクからのフィードバックを組み込むことで反復的に自己改善する。誤った予測がKG構造の更新をトリガーする。</li>
+<li><strong>金融推論:</strong> 金融関係に関するマルチホップ推論をサポート（例：「企業Aのサプライヤーがデフォルトした場合、企業Aの信用格付けにどのような影響があるか？」）。</li>
+<li><strong>LLM統合:</strong> KG構築と反省的改善の両方に大規模言語モデルを使用し、構造化された知識と言語理解の間にフィードバックループを生成する。</li>
+</ul>
+<h3 id="14-finkario">1.4 FinKario</h3>
+<p><strong>FinKario</strong>は、エンタープライズグレードの金融ナレッジグラフプラットフォームである。</p>
+<ul>
+<li><strong>対象ユーザー:</strong> 金融機関、資産運用会社、コンプライアンスチーム。</li>
+<li><strong>機能:</strong></li>
+<li>規制提出書類、ニュース、社内文書からの自動KG構築。</li>
+<li>複数のデータプロバイダー間のエンティティ解決。</li>
+<li>ストリーミングデータ統合によるリアルタイムKG更新。</li>
+<li>取引システムおよびリスクプラットフォームとの統合のためのAPI駆動アクセス。</li>
+<li><strong>業界焦点:</strong> エンタープライズデータ管理、規制コンプライアンス、投資調査。</li>
+</ul>
+<h3 id="kg">概要表：金融KGプロジェクト</h3>
+<table>
+<thead>
+<tr>
+<th>プロジェクト</th>
+<th>機関</th>
+<th>焦点</th>
+<th>主要なイノベーション</th>
+<th>状態</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FinDKG</td>
+<td>Imperial College London</td>
+<td>動的KG、時間的予測</td>
+<td>GNNによる時間的リンク予測</td>
+<td>活発な研究</td>
+</tr>
+<tr>
+<td>FinKG</td>
+<td>複数のグループ</td>
+<td>リスク分析、エンティティリンキング</td>
+<td>FIBOベースの金融エンティティリンキング</td>
+<td>研究</td>
+</tr>
+<tr>
+<td>FinReflectKG</td>
+<td>学術</td>
+<td>反省的推論</td>
+<td>LLMフィードバックによる自己改善KG</td>
+<td>研究</td>
+</tr>
+<tr>
+<td>FinKario</td>
+<td>エンタープライズ</td>
+<td>エンタープライズKGプラットフォーム</td>
+<td>本番環境向け金融KG</td>
+<td>商用</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. 学術研究グループ</h2>
+<h3 id="21-stanford-snap-jure-leskovec">2.1 Stanford SNAP (Jure Leskovec)</h3>
+<p><strong>Stanford Network Analysis Project (SNAP)</strong>は、Jure Leskovec率いる、世界で最も影響力のあるグラフ機械学習研究グループであるといえる。</p>
+<ul>
+<li><strong>金融分野への主要な貢献:</strong></li>
+<li><strong>node2vec</strong> (Grover &amp; Leskovec, 2016)：金融ネットワークにおけるエンティティ表現、ポートフォリオ構築、不正検出に広く適用されるグラフ埋め込み手法。</li>
+<li><strong>GraphSAGE</strong> (Hamilton, Ying &amp; Leskovec, 2017)：マネーロンダリング対策や取引分類に使用される帰納的グラフ学習フレームワーク。</li>
+<li><strong>OGB (Open Graph Benchmark):</strong> 金融関連データセットを含む標準化されたベンチマーク。</li>
+<li><strong>PyG (PyTorch Geometric):</strong> 金融GNN研究で広く使用されるグラフ学習ライブラリ。</li>
+<li><strong>金融応用:</strong> 企業関係グラフ、取引ネットワーク、社会・金融ネットワーク分析。</li>
+<li><strong>URL:</strong> http://snap.stanford.edu</li>
+</ul>
+<h3 id="22-ucl-financial-computing-fabio-caccioli-tomaso-aste">2.2 UCL Financial Computing (Fabio Caccioli, Tomaso Aste)</h3>
+<p><strong>UCL Centre for Financial Computing</strong>（UCL金融計算センター）は、金融ネットワークトポロジーにおける主要な研究グループである。</p>
+<ul>
+<li><strong>Fabio Caccioli:</strong> 二部金融ネットワークにおけるシステミックリスク、重複ポートフォリオの伝染、ネットワークモデルによるストレステスト。</li>
+<li><strong>Tomaso Aste:</strong> 相関ベースの金融ネットワーク、TMFG（Triangulated Maximally Filtered Graph）、情報フィルタリングネットワーク、市場ミクロ構造。</li>
+<li><strong>主要な貢献:</strong></li>
+<li>金融ネットワーク構築への情報理論的アプローチ。</li>
+<li>市場構造のための最小全域木およびPlanar Maximally Filtered Graph手法。</li>
+<li>ネットワークベースのポートフォリオ最適化。</li>
+<li>市場相関構造への経済物理学的アプローチ。</li>
+<li><strong>参考文献:</strong> Aste, T. &amp; Di Matteo, T. (2017). "Topological regularities in financial markets."</li>
+</ul>
+<h3 id="23-oxford-man-institute-of-quantitative-finance">2.3 Oxford-Man Institute of Quantitative Finance</h3>
+<ul>
+<li><strong>焦点:</strong> 定量ファイナンスのための機械学習、高頻度データ分析、市場ミクロ構造。</li>
+<li><strong>主要分野:</strong></li>
+<li>指値注文板モデリングのための深層学習。</li>
+<li>ネットワークベースの特徴量を用いた実現ボラティリティ予測。</li>
+<li>高頻度取引のネットワーク効果。</li>
+<li>Oxford-Man Realized Library：ボラティリティ研究のためのベンチマークデータセット。</li>
+<li><strong>著名な研究者:</strong> Stephen Roberts, Stefan Zohren。</li>
+</ul>
+<h3 id="24-mit-media-lab">2.4 MIT Media Lab</h3>
+<ul>
+<li><strong>関連グループ:</strong> Human Dynamics, Digital Currency Initiative, Connection Science。</li>
+<li><strong>貢献:</strong></li>
+<li>Alex "Sandy" Pentland：金融行動に適用される社会ネットワーク分析、計算社会科学。</li>
+<li>デジタル通貨研究：CBDCネットワーク設計、暗号通貨フロー分析。</li>
+<li>ネットワークベースの経済モデリング：金融ネットワーク上のエージェントベースモデル。</li>
+<li>信用ネットワーク分析と代替融資ネットワーク。</li>
+</ul>
+<h3 id="25-georgia-tech">2.5 Georgia Tech</h3>
+<ul>
+<li><strong>主要分野:</strong> 大規模グラフ分析、ナレッジグラフ構築、金融不正検出。</li>
+<li><strong>貢献:</strong></li>
+<li>取引ネットワークのためのスケーラブルなグラフマイニングアルゴリズム。</li>
+<li>不正検出のための異種情報ネットワーク。</li>
+<li>金融エンティティ解決に適用されるナレッジグラフ埋め込み手法。</li>
+<li><strong>著名な研究者:</strong> Polo Chau（インタラクティブグラフ分析）、Srijan Kumar（オンライン不正・操作）。</li>
+</ul>
+<h3 id="26-nyu-tandon-school-of-engineering">2.6 NYU Tandon School of Engineering</h3>
+<ul>
+<li><strong>主要分野:</strong> 金融工学、ネットワークリスク、金融のための機械学習。</li>
+<li><strong>貢献:</strong></li>
+<li>システミックリスクと金融伝染のネットワークモデル。</li>
+<li>ネットワーク特徴量を用いた信用リスクの機械学習。</li>
+<li>金融ネットワークシミュレーションとストレステスト。</li>
+<li><strong>著名な研究者:</strong> Petter Kolm（ネットワーク手法を用いたポートフォリオ最適化）、Vasant Dhar（金融のためのAI）。</li>
+</ul>
+<h3 id="_2">概要表：研究グループ</h3>
+<table>
+<thead>
+<tr>
+<th>グループ</th>
+<th>機関</th>
+<th>中核的専門分野</th>
+<th>主要な成果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SNAP</td>
+<td>Stanford</td>
+<td>グラフML、ネットワーク分析</td>
+<td>node2vec, GraphSAGE, PyG</td>
+</tr>
+<tr>
+<td>Financial Computing</td>
+<td>UCL</td>
+<td>金融ネットワークトポロジー</td>
+<td>TMFG、相関ネットワーク</td>
+</tr>
+<tr>
+<td>Oxford-Man</td>
+<td>Oxford</td>
+<td>定量ファイナンスML</td>
+<td>Realized Library、HFTモデル</td>
+</tr>
+<tr>
+<td>Media Lab</td>
+<td>MIT</td>
+<td>デジタル通貨、社会ネットワーク</td>
+<td>CBDC研究、ネットワーク経済学</td>
+</tr>
+<tr>
+<td>Graph Analytics</td>
+<td>Georgia Tech</td>
+<td>スケーラブルなグラフマイニング</td>
+<td>不正検出システム</td>
+</tr>
+<tr>
+<td>Financial Engineering</td>
+<td>NYU Tandon</td>
+<td>ネットワークリスク、金融ML</td>
+<td>システミックリスクモデル</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-gnn-x">3. GNN x 金融</h2>
+<p>グラフニューラルネットワークは、金融の関係データに対する学習の支配的なパラダイムとなっている。本節では、主要なGNNアーキテクチャとその金融応用を概観する。</p>
+<h3 id="31-gcn">3.1 株価予測のためのGCN</h3>
+<p><strong>Graph Convolutional Networks（グラフ畳み込みネットワーク）</strong> は、企業関係グラフから学習して株価の動きを予測する。</p>
+<ul>
+<li><strong>アプローチ:</strong> ノードが銘柄、エッジが関係（サプライチェーン、セクター共所属、相関）を表すグラフを構築し、GCNを適用して結合表現を学習する。</li>
+<li><strong>重要な洞察:</strong> 企業のファンダメンタルズは関係ネットワークを通じて伝播する。サプライヤーのディストレスシグナルが顧客の株価下落を予測しうる。</li>
+<li><strong>アーキテクチャ:</strong> スペクトルGCN（Kipf &amp; Welling）、空間GCNの変種。</li>
+<li><strong>グラフ構築方法:</strong></li>
+<li>産業・セクター共所属グラフ。</li>
+<li>サプライチェーン関係グラフ（Bloomberg、FactSetより）。</li>
+<li>相関ベースのグラフ（閾値付きPearson相関、偏相関）。</li>
+<li>Wiki/Wikidataナレッジグラフの関係。</li>
+<li><strong>参考文献:</strong> Chen, Y. et al. (2018). "Incorporating Corporation Relationship via Graph Convolutional Neural Networks for Stock Price Prediction." CIKM.</li>
+</ul>
+<h3 id="32-gat">3.2 不正検出のためのGAT</h3>
+<p><strong>Graph Attention Networks（グラフアテンションネットワーク）</strong> は、不正検出のために取引ネットワーク上で注意機構による重み付き集約を行う。</p>
+<ul>
+<li><strong>注意機構の重要性:</strong> 不正検出では、すべての近傍ノードが同等に有益であるわけではない。注意機構により、モデルは疑わしい取引パターンに焦点を当てることが可能になる。</li>
+<li><strong>応用:</strong></li>
+<li>クレジットカード不正：取引・加盟店・カード保有者の三部グラフ。</li>
+<li>保険不正：請求・提供者・契約者のネットワーク。</li>
+<li>証券不正：インサイダー取引ネットワーク、仮装売買の検出。</li>
+<li><strong>アーキテクチャ:</strong> 異種金融エンティティグラフ上のマルチヘッドアテンション。</li>
+<li><strong>参考文献:</strong> Wang, D. et al. (2019). "Semi-supervised Credit Card Fraud Detection via Attribute-Driven Graph Representation." AAAI.</li>
+</ul>
+<h3 id="33-graphsage">3.3 マネーロンダリング対策のためのGraphSAGE</h3>
+<p><strong>GraphSAGE</strong>（SAmple and agGrEgate）は、動的な取引グラフに対する帰納的学習を可能にする。これは、新しいエンティティが常に出現するAML（マネーロンダリング対策）において極めて重要である。</p>
+<ul>
+<li><strong>主要な利点:</strong> トランスダクティブな手法とは異なり、GraphSAGEは再学習なしに新しいノード（口座、エンティティ）を分類できる。これはリアルタイムAMLスクリーニングに不可欠である。</li>
+<li><strong>応用:</strong></li>
+<li>銀行ネットワークにおける疑わしい取引の検出。</li>
+<li>ネットワーク構造を通じたペーパーカンパニーの特定。</li>
+<li>レイヤリングの検出：資金の出所を隠蔽するために設計された複雑な取引チェーンの特定。</li>
+<li><strong>導入実績:</strong> 大手銀行（JP Morgan、HSBCが活用事例を報告）やフィンテック企業（Featurespace、Feedzai）で使用。</li>
+<li><strong>参考文献:</strong> Weber, M. et al. (2019). "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics." KDD Workshop on Anomaly Detection in Finance.</li>
+</ul>
+<h3 id="34-gnn">3.4 進化する金融ネットワークのための時間的GNN</h3>
+<p>金融ネットワークは本質的に動的である。時間的GNNアーキテクチャはこの進化を捕捉する。</p>
+<table>
+<thead>
+<tr>
+<th>アーキテクチャ</th>
+<th>主要なアイデア</th>
+<th>金融応用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DyRep</strong> (Trivedi et al., 2019)</td>
+<td>グラフ上の時間的点過程</td>
+<td>取引タイミングパターンのモデリング</td>
+</tr>
+<tr>
+<td><strong>TGAT</strong> (Xu et al., 2020)</td>
+<td>時間的グラフアテンション</td>
+<td>時間を考慮した不正検出</td>
+</tr>
+<tr>
+<td><strong>TGN</strong> (Rossi et al., 2020)</td>
+<td>メモリ付き時間的グラフネットワーク</td>
+<td>連続時間取引モニタリング</td>
+</tr>
+<tr>
+<td><strong>EvolveGCN</strong> (Pareja et al., 2020)</td>
+<td>時間経過に伴うGCNパラメータの進化</td>
+<td>動的ポートフォリオネットワーク</td>
+</tr>
+<tr>
+<td><strong>ROLAND</strong> (You et al., 2022)</td>
+<td>動的グラフのためのグラフ学習ベンチマーク</td>
+<td>金融グラフベンチマーク</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>主要な課題:</strong> 金融ネットワークはレジームチェンジ（危機、政策転換）を示し、モデルの迅速な適応が求められる。</li>
+<li><strong>連続時間 vs. 離散時間:</strong> 連続時間モデル（TGN）は高頻度取引データに適し、離散時間モデル（EvolveGCN）は日次・週次のリバランスネットワークに適する。</li>
+</ul>
+<h3 id="35-gnn">3.5 多種類金融エンティティネットワークのための異種GNN</h3>
+<p>金融エコシステムには、複数のエンティティタイプ（企業、人物、金融商品、規制当局）と関係タイプ（所有、取引、融資、規制）が含まれる。</p>
+<ul>
+<li><strong>HAN</strong>（Heterogeneous Graph Attention Network）：金融エンティティグラフのためのタイプ特化型アテンション機構。</li>
+<li><strong>R-GCN</strong>（Relational GCN）：関係タイプ特化型の重み行列。多種関係金融KGに適用。</li>
+<li><strong>HGT</strong>（Heterogeneous Graph Transformer）：異種金融グラフのためのTransformerベースアーキテクチャ。</li>
+<li><strong>応用:</strong></li>
+<li>複数のエンティティタイプと関係タイプを持つ企業所有構造ネットワーク。</li>
+<li>金融KG推論：異種金融KGにおける欠落関係の予測。</li>
+<li>規制ネットワーク：エンティティと規制、コンプライアンス要件の関連付け。</li>
+</ul>
+<h3 id="36-gnn-x">3.6 GNN x 金融の主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>論文</th>
+<th>発表場所</th>
+<th>GNNタイプ</th>
+<th>応用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2018</td>
+<td>"Incorporating Corporation Relationship via GCN for Stock Price Prediction" (Chen et al.)</td>
+<td>CIKM</td>
+<td>GCN</td>
+<td>株価予測</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>"Semi-supervised Credit Card Fraud Detection via Attribute-Driven Graph Representation" (Wang et al.)</td>
+<td>AAAI</td>
+<td>GAT</td>
+<td>不正検出</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>"AML in Bitcoin: Experimenting with GCN for Financial Forensics" (Weber et al.)</td>
+<td>KDD Workshop</td>
+<td>GCN</td>
+<td>AML</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>"Temporal Graph Networks for Deep Learning on Dynamic Graphs" (Rossi et al.)</td>
+<td>ICML Workshop</td>
+<td>TGN</td>
+<td>動的ネットワーク</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>"Graph-based Deep Modeling and Real Time Forecasting of Sparse Spatio-temporal Data" (Deng et al.)</td>
+<td>KDD</td>
+<td>ST-GNN</td>
+<td>金融時空間</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>"EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs" (Pareja et al.)</td>
+<td>AAAI</td>
+<td>EvolveGCN</td>
+<td>動的金融グラフ</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>"FinGAT: Financial Graph Attention Networks" (Hsu et al.)</td>
+<td>IJCAI Workshop</td>
+<td>GAT</td>
+<td>マルチソース株価予測</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>"REST: Relational Event-driven Stock Trend Forecasting" (Xu et al.)</td>
+<td>WWW</td>
+<td>Event GNN</td>
+<td>イベント駆動予測</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>"Heterogeneous Graph Neural Network for Financial Fraud Detection" (Liu et al.)</td>
+<td>WWW</td>
+<td>HetGNN</td>
+<td>多種類不正</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>"TradingGNN: GNN-based Stock Trading Decision" (Yang et al.)</td>
+<td>ICAIF</td>
+<td>GNN</td>
+<td>取引戦略</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>"Graph Neural Networks for Credit Modeling" (Bussmann et al.)</td>
+<td>Journal of Finance &amp; Data Science</td>
+<td>GCN</td>
+<td>信用リスク</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>"Financial Knowledge Graph Enhanced Stock Market Prediction" (Li et al.)</td>
+<td>AAAI</td>
+<td>KG-GNN</td>
+<td>KG強化型予測</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>"Temporal and Heterogeneous Graph Neural Network for Financial Time Series" (Zhang et al.)</td>
+<td>CIKM</td>
+<td>TH-GNN</td>
+<td>金融時系列</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>"Graph Foundation Models for Financial Networks" (Wang et al.)</td>
+<td>ICAIF</td>
+<td>Foundation GNN</td>
+<td>事前学習済みグラフモデル</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>"LLM-Enhanced GNN for Financial Fraud Detection" (Chen et al.)</td>
+<td>KDD</td>
+<td>LLM+GNN</td>
+<td>ハイブリッド不正検出</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-nlp">4. 金融NLP → ナレッジグラフ構築</h2>
+<h3 id="41-ner">4.1 金融テキストのための固有表現認識（NER）</h3>
+<p>金融NERは、非構造化金融テキストからKGを構築するための基盤的ステップである。</p>
+<ul>
+<li><strong>エンティティタイプ:</strong> 組織（企業、ファンド、規制当局）、人物（経営幹部、取締役会メンバー）、金融商品（株式、債券、デリバティブ）、金額、日付、場所。</li>
+<li><strong>課題:</strong></li>
+<li>高度に曖昧なエンティティ名（例：企業としての「Apple」vs. 商品としての「apple」）。</li>
+<li>ネストされたエンティティ（例："Bank of America Merrill Lynch Global Research"）。</li>
+<li>ドメイン固有の略語（EBITDA、P/E、CDS、MBS）。</li>
+<li>急速に登場する新しいエンティティ（SPAC、新しい暗号トークン）。</li>
+<li><strong>モデル:</strong></li>
+<li><strong>FinBERT-NER:</strong> 金融エンティティ認識のためにファインチューニングされたBERT。</li>
+<li><strong>SEC-BERT:</strong> 規制テキストNERのためにSEC提出書類で事前学習されたモデル。</li>
+<li><strong>SpaCy-Finance:</strong> 金融テキスト処理のためのカスタムSpaCyパイプライン。</li>
+</ul>
+<h3 id="42">4.2 金融文書からの関係抽出</h3>
+<p>特定されたエンティティ間の関係を抽出し、KGのエッジを構築する。</p>
+<ul>
+<li><strong>関係タイプ:</strong></li>
+<li>企業関係：subsidiary_of、acquired_by、partner_with、competes_with。</li>
+<li>人事：CEO_of、board_member_of、founded_by。</li>
+<li>金融：invested_in、lent_to、issued_by、rated_by。</li>
+<li>イベント起因：merged_with（M&amp;A）、defaulted_on（信用イベント）。</li>
+<li><strong>データソース:</strong></li>
+<li>決算説明会議事録：将来に関する関係シグナルの豊富なソース。</li>
+<li>SEC提出書類（10-K、10-Q、8-K）：重要な関係の構造化された開示。</li>
+<li>金融ニュース：リアルタイムの関係更新。</li>
+<li>アナリストレポート：専門家がアノテーションしたエンティティ関係。</li>
+<li><strong>アプローチ:</strong></li>
+<li>既存のKG（Wikidata、FIBO）を学習シグナルとして用いる遠距離監督。</li>
+<li>LLMを用いたフューショット関係抽出。</li>
+<li>エンティティと関係の共同抽出モデル。</li>
+</ul>
+<h3 id="43">4.3 イベント抽出</h3>
+<p>金融テキストから構造化されたイベントを抽出し、時間的KGノードを構築する。</p>
+<table>
+<thead>
+<tr>
+<th>イベントタイプ</th>
+<th>トリガー例</th>
+<th>引数</th>
+<th>影響</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M&amp;A</td>
+<td>"acquired"、"merger"、"takeover"</td>
+<td>買収者、対象、価格、日付</td>
+<td>所有構造KGの更新</td>
+</tr>
+<tr>
+<td>IPO</td>
+<td>"went public"、"listed"、"offering"</td>
+<td>企業、取引所、価格、日付</td>
+<td>KGへの新規エンティティ追加</td>
+</tr>
+<tr>
+<td>倒産</td>
+<td>"filed Chapter 11"、"insolvency"</td>
+<td>企業、日付、金額</td>
+<td>エッジの削除・更新</td>
+</tr>
+<tr>
+<td>決算サプライズ</td>
+<td>"beat estimates"、"missed expectations"</td>
+<td>企業、実績EPS、予想EPS</td>
+<td>センチメントエッジの更新</td>
+</tr>
+<tr>
+<td>信用イベント</td>
+<td>"downgraded"、"default"、"restructured"</td>
+<td>エンティティ、格付け、格付機関</td>
+<td>リスクエッジの更新</td>
+</tr>
+<tr>
+<td>規制</td>
+<td>"fined"、"sanctioned"、"approved"</td>
+<td>エンティティ、規制当局、金額</td>
+<td>コンプライアンスエッジの更新</td>
+</tr>
+<tr>
+<td>経営陣</td>
+<td>"appointed CEO"、"resigned"</td>
+<td>人物、企業、役職</td>
+<td>人事エッジの更新</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-kg">4.4 センチメント・オピニオンKG</h3>
+<ul>
+<li><strong>概念:</strong> エッジが金融テキストから導出されたセンチメントの極性と強度を持つKGを構築する。</li>
+<li><strong>応用:</strong></li>
+<li>アナリストセンチメントネットワーク：誰がどのエンティティに対して強気・弱気であるか。</li>
+<li>ソーシャルメディアオピニオングラフ：個人投資家のセンチメント伝播（Reddit、StockTwits）。</li>
+<li>ニュースセンチメントフロー：あるエンティティに関するセンチメントが関連エンティティにどのように伝播するか。</li>
+<li><strong>モデル:</strong> 文レベルのセンチメントにはFinBERT、エンティティ固有の意見にはアスペクトベースセンチメント。</li>
+</ul>
+<h3 id="45-llmkg">4.5 LLMベースのKG構築</h3>
+<p>大規模言語モデルは金融KG構築を劇的に加速させている。</p>
+<ul>
+<li><strong>GPT-4 / GPT-4o:</strong> 金融テキストからのゼロショットおよびフューショットでのエンティティ・関係抽出。複雑な関係タイプに対して高い精度を持つが、ハルシネーションリスクのため検証が必要。</li>
+<li><strong>Claude:</strong> 金融文書分析、長文ドキュメント（決算説明会、目論見書）からの構造化抽出。マルチホップ関係推論に強い推論能力。</li>
+<li><strong>オープンソースLLM:</strong> 金融コーパスでファインチューニングされたLlama-3、MixtralによるKG抽出。</li>
+<li><strong>パイプライン:</strong></li>
+<li>ドキュメント取り込み（PDF解析、スキャン文書のOCR）。</li>
+<li>スキーマ誘導型プロンプティングによるLLMベースのエンティティ抽出。</li>
+<li>連鎖思考推論による関係抽出。</li>
+<li>エンティティ解決と重複排除によるKG構築。</li>
+<li>重要度の高いKGエッジに対するHuman-in-the-loop検証。</li>
+</ul>
+<h3 id="46">4.6 ツールとライブラリ</h3>
+<table>
+<thead>
+<tr>
+<th>ツール</th>
+<th>タイプ</th>
+<th>金融での用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>spaCy</strong>（＋カスタム金融パイプライン）</td>
+<td>NLPライブラリ</td>
+<td>金融NER、トークン化</td>
+</tr>
+<tr>
+<td><strong>FinBERT</strong> (ProsusAI)</td>
+<td>事前学習済み言語モデル</td>
+<td>金融センチメント、NER</td>
+</tr>
+<tr>
+<td><strong>SEC-BERT</strong></td>
+<td>事前学習済み言語モデル</td>
+<td>SEC提出書類分析</td>
+</tr>
+<tr>
+<td><strong>BloombergGPT</strong></td>
+<td>金融LLM</td>
+<td>幅広い金融NLPタスク</td>
+</tr>
+<tr>
+<td><strong>FinGPT</strong></td>
+<td>オープンソース金融LLM</td>
+<td>民主化された金融NLP</td>
+</tr>
+<tr>
+<td><strong>Hugging Face</strong> 金融モデル</td>
+<td>モデルハブ</td>
+<td>各種金融NLPタスク</td>
+</tr>
+<tr>
+<td><strong>LangChain / LlamaIndex</strong></td>
+<td>LLMフレームワーク</td>
+<td>KG強化型金融QA</td>
+</tr>
+<tr>
+<td><strong>DiffBot</strong></td>
+<td>自動KG</td>
+<td>Webからのエンティティ抽出</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 業界プレイヤー</h2>
+<h3 id="51-kg">5.1 グラフデータベースおよびKG企業</h3>
+<h4 id="neo4j">Neo4j</h4>
+<ul>
+<li><strong>ポジション:</strong> 世界で最も広く使用されているグラフデータベースであり、金融サービスで広範に導入されている。</li>
+<li><strong>金融ソリューション:</strong></li>
+<li>不正検出と調査：取引モニタリングのためのリアルタイムグラフ探索。</li>
+<li>マネーロンダリング対策：取引ネットワーク上のパターンマッチング。</li>
+<li>リスク管理：ネットワーク分析によるカウンターパーティリスク。</li>
+<li>規制コンプライアンス：エンティティ解決と実質的所有者の追跡。</li>
+<li><strong>技術:</strong> プロパティグラフモデル、Cypherクエリ言語、GDS（Graph Data Science）ライブラリ。</li>
+<li><strong>顧客:</strong> 大手銀行、保険会社、規制当局。</li>
+<li><strong>URL:</strong> https://neo4j.com/use-cases/financial-services/</li>
+</ul>
+<h4 id="tigergraph">TigerGraph</h4>
+<ul>
+<li><strong>ポジション:</strong> ディープリンク分析に最適化された高性能分散グラフデータベース。</li>
+<li><strong>金融ユースケース:</strong></li>
+<li>リアルタイム不正検出：数十億エッジの取引グラフに対するサブ秒クエリ。</li>
+<li>マネーロンダリング対策：複雑な取引チェーンにわたるディープパターンマッチング。</li>
+<li>Customer 360（顧客360度ビュー）：製品とチャネルをまたいだ顧客関係の統合ビュー。</li>
+<li>リスク評価：リアルタイムのカウンターパーティネットワークリスクスコアリング。</li>
+<li><strong>技術:</strong> GSQLクエリ言語、超並列処理、ネイティブ分散アーキテクチャ。</li>
+<li><strong>差別化要素:</strong> 大規模でのディープリンククエリ（10ホップ以上の探索）における速度。</li>
+</ul>
+<h4 id="stardog">Stardog</h4>
+<ul>
+<li><strong>ポジション:</strong> 強力なセマンティックWeb・オントロジーサポートを持つエンタープライズナレッジグラフプラットフォーム。</li>
+<li><strong>金融焦点:</strong></li>
+<li>FIBO統合：Financial Industry Business Ontologyのネイティブサポート。</li>
+<li>規制コンプライアンス：規制要件に対するセマンティック推論。</li>
+<li>データ仮想化：ETLなしで異種金融データソースをまたいだクエリ。</li>
+<li>仮想ナレッジグラフ：既存データベースからのオンデマンドKG構築。</li>
+<li><strong>技術:</strong> RDF/SPARQL、OWL推論、仮想グラフレイヤー。</li>
+</ul>
+<h4 id="ontotext">Ontotext</h4>
+<ul>
+<li><strong>ポジション:</strong> ナレッジマネジメントに特化したセマンティック技術企業。</li>
+<li><strong>金融応用:</strong></li>
+<li>GraphDB：推論機能を持つRDFトリプルストア。</li>
+<li>金融ナレッジマネジメント：金融文書、規制、市場データの整理とリンキング。</li>
+<li>テキストマイニング：文書からの金融エンティティと関係の自動抽出。</li>
+<li>リンクトデータ：社内金融データと外部知識ベースの接続。</li>
+</ul>
+<h4 id="diffbot">Diffbot</h4>
+<ul>
+<li><strong>ポジション:</strong> Webデータからの自動ナレッジグラフ構築。</li>
+<li><strong>グローバルナレッジグラフ:</strong> 200億以上のエンティティ、1兆以上のファクトを公開Webから抽出。</li>
+<li><strong>金融応用:</strong></li>
+<li>企業インテリジェンス：Webソースからの自動プロファイリング。</li>
+<li>M&amp;A対象の特定：企業間関係とシグナルの発見。</li>
+<li>サプライチェーンマッピング：Webデータからのサプライヤー・顧客関係の抽出。</li>
+<li>競合情報：競合他社の活動とパートナーシップの追跡。</li>
+</ul>
+<h3 id="52">5.2 金融データとアナリティクス</h3>
+<h4 id="refinitiv-lseg-london-stock-exchange-group">Refinitiv / LSEG (London Stock Exchange Group)</h4>
+<ul>
+<li><strong>PermID (Permanent Identifier):</strong> 金融エンティティ（組織、金融商品、人物、気配値）に一意の識別子を提供するオープンリンクトデータイニシアチブ。</li>
+<li><strong>ナレッジグラフ:</strong> 金融商品、発行体、取引所、規制データをリンクするエンタープライズKG。</li>
+<li><strong>オープンデータ:</strong> PermIDは無料で利用可能であり、外部KG（Wikidata、DBpedia）にリンクしている。</li>
+<li><strong>BOLD (Business Object Linked Data):</strong> 金融データ管理に対するセマンティックWebアプローチ。</li>
+</ul>
+<h4 id="bloomberg">Bloomberg</h4>
+<ul>
+<li><strong>エンタープライズKG:</strong> 最大級の独自金融ナレッジグラフの一つ。</li>
+<li><strong>機能:</strong></li>
+<li>グローバル市場にわたる金融エンティティ解決。</li>
+<li>サプライチェーンデータ：広範なサプライヤー・顧客関係データベース。</li>
+<li>企業構造：実質的所有権、子会社ネットワーク。</li>
+<li>ニュース・イベントKG：リアルタイムのイベント抽出とリンキング。</li>
+<li><strong>BloombergGPT:</strong> 金融データで学習された500億パラメータのLLMであり、金融NLP能力を実証。</li>
+</ul>
+<h4 id="nvidia">NVIDIA</h4>
+<ul>
+<li><strong>cuGraph:</strong> GPU加速グラフ分析ライブラリ（RAPIDSの一部）。</li>
+<li>グラフアルゴリズム（PageRank、コミュニティ検出、BFS/DFS）で100～1000倍の高速化。</li>
+<li>金融応用：リアルタイム不正スコアリング、大規模ネットワーク分析。</li>
+<li><strong>DGL (Deep Graph Library):</strong> 金融の応用例を含むGNN開発フレームワーク。</li>
+<li><strong>Morpheus:</strong> グラフ分析を備えたAI駆動のサイバーセキュリティ・不正検出パイプライン。</li>
+<li><strong>金融パートナーシップ:</strong> GPU加速リスク分析のための大手銀行との協業。</li>
+</ul>
+<h3 id="53">5.3 クラウドプラットフォーム</h3>
+<h4 id="aws-amazon-web-services">AWS (Amazon Web Services)</h4>
+<ul>
+<li><strong>Amazon Neptune:</strong> マネージドグラフデータベース（プロパティグラフ＋RDF）。</li>
+<li><strong>Neptune + Bedrock:</strong> 金融サービスのためのGraphRAG（Graph-enhanced Retrieval Augmented Generation、グラフ強化型検索拡張生成）。</li>
+<li><strong>Amazon FinSpace:</strong> 金融サービスのためのマネージドデータ管理・分析。</li>
+<li><strong>金融ユースケース:</strong></li>
+<li>Neptune ML（GNNベース）による不正検出。</li>
+<li>規制コンプライアンスナレッジグラフ。</li>
+<li>金融機関のためのCustomer 360グラフ。</li>
+</ul>
+<h4 id="morgan-stanley-semantic-arts">Morgan Stanley + Semantic Arts</h4>
+<ul>
+<li><strong>エンタープライズKGイニシアチブ:</strong> 金融データ管理のためのナレッジグラフ技術の大規模導入。</li>
+<li><strong>アプローチ:</strong> FIBOとカスタム金融オントロジーを用いた、オントロジーファーストのデータ管理。</li>
+<li><strong>メリット:</strong> データ統合の複雑性の低減、データリネージの改善、規制報告の効率化。</li>
+<li><strong>参考文献:</strong> Semantic Arts case study on enterprise knowledge graphs in financial services.</li>
+</ul>
+<h4 id="google-cloud">Google Cloud</h4>
+<ul>
+<li><strong>金融サービスKGソリューション:</strong></li>
+<li>BigQuery + Knowledge Graph：構造化金融データに対するグラフ分析。</li>
+<li>Vertex AI：金融応用のためのGNNの学習とデプロイ。</li>
+<li>Document AI：KG構築のための金融文書処理。</li>
+<li>マネーロンダリング対策AI：グラフベースのAMLソリューション。</li>
+</ul>
+<h3 id="_3">業界全体の概要</h3>
+<table>
+<thead>
+<tr>
+<th>カテゴリ</th>
+<th>企業</th>
+<th>主要サービス</th>
+<th>金融焦点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>グラフDB</td>
+<td>Neo4j</td>
+<td>プロパティグラフDB</td>
+<td>不正、AML、リスク</td>
+</tr>
+<tr>
+<td>グラフDB</td>
+<td>TigerGraph</td>
+<td>分散グラフDB</td>
+<td>リアルタイムディープリンク分析</td>
+</tr>
+<tr>
+<td>グラフDB</td>
+<td>Stardog</td>
+<td>エンタープライズKGプラットフォーム</td>
+<td>FIBO、コンプライアンス</td>
+</tr>
+<tr>
+<td>セマンティック</td>
+<td>Ontotext</td>
+<td>GraphDB、テキストマイニング</td>
+<td>金融ナレッジマネジメント</td>
+</tr>
+<tr>
+<td>KG構築</td>
+<td>Diffbot</td>
+<td>自動WebKG</td>
+<td>企業インテリジェンス</td>
+</tr>
+<tr>
+<td>データプロバイダー</td>
+<td>Refinitiv/LSEG</td>
+<td>PermID、BOLD</td>
+<td>オープンリンクト金融データ</td>
+</tr>
+<tr>
+<td>データプロバイダー</td>
+<td>Bloomberg</td>
+<td>エンタープライズKG</td>
+<td>エンティティ解決、サプライチェーン</td>
+</tr>
+<tr>
+<td>ハードウェア/SW</td>
+<td>NVIDIA</td>
+<td>cuGraph、DGL</td>
+<td>GPU加速グラフ分析</td>
+</tr>
+<tr>
+<td>クラウド</td>
+<td>AWS</td>
+<td>Neptune、FinSpace</td>
+<td>GraphRAG、マネージドグラフ</td>
+</tr>
+<tr>
+<td>クラウド</td>
+<td>Google</td>
+<td>Vertex AI、BigQuery</td>
+<td>GNN学習、AML AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 学会とワークショップ</h2>
+<h3 id="61">6.1 主要な会場</h3>
+<h4 id="acm-icaif-international-conference-on-ai-in-finance">ACM ICAIF (International Conference on AI in Finance)</h4>
+<ul>
+<li><strong>主催:</strong> ACM (Association for Computing Machinery)。</li>
+<li><strong>範囲:</strong> 金融におけるAI/ML応用のための主要な学術会場。グラフ手法、金融NLP、取引のための強化学習を含む。</li>
+<li><strong>頻度:</strong> 年次開催（2020年以降）。</li>
+<li><strong>主要トピック:</strong> 金融のためのGNN、金融NLP、金融分析のためのKG、アルゴリズム取引、リスク管理。</li>
+<li><strong>URL:</strong> https://ai-finance.org</li>
+</ul>
+<h4 id="kdd-finance-day">KDD Finance Day</h4>
+<ul>
+<li><strong>主催:</strong> ACM SIGKDD。</li>
+<li><strong>範囲:</strong> 金融における応用データサイエンス。KDDカンファレンスの一部として開催。</li>
+<li><strong>主要トピック:</strong> 不正検出、信用スコアリング、金融グラフ分析、リアルタイムリスク。</li>
+<li><strong>注目論文:</strong> GNN不正検出に関する多くの影響力のある論文がKDDで発表されている。</li>
+</ul>
+<h4 id="finnlp-workshop">FinNLP Workshop</h4>
+<ul>
+<li><strong>共催会議:</strong> 主要NLPカンファレンス（ACL、EMNLP、NAACL、EACL）に併設。</li>
+<li><strong>範囲:</strong> 金融テキストからのKG構築、金融NER/RE、センチメント分析を含む金融NLP。</li>
+<li><strong>主要トピック:</strong> 金融エンティティ抽出、提出書類からの関係抽出、金融テキストのためのLLM。</li>
+</ul>
+<h3 id="62">6.2 専門的な会場</h3>
+<h4 id="knowledge-graph-conference-kgc">Knowledge Graph Conference (KGC)</h4>
+<ul>
+<li><strong>焦点:</strong> 金融サービストラックを備えた産業志向のナレッジグラフカンファレンス。</li>
+<li><strong>金融トピック:</strong> 銀行業におけるエンタープライズKGの導入、FIBOの採用、規制KG。</li>
+<li><strong>形式:</strong> 講演、チュートリアル、ベンダーショーケース。</li>
+<li><strong>URL:</strong> https://www.knowledgegraph.tech</li>
+</ul>
+<h4 id="aaai-bridge-program-ai-for-financial-services">AAAI Bridge Program: AI for Financial Services</h4>
+<ul>
+<li><strong>主催:</strong> AAAI (Association for the Advancement of AI)。</li>
+<li><strong>範囲:</strong> AI研究と金融業界の実践の橋渡し。</li>
+<li><strong>主要トピック:</strong> 金融のための説明可能なAI、規制AI、グラフベースのリスクモデル。</li>
+</ul>
+<h4 id="eswc-financial-kg-workshop">ESWC Financial KG Workshop</h4>
+<ul>
+<li><strong>共催会議:</strong> Extended Semantic Web Conference (ESWC) に併設。</li>
+<li><strong>範囲:</strong> 金融データに適用されるセマンティックWeb技術、金融オントロジー、リンクトデータ。</li>
+<li><strong>主要トピック:</strong> FIBOの開発、RDFベースの金融データ統合、オントロジー駆動のコンプライアンス。</li>
+</ul>
+<h4 id="ieee-blockchain-for-finance">IEEE Blockchain for Finance</h4>
+<ul>
+<li><strong>主催:</strong> IEEE。</li>
+<li><strong>範囲:</strong> 金融サービスにおけるブロックチェーン技術の応用。</li>
+<li><strong>主要トピック:</strong> DeFiネットワーク分析、CBDC設計、ブロックチェーンベースのKG、スマートコントラクトの検証。</li>
+</ul>
+<h3 id="_4">学会の概要</h3>
+<table>
+<thead>
+<tr>
+<th>学会</th>
+<th>主催</th>
+<th>頻度</th>
+<th>主要な焦点</th>
+<th>グラフ/KGとの関連性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACM ICAIF</td>
+<td>ACM</td>
+<td>年次</td>
+<td>金融におけるAI</td>
+<td>高：GNN、KG、NLP</td>
+</tr>
+<tr>
+<td>KDD Finance Day</td>
+<td>ACM SIGKDD</td>
+<td>年次</td>
+<td>応用データサイエンス</td>
+<td>高：不正、グラフ分析</td>
+</tr>
+<tr>
+<td>FinNLP Workshop</td>
+<td>*ACL</td>
+<td>年次</td>
+<td>金融NLP</td>
+<td>高：KG構築</td>
+</tr>
+<tr>
+<td>KGC</td>
+<td>産業界</td>
+<td>年次</td>
+<td>ナレッジグラフ</td>
+<td>非常に高：エンタープライズKG</td>
+</tr>
+<tr>
+<td>AAAI Bridge</td>
+<td>AAAI</td>
+<td>隔年</td>
+<td>金融サービスのためのAI</td>
+<td>中：AI/KGによるリスク</td>
+</tr>
+<tr>
+<td>ESWC Financial KG</td>
+<td>ESWC</td>
+<td>年次</td>
+<td>セマンティックWeb＋金融</td>
+<td>非常に高：オントロジー、FIBO</td>
+</tr>
+<tr>
+<td>IEEE Blockchain</td>
+<td>IEEE</td>
+<td>年次</td>
+<td>ブロックチェーン金融</td>
+<td>中：DeFiネットワーク</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="references">References</h2>
+<ol>
+<li>Grover, A. &amp; Leskovec, J. (2016). "node2vec: Scalable Feature Learning for Networks." KDD.</li>
+<li>Hamilton, W., Ying, R. &amp; Leskovec, J. (2017). "Inductive Representation Learning on Large Graphs." NeurIPS.</li>
+<li>Kipf, T. &amp; Welling, M. (2017). "Semi-Supervised Classification with Graph Convolutional Networks." ICLR.</li>
+<li>Velickovic, P. et al. (2018). "Graph Attention Networks." ICLR.</li>
+<li>Chen, Y. et al. (2018). "Incorporating Corporation Relationship via GCN for Stock Price Prediction." CIKM.</li>
+<li>Wang, D. et al. (2019). "Semi-supervised Credit Card Fraud Detection." AAAI.</li>
+<li>Weber, M. et al. (2019). "AML in Bitcoin: Experimenting with GCN." KDD Workshop.</li>
+<li>Trivedi, R. et al. (2019). "DyRep: Learning Representations over Dynamic Graphs." ICLR.</li>
+<li>Xu, D. et al. (2020). "Inductive Representation Learning on Temporal Graphs." ICLR.</li>
+<li>Rossi, E. et al. (2020). "Temporal Graph Networks for Deep Learning on Dynamic Graphs." ICML Workshop.</li>
+<li>Pareja, A. et al. (2020). "EvolveGCN: Evolving Graph Convolutional Networks." AAAI.</li>
+<li>Wu, S. et al. (2021). "BloombergGPT: A Large Language Model for Finance." arXiv.</li>
+<li>Cheng, D. et al. (2024). "FinDKG: Dynamic Knowledge Graphs with LLMs for Financial Markets." arXiv:2407.10909.</li>
+<li>Aste, T. &amp; Di Matteo, T. (2017). "Topological regularities in financial markets."</li>
+<li>Schlichtkrull, M. et al. (2018). "Modeling Relational Data with Graph Convolutional Networks." ESWC.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2610 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yk0817.github.io/finance-knowledge-graph-network-science/06-quantitative-methods/">
+      
+      
+        <link rel="prev" href="../05-emerging-fields/">
+      
+      
+        <link rel="next" href="../07-japan-asia/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>計量手法 - 金融 × 知識グラフ × ネットワーク科学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-header__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            金融 × 知識グラフ × ネットワーク科学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              計量手法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切替"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切替" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切替"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切替" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="金融 × 知識グラフ × ネットワーク科学" class="md-nav__button md-logo" aria-label="金融 × 知識グラフ × ネットワーク科学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    金融 × 知識グラフ × ネットワーク科学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yk0817/finance-knowledge-graph-network-science" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ドキュメント
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ドキュメント
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概観と歴史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    経済学の視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-computer-science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コンピュータサイエンスの視点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-corporate-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    コーポレートガバナンス
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-emerging-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    新興分野
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    計量手法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    計量手法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 最小全域木と相関ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 最小全域木と相関ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mantegna1999" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基礎的フレームワーク：Mantegna（1999年）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pmfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平面最大フィルタグラフ（PMFG）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三角分割最大フィルタグラフ（TMFG）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        応用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ネットワークベースのポートフォリオ最適化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ネットワークベースのポートフォリオ最適化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        階層的リスクパリティ（HRP）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#herc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        階層的均等リスク寄与（HERC）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネットワークリスクパリティ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        符号付きネットワークポートフォリオ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        グラフニューラルネットワークポートフォリオ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ランダム行列理論
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ランダム行列理論">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laloux-cizeau-bouchaud-potters1999" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基礎的研究：Laloux, Cizeau, Bouchaud &amp; Potters（1999年）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ノイズ除去手法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネットワーク構築への応用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スパイクモデルとファクター構造
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. マルチプレックスネットワークと多層ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. マルチプレックスネットワークと多層ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        動機
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bisno-603" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BISワーキングペーパーNo. 603
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多層システミックリスク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二部ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        時間的マルチプレックス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 市場マイクロストラクチャーネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 市場マイクロストラクチャーネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指値注文ブック（LOB）ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTCディーラーネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ダークプールネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        マーケットメイカーネットワークと流動性供給
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-japan-asia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本・アジアの研究
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-mathematical-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数学的基礎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    リソース
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    リソース
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/researchers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要研究者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データセット
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/tools-and-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ツール＆プラットフォーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/conferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学会・ワークショップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主要論文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/ontologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    オントロジー＆標準
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究ノート
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    研究ノート
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究計画書
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/data-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    データソース調査
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-notes/ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    アイデア
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    チュートリアル
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    チュートリアル
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/01-correlation-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    株価相関ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/02-ownership-network.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業所有ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/03-board-interlocks.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    取締役兼任ネットワーク
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/04-gnn-fraud-detection.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNN不正検知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/05-kg-construction.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融KG構築
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 最小全域木と相関ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 最小全域木と相関ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mantegna1999" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基礎的フレームワーク：Mantegna（1999年）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pmfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平面最大フィルタグラフ（PMFG）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三角分割最大フィルタグラフ（TMFG）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        応用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ネットワークベースのポートフォリオ最適化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ネットワークベースのポートフォリオ最適化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        階層的リスクパリティ（HRP）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#herc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        階層的均等リスク寄与（HERC）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネットワークリスクパリティ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        符号付きネットワークポートフォリオ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        グラフニューラルネットワークポートフォリオ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ランダム行列理論
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ランダム行列理論">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laloux-cizeau-bouchaud-potters1999" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基礎的研究：Laloux, Cizeau, Bouchaud &amp; Potters（1999年）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ノイズ除去手法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ネットワーク構築への応用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スパイクモデルとファクター構造
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. マルチプレックスネットワークと多層ネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. マルチプレックスネットワークと多層ネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        動機
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bisno-603" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BISワーキングペーパーNo. 603
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多層システミックリスク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二部ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        時間的マルチプレックス
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 市場マイクロストラクチャーネットワーク
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 市場マイクロストラクチャーネットワーク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lob" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指値注文ブック（LOB）ネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OTCディーラーネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ダークプールネットワーク
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        マーケットメイカーネットワークと流動性供給
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要論文
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">金融ネットワークのための定量的手法</h1>
+<p>本章では、金融ネットワークの構築、フィルタリング、分析に用いられる中核的な定量技法を取り上げる——相関ベースのグラフ構築やポートフォリオ最適化から、ランダム行列理論、多層ネットワーク、市場マイクロストラクチャーまで。</p>
+<hr />
+<h2 id="1">1. 最小全域木と相関ネットワーク</h2>
+<h3 id="mantegna1999">基礎的フレームワーク：Mantegna（1999年）</h3>
+<p>相関ベースの金融ネットワークの現代的研究は、Mantegnaの画期的論文 "Hierarchical structure in financial markets"（1999年）に始まる。構築パイプラインは以下の通り：</p>
+<ol>
+<li><strong>相互相関行列</strong>：ローリングウィンドウにわたる<span class="arithmatex">\(N\)</span>資産の対数リターンのペアワイズPearson相関<span class="arithmatex">\(\rho_{ij}\)</span>を計算。</li>
+<li><strong>距離行列</strong>：相関を距離指標に変換：
+$<span class="arithmatex">\(d_{ij} = \sqrt{2(1 - \rho_{ij})}\)</span>$
+   これは距離の3公理（非負性、対称性、三角不等式）を満たす。</li>
+<li><strong>最小全域木（MST）</strong>：KruskalまたはPrimのアルゴリズムを適用してMSTを抽出——総距離を最小化する<span class="arithmatex">\(N-1\)</span>本のエッジを持つ連結非巡回部分グラフ。</li>
+</ol>
+<p>得られるMSTは<strong>セクターと産業による株式の階層的クラスタリング</strong>を明らかにし、<span class="arithmatex">\(O(N^2)\)</span>の相関を<span class="arithmatex">\(O(N)\)</span>のエッジに縮約した簡潔な市場構造の表現を提供する。</p>
+<h3 id="pmfg">平面最大フィルタグラフ（PMFG）</h3>
+<p>Tumminello, Aste, Di Matteo &amp; Mantegna（2005年）は、MSTのより豊かな代替としてPMFGを導入した：</p>
+<ul>
+<li>MSTの<span class="arithmatex">\(N-1\)</span>本に対し<span class="arithmatex">\(3(N-2)\)</span>本のエッジを保持しつつ、<strong>平面性</strong>（エッジ交差なく球面上に埋め込み可能）を維持。</li>
+<li>常にMSTを部分グラフとして含む。</li>
+<li>追加のトポロジー的特徴を捕捉：高次の相関構造を符号化する<strong>クリーク</strong>（3-クリークおよび4-クリーク）と<strong>ループ</strong>。</li>
+<li>MSTと比較してローカルな近傍情報をより良く保存。</li>
+</ul>
+<h3 id="tmfg">三角分割最大フィルタグラフ（TMFG）</h3>
+<p>Massara, Di Matteo &amp; Aste（2016年）はTMFGを提案した：</p>
+<ul>
+<li>反復的な頂点挿入に基づく効率的な<span class="arithmatex">\(O(N^2)\)</span>構築アルゴリズム。</li>
+<li>弦的（三角分割された）平面グラフを生成。</li>
+<li><strong>局所的クラスタリング構造</strong>をより良く捕捉し、正定値フィルタ相関行列を生成。</li>
+<li>疎でありながら情報量の多いグラフ表現が必要な場合に特に有用。</li>
+</ul>
+<h3 id="_2">応用</h3>
+<table>
+<thead>
+<tr>
+<th>応用</th>
+<th>手法</th>
+<th>主要な洞察</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ポートフォリオ分散</td>
+<td>MSTトポロジー分析</td>
+<td>MST上の周辺資産は相関が低い → より良い分散効果</td>
+</tr>
+<tr>
+<td>市場レジーム検出</td>
+<td>動的MST追跡</td>
+<td>MSTトポロジーの変化（正規化木長、次数分布）がレジーム転換を示唆</td>
+</tr>
+<tr>
+<td>危機検出</td>
+<td>MSTの縮退</td>
+<td>市場ストレス時、相関が急上昇しMSTが収縮——「超計量縮退」効果</td>
+</tr>
+<tr>
+<td>セクターローテーション</td>
+<td>時変MST</td>
+<td>ハブ構造とクラスター所属の変化がセクターリーダーシップの交代を明示</td>
+</tr>
+<tr>
+<td>リスク管理</td>
+<td>PMFG/TMFGフィルタリング</td>
+<td>下流の共分散推定のためのよりクリーンな相関構造</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>論文</th>
+<th>著者</th>
+<th>年</th>
+<th>貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hierarchical structure in financial markets</td>
+<td>Mantegna</td>
+<td>1999</td>
+<td>相関距離からのMST——創始論文</td>
+</tr>
+<tr>
+<td>A tool for filtering information in complex systems</td>
+<td>Tumminello, Aste, Di Matteo, Mantegna</td>
+<td>2005</td>
+<td>PMFGの構築と特性</td>
+</tr>
+<tr>
+<td>Network filtering for big data: TMFG</td>
+<td>Massara, Di Matteo, Aste</td>
+<td>2016</td>
+<td>TMFGアルゴリズムと正定値性</td>
+</tr>
+<tr>
+<td>Dynamics of the MST of the US stock market</td>
+<td>Onnela, Chakraborti, Kaski, Kertesz, Kanto</td>
+<td>2003</td>
+<td>動的MST分析、危機検出</td>
+</tr>
+<tr>
+<td>Clustering and information in correlation-based financial networks</td>
+<td>Tumminello, Lillo, Mantegna</td>
+<td>2010</td>
+<td>MST、PMFG、閾値ネットワークの比較</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. ネットワークベースのポートフォリオ最適化</h2>
+<h3 id="hrp">階層的リスクパリティ（HRP）</h3>
+<p>Marcos Lopez de Prado（2016年）は "Building Diversified Portfolios that Outperform Out-of-Sample" においてHRPを導入した：</p>
+<ol>
+<li><strong>ツリークラスタリング</strong>：相関行列の階層的クラスタリング（単連結法）を計算。</li>
+<li><strong>準対角化</strong>：デンドログラムに従って共分散行列を並べ替え、相関の高い資産を隣接させる。</li>
+<li><strong>再帰的二分法</strong>：ソートされた資産を分割し、クラスター分散に逆比例してリスクをトップダウンで配分。</li>
+</ol>
+<p><strong>主要な利点</strong>：
+- 行列の逆行列を必要としない（Markowitz平均分散最適化とは異なる）。
+- 共分散行列の推定誤差に対してロバスト——ポートフォリオ構築への機械学習アプローチ。
+- アウトオブサンプルテストにおいて従来の平均分散を一貫して上回る。
+- 共分散行列を非構造的に扱うのではなく、<strong>資産相関の階層的構造</strong>を活用。</p>
+<h3 id="herc">階層的均等リスク寄与（HERC）</h3>
+<p>Raffinot（2017年）はHRPを<strong>リスクバジェッティング</strong>で拡張した：</p>
+<ul>
+<li>階層的クラスタリングをクラスター内の均等リスク寄与（ERC）と組み合わせ。</li>
+<li>より柔軟なリスク配分——階層の各レベルで均等リスク寄与を目指すことが可能。</li>
+<li>HRPと従来のリスクパリティアプローチを橋渡し。</li>
+</ul>
+<h3 id="_4">ネットワークリスクパリティ</h3>
+<ul>
+<li><strong>グラフ中心性指標</strong>（次数、固有ベクトル、媒介中心性）を用いてリスク配分に情報を付与。</li>
+<li>高度に接続された資産にペナルティ：中心性の高いノードはシステミックリスクへの寄与が大きく、ポートフォリオウェイトを低く設定。</li>
+<li>バリエーション：</li>
+<li>次数加重リスクパリティ：加重次数に逆比例して配分。</li>
+<li>媒介中心性ペナルティ付き配分：クラスター間の「ブリッジ」として機能する資産のウェイトを削減。</li>
+<li>固有ベクトル中心性調整リスクバジェッティング。</li>
+</ul>
+<h3 id="_5">符号付きネットワークポートフォリオ</h3>
+<ul>
+<li>金融相関ネットワークは<strong>正と負の両方の相関</strong>を持つ——自然に<strong>符号付きエッジ</strong>としてモデル化される。</li>
+<li><strong>符号付きネットワーク上のコミュニティ検出</strong>：コミュニティ内のエッジが正（相関）、コミュニティ間のエッジが負（ヘッジ）となるように資産をグループ化。</li>
+<li><strong>バランス理論の応用</strong>：Heiderのバランス理論——「敵の敵は味方」——がポートフォリオのグループ分けに構造的制約を提供。</li>
+<li>フラストレーションエッジ（バランスの違反）が裁定機会またはミスプライシングを示唆。</li>
+</ul>
+<h3 id="_6">グラフニューラルネットワークポートフォリオ</h3>
+<ul>
+<li><strong>GNNベースの資産配分</strong>：金融関係グラフ（相関、サプライチェーン、セクター所属）を構築し、ポートフォリオウェイトをエンドツーエンドで学習。</li>
+<li>GNNは<strong>最適なネットワーク構造</strong>（アテンションまたは学習可能な隣接行列を介して）と<strong>ポートフォリオウェイト</strong>を共同で学習。</li>
+<li>アーキテクチャ：アテンション加重近傍集約のためのGAT、変動する資産ユニバースにわたる帰納的学習のためのGraphSAGE。</li>
+<li>利点：異種の金融関係（ファンダメンタル、テクニカル、オルタナティブデータ）を統一的なグラフフレームワークに組み込むことが可能。</li>
+</ul>
+<h3 id="_7">主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>論文</th>
+<th>著者</th>
+<th>年</th>
+<th>貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Building Diversified Portfolios that Outperform Out-of-Sample</td>
+<td>Lopez de Prado</td>
+<td>2016</td>
+<td>HRPアルゴリズム</td>
+</tr>
+<tr>
+<td>Hierarchical clustering-based asset allocation</td>
+<td>Raffinot</td>
+<td>2017</td>
+<td>HERC拡張</td>
+</tr>
+<tr>
+<td>Network-based risk parity</td>
+<td>Various</td>
+<td>2018+</td>
+<td>中心性に基づく配分</td>
+</tr>
+<tr>
+<td>Portfolio optimization with graph neural networks</td>
+<td>Various</td>
+<td>2020+</td>
+<td>エンドツーエンドGNNポートフォリオ学習</td>
+</tr>
+<tr>
+<td>Signed networks in finance</td>
+<td>Harary (balance theory), applications in finance</td>
+<td>—</td>
+<td>符号付きグラフによるポートフォリオグループ化</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. ランダム行列理論</h2>
+<h3 id="laloux-cizeau-bouchaud-potters1999">基礎的研究：Laloux, Cizeau, Bouchaud &amp; Potters（1999年）</h3>
+<p>"Noise Dressing of Financial Correlation Matrices"——<strong>CFM (Capital Fund Management)</strong> リサーチによる画期的論文：</p>
+<ul>
+<li><span class="arithmatex">\(N\)</span>資産のリターンの<span class="arithmatex">\(T\)</span>観測にわたる経験的相関行列<span class="arithmatex">\(\mathbf{C}\)</span>は、<span class="arithmatex">\(N/T = Q\)</span>が無視できない場合に相当なノイズを含む。</li>
+<li><strong>Marchenko-Pastur分布</strong>：純粋にランダムな行列（i.i.d.リターン）の場合、固有値密度は以下に従う：
+$<span class="arithmatex">\(\rho(\lambda) = \frac{Q}{2\pi\sigma^2} \frac{\sqrt{(\lambda_+ - \lambda)(\lambda - \lambda_-)}}{\lambda}\)</span>$
+  ここで <span class="arithmatex">\(\lambda_{\pm} = \sigma^2(1 \pm \sqrt{1/Q})^2\)</span>。</li>
+<li>Marchenko-Pasturバルク内の固有値は<strong>ノイズ</strong>であり、<span class="arithmatex">\(\lambda_+\)</span>を超えるものは真のシグナル（市場ファクター、セクターファクター）を持つ。</li>
+<li>これは相関行列における<strong>シグナルとノイズの分離</strong>のための原理的方法を提供する。</li>
+</ul>
+<h3 id="_8">ノイズ除去手法</h3>
+<table>
+<thead>
+<tr>
+<th>手法</th>
+<th>説明</th>
+<th>参考文献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>固有値クリッピング</td>
+<td>バルク固有値をその平均（またはゼロ）で置換し、トレースを保存</td>
+<td>Laloux et al. (1999)</td>
+</tr>
+<tr>
+<td>回転不変推定量（RIE）</td>
+<td>自由確率論を用いた各固有値の最適縮小</td>
+<td>Bun, Bouchaud &amp; Potters (2017)</td>
+</tr>
+<tr>
+<td>Ledoit-Wolf縮小</td>
+<td>構造化ターゲット（単位行列、定数相関）への線形縮小</td>
+<td>Ledoit &amp; Wolf (2004)</td>
+</tr>
+<tr>
+<td>Oracle Approximating Shrinkage (OAS)</td>
+<td>改善されたバイアス-分散トレードオフによる縮小</td>
+<td>Chen, Wiesel, Eldar &amp; Hero (2010)</td>
+</tr>
+<tr>
+<td>非線形縮小</td>
+<td>Stieltjes変換を用いた解析的最適非線形縮小</td>
+<td>Ledoit &amp; Wolf (2012, 2020)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">ネットワーク構築への応用</h3>
+<ul>
+<li><strong>クリーニングされた相関行列 → より良いネットワークトポロジー</strong>：ノイズ除去された行列は、より安定的で意味のあるMSTおよびPMFGを生成する。</li>
+<li><strong>改善されたMST構築</strong>：ノイズ除去行列からのMSTは、より一貫したセクタークラスタリングとより少ない時間的不安定性を示す。</li>
+<li><strong>時変ネットワーク推定のための動的RMT</strong>：固有値スペクトルと固有ベクトルの変遷を追跡し、ネットワークの構造変化を検出。</li>
+</ul>
+<h3 id="_10">スパイクモデルとファクター構造</h3>
+<ul>
+<li><strong>スパイク共分散モデル</strong>：少数の大きな固有値（スパイク）がMarchenko-Pasturの海の上に出現し、市場全体およびセクターファクターに対応する。</li>
+<li><strong>BBP転移</strong>（Baik, Ben Arous &amp; Peche, 2005年）：スパイクの検出可能性における相転移——臨界SNRを下回るとスパイクはバルクに溶け込み検出不能になる。</li>
+<li><strong>ファクターモデル</strong>との関連：上位固有ベクトルはPCAファクター（市場、バリュー、サイズ、モメンタム）に対応し、RMTと資産価格理論を結びつける。</li>
+</ul>
+<h3 id="_11">主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>論文</th>
+<th>著者</th>
+<th>年</th>
+<th>貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Noise dressing of financial correlation matrices</td>
+<td>Laloux, Cizeau, Bouchaud, Potters</td>
+<td>1999</td>
+<td>RMTの金融への適用——基礎論文</td>
+</tr>
+<tr>
+<td>Universal and non-universal properties of cross-correlations</td>
+<td>Plerou, Gopikrishnan, Rosenow, Amaral, Guhr, Stanley</td>
+<td>1999</td>
+<td>株式相関の経験的固有値分析</td>
+</tr>
+<tr>
+<td>Cleaning large correlation matrices</td>
+<td>Bun, Bouchaud, Potters</td>
+<td>2017</td>
+<td>RIEと最適推定</td>
+</tr>
+<tr>
+<td>A well-conditioned estimator for large-dimensional covariance matrices</td>
+<td>Ledoit, Wolf</td>
+<td>2004</td>
+<td>縮小推定量</td>
+</tr>
+<tr>
+<td>Nonlinear shrinkage estimation of large-dimensional covariance matrices</td>
+<td>Ledoit, Wolf</td>
+<td>2012</td>
+<td>解析的最適非線形縮小</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. マルチプレックスネットワークと多層ネットワーク</h2>
+<h3 id="_12">動機</h3>
+<p>金融機関は<strong>複数の種類の関係を同時に</strong>通じて接続されている：株式の相互保有、債権、デリバティブエクスポージャー、インターバンク融資、決済フロー。いずれか単一の層を孤立して分析すると、重要なクロスレイヤー相互作用を見落とす。</p>
+<h3 id="bisno-603">BISワーキングペーパーNo. 603</h3>
+<p>Bank for International Settlements（国際決済銀行）は、<strong>金融の相互連関性に関する多層ネットワーク分析</strong>に関する重要なワーキングペーパーを発表し、単一層分析に基づくシステミックリスク評価が深刻な誤りを招きうることを示した。</p>
+<h3 id="_13">多層システミックリスク</h3>
+<ul>
+<li><strong>異なる層</strong>：</li>
+<li>株式層：相互株式保有、株式リターンの相関</li>
+<li>債務層：債券保有、信用エクスポージャー</li>
+<li>デリバティブ層：OTCおよび上場取引のカウンターパーティネットワーク</li>
+<li>インターバンク層：オーバーナイト融資、レポ市場</li>
+<li>
+<p>決済層：即時グロス決済フロー</p>
+</li>
+<li>
+<p><strong>クロスレイヤー伝染と増幅</strong>：ある層での苦境（例：インターバンクのデフォルト）が他の層（例：デリバティブのカウンターパーティリスク、株式のファイアセール）に波及。</p>
+</li>
+<li><strong>マルチプレックスネットワーク上のDebtRank</strong>：複数のエクスポージャータイプにわたるカスケーディング損失を同時に考慮する拡張DebtRankアルゴリズム。</li>
+</ul>
+<h3 id="_14">二部ネットワーク</h3>
+<ul>
+<li><strong>銀行-資産ネットワーク</strong>：銀行が保有する資産に接続される二部（二モード）グラフ。</li>
+<li><strong>投資家-資産の重複</strong>：重複するポートフォリオが共通資産保有を通じて機関間の間接的な接続を生む。</li>
+<li>二部射影により機関の一モードネットワーク（ポートフォリオの重複で重み付け）が得られ、これがファイアセール伝染を駆動する。</li>
+</ul>
+<h3 id="_15">時間的マルチプレックス</h3>
+<ul>
+<li>多層構造に<strong>時間次元</strong>を追加：各層がクロスレイヤー結合を伴いながら独立に変遷。</li>
+<li>危機時に多層金融ネットワークがどのように再配線されるかの分析を可能にする。</li>
+</ul>
+<h3 id="_16">主要概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>レイヤー間結合</td>
+<td>レイヤー間の依存関係の強さ（例：株式-債務のフィードバック）</td>
+</tr>
+<tr>
+<td>レイヤー集約</td>
+<td>複数のレイヤーを単一ネットワークに統合——情報損失 vs. 扱いやすさ</td>
+</tr>
+<tr>
+<td>マルチプレックス中心性</td>
+<td>すべてのレイヤーにわたるノードの重要性を考慮した中心性指標</td>
+</tr>
+<tr>
+<td>レイヤー縮約可能性</td>
+<td>レイヤー間の冗長性の定量化——構造的に類似しているか？</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>論文</th>
+<th>著者</th>
+<th>年</th>
+<th>貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The multiplex structure of interbank networks</td>
+<td>Bargigli, di Iasio, Infante, Lillo, Pierobon</td>
+<td>2015</td>
+<td>イタリアのインターバンク市場のマルチプレックス分析</td>
+</tr>
+<tr>
+<td>Multilayer network analysis of financial interconnectedness</td>
+<td>BIS Working Paper No. 603</td>
+<td>2016</td>
+<td>多層金融ネットワークにおけるシステミックリスク</td>
+</tr>
+<tr>
+<td>Multiplexity and systemic risk</td>
+<td>Poledna, Molina-Borboa, Martinez-Jaramillo, van der Leij, Thurner</td>
+<td>2015</td>
+<td>マルチプレックスインターバンクネットワーク上のDebtRank</td>
+</tr>
+<tr>
+<td>Leveraging the network: a stress-test framework</td>
+<td>Cont, Moussa, Santos</td>
+<td>2013</td>
+<td>二部銀行-資産ストレステスト</td>
+</tr>
+<tr>
+<td>Fire sales, indirect contagion and systemic risk</td>
+<td>Cont, Schaanning</td>
+<td>2017</td>
+<td>重複ポートフォリオとファイアセールスパイラル</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 市場マイクロストラクチャーネットワーク</h2>
+<h3 id="lob">指値注文ブック（LOB）ネットワーク</h3>
+<ul>
+<li><strong>注文フローネットワーク</strong>：注文ブックデータから「誰が誰と取引しているか」を再構築。</li>
+<li>ノード：市場参加者（一部市場ではトレーダーIDで識別可能）。</li>
+<li>エッジ：二者間取引、取引量または頻度で重み付け。</li>
+<li><strong>注文ブックダイナミクスを通じた情報フロー</strong>：資産間または取引所間の注文ブックイベントにおけるリード・ラグ関係が情報伝播経路を明らかにする。</li>
+<li><strong>高頻度取引のネットワーク効果</strong>：</li>
+<li>HFT企業は取引ネットワークのハブとして機能し、流動性を提供する一方でショックも伝達。</li>
+<li>コロケーションとレイテンシー裁定が非対称なネットワーク構造を生む。</li>
+<li>フラッシュクラッシュの伝播はネットワークトポロジーに従う。</li>
+</ul>
+<h3 id="otc">OTCディーラーネットワーク</h3>
+<ul>
+<li>債券、外国為替、デリバティブ市場における<strong>インターディーラーブローカーネットワーク</strong>：</li>
+<li>OTC市場には中央の指値注文ブックがなく、取引はディーラーの仲介を通じて二者間で行われる。</li>
+<li>
+<p>結果として得られるネットワークは強い<strong>コア・ペリフェリー構造</strong>を示す：大規模ディーラーの密なコアがより小規模な参加者の疎なペリフェリーに接続。</p>
+</li>
+<li>
+<p><strong>Li &amp; Schurhoff（2019年）</strong>："Dealer Networks"——地方債市場の分析：</p>
+</li>
+<li>仲介チェーンの文書化：債券はエンド投資家に到達する前に複数のディーラーを経由。</li>
+<li>ネットワーク上の位置が取引コストを決定：周辺の顧客はより高いマークアップを支払う。</li>
+<li>
+<p>中心的なディーラーはネットワーク上の位置からレントを獲得。</p>
+</li>
+<li>
+<p><strong>価格設定と流動性に対するネットワーク効果</strong>：</p>
+</li>
+<li>ビッドアスクスプレッドは取引ネットワークにおけるディーラーの中心性に依存。</li>
+<li>流動性は資産単体の性質ではなく、それが取引されるネットワークの性質。</li>
+<li>ネットワークの脆弱性：コアディーラーの除去により流動性が蒸発しうる。</li>
+</ul>
+<h3 id="_18">ダークプールネットワーク</h3>
+<ul>
+<li><strong>断片化された株式市場</strong>：取引はリット取引所、ダークプール、インターナライザーにまたがって行われ、ネットワーク化された市場エコシステムを形成。</li>
+<li><strong>取引所間の情報漏洩</strong>：ある取引所での注文フローが他の取引所のインフォームドトレーダーにシグナルを送る；この情報ネットワークのトポロジーが執行品質に影響。</li>
+<li><strong>ネットワーク化された市場における最適執行</strong>：スマートオーダールーティングをネットワーク最適化問題として捉える——マーケットインパクトを最小化するために相互接続された取引所間に注文をどう分割するか。</li>
+</ul>
+<h3 id="_19">マーケットメイカーネットワークと流動性供給</h3>
+<ul>
+<li>マーケットメイカーは重複する義務と在庫管理を通じてネットワークを形成。</li>
+<li>マーケットメイカー間の情報共有と競争ダイナミクスがビッドアスクスプレッドを形成。</li>
+<li>マーケットメイキングにおけるネットワーク効果：一つのマーケットメイカーの破綻は在庫の不均衡を通じて接続されたメイカーに伝播。</li>
+</ul>
+<h3 id="_20">主要論文</h3>
+<table>
+<thead>
+<tr>
+<th>論文</th>
+<th>著者</th>
+<th>年</th>
+<th>貢献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dealer Networks</td>
+<td>Li, Schurhoff</td>
+<td>2019</td>
+<td>地方債ディーラーネットワーク構造と価格設定</td>
+</tr>
+<tr>
+<td>The network of interdealer trades</td>
+<td>Iori, de Masi, Precup, Gabbi, Caldarelli</td>
+<td>2008</td>
+<td>イタリアのインターバンクe-MIDネットワーク</td>
+</tr>
+<tr>
+<td>Core-periphery structure in OTC markets</td>
+<td>Craig, von Peter</td>
+<td>2014</td>
+<td>インターバンク市場のコア・ペリフェリーモデル</td>
+</tr>
+<tr>
+<td>High-frequency trading and market quality</td>
+<td>Various</td>
+<td>2010s</td>
+<td>HFTの市場マイクロストラクチャーへのネットワーク効果</td>
+</tr>
+<tr>
+<td>Fragmentation and market quality</td>
+<td>O'Hara, Ye</td>
+<td>2011</td>
+<td>市場断片化の影響</td>
+</tr>
+<tr>
+<td>The network origins of aggregate fluctuations</td>
+<td>Acemoglu, Carvalho, Ozdaglar, Tahbaz-Salehi</td>
+<td>2012</td>
+<td>マイクロストラクチャーショックのネットワーク伝播</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_21">まとめ</h2>
+<p>本章で概観した定量的手法は、金融ネットワーク科学の分析的基盤を形成する：</p>
+<ul>
+<li><strong>相関ネットワーク</strong>（MST、PMFG、TMFG）は、ノイズの多い相関行列から意味のある構造を抽出するための原理的方法を提供する。</li>
+<li><strong>ネットワークベースのポートフォリオ最適化</strong>（HRP、HERC、ネットワークリスクパリティ、GNNポートフォリオ）は、より堅牢な資産配分のためにグラフ構造を活用する。</li>
+<li><strong>ランダム行列理論</strong>はシグナルとノイズの分離を可能にし、ネットワーク構築と共分散推定の両方を改善する。</li>
+<li><strong>マルチプレックスおよび多層ネットワーク</strong>は、金融の相互接続の多面的な性質とそのクロスレイヤー伝染ダイナミクスを捕捉する。</li>
+<li><strong>市場マイクロストラクチャーネットワーク</strong>は、取引関係の隠れたトポロジーと、それが価格設定、流動性、システミック安定性に与える影響を明らかにする。</li>
+</ul>
+<p>これらの手法は孤立したものではなく、相乗的に相互作用する。RMTでクリーニングされた相関はより良いMSTを生み出し、MSTトポロジーはHRPのクラスタリングに情報を提供し、マルチプレックス分析は単一層ネットワークでは見えない伝染チャネルを明らかにし、マイクロストラクチャーネットワークはマクロレベルの金融ネットワークが依拠する経験的基盤を提供する。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
