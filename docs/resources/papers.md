@@ -114,6 +114,14 @@
 | Liu, X. et al. | 2021 | FinBERT-KG: Finance Domain Knowledge Graph Construction via Pre-trained Language Model | — | BERTベースの金融KG構築 |
 | Cao, Y. et al. | 2020 | KGAT: Knowledge Graph Attention Network for Recommendation | KDD | 金融KG推論に適用可能なKGアテンションメカニズム |
 | Ye, H. et al. | 2023 | Financial Knowledge Graph Reasoning | — | 時間的金融ナレッジグラフ上の推論 |
+| Popov, A. | 2024 | Building Financial Knowledge Graphs with Ontology-Driven Approaches | Graphwise Blog | オントロジー駆動型KGの金融実践事例 |
+| Osman, C., Ghiran, A. & Buchmann, R. | 2024 | An Enterprise Modeling Approach for ESG Accounting Using Knowledge Graphs | CEUR-WS Vol-3855 | エンタープライズモデリング+KGによるESG会計フレームワーク |
+| Mohsin, S., Jami, S.I., Wasi, S. & Siddiqui, M.S. | 2024 | OBIE-based Knowledge Graph Construction from Annual Bank Reports | PeerJ Computer Science | 年次銀行報告書からのOBIE+KG構築パイプライン |
+| Kertkeidkachorn, N. et al. | 2023 | FinKG: A Core Financial Knowledge Graph for Financial Analysis | IEEE ICSC | 専門家検証済みOWLオントロジーによる高品質金融KG; 株価予測で有用性実証 |
+| Xu, Z. & Ichise, R. | 2025 | FinCaKG-Onto: Financial Expertise Depiction via Causality Knowledge Graph and Domain Ontology | Applied Intelligence | FIBO統合+BERT因果検出による因果KG; オントロジー整合性95.6% |
+| Elhammadi, S. et al. | 2020 | A High Precision Pipeline for Financial Knowledge Graph Construction | COLING | 金融ニュース28.8万件→34.2万関係抽出; 精度78%の高精度KGパイプライン |
+| Abrouk, L. et al. | 2023 | OntoFiC: An Ontology for Financial Fraud Detection and Customer Behavior Modeling | IEEE/ACM ASONAM | OWL+SWRLルール推論によるSWIFT不正取引検出 |
+| Kertkeidkachorn, N. et al. | 2023 | FinKG-JP: A Japanese Financial Knowledge Graph | JSAI | EDINETデータ活用; FinKGオントロジーの日本市場拡張 |
 
 ---
 
@@ -227,7 +235,8 @@
 | Reinders, H.J. et al. | 2023 | Climate risk in the financial system | Annual Review of Financial Economics | 気候-金融ネットワーク研究のサーベイ |
 | Barrot, J.-N. & Sauvagnat, J. | 2016 | Input specificity and the propagation of idiosyncratic shocks in production networks | Quarterly Journal of Economics | サプライチェーン途絶の伝播; 地震を利用した自然実験 |
 | Inoue, H. & Todo, Y. | 2020 | Propagation of COVID-19 supply chain shocks | — | サプライチェーンネットワークを通じたCOVID-19の影響 |
+| Angioni, S. et al. | 2024 | Analyzing ESG Discourse in US and UK News through Knowledge Graphs | CEUR-WS Vol-3697 | 米英ニュースのESG言説をKG化して比較分析 |
 
 ---
 
-*最終更新: 2026-03-01*
+*最終更新: 2026-03-14*
