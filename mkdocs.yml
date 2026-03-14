@@ -36,6 +36,10 @@ nav:
     - 学会・ワークショップ: resources/conferences.md
     - 主要論文: resources/papers.md
     - オントロジー＆標準: resources/ontologies.md
+  - 研究ノート:
+    - 研究計画書: research-plan.md
+    - データソース調査: research-notes/data-sources.md
+    - アイデア: research-notes/ideas.md
   - チュートリアル:
     - 株価相関ネットワーク: notebooks/01-correlation-network.ipynb
     - 企業所有ネットワーク: notebooks/02-ownership-network.ipynb
